@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="<meta name="google-site-verification" content="BXdHtW-DrlxrxqqWU7NtzaDn_jm-z9A1Lv-D2aFOMxY" />">
+  <meta name="google-site-verification" content="<meta name=" google-site-verification">">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -159,9 +159,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -203,7 +201,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mokku-blue.jpg">
       <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -313,17 +311,17 @@
 <p>在认为有问题的函数打断点直接执行来缩小范围，后来怀疑是在parsePath的strcpy出现问题，因为一开始char entname[12] 编译没有通过改成了 char* entname，怀疑没有分配足够的空间导致栈溢出，于是改成用动态数组分配，问题解决</p>
 <p>调试的时候遇到了输入第二个命令会 <code>*** stack smashing detected ***: terminated Aborted (core dumped)</code> </p>
 <p>0730</p>
-<p>先把剩下的命令全部实现，其中在写edit命令的时候学到一个函数<a target="_blank" rel="noopener" href="https://www.cplusplus.com/reference/cstdio/fgets/"><strong>fget</strong></a>的用法,支持逐个字节读入数据并写入磁盘</p>
+<p>先把剩下的命令全部实现，其中在写edit命令的时候学到一个函数<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.cplusplus.com/reference/cstdio/fgets/"><strong>fget</strong></a>的用法,支持逐个字节读入数据并写入磁盘</p>
 <h2 id="Sum-up"><a href="#Sum-up" class="headerlink" title="Sum up"></a>Sum up</h2><p>第一次在没有框架代码的情况下写这样的小系统。通过阅读别人的代码和自己设计实现逐步理清了框架和各个函数的功能与实现。项目管理的缺失让coding的进展非常不稳定。下个学期上课应该多注意这一方面的训练。</p>
 <p>断断续续做了一个月，还有一些小bug没有调试。之后有空再来填坑</p>
 <p>项目代码：（因为网络问题暂时没有同步，回校再填坑）</p>
 <p>参考文献：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/122569192">https://zhuanlan.zhihu.com/p/122569192</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yxc135/article/details/8769086">https://blog.csdn.net/yxc135/article/details/8769086</a></p>
-<p><a target="_blank" rel="noopener" href="https://reeeeeeeeeein.github.io/2020/04/15/fat12%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">https://reeeeeeeeeein.github.io/2020/04/15/fat12%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/warpmatrix/fat12-file-system">https://github.com/warpmatrix/fat12-file-system</a> useful</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Laichilueng/article/details/54669370?utm_medium=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version_3&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version">https://blog.csdn.net/Laichilueng/article/details/54669370?utm_medium=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version_3&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version</a>_</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/121807427">https://zhuanlan.zhihu.com/p/121807427</a> 给出参数具体值</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zhuanlan.zhihu.com/p/122569192">https://zhuanlan.zhihu.com/p/122569192</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/yxc135/article/details/8769086">https://blog.csdn.net/yxc135/article/details/8769086</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://reeeeeeeeeein.github.io/2020/04/15/fat12%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">https://reeeeeeeeeein.github.io/2020/04/15/fat12%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/warpmatrix/fat12-file-system">https://github.com/warpmatrix/fat12-file-system</a> useful</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/Laichilueng/article/details/54669370?utm_medium=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version_3&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version">https://blog.csdn.net/Laichilueng/article/details/54669370?utm_medium=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version_3&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-2~default~searchFromBaidu~default-7.test_version</a>_</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zhuanlan.zhihu.com/p/121807427">https://zhuanlan.zhihu.com/p/121807427</a> 给出参数具体值</p>
 
     </div>
 
@@ -414,8 +412,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Augustus"
-      src="/images/mokku-blue.jpg">
+    <img class="site-author-image" itemprop="image" alt="Augustus" src="/images/mokku-blue.jpg">
   <p class="site-author-name" itemprop="name">Augustus</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -444,7 +441,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
 
@@ -475,7 +472,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Augustus</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>
 
         
