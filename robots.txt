@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /posts/
+
+Disallow: /assets/
+Disallow: /js/
+Disallow: /css/
+Disallow: /lib/
+
+Sitemap: https://august0830.github.io/sitemap.xml 
+Sitemap: https://august0830.github.io/baidusitemap.xml
