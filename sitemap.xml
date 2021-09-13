@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://august0830.github.io/post/ca390c6f/</loc>
+    
+    <lastmod>2021-09-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://august0830.github.io/post/f7e510c4/</loc>
     
     <lastmod>2021-08-29</lastmod>
@@ -74,7 +81,7 @@
 
   <url>
     <loc>https://august0830.github.io/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,28 +89,35 @@
   
   <url>
     <loc>https://august0830.github.io/tags/Owl-at-Dusk/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/OS/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/Interview/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/book-review/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://august0830.github.io/tags/git/</loc>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,14 +126,14 @@
   
   <url>
     <loc>https://august0830.github.io/categories/Reading/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/categories/Tech/</loc>
-    <lastmod>2021-08-29</lastmod>
+    <lastmod>2021-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

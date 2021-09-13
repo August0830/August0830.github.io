@@ -21,15 +21,20 @@
     var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Map of the Soul">
-<meta property="og:url" content="https://august0830.github.io/archives/index.html">
+  <meta name="description" content="事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子 首先是查询特定文件的git log记录 1git log .&#x2F;folder&#x2F;filename    在windows的git bash中，是无法通过 git reset --hard 版本哈希 filename  来回退的 搜索后发现应该用checkout 1git checko">
+<meta property="og:type" content="article">
+<meta property="og:title" content="恢复特定文件到过去版本的解决办法">
+<meta property="og:url" content="https://august0830.github.io/post/ca390c6f/index.html">
 <meta property="og:site_name" content="Map of the Soul">
+<meta property="og:description" content="事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子 首先是查询特定文件的git log记录 1git log .&#x2F;folder&#x2F;filename    在windows的git bash中，是无法通过 git reset --hard 版本哈希 filename  来回退的 搜索后发现应该用checkout 1git checko">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-09-13T02:42:27.000Z">
+<meta property="article:modified_time" content="2021-09-13T02:49:56.073Z">
 <meta property="article:author" content="Augustus">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://august0830.github.io/archives/">
+<link rel="canonical" href="https://august0830.github.io/post/ca390c6f/">
 
 
 <script id="page-configurations">
@@ -37,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | Map of the Soul</title>
+  <title>恢复特定文件到过去版本的解决办法 | Map of the Soul</title>
   
 
 
@@ -176,198 +181,124 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/ca390c6f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          恢复特定文件到过去版本的解决办法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-13 10:42:27 / Modified: 10:49:56" itemprop="dateCreated datePublished" datetime="2021-09-13T10:42:27+08:00">2021-09-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 9 posts in total. Keep on posting.</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/ca390c6f/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/ca390c6f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
+        <p>事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子</p>
+<p>首先是查询特定文件的git log记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> ./folder/filename</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-09-13T10:42:27+08:00" content="2021-09-13">
-          09-13
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/post/ca390c6f/" itemprop="url">
-            <span itemprop="name">恢复特定文件到过去版本的解决办法</span>
-          </a>
-      </div>
+<p>在windows的git bash中，是无法通过 <code>git reset --hard 版本哈希 filename </code> 来回退的</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/caae5b928173">搜索</a>后发现应该用<code>checkout</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 版本<span class="built_in">hash</span> filename</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-29T11:40:04+08:00" content="2021-08-29">
-          08-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/f7e510c4/" itemprop="url">
-            <span itemprop="name">2021暑假小结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-29T11:38:58+08:00" content="2021-08-29">
-          08-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/68913f78/" itemprop="url">
-            <span itemprop="name">前人栽树后人乘凉-配置自己的RSS</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-28T20:37:12+08:00" content="2021-08-28">
-          08-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/d050af8b/" itemprop="url">
-            <span itemprop="name">2021秋开学前鸡汤</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-19T17:47:50+08:00" content="2021-08-19">
-          08-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/c243b9f0/" itemprop="url">
-            <span itemprop="name">Google2021STEP 失败小结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-16T20:10:48+08:00" content="2021-08-16">
-          08-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/7f6e4fde/" itemprop="url">
-            <span itemprop="name">FAT12 File System</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-05T14:47:02+08:00" content="2021-08-05">
-          08-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/7b442c5c/" itemprop="url">
-            <span itemprop="name">The Truth Untold--迟到两年的高中生活回忆</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-05T14:25:20+08:00" content="2021-08-05">
-          08-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/6e659447/" itemprop="url">
-            <span itemprop="name">最寒冷的冬天</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-08-04T21:19:31+08:00" content="2021-08-04">
-          08-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/b1d4025b/" itemprop="url">
-            <span itemprop="name">hello-world</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>可以避免影响已经完成的作业</p>
+<p>但是这样是无法直接push的，因为有文件回退到了过去的版本。<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/30471557/git-push-master-fatal-you-are-not-currently-on-a-branch/30471627">会出现 you are not currently on a branch</a></p>
+<p>可以通过 <code>git push origin HEAD:mater --force</code> 来强制执行</p>
+<p>成功！</p>
+<p>Stackoverflow 好用！</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/f7e510c4/" rel="prev" title="2021暑假小结">
+      <i class="fa fa-chevron-left"></i> 2021暑假小结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
