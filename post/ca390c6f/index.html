@@ -29,7 +29,7 @@
 <meta property="og:description" content="事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子 首先是查询特定文件的git log记录 1git log .&#x2F;folder&#x2F;filename    在windows的git bash中，是无法通过 git reset --hard 版本哈希 filename  来回退的 搜索后发现应该用checkout 1git checko">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-09-13T02:42:27.000Z">
-<meta property="article:modified_time" content="2021-09-13T02:49:56.073Z">
+<meta property="article:modified_time" content="2021-09-14T03:46:00.061Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -210,10 +210,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-13 10:42:27 / Modified: 10:49:56" itemprop="dateCreated datePublished" datetime="2021-09-13T10:42:27+08:00">2021-09-13</time>
+              <time title="Created: 2021-09-13 10:42:27" itemprop="dateCreated datePublished" datetime="2021-09-13T10:42:27+08:00">2021-09-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-14 11:46:00" itemprop="dateModified" datetime="2021-09-14T11:46:00+08:00">2021-09-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -261,7 +267,7 @@
 
 <p>可以避免影响已经完成的作业</p>
 <p>但是这样是无法直接push的，因为有文件回退到了过去的版本。<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/30471557/git-push-master-fatal-you-are-not-currently-on-a-branch/30471627">会出现 you are not currently on a branch</a></p>
-<p>可以通过 <code>git push origin HEAD:mater --force</code> 来强制执行</p>
+<p>可以通过 <code>git push origin HEAD:master --force</code> 来强制执行</p>
 <p>成功！</p>
 <p>Stackoverflow 好用！</p>
 
@@ -285,7 +291,10 @@
     <a href="/post/f7e510c4/" rel="prev" title="2021暑假小结">
       <i class="fa fa-chevron-left"></i> 2021暑假小结
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/fbfaa019/" rel="next" title="配环境有感">
+      配环境有感 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -359,7 +368,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
