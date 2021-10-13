@@ -784,6 +784,7 @@
 <p>Last, it’s meaningless to have stocks at last day, so the answer comes from cool-down and no-stocks-no-cool.</p>
 <figure class="highlight cc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> stock=-prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> cool = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> nsnc = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;prices.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            <span class="keyword">int</span> newst = <span class="built_in">max</span>(stock,nsnc-prices[i]);</span><br><span class="line">            <span class="keyword">int</span> newcool = stock+prices[i];</span><br><span class="line">            <span class="keyword">int</span> newnsnc = <span class="built_in">max</span>(nsnc,cool);</span><br><span class="line">            stock = newst;</span><br><span class="line">            cool = newcool;</span><br><span class="line">            nsnc = newnsnc;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(cool,nsnc);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h4 id="322-Coin-Change"><a href="#322-Coin-Change" class="headerlink" title="322. Coin Change"></a><a href="https://leetcode-cn.com/problems/coin-change/">322. Coin Change</a></h4><p>When using dynamic programing, vector can be initialized to be amount+1. Such impossible value can avoid INT_MAX overflow when calculating.</p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -791,5 +792,10 @@
       <tags>
         <tag>LeetCode</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Android虚拟机运行闭源无源码APK时问题与解</title>
+    <url>/post/4dcc6d7b/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
