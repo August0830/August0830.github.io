@@ -2,37 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://august0830.github.io/nxb-try/index.html</loc>
+    <loc>https://august0830.github.io/post/4a3554ff/</loc>
     
-    <lastmod>2021-10-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://august0830.github.io/post/4dcc6d7b/</loc>
-    
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     
   </url>
   
   <url>
     <loc>https://august0830.github.io/post/9120db44/</loc>
     
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     
   </url>
   
   <url>
     <loc>https://august0830.github.io/post/55a58fe7/</loc>
     
-    <lastmod>2021-10-08</lastmod>
+    <lastmod>2021-10-29</lastmod>
     
   </url>
   
   <url>
     <loc>https://august0830.github.io/post/c0898a4d/</loc>
     
-    <lastmod>2021-10-08</lastmod>
+    <lastmod>2021-10-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://august0830.github.io/return-url/index.html</loc>
+    
+    <lastmod>2021-10-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://august0830.github.io/nxb-try/index.html</loc>
+    
+    <lastmod>2021-10-13</lastmod>
     
   </url>
   
@@ -144,7 +151,7 @@
 
   <url>
     <loc>https://august0830.github.io/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -152,42 +159,42 @@
   
   <url>
     <loc>https://august0830.github.io/tags/Owl-at-Dusk/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/OS/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/Interview/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/book-review/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/tags/git/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://august0830.github.io/tags/LeetCode/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <loc>https://august0830.github.io/tags/Algo/</loc>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,14 +203,14 @@
   
   <url>
     <loc>https://august0830.github.io/categories/Reading/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://august0830.github.io/categories/Tech/</loc>
-    <lastmod>2021-10-13</lastmod>
+    <lastmod>2021-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
