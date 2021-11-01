@@ -30,7 +30,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211030113256401.png">
 <meta property="article:published_time" content="2021-10-30T01:08:03.000Z">
-<meta property="article:modified_time" content="2021-10-30T06:34:01.418Z">
+<meta property="article:modified_time" content="2021-11-01T06:03:58.252Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-30 09:08:03 / Modified: 14:34:01" itemprop="dateCreated datePublished" datetime="2021-10-30T09:08:03+08:00">2021-10-30</time>
+              <time title="Created: 2021-10-30 09:08:03" itemprop="dateCreated datePublished" datetime="2021-10-30T09:08:03+08:00">2021-10-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-01 14:03:58" itemprop="dateModified" datetime="2021-11-01T14:03:58+08:00">2021-11-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -292,6 +298,7 @@
 <h2 id="Exchanger"><a href="#Exchanger" class="headerlink" title="Exchanger"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Exchanger.html">Exchanger</a></h2><p>“Synchronization point” 说明可以认为这里的exchanger操作是一个可以视为原子操作 交换指定的数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FillAndEmpty</span> </span>&#123;</span><br><span class="line">  Exchanger&lt;DataBuffer&gt; exchanger = <span class="keyword">new</span> Exchanger&lt;DataBuffer&gt;();</span><br><span class="line">  DataBuffer initialEmptyBuffer = ... a made-up type</span><br><span class="line">  DataBuffer initialFullBuffer = ...</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">FillingLoop</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      DataBuffer currentBuffer = initialEmptyBuffer;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (currentBuffer != <span class="keyword">null</span>) &#123;</span><br><span class="line">          addToBuffer(currentBuffer);</span><br><span class="line">          <span class="keyword">if</span> (currentBuffer.isFull())</span><br><span class="line">            currentBuffer = exchanger.exchange(currentBuffer);<span class="comment">//在这里交换</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123; ... handle ... &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">EmptyingLoop</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      DataBuffer currentBuffer = initialFullBuffer;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (currentBuffer != <span class="keyword">null</span>) &#123;</span><br><span class="line">          takeFromBuffer(currentBuffer);</span><br><span class="line">          <span class="keyword">if</span> (currentBuffer.isEmpty())</span><br><span class="line">            currentBuffer = exchanger.exchange(currentBuffer);<span class="comment">//在这里交换</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (InterruptedException ex) &#123; ... handle ...&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Thread(<span class="keyword">new</span> FillingLoop()).start();</span><br><span class="line">    <span class="keyword">new</span> Thread(<span class="keyword">new</span> EmptyingLoop()).start();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>sun.misc.Unsafe U; compareAndSwapObject来实现原子操作</p>
 <p>可以用来实现管道之类进程间通信的机制（？）</p>
 <h2 id="DelayQueue"><a href="#DelayQueue" class="headerlink" title="DelayQueue"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/DelayQueue.html">DelayQueue</a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DelayQueue</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">Delayed</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt; //有四种处理不能立刻满足的操作的方式</span></span><br></pre></td></tr></table></figure>
 
@@ -323,7 +330,10 @@
     <a href="/post/4a3554ff/" rel="prev" title="NPC问题：服务商+bitset用法">
       <i class="fa fa-chevron-left"></i> NPC问题：服务商+bitset用法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/87e0a4be/" rel="next" title="打开ObeoDesigner出现'Failed to load jvm.dll'问题">
+      打开ObeoDesigner出现'Failed to load jvm.dll'问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -398,7 +408,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
