@@ -23,13 +23,13 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Map of the Soul">
-<meta property="og:url" content="https://august0830.github.io/tags/JAVA/index.html">
+<meta property="og:url" content="https://august0830.github.io/tags/Java/index.html">
 <meta property="og:site_name" content="Map of the Soul">
 <meta property="og:locale">
 <meta property="article:author" content="Augustus">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://august0830.github.io/tags/JAVA/">
+<link rel="canonical" href="https://august0830.github.io/tags/Java/">
 
 
 <script id="page-configurations">
@@ -42,7 +42,7 @@
   };
 </script>
 
-  <title>Tag: JAVA | Map of the Soul</title>
+  <title>Tag: Java | Map of the Soul</title>
   
 
 
@@ -185,7 +185,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h2 class="collection-header">JAVA
+        <h2 class="collection-header">Java
           <small>Tag</small>
         </h2>
       </div>
@@ -199,32 +199,14 @@
     <header class="post-header">
 
       <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-11-01T11:29:24+08:00" content="2021-11-01">
-          11-01
+        <time itemprop="dateCreated" datetime="2021-11-17T10:40:45+08:00" content="2021-11-17">
+          11-17
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/post/87e0a4be/" itemprop="url">
-            <span itemprop="name">打开ObeoDesigner出现'Failed to load jvm.dll'问题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-10-30T09:08:03+08:00" content="2021-10-30">
-          10-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/175000d5/" itemprop="url">
-            <span itemprop="name">JAVA并发高级设施实现原理笔记</span>
+          <a class="post-title-link" href="/post/601be613/" itemprop="url">
+            <span itemprop="name">JVM Internals Notes</span>
           </a>
       </div>
 
@@ -303,7 +285,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -316,7 +298,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -420,6 +402,30 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'JT9nm32Rf5wbsCR5OTAwNiKt-gzGzoHsz',
+      appKey     : 'pUI49PHMERibkyNXiuNT2IiM',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
+
     });
     new Valine({
       el         : '#valine-comments',
