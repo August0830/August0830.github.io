@@ -887,7 +887,7 @@
       </tags>
   </entry>
   <entry>
-    <title>JAVA并发高级设施实现原理笔记</title>
+    <title>Java并发高级设施实现原理笔记</title>
     <url>/post/175000d5/</url>
     <content><![CDATA[<blockquote>
 <p>vscode看java api的源码非常舒适 提供了跳转到指定源码的功能</p>
@@ -946,7 +946,7 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -960,7 +960,7 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1074,27 +1074,21 @@
 <h3 id="反问-1"><a href="#反问-1" class="headerlink" title="反问"></a>反问</h3><p>实习生培养？</p>
 <p>1123 二面通过 约三面</p>
 <h3 id="1124晚上七点三面"><a href="#1124晚上七点三面" class="headerlink" title="1124晚上七点三面"></a>1124晚上七点三面</h3><ul>
-<li><p>问了个人规划 为什么这个时候投实习（说计划本科出来工作所以来试试）</p>
-</li>
-<li><p>不打算读研吗  </p>
-</li>
-<li><p>对什么方向感兴趣（因为我感兴趣的方向我也不是太懂 就说还需要探索）</p>
-</li>
-<li><p>介绍一下做的app应用吧——被问了一堆业务端逻辑设计给我问傻了 主要是写一些request和response流程</p>
-</li>
-<li><p>社交app好友列表 怎么在手机上第一次获取好友列表</p>
-</li>
-<li><p>在pc上添加了好友 在手机需要怎么同步</p>
-<ul>
+<li>问了个人规划 为什么这个时候投实习（说计划本科出来工作所以来试试）</li>
+<li>不打算读研吗  </li>
+<li>对什么方向感兴趣（因为我感兴趣的方向我也不是太懂 就说还需要探索）</li>
+<li>介绍一下做的app应用吧——被问了一堆业务端逻辑设计给我问傻了 主要是写一些request和response流程</li>
+<li>社交app好友列表 怎么在手机上第一次获取好友列表</li>
+<li>在pc上添加了好友 在手机需要怎么同步<ul>
 <li>说想要添加删除的信息 说成了log 给了提示 设备上可以获取与某个好友加好友的时间 还有另一个条件我忘了因为不理解 然后说了一下用加好友的时间倒序检查手机上没有登陆更新的这段时间的好友添加时间然后更新 </li>
 <li>时间快到了就没多问 感觉确实盲区了55</li>
 </ul>
 </li>
-<li><p>平常除了课本还看什么技术内容吗</p>
-<ul>
-<li>提到再看拓展阅读读到java虚拟机相关+垃圾回收 但是不熟 属于把自己坑到了</li>
+<li>平常除了课本还看什么技术内容吗<ul>
+<li>提到在看拓展阅读读到java虚拟机相关+垃圾回收 但是不熟 属于把自己坑到了</li>
 </ul>
 </li>
+<li>大三什么时间方便实习 上课怎么办？</li>
 </ul>
 <h3 id="反问-2"><a href="#反问-2" class="headerlink" title="反问"></a>反问</h3><p>怎样学习客户端设计逻辑？</p>
 ]]></content>
@@ -1103,6 +1097,62 @@
       </categories>
       <tags>
         <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java下运行mysql</title>
+    <url>/post/15229090/</url>
+    <content><![CDATA[<h2 id="环境配置问题"><a href="#环境配置问题" class="headerlink" title="环境配置问题"></a>环境配置问题</h2><p>如果出现 <code>java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</code> 的问题（在mysql 8.0及以上的版本 应该是<code>com.mysql.cj.jdbc.Driver</code>）有可能是没有安装connection j的依赖，最好先借助mysql installer检查mysql的安装包。</p>
+<p>查到的解决方案大多针对有maven等管理工具的大型软件，对vscode下临时建立的小项目不直接适用。</p>
+<p>安装后有一个jar包，移动到classpath以后依旧报错，在YouTube上找到一位<a href="https://www.youtube.com/watch?v=MtME-ERufu0&ab_channel=BoostMyTool">印度小哥制作的新手教程</a> 把jar包移动到java project中即可。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211209203900546.png" alt="image-20211209203900546"></p>
+<h2 id="依赖和包的使用"><a href="#依赖和包的使用" class="headerlink" title="依赖和包的使用"></a>依赖和包的使用</h2><p>需要java.sql.*</p>
+<p>可以<a href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-statements.html">参考Mysql官方文档</a> 和 <a href="https://www.runoob.com/java/java-mysql-connect.html">菜鸟教程</a></p>
+<p>Statement: 用于像数据库发送指令 其中execute可以用于执行无返回结果和有返回结果的sql语句，但是executeQuery只能用于有返回结果的（如select）</p>
+<p>ResultSet：用于接收结果，<a href="https://blog.csdn.net/SHU15121856/article/details/79305295">游标</a>可以通过该对象使用</p>
+<h4 id="额外收获"><a href="#额外收获" class="headerlink" title="额外收获"></a>额外收获</h4><ul>
+<li>”==“ 改成 equals就可以正常判断 why？<ul>
+<li>“==” 基本类型比较的是值，引用类型比较的是引用 string后者，equals比较的是引用类型的值</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于Java实现简单Reactor</title>
+    <url>/post/b5bd3a01/</url>
+    <content><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
+<p>一张解释了各个组件之间关系的图：</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png" alt="image-20211211134127551"></p>
+<p>InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。</p>
+<p>EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。</p>
+<p>在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。</p>
+<h2 id="Reactor-Basic"><a href="#Reactor-Basic" class="headerlink" title="Reactor Basic"></a>Reactor Basic</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png" alt="image-20211211135057739"></p>
+<p>可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。</p>
+<p>Handler（Runnable）对应了论文中的EventHandler，其中需要初始化socket，并且设置为NIO模式（将会使用到select）。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135532346.png" alt="image-20211211135532346"></p>
+<p>此外，最重要的是注册事件。注册事件实际上除了绑定到特定的selectkey上，还会在启动run的时候绑定具体的处理函数。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135554150.png" alt="image-20211211135554150"></p>
+<p>特别的是，所有事件注册在同一个Reactor的socket上，因此Accept事件结束后要用interestOps注册下一个需要被处理的事件。</p>
+<p>Reactor类中的run中的循环实际上对应着论文中的ID，进行监听，select实现了NIO，在监听到事件后进行分发。其中的dispatch函数就是提取之前注册在selectkey上的handler对应的具体的Runnable来执行。</p>
+<p>Basic的缺点是，在执行任务的一侧，依旧是多线程，并没有解决最开始希望减少线程开销的目标。因此在Pool版中使用了线程池来有效管理资源。</p>
+<h2 id="Pool-Reactor"><a href="#Pool-Reactor" class="headerlink" title="Pool Reactor"></a>Pool Reactor</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140352313.png" alt="image-20211211140352313"></p>
+<p>除了增加线程池相关，其他代码与basic没有太大差别。</p>
+<h2 id="Multiple-Reactor"><a href="#Multiple-Reactor" class="headerlink" title="Multiple Reactor"></a>Multiple Reactor</h2><p>注意到上述两种，不同事件都注册在同一个selector上，在同一个线程中处理，而不同的事件处理时长可能不同，在同一个线程中可能会阻塞。因此考虑把事件分类，并用不同的selector处理。提高效率的同时增加了拓展性。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140628740.png" alt="image-20211211140628740"></p>
+<p>示例代码中把事件分为连接事件和操作事件，MainReactor和SubReactor分别进行处理。在这种模式下，thread的使用模式（单线程/无限制的多线程/线程池）不受限制。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>

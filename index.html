@@ -182,6 +182,204 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/b5bd3a01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/b5bd3a01/" class="post-title-link" itemprop="url">基于Java实现简单Reactor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-11 13:39:07 / Modified: 14:11:13" itemprop="dateCreated datePublished" datetime="2021-12-11T13:39:07+08:00">2021-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/b5bd3a01/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/b5bd3a01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
+<p>一张解释了各个组件之间关系的图：</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png" alt="image-20211211134127551"></p>
+<p>InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。</p>
+<p>EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。</p>
+<p>在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。</p>
+<h2 id="Reactor-Basic"><a href="#Reactor-Basic" class="headerlink" title="Reactor Basic"></a>Reactor Basic</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png" alt="image-20211211135057739"></p>
+<p>可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/b5bd3a01/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/15229090/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/15229090/" class="post-title-link" itemprop="url">Java下运行mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-09 20:34:07" itemprop="dateCreated datePublished" datetime="2021-12-09T20:34:07+08:00">2021-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:11:13" itemprop="dateModified" datetime="2021-12-11T14:11:13+08:00">2021-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/15229090/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/15229090/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="环境配置问题"><a href="#环境配置问题" class="headerlink" title="环境配置问题"></a>环境配置问题</h2><p>如果出现 <code>java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</code> 的问题（在mysql 8.0及以上的版本 应该是<code>com.mysql.cj.jdbc.Driver</code>）有可能是没有安装connection j的依赖，最好先借助mysql installer检查mysql的安装包。</p>
+<p>查到的解决方案大多针对有maven等管理工具的大型软件，对vscode下临时建立的小项目不直接适用。</p>
+<p>安装后有一个jar包，移动到classpath以后依旧报错，在YouTube上找到一位<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.youtube.com/watch?v=MtME-ERufu0&ab_channel=BoostMyTool">印度小哥制作的新手教程</a> 把jar包移动到java project中即可。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211209203900546.png" alt="image-20211209203900546"></p>
+<h2 id="依赖和包的使用"><a href="#依赖和包的使用" class="headerlink" title="依赖和包的使用"></a>依赖和包的使用</h2><p>需要java.sql.*</p>
+<p>可以<a target="_blank" rel="external nofollow noopener noreferrer" href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-statements.html">参考Mysql官方文档</a> 和 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/java/java-mysql-connect.html">菜鸟教程</a></p>
+<p>Statement: 用于像数据库发送指令 其中execute可以用于执行无返回结果和有返回结果的sql语句，但是executeQuery只能用于有返回结果的（如select）</p>
+<p>ResultSet：用于接收结果，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/SHU15121856/article/details/79305295">游标</a>可以通过该对象使用</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/15229090/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c9d2088f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +405,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-24 21:01:30 / Modified: 21:33:58" itemprop="dateCreated datePublished" datetime="2021-11-24T21:01:30+08:00">2021-11-24</time>
+              <time title="Created: 2021-11-24 21:01:30 / Modified: 21:55:36" itemprop="dateCreated datePublished" datetime="2021-11-24T21:01:30+08:00">2021-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -436,10 +634,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-11-01 11:29:24 / Modified: 14:03:58" itemprop="dateCreated datePublished" datetime="2021-11-01T11:29:24+08:00">2021-11-01</time>
+              <time title="Created: 2021-11-01 11:29:24" itemprop="dateCreated datePublished" datetime="2021-11-01T11:29:24+08:00">2021-11-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:12:37" itemprop="dateModified" datetime="2021-12-11T14:12:37+08:00">2021-12-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -519,7 +723,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/post/175000d5/" class="post-title-link" itemprop="url">JAVA并发高级设施实现原理笔记</a>
+            <a href="/post/175000d5/" class="post-title-link" itemprop="url">Java并发高级设施实现原理笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -536,7 +740,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-01 14:03:58" itemprop="dateModified" datetime="2021-11-01T14:03:58+08:00">2021-11-01</time>
+                <time title="Modified: 2021-12-11 14:12:53" itemprop="dateModified" datetime="2021-12-11T14:12:53+08:00">2021-12-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1018,207 +1222,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c0898a4d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/c0898a4d/" class="post-title-link" itemprop="url">新世界大门大开-几款编程相关工具</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-19 23:37:08" itemprop="dateCreated datePublished" datetime="2021-09-19T23:37:08+08:00">2021-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-19 20:13:10" itemprop="dateModified" datetime="2021-10-19T20:13:10+08:00">2021-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/c0898a4d/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/c0898a4d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="plantuml"><a href="#plantuml" class="headerlink" title="plantuml"></a>plantuml</h2><p>一个绘制类图，时序图的在线<a target="_blank" rel="external nofollow noopener noreferrer" href="https://plantuml.com/zh/starting">网站</a>，支持生成在线的url，无需登录。</p>
-<p>和其他工具不太一样的是，输入主要依靠代码描述，和拖拽相比感觉很酷（x</p>
-<h2 id="asciinema"><a href="#asciinema" class="headerlink" title="asciinema"></a>asciinema</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://asciinema.org/">终端录制工具</a>，可以把终端的动画保存在网站云端，可以获取url插入markdown，但是大小有限制，超过5M左右就无法顺利上传。邮箱可以直接注册登陆。</p>
-<p>可以在命令行安装，但是不支持windows，macOS和linux都可以。</p>
-<h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2><p>一个图床工具，支持github，gitee，七牛腾讯等等云床，可以内嵌进入markdown。</p>
-<h2 id="localtunnel"><a href="#localtunnel" class="headerlink" title="localtunnel"></a>localtunnel</h2><p>在自己本地测试服务器的时候，如果需要外部网络访问被测试的网站和服务器，可以用这个<a target="_blank" rel="external nofollow noopener noreferrer" href="https://localtunnel.github.io/www/">工具</a>生成网址。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/c0898a4d/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/3a3e4295/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/3a3e4295/" class="post-title-link" itemprop="url">更换设备后追踪仓库更新</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-09-19 17:58:45 / Modified: 23:29:56" itemprop="dateCreated datePublished" datetime="2021-09-19T17:58:45+08:00">2021-09-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/3a3e4295/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/3a3e4295/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>原本是在windows上git clone的github仓库，在原仓库有一次较大改动（发布新作业）之后，因为环境问题需要换到linux虚拟机上做，于是需要把仓库也clone到虚拟机上，但是直接git clone我fork过后的仓库只能下载提交后原仓库更新前的代码，需要更新。</p>
-<p>首先检查upstream是否有对应的远程仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
-<p>如果只有两行origin，说明新设备上的仓库还没有与原本的仓库挂钩，需要添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add remote-original.git</span><br></pre></td></tr></table></figure>
-
-<p>之后再次检查upstream，出现upstream两行就可以了</p>
-<p>记得根据upstream的提示切换分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout upstream/main</span><br></pre></td></tr></table></figure>
-
-<p>否则就会依旧停留在旧的版本（在这里卡了很久以为弄错了）</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/3a3e4295/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1289,7 +1292,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1302,7 +1305,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

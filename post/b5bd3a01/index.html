@@ -21,15 +21,27 @@
     var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Map of the Soul">
-<meta property="og:url" content="https://august0830.github.io/archives/index.html">
+  <meta name="description" content="IntroReactor最早是在这篇论文中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的参考实现和论文中介绍的组件的对应关系。 一张解释了各个组件之间关系的图：  InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的Ev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Java实现简单Reactor">
+<meta property="og:url" content="https://august0830.github.io/post/b5bd3a01/index.html">
 <meta property="og:site_name" content="Map of the Soul">
+<meta property="og:description" content="IntroReactor最早是在这篇论文中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的参考实现和论文中介绍的组件的对应关系。 一张解释了各个组件之间关系的图：  InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的Ev">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135532346.png">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135554150.png">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140352313.png">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140628740.png">
+<meta property="article:published_time" content="2021-12-11T05:39:07.000Z">
+<meta property="article:modified_time" content="2021-12-11T06:11:13.639Z">
 <meta property="article:author" content="Augustus">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png">
 
-<link rel="canonical" href="https://august0830.github.io/archives/">
+<link rel="canonical" href="https://august0830.github.io/post/b5bd3a01/">
 
 
 <script id="page-configurations">
@@ -37,12 +49,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Archive | Map of the Soul</title>
+  <title>基于Java实现简单Reactor | Map of the Soul</title>
   
 
 
@@ -176,219 +188,129 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/b5bd3a01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于Java实现简单Reactor
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-11 13:39:07 / Modified: 14:11:13" itemprop="dateCreated datePublished" datetime="2021-12-11T13:39:07+08:00">2021-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 23 posts in total. Keep on posting.</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/b5bd3a01/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/b5bd3a01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-12-11T13:39:07+08:00" content="2021-12-11">
-          12-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/b5bd3a01/" itemprop="url">
-            <span itemprop="name">基于Java实现简单Reactor</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-12-09T20:34:07+08:00" content="2021-12-09">
-          12-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/15229090/" itemprop="url">
-            <span itemprop="name">Java下运行mysql</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-11-24T21:01:30+08:00" content="2021-11-24">
-          11-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/c9d2088f/" itemprop="url">
-            <span itemprop="name">字节上海客户端面经一二三面</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-11-17T10:40:45+08:00" content="2021-11-17">
-          11-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/601be613/" itemprop="url">
-            <span itemprop="name">JVM Internals Notes</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-11-01T11:29:24+08:00" content="2021-11-01">
-          11-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/87e0a4be/" itemprop="url">
-            <span itemprop="name">打开ObeoDesigner出现'Failed to load jvm.dll'问题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-10-30T09:08:03+08:00" content="2021-10-30">
-          10-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/175000d5/" itemprop="url">
-            <span itemprop="name">Java并发高级设施实现原理笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-10-29T16:19:41+08:00" content="2021-10-29">
-          10-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/4a3554ff/" itemprop="url">
-            <span itemprop="name">NPC问题：服务商+bitset用法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-10-07T20:55:16+08:00" content="2021-10-07">
-          10-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/d0b95d98/" itemprop="url">
-            <span itemprop="name">tunneling socket could not established， cause = getaddrinfo ENOTFOUND 解决方案</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-09-19T23:39:20+08:00" content="2021-09-19">
-          09-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/55a58fe7/" itemprop="url">
-            <span itemprop="name">Algo Revised: Tree</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-09-19T23:39:08+08:00" content="2021-09-19">
-          09-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/9120db44/" itemprop="url">
-            <span itemprop="name">Algo Revised: Dynamic Programing</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
+<p>一张解释了各个组件之间关系的图：</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png" alt="image-20211211134127551"></p>
+<p>InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。</p>
+<p>EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。</p>
+<p>在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。</p>
+<h2 id="Reactor-Basic"><a href="#Reactor-Basic" class="headerlink" title="Reactor Basic"></a>Reactor Basic</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png" alt="image-20211211135057739"></p>
+<p>可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。</p>
+<p>Handler（Runnable）对应了论文中的EventHandler，其中需要初始化socket，并且设置为NIO模式（将会使用到select）。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135532346.png" alt="image-20211211135532346"></p>
+<p>此外，最重要的是注册事件。注册事件实际上除了绑定到特定的selectkey上，还会在启动run的时候绑定具体的处理函数。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135554150.png" alt="image-20211211135554150"></p>
+<p>特别的是，所有事件注册在同一个Reactor的socket上，因此Accept事件结束后要用interestOps注册下一个需要被处理的事件。</p>
+<p>Reactor类中的run中的循环实际上对应着论文中的ID，进行监听，select实现了NIO，在监听到事件后进行分发。其中的dispatch函数就是提取之前注册在selectkey上的handler对应的具体的Runnable来执行。</p>
+<p>Basic的缺点是，在执行任务的一侧，依旧是多线程，并没有解决最开始希望减少线程开销的目标。因此在Pool版中使用了线程池来有效管理资源。</p>
+<h2 id="Pool-Reactor"><a href="#Pool-Reactor" class="headerlink" title="Pool Reactor"></a>Pool Reactor</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140352313.png" alt="image-20211211140352313"></p>
+<p>除了增加线程池相关，其他代码与basic没有太大差别。</p>
+<h2 id="Multiple-Reactor"><a href="#Multiple-Reactor" class="headerlink" title="Multiple Reactor"></a>Multiple Reactor</h2><p>注意到上述两种，不同事件都注册在同一个selector上，在同一个线程中处理，而不同的事件处理时长可能不同，在同一个线程中可能会阻塞。因此考虑把事件分类，并用不同的selector处理。提高效率的同时增加了拓展性。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140628740.png" alt="image-20211211140628740"></p>
+<p>示例代码中把事件分为连接事件和操作事件，MainReactor和SubReactor分别进行处理。在这种模式下，thread的使用模式（单线程/无限制的多线程/线程池）不受限制。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/15229090/" rel="prev" title="Java下运行mysql">
+      <i class="fa fa-chevron-left"></i> Java下运行mysql
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -435,6 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reactor-Basic"><span class="nav-number">2.</span> <span class="nav-text">Reactor Basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pool-Reactor"><span class="nav-number">3.</span> <span class="nav-text">Pool Reactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiple-Reactor"><span class="nav-number">4.</span> <span class="nav-text">Multiple Reactor</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
