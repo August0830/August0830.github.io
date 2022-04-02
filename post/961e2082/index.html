@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="BXdHtW-DrlxrxqqWU7NtzaDn_jm-z9A1Lv-D2aFOMxY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="gcr.io 镜像因为网络原因拉取失败尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载 虚拟机使用宿主机的梯子环境vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 网络地址转换（NAT） 在终端用  1ip route show  查看虚拟机所占用的ip地址，选择default的记录下来。 在虚拟机设置中找到Network-NeworkP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Software-Architecture docker踩坑小结+AW04记录">
+<meta property="og:url" content="https://august0830.github.io/post/961e2082/index.html">
+<meta property="og:site_name" content="Map of the Soul">
+<meta property="og:description" content="gcr.io 镜像因为网络原因拉取失败尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载 虚拟机使用宿主机的梯子环境vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 网络地址转换（NAT） 在终端用  1ip route show  查看虚拟机所占用的ip地址，选择default的记录下来。 在虚拟机设置中找到Network-NeworkP">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-03-27T07:26:37.000Z">
+<meta property="article:modified_time" content="2022-04-02T15:12:41.394Z">
+<meta property="article:author" content="Augustus">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://august0830.github.io/post/961e2082/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Software-Architecture docker踩坑小结+AW04记录 | Map of the Soul</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Map of the Soul</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/961e2082/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Software-Architecture docker踩坑小结+AW04记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-03-27 15:26:37" itemprop="dateCreated datePublished" datetime="2022-03-27T15:26:37+08:00">2022-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-04-02 23:12:41" itemprop="dateModified" datetime="2022-04-02T23:12:41+08:00">2022-04-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/961e2082/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/961e2082/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="gcr-io-镜像因为网络原因拉取失败"><a href="#gcr-io-镜像因为网络原因拉取失败" class="headerlink" title="gcr.io 镜像因为网络原因拉取失败"></a>gcr.io 镜像因为网络原因拉取失败</h2><p>尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载</p>
+<h3 id="虚拟机使用宿主机的梯子环境"><a href="#虚拟机使用宿主机的梯子环境" class="headerlink" title="虚拟机使用宿主机的梯子环境"></a>虚拟机使用宿主机的梯子环境</h3><p>vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 <strong>网络地址转换（NAT）</strong></p>
+<p>在终端用 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route show</span><br></pre></td></tr></table></figure>
+
+<p>查看虚拟机所占用的ip地址，选择default的记录下来。</p>
+<p>在虚拟机设置中找到Network-NeworkProxy 选择manual</p>
+<p>所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）</p>
+<p>在浏览器中访问google/youtube，成功即可</p>
+<h3 id="mvn中的jib-dockerBuild使用代理"><a href="#mvn中的jib-dockerBuild使用代理" class="headerlink" title="mvn中的jib dockerBuild使用代理"></a>mvn中的jib dockerBuild使用代理</h3><p>首先参照<a target="_blank" rel="external nofollow noopener noreferrer" href="https://note.qidong.name/2020/05/docker-proxy/">此篇文章</a>给dockerd设置的全局的代理。</p>
+<p>随后，参考github上的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/GoogleContainerTools/jib/issues/1403">此issue</a>和另一篇<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/4701d9738bfa">文章</a>，执行mvn命令时需要添加参数，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile -Dhttps.proxyHost=10.0.2.2 -Dhttps.proxyPort=33210 compile jib:dockerBuild</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>10.0.2.2</code>和<code>33210</code>换成和虚拟机网络代理设置中的ip地址和端口，注意ip地址前不需要加协议名（在这里被坑了，因为不是很了解代理参数的含义）</p>
+<p>就可以成功得到所需要的镜像了！</p>
+<h2 id="gatling使用"><a href="#gatling使用" class="headerlink" title="gatling使用"></a>gatling使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/gatling.sh</span><br></pre></td></tr></table></figure>
+
+<p>参考gatling官方文档编写更复杂的脚本，比如模仿添加购物车操作，简单来说是在get函数中的url带上参数</p>
+<h2 id="docker的使用"><a href="#docker的使用" class="headerlink" title="docker的使用"></a>docker的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker ps //查看当前在运行的容器</span><br><span class="line">docker ps -a //查看所有</span><br><span class="line">docker run -d --name app-pi-0.5 --cpus=0.5 -p 18080:8080 app-pi //限制cpu占用时间，映射端口，命名，选择镜像</span><br><span class="line">docker stop &#123;container-hash&#125;</span><br><span class="line">docker rm &#123;container-hash&#125; //删除容器</span><br><span class="line">docker rmi &#123;image-hash&#125; //删除镜像</span><br><span class="line">docker run --name redis -p 6379:6379 -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest//镜像启动redis服务 第一次会自动下载</span><br><span class="line">docker logs &#123;container-hash&#125; //查看log </span><br></pre></td></tr></table></figure>
+
+
+
+<p>vscode中的run方法不会补全pom文件中的组件，第一次运行用:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean spring-boot:run</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker相关概念"><a href="#Docker相关概念" class="headerlink" title="Docker相关概念"></a>Docker相关概念</h3><p>image 映像文件: 包括光盘的所有信息的文件 可以被运行</p>
+<p>root文件系统: 内核启动后加载的第一个文件系统，包括内核代码的影响文件和初始化脚本</p>
+<p>docker image相当于一个root文件系统，配置了容器运行时需要的程序、库、资源、配置参数，但是都是静态的，image不包括任何动态数据。</p>
+<p>image和container 就像class 和 instance的关系，可以认为是一种特定轻量级的环境。</p>
+<h2 id="Redis相关"><a href="#Redis相关" class="headerlink" title="Redis相关"></a>Redis相关</h2><h3 id="Redis-info："><a href="#Redis-info：" class="headerlink" title="Redis info："></a>Redis info：</h3><p>键值对 非关系型数据库；</p>
+<p>可以内存，可以分布式</p>
+<p>Redis slot：可以认为是逻辑上构建范围区间，每个节点对应一定的范围，计算出的哈希值落到一个slot中，则值存到对应的节点中去。在节点添加和减少的时候，</p>
+<h5 id="cluster-配置不同的地方在于："><a href="#cluster-配置不同的地方在于：" class="headerlink" title="cluster 配置不同的地方在于："></a>cluster 配置不同的地方在于：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.redis.cluster.nodes[0]=ip:port</span><br><span class="line">...[1]=ip:port</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="another-redis-manager"><a href="#another-redis-manager" class="headerlink" title="another redis manager:"></a>another redis manager:</h5><p>可以用来查看redis中数据存储的情况</p>
+<h5 id="尝试连接数据库查看session遇到的问题-此时使用的是JDBC"><a href="#尝试连接数据库查看session遇到的问题-此时使用的是JDBC" class="headerlink" title="尝试连接数据库查看session遇到的问题,此时使用的是JDBC"></a>尝试连接数据库查看session遇到的问题,此时使用的是JDBC</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.beans.factory.beancreationexception: error creating bean with name &#x27;org.springframework.boot.autoconfigure.session.sessionautoconfiguration$servletsessionrepositoryvalidator&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：在pom.xml中添加依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="基于redis的session配置"><a href="#基于redis的session配置" class="headerlink" title="基于redis的session配置"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/spring-session">基于redis的session配置</a></h5><p>bean factory 初始化失败 ：把starter-data-jpa 改成 starter-data-redis 前者是用于session-jdbc的依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>连不上 给redis镜像<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/67fc4b1cbe1b">添加配置文件</a> 修改映射端口（见群聊讨论）？？重启 先开redis镜像 再开webpos镜像 又好了</p>
+<h5 id="直接配置redis，不使用docker"><a href="#直接配置redis，不使用docker" class="headerlink" title="直接配置redis，不使用docker"></a>直接配置redis，不使用docker</h5><p>redis容器问题太多了 改用直接配置</p>
+<p>下载压缩包 make后make install 确认redis-server,redis-cli可用</p>
+<p>分节点配置脚本可以参考<a target="_blank" rel="external nofollow noopener noreferrer" href="https://redis.io/docs/manual/scaling/">官方网站</a></p>
+<p>自动化读取各个文件夹中的脚本来构建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for d in ./*/ ; do (cd &quot;$d&quot; &amp;&amp; redis-server ./redis.conf &amp;); done</span><br><span class="line"></span><br><span class="line">redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 \</span><br><span class="line">127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 \</span><br><span class="line">--cluster-replicas 1 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>构建之后需要检查</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --cluster check 127.0.0.1:7000 //example</span><br><span class="line">redis-cli --cluster fix 127.0.0.1:7000 //if something wrong</span><br><span class="line">redis-cli -h localhost -p 7000</span><br><span class="line">keys*</span><br><span class="line">flushdb //清空当前</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="镜像中连不上集群？"><a href="#镜像中连不上集群？" class="headerlink" title="镜像中连不上集群？"></a>镜像中连不上集群？</h5><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/qq_20597727/article/details/85040056">参考</a> 由于在镜像中运行程序，应使用ifconfig查看docker对应的ip，替换127.0.0.1 并且在每个节点的redis.conf中插入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protected-mode no</span><br></pre></td></tr></table></figure>
+
+<p>设置后可以在宿主机命令行用redis-cli检查各个节点状态或者查看内容</p>
+<h5 id="host-网络？"><a href="#host-网络？" class="headerlink" title="host 网络？"></a>host 网络？</h5><p>待补充</p>
+<h5 id="可序列化对象才能写入redis数据库"><a href="#可序列化对象才能写入redis数据库" class="headerlink" title="可序列化对象才能写入redis数据库"></a>可序列化对象才能写入redis数据库</h5><p>出现问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer ; nested exception is java.io.NotSerializableException: com.example.webpos.model.Product] with root cause</span><br><span class="line"></span><br><span class="line">java.io.NotSerializableException: com.example.webpos.model.Product</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查询后发现是被写入的对象（包括cart，item，product）应该implements Serializable接口，成为可序列化对象才能写入redis数据库</p>
+<h2 id="cache和session"><a href="#cache和session" class="headerlink" title="cache和session"></a>cache和session</h2><p><strong>cache</strong>：product时使用——实际的业务层是在JD 不是原先的serviceImp——用的是另一个数据库</p>
+<p>@CacheEvict  清除缓存</p>
+<p><strong>session</strong>: 传递cart信息 getAttribute-getCart/setAttribute-changeCart  <strong>在controller中添加 与网页运行有关</strong></p>
+<h2 id="HAProxy"><a href="#HAProxy" class="headerlink" title="HAProxy"></a>HAProxy</h2><p>编写好haproxy.cfg </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defaults</span><br><span class="line">	mode tcp</span><br><span class="line">frontend lb-app-pi</span><br><span class="line">	bind *:8080 #统一对外接口</span><br><span class="line">	default_backend servers</span><br><span class="line">backend servers</span><br><span class="line">	balance roundrobin #轮换方式</span><br><span class="line">	server server1 localhost:8081 # 单独一个服务器的端口 在本次实验中是镜像映射到本机的端口</span><br><span class="line">	server server2 localhost:8082</span><br><span class="line">	server server3 localhost:8083</span><br><span class="line">	server server4 localhost:8084</span><br></pre></td></tr></table></figure>
+
+<p>用以下命令运行对应目录下的该文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">haproxy -f haproxy.cfg</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nlp //是查看所有的端口占用情况</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/155d23b4/" rel="prev" title="暑期实习面经">
+      <i class="fa fa-chevron-left"></i> 暑期实习面经
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gcr-io-%E9%95%9C%E5%83%8F%E5%9B%A0%E4%B8%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E5%9B%A0%E6%8B%89%E5%8F%96%E5%A4%B1%E8%B4%A5"><span class="nav-number">1.</span> <span class="nav-text">gcr.io 镜像因为网络原因拉取失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%A2%AF%E5%AD%90%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.</span> <span class="nav-text">虚拟机使用宿主机的梯子环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mvn%E4%B8%AD%E7%9A%84jib-dockerBuild%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">mvn中的jib dockerBuild使用代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gatling%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">gatling使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">docker的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">Docker相关概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E7%9B%B8%E5%85%B3"><span class="nav-number">4.</span> <span class="nav-text">Redis相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-info%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">Redis info：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cluster-%E9%85%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9C%B0%E6%96%B9%E5%9C%A8%E4%BA%8E%EF%BC%9A"><span class="nav-number">4.1.0.1.</span> <span class="nav-text">cluster 配置不同的地方在于：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#another-redis-manager"><span class="nav-number">4.1.0.2.</span> <span class="nav-text">another redis manager:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E7%9C%8Bsession%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E6%AD%A4%E6%97%B6%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AFJDBC"><span class="nav-number">4.1.0.3.</span> <span class="nav-text">尝试连接数据库查看session遇到的问题,此时使用的是JDBC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Eredis%E7%9A%84session%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.0.4.</span> <span class="nav-text">基于redis的session配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E9%85%8D%E7%BD%AEredis%EF%BC%8C%E4%B8%8D%E4%BD%BF%E7%94%A8docker"><span class="nav-number">4.1.0.5.</span> <span class="nav-text">直接配置redis，不使用docker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E4%B8%AD%E8%BF%9E%E4%B8%8D%E4%B8%8A%E9%9B%86%E7%BE%A4%EF%BC%9F"><span class="nav-number">4.1.0.6.</span> <span class="nav-text">镜像中连不上集群？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#host-%E7%BD%91%E7%BB%9C%EF%BC%9F"><span class="nav-number">4.1.0.7.</span> <span class="nav-text">host 网络？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E5%BA%8F%E5%88%97%E5%8C%96%E5%AF%B9%E8%B1%A1%E6%89%8D%E8%83%BD%E5%86%99%E5%85%A5redis%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.1.0.8.</span> <span class="nav-text">可序列化对象才能写入redis数据库</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#cache%E5%92%8Csession"><span class="nav-number">5.</span> <span class="nav-text">cache和session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HAProxy"><span class="nav-number">6.</span> <span class="nav-text">HAProxy</span></a></li></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augustus" src="/images/mokku-blue.jpg">
+  <p class="site-author-name" itemprop="name">Augustus</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augustus</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'JT9nm32Rf5wbsCR5OTAwNiKt-gzGzoHsz',
+      appKey     : 'pUI49PHMERibkyNXiuNT2IiM',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

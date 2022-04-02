@@ -182,6 +182,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/55a58fe7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/55a58fe7/" class="post-title-link" itemprop="url">Algo Revised: Tree</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-19 23:39:20" itemprop="dateCreated datePublished" datetime="2021-09-19T23:39:20+08:00">2021-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-16 10:16:42" itemprop="dateModified" datetime="2022-01-16T10:16:42+08:00">2022-01-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/55a58fe7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/55a58fe7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/symmetric-tree/">101. Symmetric Tree</a></h4><p>从树的递归性质入手 这里增加的难度在于左右交替判断 注意指针为空的情况</p>
+<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSym</span><span class="params">(TreeNode* rt1,TreeNode*rt2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!rt1&amp;&amp;!rt2)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(rt1 &amp;&amp; rt2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(rt1-&gt;val!=rt2-&gt;val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">isSym</span>(rt1-&gt;left,rt2-&gt;right) &amp;&amp; <span class="built_in">isSym</span>(rt1-&gt;right,rt2-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isSym</span>(root-&gt;left,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="98-Validate-Binary-Search-Tree"><a href="#98-Validate-Binary-Search-Tree" class="headerlink" title="98. Validate Binary Search Tree"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. Validate Binary Search Tree</a></h4><p>搜索树的定义！！复习非递归实现前序遍历</p>
+<p>递归：结合范围 注意数字取值的范围</p>
+<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> lower,<span class="keyword">long</span> <span class="keyword">long</span> upper, TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val &lt;= lower || root-&gt;val &gt;= upper)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">check</span>(lower,root-&gt;val,root-&gt;left) &amp;&amp; </span><br><span class="line">        <span class="built_in">check</span>(root-&gt;val,upper,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">check</span>(LONG_MIN,LONG_MAX,root);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>非递归的中序遍历</p>
+<p>甚至都不需要存队列 只需要保存队列的最后一个值进行比较就可以了</p>
+<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        stack&lt;TreeNode*&gt; stk;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> inorder = LONG_MIN;</span><br><span class="line">        <span class="keyword">while</span>(!stk.<span class="built_in">empty</span>() || root)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(root)</span><br><span class="line">            &#123;</span><br><span class="line">                stk.<span class="built_in">push</span>(root);</span><br><span class="line">                root=root-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.<span class="built_in">top</span>();</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(inorder&gt;=root-&gt;val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            inorder = root-&gt;val;</span><br><span class="line">            root=root-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/55a58fe7/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/9120db44/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1147,106 +1251,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c243b9f0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/c243b9f0/" class="post-title-link" itemprop="url">Google2021STEP 失败小结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-08-19 17:47:50" itemprop="dateCreated datePublished" datetime="2021-08-19T17:47:50+08:00">2021-08-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-29 11:43:01" itemprop="dateModified" datetime="2021-08-29T11:43:01+08:00">2021-08-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/c243b9f0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/c243b9f0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="初期准备"><a href="#初期准备" class="headerlink" title="初期准备"></a>初期准备</h2><p>起初真就见财起意，但是由于本人执行力太差，大一下在家期间原本希望的早起刷题并没有实现，暑假又以准备开学考试为由没有刷题，真正刷题是大二上学期在决定申请之后，刷力扣大概一两个月的时间，算法面试题的集合中动态规划几乎没做（划重点这里会考！），其他部分做了七七八八。但是完成度不高，不够精细，基本都是先想一会然后看答案，如果不太难就自己复刻，太难没耐心想就会理解之后copy。而且重难点的题目没有多次巩固。一方面是时间问题，刷题的时间集中在了复习周+美赛爆肝期间（不过事实证明时间确实是海绵里的水，没空是因为还不够渴望）；另一方面是方法问题，由于对需要达到怎样的程度并没有清晰的认识，在钻研的深度上有所欠缺。</p>
-<h2 id="软实力准备"><a href="#软实力准备" class="headerlink" title="软实力准备"></a>软实力准备</h2><p>写了简历，结合了自己做过的一些小项目和课程大作业（呜呜这里也划重点），但是简历当时写的不够精简。</p>
-<p>找了HR姐姐给自己内推，之后出现情况也很及时的去push了 夸夸自己！</p>
-<h2 id="本人搞笑实录"><a href="#本人搞笑实录" class="headerlink" title="本人搞笑实录"></a>本人搞笑实录</h2><p>留了两个邮箱，但是一直以来主要通过新浪联系，导致没发现最后最关键的通知面试信息投到谷歌邮箱去了，还好在朋友开始面试之后去问了hr姐姐 我是憨憨</p>
-<p>不知道是否是回复面试通知确认时间太晚的原因，我第二天的上海base面试竟然被放鸽子了，于是只能过年后回来再面。我早早面完的同学第二天就收到了拒信orz</p>
-<h2 id="手撕代码部分"><a href="#手撕代码部分" class="headerlink" title="手撕代码部分"></a>手撕代码部分</h2><h3 id="第一场-北京base"><a href="#第一场-北京base" class="headerlink" title="第一场 北京base"></a>第一场 北京base</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/c243b9f0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1317,7 +1321,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

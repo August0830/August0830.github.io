@@ -1107,7 +1107,7 @@
 </blockquote>
 <h3 id="反问-1"><a href="#反问-1" class="headerlink" title="反问"></a>反问</h3><p>实习生培养？</p>
 <p>1123 二面通过 约三面</p>
-<h3 id="1124晚上七点三面"><a href="#1124晚上七点三面" class="headerlink" title="1124晚上七点三面"></a>1124晚上七点三面</h3><ul>
+<h2 id="1124晚上七点三面"><a href="#1124晚上七点三面" class="headerlink" title="1124晚上七点三面"></a>1124晚上七点三面</h2><ul>
 <li>问了个人规划 为什么这个时候投实习（说计划本科出来工作所以来试试）</li>
 <li>不打算读研吗  </li>
 <li>对什么方向感兴趣（因为我感兴趣的方向我也不是太懂 就说还需要探索）</li>
@@ -1125,6 +1125,7 @@
 <li>大三什么时间方便实习 上课怎么办？</li>
 </ul>
 <h3 id="反问-2"><a href="#反问-2" class="headerlink" title="反问"></a>反问</h3><p>怎样学习客户端设计逻辑？</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>1125口头offer 1129隔了一个周末邮件正式offer确认 </p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -1284,5 +1285,90 @@
       <tags>
         <tag>Interview</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Software-Architecture docker踩坑小结+AW04记录</title>
+    <url>/post/961e2082/</url>
+    <content><![CDATA[<h2 id="gcr-io-镜像因为网络原因拉取失败"><a href="#gcr-io-镜像因为网络原因拉取失败" class="headerlink" title="gcr.io 镜像因为网络原因拉取失败"></a>gcr.io 镜像因为网络原因拉取失败</h2><p>尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载</p>
+<h3 id="虚拟机使用宿主机的梯子环境"><a href="#虚拟机使用宿主机的梯子环境" class="headerlink" title="虚拟机使用宿主机的梯子环境"></a>虚拟机使用宿主机的梯子环境</h3><p>vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 <strong>网络地址转换（NAT）</strong></p>
+<p>在终端用 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip route show</span><br></pre></td></tr></table></figure>
+
+<p>查看虚拟机所占用的ip地址，选择default的记录下来。</p>
+<p>在虚拟机设置中找到Network-NeworkProxy 选择manual</p>
+<p>所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）</p>
+<p>在浏览器中访问google/youtube，成功即可</p>
+<h3 id="mvn中的jib-dockerBuild使用代理"><a href="#mvn中的jib-dockerBuild使用代理" class="headerlink" title="mvn中的jib dockerBuild使用代理"></a>mvn中的jib dockerBuild使用代理</h3><p>首先参照<a href="https://note.qidong.name/2020/05/docker-proxy/">此篇文章</a>给dockerd设置的全局的代理。</p>
+<p>随后，参考github上的<a href="https://github.com/GoogleContainerTools/jib/issues/1403">此issue</a>和另一篇<a href="https://www.jianshu.com/p/4701d9738bfa">文章</a>，执行mvn命令时需要添加参数，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mvn compile -Dhttps.proxyHost=10.0.2.2 -Dhttps.proxyPort=33210 compile jib:dockerBuild</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>10.0.2.2</code>和<code>33210</code>换成和虚拟机网络代理设置中的ip地址和端口，注意ip地址前不需要加协议名（在这里被坑了，因为不是很了解代理参数的含义）</p>
+<p>就可以成功得到所需要的镜像了！</p>
+<h2 id="gatling使用"><a href="#gatling使用" class="headerlink" title="gatling使用"></a>gatling使用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin/gatling.sh</span><br></pre></td></tr></table></figure>
+
+<p>参考gatling官方文档编写更复杂的脚本，比如模仿添加购物车操作，简单来说是在get函数中的url带上参数</p>
+<h2 id="docker的使用"><a href="#docker的使用" class="headerlink" title="docker的使用"></a>docker的使用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps //查看当前在运行的容器</span><br><span class="line">docker ps -a //查看所有</span><br><span class="line">docker run -d --name app-pi-0.5 --cpus=0.5 -p 18080:8080 app-pi //限制cpu占用时间，映射端口，命名，选择镜像</span><br><span class="line">docker stop &#123;container-hash&#125;</span><br><span class="line">docker rm &#123;container-hash&#125; //删除容器</span><br><span class="line">docker rmi &#123;image-hash&#125; //删除镜像</span><br><span class="line">docker run --name redis -p 6379:6379 -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis:latest//镜像启动redis服务 第一次会自动下载</span><br><span class="line">docker logs &#123;container-hash&#125; //查看log </span><br></pre></td></tr></table></figure>
+
+
+
+<p>vscode中的run方法不会补全pom文件中的组件，第一次运行用:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mvn clean spring-boot:run</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker相关概念"><a href="#Docker相关概念" class="headerlink" title="Docker相关概念"></a>Docker相关概念</h3><p>image 映像文件: 包括光盘的所有信息的文件 可以被运行</p>
+<p>root文件系统: 内核启动后加载的第一个文件系统，包括内核代码的影响文件和初始化脚本</p>
+<p>docker image相当于一个root文件系统，配置了容器运行时需要的程序、库、资源、配置参数，但是都是静态的，image不包括任何动态数据。</p>
+<p>image和container 就像class 和 instance的关系，可以认为是一种特定轻量级的环境。</p>
+<h2 id="Redis相关"><a href="#Redis相关" class="headerlink" title="Redis相关"></a>Redis相关</h2><h3 id="Redis-info："><a href="#Redis-info：" class="headerlink" title="Redis info："></a>Redis info：</h3><p>键值对 非关系型数据库；</p>
+<p>可以内存，可以分布式</p>
+<p>Redis slot：可以认为是逻辑上构建范围区间，每个节点对应一定的范围，计算出的哈希值落到一个slot中，则值存到对应的节点中去。在节点添加和减少的时候，</p>
+<h5 id="cluster-配置不同的地方在于："><a href="#cluster-配置不同的地方在于：" class="headerlink" title="cluster 配置不同的地方在于："></a>cluster 配置不同的地方在于：</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">spring.redis.cluster.nodes[0]=ip:port</span><br><span class="line">...[1]=ip:port</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="another-redis-manager"><a href="#another-redis-manager" class="headerlink" title="another redis manager:"></a>another redis manager:</h5><p>可以用来查看redis中数据存储的情况</p>
+<h5 id="尝试连接数据库查看session遇到的问题-此时使用的是JDBC"><a href="#尝试连接数据库查看session遇到的问题-此时使用的是JDBC" class="headerlink" title="尝试连接数据库查看session遇到的问题,此时使用的是JDBC"></a>尝试连接数据库查看session遇到的问题,此时使用的是JDBC</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">org.springframework.beans.factory.beancreationexception: error creating bean with name &#x27;org.springframework.boot.autoconfigure.session.sessionautoconfiguration$servletsessionrepositoryvalidator&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：在pom.xml中添加依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="基于redis的session配置"><a href="#基于redis的session配置" class="headerlink" title="基于redis的session配置"></a><a href="https://www.baeldung.com/spring-session">基于redis的session配置</a></h5><p>bean factory 初始化失败 ：把starter-data-jpa 改成 starter-data-redis 前者是用于session-jdbc的依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>连不上 给redis镜像<a href="https://www.jianshu.com/p/67fc4b1cbe1b">添加配置文件</a> 修改映射端口（见群聊讨论）？？重启 先开redis镜像 再开webpos镜像 又好了</p>
+<h5 id="直接配置redis，不使用docker"><a href="#直接配置redis，不使用docker" class="headerlink" title="直接配置redis，不使用docker"></a>直接配置redis，不使用docker</h5><p>redis容器问题太多了 改用直接配置</p>
+<p>下载压缩包 make后make install 确认redis-server,redis-cli可用</p>
+<p>分节点配置脚本可以参考<a href="https://redis.io/docs/manual/scaling/">官方网站</a></p>
+<p>自动化读取各个文件夹中的脚本来构建</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for d in ./*/ ; do (cd &quot;$d&quot; &amp;&amp; redis-server ./redis.conf &amp;); done</span><br><span class="line"></span><br><span class="line">redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 \</span><br><span class="line">127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 \</span><br><span class="line">--cluster-replicas 1 &amp;</span><br></pre></td></tr></table></figure>
+
+<p>构建之后需要检查</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli --cluster check 127.0.0.1:7000 //example</span><br><span class="line">redis-cli --cluster fix 127.0.0.1:7000 //if something wrong</span><br><span class="line">redis-cli -h localhost -p 7000</span><br><span class="line">keys*</span><br><span class="line">flushdb //清空当前</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="镜像中连不上集群？"><a href="#镜像中连不上集群？" class="headerlink" title="镜像中连不上集群？"></a>镜像中连不上集群？</h5><p><a href="https://blog.csdn.net/qq_20597727/article/details/85040056">参考</a> 由于在镜像中运行程序，应使用ifconfig查看docker对应的ip，替换127.0.0.1 并且在每个节点的redis.conf中插入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">protected-mode no</span><br></pre></td></tr></table></figure>
+
+<p>设置后可以在宿主机命令行用redis-cli检查各个节点状态或者查看内容</p>
+<h5 id="host-网络？"><a href="#host-网络？" class="headerlink" title="host 网络？"></a>host 网络？</h5><p>待补充</p>
+<h5 id="可序列化对象才能写入redis数据库"><a href="#可序列化对象才能写入redis数据库" class="headerlink" title="可序列化对象才能写入redis数据库"></a>可序列化对象才能写入redis数据库</h5><p>出现问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> Cannot serialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to serialize object using DefaultSerializer ; nested exception is java.io.NotSerializableException: com.example.webpos.model.Product] with root cause</span><br><span class="line"></span><br><span class="line">java.io.NotSerializableException: com.example.webpos.model.Product</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查询后发现是被写入的对象（包括cart，item，product）应该implements Serializable接口，成为可序列化对象才能写入redis数据库</p>
+<h2 id="cache和session"><a href="#cache和session" class="headerlink" title="cache和session"></a>cache和session</h2><p><strong>cache</strong>：product时使用——实际的业务层是在JD 不是原先的serviceImp——用的是另一个数据库</p>
+<p>@CacheEvict  清除缓存</p>
+<p><strong>session</strong>: 传递cart信息 getAttribute-getCart/setAttribute-changeCart  <strong>在controller中添加 与网页运行有关</strong></p>
+<h2 id="HAProxy"><a href="#HAProxy" class="headerlink" title="HAProxy"></a>HAProxy</h2><p>编写好haproxy.cfg </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults</span><br><span class="line">	mode tcp</span><br><span class="line">frontend lb-app-pi</span><br><span class="line">	bind *:8080 #统一对外接口</span><br><span class="line">	default_backend servers</span><br><span class="line">backend servers</span><br><span class="line">	balance roundrobin #轮换方式</span><br><span class="line">	server server1 localhost:8081 # 单独一个服务器的端口 在本次实验中是镜像映射到本机的端口</span><br><span class="line">	server server2 localhost:8082</span><br><span class="line">	server server3 localhost:8083</span><br><span class="line">	server server4 localhost:8084</span><br></pre></td></tr></table></figure>
+
+<p>用以下命令运行对应目录下的该文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">haproxy -f haproxy.cfg</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -nlp //是查看所有的端口占用情况</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
   </entry>
 </search>
