@@ -1370,5 +1370,46 @@
       <categories>
         <category>Tech</category>
       </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hadoop实验一记录</title>
+    <url>/post/f141b6ad/</url>
+    <content><![CDATA[<h2 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h2><p>账户设置：采用虚拟机原有设置 没有新建账号</p>
+<p>环境变量设置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java <span class="comment">#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib:.</span><br></pre></td></tr></table></figure>
+
+<p>下载安装ssh 确认启动</p>
+<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
+<h3 id="填写配置文件"><a href="#填写配置文件" class="headerlink" title="填写配置文件"></a>填写配置文件</h3><p><a href="https://blog.csdn.net/u013232219/article/details/104429007">https://blog.csdn.net/u013232219/article/details/104429007</a></p>
+<p><a href="https://www.jianshu.com/p/2138e473b909">https://www.jianshu.com/p/2138e473b909</a></p>
+<p><a href="https://blog.51cto.com/u_13836096/2532831">带参数解读版本</a></p>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#~/.bashrc etc/profile同理</span></span><br><span class="line">sudo vim ~/.bashsrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashsrc <span class="comment">#启动配置</span></span><br></pre></td></tr></table></figure>
+
+<p>HADOOP_HOME应该填写hadoop安装的路径 这样在bash中可以直接使用hadoop命令</p>
+<p>jdk 版本比较高 <a href="https://blog.csdn.net/weixin_43968936/article/details/102654353">弹出警告可以忽略不计</a></p>
+<p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
+<h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hijiangtao.github.io/2014/02/19/wordcountrunning/">样例的运行方法指导</a> 样例程序wordcount在hadoop的share/hadoop/mapreduce下</p>
+<p>可视化信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://localhost:50070/ 查看信息 端口是默认的</span><br><span class="line">http://localhost:8088/cluster  查看集群信息 ip和端口默认 </span><br></pre></td></tr></table></figure>
+
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
+<li><p>不要轻易使用format命令，会导致datanode无法启动，<a href="https://blog.csdn.net/aicyo8644/article/details/102063909?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.topblog&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.topblog">解决方案</a>是检查datanode和namenode的cluster-ID是否一致 最好直接删除</p>
+</li>
+<li><p>application中找不到正在运行的任务，参考<a href="https://blog.csdn.net/tangtang5156/article/details/40867759">解决方案</a>后，是yarn.xml没设置好</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
   </entry>
 </search>

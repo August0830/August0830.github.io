@@ -21,27 +21,20 @@
     var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="IntroReactor最早是在这篇论文中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的参考实现和论文中介绍的组件的对应关系。 一张解释了各个组件之间关系的图：  InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的Ev">
+  <meta name="description" content="虚拟机环境准备账户设置：采用虚拟机原有设置 没有新建账号 环境变量设置 12345678sudo vi ~&#x2F;.bash_profilePATH&#x3D;$PATH:$HOME&#x2F;binexport JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-11-openjdk-amd64&#x2F;bin&#x2F;java #需要查询本地Java安装地址 export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Java实现简单Reactor">
-<meta property="og:url" content="https://august0830.github.io/post/b5bd3a01/index.html">
+<meta property="og:title" content="Hadoop实验一记录">
+<meta property="og:url" content="https://august0830.github.io/post/f141b6ad/index.html">
 <meta property="og:site_name" content="Map of the Soul">
-<meta property="og:description" content="IntroReactor最早是在这篇论文中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的参考实现和论文中介绍的组件的对应关系。 一张解释了各个组件之间关系的图：  InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的Ev">
+<meta property="og:description" content="虚拟机环境准备账户设置：采用虚拟机原有设置 没有新建账号 环境变量设置 12345678sudo vi ~&#x2F;.bash_profilePATH&#x3D;$PATH:$HOME&#x2F;binexport JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-11-openjdk-amd64&#x2F;bin&#x2F;java #需要查询本地Java安装地址 export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-1">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135532346.png">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135554150.png">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140352313.png">
-<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140628740.png">
-<meta property="article:published_time" content="2021-12-11T05:39:07.000Z">
-<meta property="article:modified_time" content="2021-12-11T06:11:13.639Z">
+<meta property="article:published_time" content="2022-04-03T07:03:06.000Z">
+<meta property="article:modified_time" content="2022-04-04T16:14:56.151Z">
 <meta property="article:author" content="Augustus">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="NJUCS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png">
 
-<link rel="canonical" href="https://august0830.github.io/post/b5bd3a01/">
+<link rel="canonical" href="https://august0830.github.io/post/f141b6ad/">
 
 
 <script id="page-configurations">
@@ -54,7 +47,7 @@
   };
 </script>
 
-  <title>基于Java实现简单Reactor | Map of the Soul</title>
+  <title>Hadoop实验一记录 | Map of the Soul</title>
   
 
 
@@ -195,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/b5bd3a01/">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f141b6ad/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mokku-blue.jpg">
@@ -208,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          基于Java实现简单Reactor
+          Hadoop实验一记录
         </h1>
 
         <div class="post-meta">
@@ -217,10 +210,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-12-11 13:39:07 / Modified: 14:11:13" itemprop="dateCreated datePublished" datetime="2021-12-11T13:39:07+08:00">2021-12-11</time>
+              <time title="Created: 2022-04-03 15:03:06" itemprop="dateCreated datePublished" datetime="2022-04-03T15:03:06+08:00">2022-04-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-04-05 00:14:56" itemprop="dateModified" datetime="2022-04-05T00:14:56+08:00">2022-04-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -240,8 +239,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/post/b5bd3a01/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/b5bd3a01/" itemprop="commentCount"></span>
+    <a title="valine" href="/post/f141b6ad/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/f141b6ad/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -256,26 +255,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
-<p>一张解释了各个组件之间关系的图：</p>
-<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png" alt="image-20211211134127551"></p>
-<p>InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。</p>
-<p>EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。</p>
-<p>在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。</p>
-<h2 id="Reactor-Basic"><a href="#Reactor-Basic" class="headerlink" title="Reactor Basic"></a>Reactor Basic</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png" alt="image-20211211135057739"></p>
-<p>可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。</p>
-<p>Handler（Runnable）对应了论文中的EventHandler，其中需要初始化socket，并且设置为NIO模式（将会使用到select）。</p>
-<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135532346.png" alt="image-20211211135532346"></p>
-<p>此外，最重要的是注册事件。注册事件实际上除了绑定到特定的selectkey上，还会在启动run的时候绑定具体的处理函数。</p>
-<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135554150.png" alt="image-20211211135554150"></p>
-<p>特别的是，所有事件注册在同一个Reactor的socket上，因此Accept事件结束后要用interestOps注册下一个需要被处理的事件。</p>
-<p>Reactor类中的run中的循环实际上对应着论文中的ID，进行监听，select实现了NIO，在监听到事件后进行分发。其中的dispatch函数就是提取之前注册在selectkey上的handler对应的具体的Runnable来执行。</p>
-<p>Basic的缺点是，在执行任务的一侧，依旧是多线程，并没有解决最开始希望减少线程开销的目标。因此在Pool版中使用了线程池来有效管理资源。</p>
-<h2 id="Pool-Reactor"><a href="#Pool-Reactor" class="headerlink" title="Pool Reactor"></a>Pool Reactor</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140352313.png" alt="image-20211211140352313"></p>
-<p>除了增加线程池相关，其他代码与basic没有太大差别。</p>
-<h2 id="Multiple-Reactor"><a href="#Multiple-Reactor" class="headerlink" title="Multiple Reactor"></a>Multiple Reactor</h2><p>注意到上述两种，不同事件都注册在同一个selector上，在同一个线程中处理，而不同的事件处理时长可能不同，在同一个线程中可能会阻塞。因此考虑把事件分类，并用不同的selector处理。提高效率的同时增加了拓展性。</p>
-<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211140628740.png" alt="image-20211211140628740"></p>
-<p>示例代码中把事件分为连接事件和操作事件，MainReactor和SubReactor分别进行处理。在这种模式下，thread的使用模式（单线程/无限制的多线程/线程池）不受限制。</p>
+        <h2 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h2><p>账户设置：采用虚拟机原有设置 没有新建账号</p>
+<p>环境变量设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java <span class="comment">#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib:.</span><br></pre></td></tr></table></figure>
+
+<p>下载安装ssh 确认启动</p>
+<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
+<h3 id="填写配置文件"><a href="#填写配置文件" class="headerlink" title="填写配置文件"></a>填写配置文件</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/u013232219/article/details/104429007">https://blog.csdn.net/u013232219/article/details/104429007</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/2138e473b909">https://www.jianshu.com/p/2138e473b909</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.51cto.com/u_13836096/2532831">带参数解读版本</a></p>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#~/.bashrc etc/profile同理</span></span><br><span class="line">sudo vim ~/.bashsrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashsrc <span class="comment">#启动配置</span></span><br></pre></td></tr></table></figure>
+
+<p>HADOOP_HOME应该填写hadoop安装的路径 这样在bash中可以直接使用hadoop命令</p>
+<p>jdk 版本比较高 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_43968936/article/details/102654353">弹出警告可以忽略不计</a></p>
+<p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
+<h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hijiangtao.github.io/2014/02/19/wordcountrunning/">样例的运行方法指导</a> 样例程序wordcount在hadoop的share/hadoop/mapreduce下</p>
+<p>可视化信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:50070/ 查看信息 端口是默认的</span><br><span class="line">http://localhost:8088/cluster  查看集群信息 ip和端口默认 </span><br></pre></td></tr></table></figure>
+
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
+<li><p>不要轻易使用format命令，会导致datanode无法启动，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/aicyo8644/article/details/102063909?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.topblog&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1.topblog">解决方案</a>是检查datanode和namenode的cluster-ID是否一致 最好直接删除</p>
+</li>
+<li><p>application中找不到正在运行的任务，参考<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/tangtang5156/article/details/40867759">解决方案</a>后，是yarn.xml没设置好</p>
+</li>
+</ol>
 
     </div>
 
@@ -285,7 +291,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/NJUCS/" rel="tag"># NJUCS</a>
           </div>
 
         
@@ -294,13 +300,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/15229090/" rel="prev" title="Java下运行mysql">
-      <i class="fa fa-chevron-left"></i> Java下运行mysql
+    <a href="/post/961e2082/" rel="prev" title="Software-Architecture docker踩坑小结+AW04记录">
+      <i class="fa fa-chevron-left"></i> Software-Architecture docker踩坑小结+AW04记录
     </a></div>
-      <div class="post-nav-item">
-    <a href="/post/155d23b4/" rel="next" title="暑期实习面经">
-      暑期实习面经 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reactor-Basic"><span class="nav-number">2.</span> <span class="nav-text">Reactor Basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pool-Reactor"><span class="nav-number">3.</span> <span class="nav-text">Pool Reactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiple-Reactor"><span class="nav-number">4.</span> <span class="nav-text">Multiple Reactor</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Hadoop配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">填写配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.3.</span> <span class="nav-text">进行测试实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">其他问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
