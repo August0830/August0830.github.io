@@ -182,6 +182,216 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/175000d5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/175000d5/" class="post-title-link" itemprop="url">Java并发高级设施实现原理笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-30 09:08:03" itemprop="dateCreated datePublished" datetime="2021-10-30T09:08:03+08:00">2021-10-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:12:53" itemprop="dateModified" datetime="2021-12-11T14:12:53+08:00">2021-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/175000d5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/175000d5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>vscode看java api的源码非常舒适 提供了跳转到指定源码的功能</p>
+<p>结合Oracle的JAVA文档食用更佳</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/">Java相关api介绍网站推荐: Baeldung</a></p>
+</blockquote>
+<h2 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html">CountDownLatch</a></h2><p>核心是sync，Sync类是基于AbstractQueueSynchonizer这一抽象接口实现的</p>
+<h3 id="AbstractQueueSynchronizer"><a href="#AbstractQueueSynchronizer" class="headerlink" title="AbstractQueueSynchronizer"></a>AbstractQueueSynchronizer</h3><p>一个用链表实现的队列，对节点加自旋锁来实现synchronize。按照队列的性质，头部的节点会先获得申请锁的机会，但是不保证成功。</p>
+<p>有state来存储状态，其中state是volatile的，即存储在内存中，立即更新，不存在写缓冲问题。</p>
+<p>这里的加锁方式有exclusive/shared两种。实现上没有做显著区分</p>
+<h3 id="Sync"><a href="#Sync" class="headerlink" title="Sync"></a>Sync</h3><p>实现了上述接口，其中Count直接存储在了AbstractQueueSynchronizer（以下简称AQS）的state变量中。</p>
+<p>CountDownLatch的countDown方法是调用sync的releaseShared方法实现的 而sync中又调用AQS的tryReleaseShared() 判断能否释放，如果能，就调用doReleaseShared()对队列里的节点做操作。具体会调整列表中节点的状态。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/175000d5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/4a3554ff/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/4a3554ff/" class="post-title-link" itemprop="url">NPC问题：服务商+bitset用法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-29 16:19:41" itemprop="dateCreated datePublished" datetime="2021-10-29T16:19:41+08:00">2021-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-01 20:03:20" itemprop="dateModified" datetime="2021-11-01T20:03:20+08:00">2021-11-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/4a3554ff/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/4a3554ff/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>原题：</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/Cache_3de56e540c5c45f2..jpg" alt="Cache_3de56e540c5c45f2."></p>
+<p>参考的是<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/RayoNicks/article/details/102875252?ops_request_misc=&request_id=&biz_id=102&utm_term=%E4%B8%80%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%9C%A8%20N%20%E4%B8%AA%E5%B0%8F%E9%95%87%E9%94%80%E5%94%AE%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91%EF%BC%883%E2%89%A4N%E2%89%A435%EF%BC%89%EF%BC%8C%E6%9C%89%20M%20&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-102875252.pc_search_result_control_group&spm=1018.2226.3001.4187">Program Challenge的CSDN解析</a></p>
+<p>数据结构上的绝妙是利用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.cppreference.com/w/cpp/utility/bitset">bitset</a>来压缩信息的存储.可以认为把二位vector中的行变为bitset，即每个单位由int变为bit，则每一行对应一个点的连通信息，每个比特对应点对点是否连通。之后的DFS中，通过位运算可以简洁的合并信息并进行判断。</p>
+<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(i); <span class="comment">//把bitset的第i位比特设置成1</span></span><br><span class="line"><span class="built_in">test</span>(i);<span class="comment">//检查bitset的第i位是1则返回true</span></span><br><span class="line"><span class="built_in">count</span>();<span class="comment">//数bitset中有多少位是1</span></span><br><span class="line">对bitset可以做位运算</span><br></pre></td></tr></table></figure>
+
+<p>这是一个NPC问题，多项式时间内没有解法，但是可以多项式时间验证解是否正确。作为一个图论问题，自然想到用DFS或者BFS来做。为了求出最小的站点数，从小到大遍历答案并检查。</p>
+<p>这里为了简化求解，把图拆封成连通分量分别求解，每个连通分量上的最小解的和就是整个图的最小解。在压入每一个点的信息（即每一行bitset）的时候，可以认为对子图进行了重新编号。</p>
+<p>还有一处简化是是通过覆盖率来剪枝。由于遍历是按照序号从小到大来遍历的，back的意思是，从当前点往更大的点遍历，能有多少个点被服务站覆盖。因此填写信息的时候是从序号大的点往序号小的点遍历，因为较大序号的点不会再去遍历小序号的点。这里主要是为了剪枝以下情况。（左侧是结果树）</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/A45CFDC5EF4DCAB9BA01E313BD59C701.png" alt="A45CFDC5EF4DCAB9BA01E313BD59C701"></p>
+<p>可以看到在对1的处理中，对5做DFS是没有意义的，因此剪枝。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/4a3554ff/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/d0b95d98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -987,257 +1197,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f7e510c4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/f7e510c4/" class="post-title-link" itemprop="url">2021暑假小结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-08-29 11:40:04 / Modified: 20:31:28" itemprop="dateCreated datePublished" datetime="2021-08-29T11:40:04+08:00">2021-08-29</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/f7e510c4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/f7e510c4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="目标与效果对照"><a href="#目标与效果对照" class="headerlink" title="目标与效果对照"></a>目标与效果对照</h2><p>假期前列出了以下to do：（按照重要性排序）</p>
-<ul>
-<li><p>准备GRE 9月开学即考试</p>
-</li>
-<li><p>完成操作系统课上的PA：FAT12文件系统</p>
-</li>
-<li><p>搭建博客</p>
-</li>
-<li><p>leetcode习题积累</p>
-</li>
-<li><p>自学爬虫 解决一些感兴趣的数据分析话题</p>
-</li>
-<li><p>收集信息</p>
-</li>
-<li><p>把借来的书读完（世界史系列8本 北欧神话 二战系列2本 说服与不被说服的艺术 20世纪简史）</p>
-</li>
-</ul>
-<p>实际完成的情况：</p>
-<ul>
-<li>GRE<ul>
-<li>在假期背完了学期间的GRE单词<ul>
-<li>粗略过了一遍 做题过程中高频词不够熟悉</li>
-</ul>
-</li>
-<li>Issue 写作5篇，分析6篇 和Arguement 5篇写作<ul>
-<li>有大致的思路框架 但是几天不写会模糊</li>
-<li>能够表达 但是打字速度和用词需要继续加强</li>
-</ul>
-</li>
-<li>选词 linduxi做了两遍，高频合集做到20+<ul>
-<li>与最开始相比能够分析句子</li>
-<li>词汇量需要加强</li>
-</ul>
-</li>
-<li>阅读 中间20~30题做了两次 目前到约40题<ul>
-<li>能够断长难句 理清逻辑</li>
-<li>词汇量和长难文有待提高</li>
-</ul>
-</li>
-<li>数学 专题还差概率部分<ul>
-<li>只做了第一遍 需要复习错题和总结技巧</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>FAT12<ul>
-<li>完成了基本的框架代码并且同步到了github上 博客同步更新</li>
-<li>但是有bug没有调试完</li>
-</ul>
-</li>
-<li>搭建博客：网站已经可以正常运行 包括评论 tag 收录到搜索引擎<ul>
-<li>反复更换心仪的主题 调试比较花时间</li>
-</ul>
-</li>
-<li>Leetcode 100题没有做完，做了一半这样，只要当天在学习就尽量做题<ul>
-<li>至少每天一题 偶尔有几次能够在玩耍完回家后随手来一题</li>
-</ul>
-</li>
-<li>读书：读完了《说服与不被说服的艺术 》世界史2本 北欧神话 （都没有更新读书笔记）</li>
-</ul>
-<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>最大的问题是作息 1点~3点睡 10~12点起成为常态导致一整个上午直接报废，下午的效率比较高 晚上基本在放松躺平</p>
-<p>因为一直在熬夜，所以也不敢运动。关键是到点就休息 维持良好的作息才会有更多的自由时间</p>
-<p>其次是不太紧张，虽然开了倒计时但是对于没有明确时间节点的任务经常会因为赖床往后推。在GRE考试延期以后连最开始坚持的GRE刷题也松懈了。</p>
-<p>因为在家放假，休息时间很容易失控。应当用温和平静的放松方式代替玩手机，避免一次上头忘乎所以。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/f7e510c4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/68913f78/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/68913f78/" class="post-title-link" itemprop="url">前人栽树后人乘凉-配置自己的RSS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-08-29 11:38:58" itemprop="dateCreated datePublished" datetime="2021-08-29T11:38:58+08:00">2021-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-23 17:25:44" itemprop="dateModified" datetime="2021-09-23T17:25:44+08:00">2021-09-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/68913f78/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/68913f78/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>希望solo追星但是不愿意错过大粉物料的，速来！</em></p>
-<span id="more"></span>
-
-
-
-<h2 id="为何使用RSS"><a href="#为何使用RSS" class="headerlink" title="为何使用RSS"></a>为何使用RSS</h2><p>面对纷繁的信息和无穷无尽的粉丝撕逼（不是），我一直以来渴望一个收集器，只获取我需要的信息/idol物料。偶然间看到RSS，发现它完美符合了我的需求：</p>
-<ul>
-<li>主动抓取，我不需要跟在博主或者平台后面翻找</li>
-<li>跨平台的整合 从微博到一些专业新闻网站</li>
-</ul>
-<p>使用现有的RSS平台（这里我用的是<a target="_blank" rel="external nofollow noopener noreferrer" href="https://feedly.com/">Feedly</a>），加上一些<a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.rsshub.app/">插件</a> 可以轻松完成跨平台的信息收集。如果需要更近一步的个性化配置，也可以自己搭建RSS服务。</p>
-<h2 id="为何需要插件"><a href="#为何需要插件" class="headerlink" title="为何需要插件"></a>为何需要插件</h2><p>RSS 的全称是 Really Simple Syndication（简易信息聚合），简单说就是一个订阅网站更新的协议。被订阅的网站需要有对应的RSS链接，就像电话联系需要有电话号码一样。如果网站有，皆大欢喜，如果没有就需要配合插件使用。</p>
-<p>目前我使用的插件是一个有规模的插件服务，支持非常多的原本不支持RSS的网站订阅。但是可能因为部分网站采取了反爬策略，有一些无法通过原本的服务器订阅。比如豆瓣和微博。</p>
-<p>参照教程，在本地部署了RSS后，豆瓣小组的内容可以被爬取了。估计需要保持本地RSS运行才能及时获取消息？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/68913f78/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1308,7 +1267,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

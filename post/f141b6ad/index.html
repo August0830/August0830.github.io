@@ -29,7 +29,7 @@
 <meta property="og:description" content="虚拟机环境准备账户设置：采用虚拟机原有设置 没有新建账号 环境变量设置 12345678sudo vi ~&#x2F;.bash_profilePATH&#x3D;$PATH:$HOME&#x2F;binexport JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-11-openjdk-amd64&#x2F;bin&#x2F;java #需要查询本地Java安装地址 export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-1">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-03T07:03:06.000Z">
-<meta property="article:modified_time" content="2022-04-04T16:14:56.151Z">
+<meta property="article:modified_time" content="2022-04-14T15:45:14.406Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="NJUCS">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-05 00:14:56" itemprop="dateModified" datetime="2022-04-05T00:14:56+08:00">2022-04-05</time>
+                <time title="Modified: 2022-04-14 23:45:14" itemprop="dateModified" datetime="2022-04-14T23:45:14+08:00">2022-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +260,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java <span class="comment">#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib:.</span><br></pre></td></tr></table></figure>
 
 <p>下载安装ssh 确认启动</p>
-<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
+<p>（由于和另一个实验环境冲突，尝试了修改，暂时未测试）</p>
+<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hadoop.apache.org/docs/r2.7.2/index.html">Apache Hadoop官方文档</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
 <h3 id="填写配置文件"><a href="#填写配置文件" class="headerlink" title="填写配置文件"></a>填写配置文件</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/u013232219/article/details/104429007">https://blog.csdn.net/u013232219/article/details/104429007</a></p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/2138e473b909">https://www.jianshu.com/p/2138e473b909</a></p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.51cto.com/u_13836096/2532831">带参数解读版本</a></p>
@@ -268,6 +270,8 @@
 
 <p>HADOOP_HOME应该填写hadoop安装的路径 这样在bash中可以直接使用hadoop命令</p>
 <p>jdk 版本比较高 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_43968936/article/details/102654353">弹出警告可以忽略不计</a></p>
+<p>hadoop需要的java环境变量</p>
+<p><code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code> 而vscode java 需要的是 <code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code></p>
 <p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
 <h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
@@ -282,6 +286,13 @@
 <li><p>application中找不到正在运行的任务，参考<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/tangtang5156/article/details/40867759">解决方案</a>后，是yarn.xml没设置好</p>
 </li>
 </ol>
+<h2 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h2><p>类别：添加或规范化License信息</p>
+<p>位置：<code>pkg/ddc/goosefs/runtime_info.go</code></p>
+<p>内容：在该文件头部添加或规范化License信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://github.com/fluid-cloudnative/fluid.git</span><br><span class="line">git fetch upstream</span><br><span class="line">git merge upstream/master <span class="comment">#merge远程代码改动</span></span><br></pre></td></tr></table></figure>
+
+<p>调试方法+远程提交方法见Chap4 PPT</p>
+<p>主要是熟悉git的开源社区协作方法</p>
 
     </div>
 
@@ -303,7 +314,10 @@
     <a href="/post/961e2082/" rel="prev" title="Software-Architecture docker踩坑小结+AW04记录">
       <i class="fa fa-chevron-left"></i> Software-Architecture docker踩坑小结+AW04记录
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/c689f23c/" rel="next" title="RESTful microPos-AW05">
+      RESTful microPos-AW05 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -363,7 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Hadoop配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">填写配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.3.</span> <span class="nav-text">进行测试实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">其他问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">虚拟机环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Hadoop配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">填写配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.3.</span> <span class="nav-text">进行测试实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">其他问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E4%BA%8C"><span class="nav-number">4.</span> <span class="nav-text">任务二</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -378,7 +392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

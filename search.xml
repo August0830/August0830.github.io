@@ -1382,7 +1382,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java <span class="comment">#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib:.</span><br></pre></td></tr></table></figure>
 
 <p>下载安装ssh 确认启动</p>
-<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
+<p>（由于和另一个实验环境冲突，尝试了修改，暂时未测试）</p>
+<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a href="https://hadoop.apache.org/docs/r2.7.2/index.html">Apache Hadoop官方文档</a></p>
+<p><a href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
 <h3 id="填写配置文件"><a href="#填写配置文件" class="headerlink" title="填写配置文件"></a>填写配置文件</h3><p><a href="https://blog.csdn.net/u013232219/article/details/104429007">https://blog.csdn.net/u013232219/article/details/104429007</a></p>
 <p><a href="https://www.jianshu.com/p/2138e473b909">https://www.jianshu.com/p/2138e473b909</a></p>
 <p><a href="https://blog.51cto.com/u_13836096/2532831">带参数解读版本</a></p>
@@ -1390,6 +1392,8 @@
 
 <p>HADOOP_HOME应该填写hadoop安装的路径 这样在bash中可以直接使用hadoop命令</p>
 <p>jdk 版本比较高 <a href="https://blog.csdn.net/weixin_43968936/article/details/102654353">弹出警告可以忽略不计</a></p>
+<p>hadoop需要的java环境变量</p>
+<p><code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code> 而vscode java 需要的是 <code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code></p>
 <p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
 <h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
@@ -1404,6 +1408,137 @@
 <li><p>application中找不到正在运行的任务，参考<a href="https://blog.csdn.net/tangtang5156/article/details/40867759">解决方案</a>后，是yarn.xml没设置好</p>
 </li>
 </ol>
+<h2 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h2><p>类别：添加或规范化License信息</p>
+<p>位置：<code>pkg/ddc/goosefs/runtime_info.go</code></p>
+<p>内容：在该文件头部添加或规范化License信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add upstream https://github.com/fluid-cloudnative/fluid.git</span><br><span class="line">git fetch upstream</span><br><span class="line">git merge upstream/master <span class="comment">#merge远程代码改动</span></span><br></pre></td></tr></table></figure>
+
+<p>调试方法+远程提交方法见Chap4 PPT</p>
+<p>主要是熟悉git的开源社区协作方法</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NJUCS 各研究组宣讲</title>
+    <url>/post/89396cda/</url>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#x69;&#x77;&#x75;&#106;&#x75;&#x6e;&#64;&#110;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#46;&#x63;&#x6e;">&#x6c;&#x69;&#x77;&#x75;&#106;&#x75;&#x6e;&#64;&#110;&#x6a;&#117;&#46;&#x65;&#100;&#117;&#46;&#x63;&#x6e;</a></p>
+<p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
+<p>大数据机器学习 机器学习算法：存储、计算、通信</p>
+<ul>
+<li>哈希学习<ul>
+<li>哈希函数很关键 哈希值应当保留样本是否相似的特征</li>
+<li>实际应用: 行人重识别，自动问答，视频查重</li>
+</ul>
+</li>
+<li>并行与分布式随机学习<ul>
+<li>单机器：并行；多机器：分布式</li>
+<li>交互协同的开销有时比计算开销更大，是加速的代价</li>
+<li>分布式机器学习：数据不出本地（保护隐私等原因），实现可信机器学习</li>
+</ul>
+</li>
+<li>大数据机器学习平台LIBBLE<ul>
+<li>机器学习的底层数据平台</li>
+</ul>
+</li>
+</ul>
+<p>应用：</p>
+<p>智慧医疗</p>
+<h2 id="ICS-基础研究和系统工程中心"><a href="#ICS-基础研究和系统工程中心" class="headerlink" title="ICS - 基础研究和系统工程中心"></a>ICS - 基础研究和系统工程中心</h2><p><a href="http://cs.nju.edu.cn/ics">http://cs.nju.edu.cn/ics</a></p>
+<p>判断程序的正误？如何根据行为习惯进行推断？高效的多心（并发）问题？</p>
+<p>（可见许畅老师的主页）</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418164005445.png" alt="image-20220418164005445"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418164044249.png" alt="image-20220418164044249"></p>
+<p><img src="/post/89396cda/191220083\Young&Wild&Free\hexo\source_posts\NJUCS-各研究组宣讲.assets\image-20220418164145804.png" alt="image-20220418164145804"></p>
+<p>（见软件所主页）</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418164409172.png" alt="image-20220418164409172"></p>
+<ul>
+<li>软件工程+机器学习<ul>
+<li>软件智能化: 机器编写代码，自动测试等</li>
+<li>逻辑的演绎性+学习的归纳性的冲突 SE+AI</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://cs.nju.edu.cn/ics">http://cs.nju.edu.cn/ics</a></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418165928416.png" alt="image-20220418165928416"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418170429405.png" alt="image-20220418170429405"></p>
+<h2 id="SEG"><a href="#SEG" class="headerlink" title="SEG"></a>SEG</h2><p><a href="http://seg.nju.edu.cn/">http://seg.nju.edu.cn</a></p>
+<p>设计开发方法/程序分析/编译优化</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418171124595.png" alt="image-20220418171124595"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418171902259.png" alt="image-20220418171902259"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418172312609.png" alt="image-20220418172312609"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220418172344072.png" alt="image-20220418172344072"></p>
+<p>学术or工程</p>
+<p>下一场4月25日（下周同一时间）</p>
+]]></content>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RESTful microPos-AW05</title>
+    <url>/post/c689f23c/</url>
+    <content><![CDATA[<p><a href="https://github.com/sawork-2022/aw05-August0830">作业项目地址</a></p>
+<p>Steps：</p>
+<p>REST/micro机制弄大概懂</p>
+<p>设计包括cache 断路器机制</p>
+<p>Question：</p>
+<p>ehcache <a href="https://www.baeldung.com/spring-boot-ehcache">在服务中使用的例子</a> 类似之前 在JDRepostry添加</p>
+<p>断路器</p>
+<ul>
+<li>cart的功能<ul>
+<li>初步设想：老师的课堂样例是网页翻页，我的理解是基于一个状态，在进行一个操作之后转移到另一个状态，也就是从一个页面，经过一个点击操作进入另一个页面。而在一定状态下，能够进行的操作是有限的，因此一定可以确定一个页面，即是前一个还是后一个。</li>
+<li>REST是没有状态的，即没有session可以存储购物车状态。但对于服务端来说，由于商品数量有限，从任意一个购物车状态能够转移到的另一个购物车状态都是有限的。假设有ABC 三种产品，一开始所有购物车状态是0，则下一种状态只有 A1,B1,C1三种可能。</li>
+<li>（果然计算机的本质是状态机！）</li>
+</ul>
+</li>
+</ul>
+<p>REST</p>
+<p>解决接口不规范的问题</p>
+<p>用于发送测试请求：postman</p>
+<p>ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析；</p>
+<p>把数据返回，并且传入http状态代码。</p>
+<p>拆解：方法名是名词，method中对应http方法</p>
+<p>api：规定程序接口 仿照样例实现</p>
+<p><a href="https://en.wikipedia.org/wiki/Data_transfer_object">DTO</a> </p>
+<p><a href="https://martinfowler.com/eaaCatalog/dataTransferObject.html">martinFowler的解读</a></p>
+<p><a href="https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application">Entity To DTO Conversion for a Spring REST API</a></p>
+<p><a href="https://www.baeldung.com/java-dto-pattern">The DTO Pattern (Data Transfer Object)</a></p>
+<p>map struct（？）</p>
+<p>不同类型的数据进行综合</p>
+<p>为了减少传输时间，把多次请求（不同类型）的数据合并在一起传输，mapper主要用来处理此类转换</p>
+<p>spring-petclinic-microservice 虽然有dto文件夹 但是并没有用到map 主要是抽离gateway和biz层的数据交换</p>
+<p>resttemplate</p>
+<p>open-api <a href="https://www.baeldung.com/java-openapi-generator-server">baeldung</a></p>
+<p>前端页面（？）—— 先返回json格式的数据</p>
+<h2 id="micro-微服务架构"><a href="#micro-微服务架构" class="headerlink" title="micro 微服务架构"></a>micro 微服务架构</h2><p>参考的代码 <a href="https://github.com/spring-petclinic/spring-petclinic-microservices">spring-petclinic-microservices</a>和<a href="https://github.com/spring-petclinic/spring-petclinic-microservices-config">配置文件参考</a>；以及<a href="https://github.com/paulc4/microservices-demo">microservice-demo</a></p>
+<h3 id="discovery-eureka"><a href="#discovery-eureka" class="headerlink" title="discovery/eureka"></a>discovery/eureka</h3><h3 id="eureka-server"><a href="#eureka-server" class="headerlink" title="eureka server"></a>eureka server</h3><p>没有采用远程fetch的形式，直接做了本地配置。</p>
+<p>对于eureka的配置，可以参考spring关于eureka的<a href="https://spring.io/guides/gs/service-registration-and-discovery/">官方文档</a>。其中提供了在start.io建立eureka项目的方式。可以直接使用，对于已经有配置文件的本项目来说，复制粘贴pom中的内容即可（关键是要包含netflix-eureka的依赖）。启动时记得添加@EnableEurekaServer的标注。</p>
+<p>yml文件是对于discovery的配置，作为一个独立的服务配置。如果不是默认application.yml的命名方式，需要在mian函数中额外指明。**并且不需要加后缀yml!**（遇到问题记得检查文件是否生效）</p>
+<p>如果yml没有配置成功，默认情况下eureka会把自身注册，就会出现如下报错：</p>
+<p><code>com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server</code></p>
+<p>即一个逻辑死循环，因此需要仿照样例将 <code>registerWithEureka</code>,<code>fetchRegistry</code>设置为false。</p>
+<h3 id="other-server"><a href="#other-server" class="headerlink" title="other server"></a>other server</h3><p><a href="https://cloud.spring.io/spring-cloud-netflix/multi/multi__service_discovery_eureka_clients.html">简单教程</a></p>
+<p>记得在yml文件中添加eureka，服务的application类中启用@EnableDiscoveryClient，并且在pom中添加如下依赖（注意starter不同！）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>调试中： rest/mvc架构和gateway不共存</p>
+<p>如果上层文件夹中pom文件已经有依赖资源，在子层中再次添加依赖需要指明版本。</p>
+<p>如果log中出现 <code>Registering application GATEWAY with eureka with status UP</code>，再检查eureka，一般是成功注册了。</p>
+<p><strong>配置服务的一般步骤: 依赖+注解+运行检查</strong></p>
+<p>如果已有文件中出现冲突，如出现以下报错即是spring-boot-starter-web和spring-cloud-starter-netflix-eureka-client版本冲突，</p>
+<p><code>[spring boot classnotfound org.springframework.boot.Bootstrapper while staring application](https://stackoverflow.com/questions/65917014/spring-boot-classnotfound-org-springframework-boot-bootstrapper-while-staring-ap)</code></p>
+<p>可以在<a href="https://start.spring.io/">自动生成项目文件的spring官方网站</a>同时选中所需的依赖，然后进行替换。此处是添加了dependencyManagement解决的。</p>
+<h2 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h2><p>最后做 其他的可以先做独立应用？——应用本身应该是能够在端口被访问的</p>
+<p>配置文件中 关于spring的部分，配置了thymeleaf相关，即网页显示</p>
+<p>添加断路器 在转发需求的时候</p>
+<p>两部分，一部分保证在eureka登记，另一部分实现转发</p>
+<p><a href="https://www.javainuse.com/spring/cloud-gateway">转发-简单样例</a> <a href="https://spring.io/guides/gs/gateway/">转发-官方手册</a></p>
+<p><a href="https://stackoverflow.com/questions/60705382/mono-class-in-java-what-is-and-when-to-use">Mono&lt;T&gt;</a> 处理流式数据</p>
 ]]></content>
       <categories>
         <category>Tech</category>
