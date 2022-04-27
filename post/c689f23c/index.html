@@ -21,18 +21,20 @@
     var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="作业项目地址 Steps： REST&#x2F;micro机制弄大概懂 设计包括cache 断路器机制 Question： ehcache 在服务中使用的例子 类似之前 在JDRepostry添加 断路器  cart的功能 初步设想：老师的课堂样例是网页翻页，我的理解是基于一个状态，在进行一个操作之后转移到另一个状态，也就是从一个页面，经过一个点击操作进入另一个页面。而在一定状态下，能够进行的操作是有限的，">
+  <meta name="description" content="作业项目地址 Question：  断路器：在gateway实现，在读取product列表的时候实现  REST官方文档 课程对应样例讲解：spring-projects&#x2F;spring-hateoas-examples REST目标之一是解决接口不规范的问题；ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析，并且传入http状态代码。 annotation类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RESTful microPos-AW05">
 <meta property="og:url" content="https://august0830.github.io/post/c689f23c/index.html">
 <meta property="og:site_name" content="Map of the Soul">
-<meta property="og:description" content="作业项目地址 Steps： REST&#x2F;micro机制弄大概懂 设计包括cache 断路器机制 Question： ehcache 在服务中使用的例子 类似之前 在JDRepostry添加 断路器  cart的功能 初步设想：老师的课堂样例是网页翻页，我的理解是基于一个状态，在进行一个操作之后转移到另一个状态，也就是从一个页面，经过一个点击操作进入另一个页面。而在一定状态下，能够进行的操作是有限的，">
+<meta property="og:description" content="作业项目地址 Question：  断路器：在gateway实现，在读取product列表的时候实现  REST官方文档 课程对应样例讲解：spring-projects&#x2F;spring-hateoas-examples REST目标之一是解决接口不规范的问题；ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析，并且传入http状态代码。 annotation类型">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220427095447461.png">
 <meta property="article:published_time" content="2022-04-13T12:13:21.000Z">
-<meta property="article:modified_time" content="2022-04-18T09:50:41.683Z">
+<meta property="article:modified_time" content="2022-04-27T16:16:30.434Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="NJUCS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220427095447461.png">
 
 <link rel="canonical" href="https://august0830.github.io/post/c689f23c/">
 
@@ -218,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-18 17:50:41" itemprop="dateModified" datetime="2022-04-18T17:50:41+08:00">2022-04-18</time>
+                <time title="Modified: 2022-04-28 00:16:30" itemprop="dateModified" datetime="2022-04-28T00:16:30+08:00">2022-04-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,38 +258,78 @@
 
       
         <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sawork-2022/aw05-August0830">作业项目地址</a></p>
-<p>Steps：</p>
-<p>REST/micro机制弄大概懂</p>
-<p>设计包括cache 断路器机制</p>
 <p>Question：</p>
-<p>ehcache <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/spring-boot-ehcache">在服务中使用的例子</a> 类似之前 在JDRepostry添加</p>
-<p>断路器</p>
 <ul>
-<li>cart的功能<ul>
-<li>初步设想：老师的课堂样例是网页翻页，我的理解是基于一个状态，在进行一个操作之后转移到另一个状态，也就是从一个页面，经过一个点击操作进入另一个页面。而在一定状态下，能够进行的操作是有限的，因此一定可以确定一个页面，即是前一个还是后一个。</li>
-<li>REST是没有状态的，即没有session可以存储购物车状态。但对于服务端来说，由于商品数量有限，从任意一个购物车状态能够转移到的另一个购物车状态都是有限的。假设有ABC 三种产品，一开始所有购物车状态是0，则下一种状态只有 A1,B1,C1三种可能。</li>
-<li>（果然计算机的本质是状态机！）</li>
+<li>断路器：在gateway实现，在<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-circuitbreaker/blob/master/src/main/java/com/example/circuitbreaker/AlbumService.java">读取product列表</a>的时候实现</li>
 </ul>
-</li>
-</ul>
-<p>REST</p>
-<p>解决接口不规范的问题</p>
-<p>用于发送测试请求：postman</p>
-<p>ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析；</p>
-<p>把数据返回，并且传入http状态代码。</p>
-<p>拆解：方法名是名词，method中对应http方法</p>
-<p>api：规定程序接口 仿照样例实现</p>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Data_transfer_object">DTO</a> </p>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://martinfowler.com/eaaCatalog/dataTransferObject.html">martinFowler的解读</a></p>
+<h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://spring.io/guides/tutorials/rest/">官方文档</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bilibili.com/video/BV1GE411G7hu?p=4">课程对应样例讲解：spring-projects/spring-hateoas-examples</a></p>
+<p>REST目标之一是解决接口不规范的问题；ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析，并且传入http状态代码。</p>
+<p>annotation类型与get/post等http方法对应</p>
+<p>配合open-api：规定程序接口 </p>
+<h3 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Data_transfer_object">DTO</a></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://martinfowler.com/eaaCatalog/dataTransferObject.html">martinFowler的解读</a></p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application">Entity To DTO Conversion for a Spring REST API</a></p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/java-dto-pattern">The DTO Pattern (Data Transfer Object)</a></p>
-<p>map struct（？）</p>
-<p>不同类型的数据进行综合</p>
-<p>为了减少传输时间，把多次请求（不同类型）的数据合并在一起传输，mapper主要用来处理此类转换</p>
+<p>不同类型的数据进行综合——为了减少传输时间，把多次请求（不同类型）的数据合并在一起传输，mapper主要用来处理此类转换。</p>
+<p>map struct：把服务内的数据结构映射成服务间通讯需要的数据结构。数据可能被重构，不一定与服务内的数据结构保持一致。</p>
 <p>spring-petclinic-microservice 虽然有dto文件夹 但是并没有用到map 主要是抽离gateway和biz层的数据交换</p>
-<p>resttemplate</p>
-<p>open-api <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/java-openapi-generator-server">baeldung</a></p>
-<p>前端页面（？）—— 先返回json格式的数据</p>
+<h2 id="pos-api-——-服务间通用api"><a href="#pos-api-——-服务间通用api" class="headerlink" title="pos-api  —— 服务间通用api"></a>pos-api  —— 服务间通用api</h2><p>open-api <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin">官方说明+参数说明</a></p>
+<p> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/java-openapi-generator-server">baeldung</a></p>
+<p>前端页面—— 先返回json格式的数据 可以裸奔</p>
+<p>把所需的所有api统一建立一个文件夹，注意不是单独服务所以不要用spring-plugin打包，把它作为依赖在其他服务中引用，或者在sprng-plugin配置中选择忽略main函数</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">skip</span>&gt;</span>true<span class="tag">&lt;/<span class="name">skip</span>&gt;</span><span class="comment">&lt;!--不需要main类打包--&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>把pos-api安装到本地，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=../pos-api/target/pos-api-0.0.1-SNAPSHOT.jar -DgroupId=com.micropos -DartifactId=micropos -Dversion=0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>其他模块就可以直接在依赖中引用：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.micropos<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pos-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>把products原本有的open-api移除，改用统一的pos-api</p>
+<p>修改顶层项目中的pom文件，否则会自动给下层指定默认位置，即上层pom的设置优先于下层的pom设置。</p>
+<p>对于曾经有过open-api的products：去掉open-api的plugin换成spring。</p>
+<p>原本products中关于open-api的import也要重写，包名与依赖中写的保持一致。</p>
+<h2 id="product"><a href="#product" class="headerlink" title="product"></a>product</h2><p>先尝试启动product作为一个独立服务，openapi使用的时候遇到如下报错：</p>
+<p><code>required a bean of type that could not be found.</code></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/42907553/field-required-a-bean-of-type-that-could-not-be-found-error-spring-restful-ap">搜索后</a>，在ProductsApplication文件中修改注释为：<code>@SpringBootApplication(scanBasePackages = &#123;&quot;com.micropos.products.*&quot;&#125; )</code></p>
+<p>访问时记得加前缀api，如下：<code>http://localhost:8082/api/products</code></p>
+<p>类似上一次作业，应该在此处添加cache</p>
+<h3 id="ehcache"><a href="#ehcache" class="headerlink" title="ehcache"></a>ehcache</h3><p> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/spring-boot-ehcache">在服务中使用的例子</a> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://its401.com/article/weixin_30617737/96032178">性能讲解和测试方式</a></p>
+<p>类似之前 在JDRepostry添加  配置了但是不知道是否成功，由于mapper对product进行了转换，所以在指明key/value类型的时候，value类型应当是productDTO，否则mapper会报空指针错：<code>ProductMapper.java:[10,8] Internal error in the mapping processor: java.lang.NullPointerException      at jdk.compiler/com.sun.tools.javac.comp.Modules.enterModule(Modules.java:310) </code></p>
+<p>不能像redis一样直接检查数据，需要java程序来管理。先完成其他部分，过程中遇到问题再说。</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://its401.com/article/weixin_30617737/96032178">程序样例1</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/kzcming/article/details/108849444">缓存查看</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/elim168/article/details/71600366">查询缓存</a></p>
+<h2 id="carts"><a href="#carts" class="headerlink" title="carts"></a>carts</h2><p>并不是针对单个用户的购物车状态跳转，而是指同时管理多用户的购物车资源</p>
+<p>javax.persistence.* 简单的进行持久化</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javaee/6/tutorial/doc/bnbqa.html#bnbqb">文档</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.persistence<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.persistence-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">&lt;/dependency</span><br></pre></td></tr></table></figure>
+
+<p>@Entity 加了该注释的类在关系型数据库中建表</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javaee/7/api/javax/persistence/GeneratedValue.html">@GeneratedValue</a> 生成关系数据库中的primarykey</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://projectlombok.org/features/experimental/Accessors">@Accessors</a></p>
+<p>fluent限定只是简单的getter和setter，默认是false，设置为true时，另一个属性chain默认是true，chain为true时决定了返回类型是this而非void</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javaee/6/api/javax/persistence/OneToMany.html">@OneToMany</a></p>
+<p>有嵌套引用的类并且是一组实体的时候,使用该注释</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javaee/7/api/javax/persistence/JoinTable.html">@JoinTable</a> </p>
+<p>配合OneToMany使用，在有多对多，一对多的情况下指明</p>
+<p>用spring-boot提供的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html">CrudRepository</a> 这是一个提供了数据管理功能的包，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://zetcode.com/springboot/crudrepository/">样例程序</a></p>
+<p>implements了cartsApi之后可以直接override方法——where is super？？</p>
+<p>再次出现：<code>[spring boot classnotfound org.springframework.boot.Bootstrapper while staring application](https://stackoverflow.com/questions/65917014/spring-boot-classnotfound-org-springframework-boot-bootstrapper-while-staring-ap)</code></p>
+<p>需要指明spring-cloud的版本，与discovery中保持一致；并且dependencyManagement保留有参数的形式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>11<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">spring-cloud.version</span>&gt;</span>2021.0.1<span class="tag">&lt;/<span class="name">spring-cloud.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>记得在springboot application的Java文件中用注解扩大bean的扫描范围并且声明向eureka注册</p>
+<p>运行时遇到如下问题</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220427095447461.png" alt="image-20220427095447461"></p>
+<p>重新编译pos-api （没有找到根本的解决办法，偶尔出现）</p>
+<p>注册时出现unknown并且端口是默认端口，说明配置文件读取不成功，发现resources放在了和main同级，应该和java文件夹同级</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">Parameter 0 of method setCartMapper <span class="keyword">in</span> com.micropos.carts.rest.CartsController required a bean of <span class="built_in">type</span> <span class="string">&#x27;com.micropos.carts.mapper.CartMapper&#x27;</span> that could not be found.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Consider defining a bean of <span class="built_in">type</span> <span class="string">&#x27;com.micropos.carts.mapper.CartMapper&#x27;</span> <span class="keyword">in</span> your configuration</span><br></pre></td></tr></table></figure>
+
+<p>遇到cartController有bean无法初始化的问题，是没有定义默认公共构造函数的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/52841620/parameter-0-of-constructor-in-required-a-bean-of-type-java-lang-string-that-co">原因</a> 建议直接在公共构造函数中传入参数cartMapper和cartService</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.micropos.carts.model.CartItem</span><br></pre></td></tr></table></figure>
+
+<p>OneToMany注解中添加属性 cascade = casecadeType.ALL</p>
 <h2 id="micro-微服务架构"><a href="#micro-微服务架构" class="headerlink" title="micro 微服务架构"></a>micro 微服务架构</h2><p>参考的代码 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/spring-petclinic/spring-petclinic-microservices">spring-petclinic-microservices</a>和<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/spring-petclinic/spring-petclinic-microservices-config">配置文件参考</a>；以及<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/paulc4/microservices-demo">microservice-demo</a></p>
 <h3 id="discovery-eureka"><a href="#discovery-eureka" class="headerlink" title="discovery/eureka"></a>discovery/eureka</h3><h3 id="eureka-server"><a href="#eureka-server" class="headerlink" title="eureka server"></a>eureka server</h3><p>没有采用远程fetch的形式，直接做了本地配置。</p>
 <p>对于eureka的配置，可以参考spring关于eureka的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://spring.io/guides/gs/service-registration-and-discovery/">官方文档</a>。其中提供了在start.io建立eureka项目的方式。可以直接使用，对于已经有配置文件的本项目来说，复制粘贴pom中的内容即可（关键是要包含netflix-eureka的依赖）。启动时记得添加@EnableEurekaServer的标注。</p>
@@ -306,12 +348,15 @@
 <p>如果已有文件中出现冲突，如出现以下报错即是spring-boot-starter-web和spring-cloud-starter-netflix-eureka-client版本冲突，</p>
 <p><code>[spring boot classnotfound org.springframework.boot.Bootstrapper while staring application](https://stackoverflow.com/questions/65917014/spring-boot-classnotfound-org-springframework-boot-bootstrapper-while-staring-ap)</code></p>
 <p>可以在<a target="_blank" rel="external nofollow noopener noreferrer" href="https://start.spring.io/">自动生成项目文件的spring官方网站</a>同时选中所需的依赖，然后进行替换。此处是添加了dependencyManagement解决的。</p>
+<p>如果需要随机分配，则不在应用中指定server port（待确定？）</p>
 <h2 id="Gateway"><a href="#Gateway" class="headerlink" title="Gateway"></a>Gateway</h2><p>最后做 其他的可以先做独立应用？——应用本身应该是能够在端口被访问的</p>
 <p>配置文件中 关于spring的部分，配置了thymeleaf相关，即网页显示</p>
 <p>添加断路器 在转发需求的时候</p>
 <p>两部分，一部分保证在eureka登记，另一部分实现转发</p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.javainuse.com/spring/cloud-gateway">转发-简单样例</a> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://spring.io/guides/gs/gateway/">转发-官方手册</a></p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/60705382/mono-class-in-java-what-is-and-when-to-use">Mono&lt;T&gt;</a> 处理流式数据</p>
+<p>可以直接在yml中配置，即可完成转发。但是如果要配置断路器，则必须用代码。</p>
+<h2 id="plantuml——AWSuml"><a href="#plantuml——AWSuml" class="headerlink" title="plantuml——AWSuml"></a>plantuml——AWSuml</h2><p>画图资源</p>
 
     </div>
 
@@ -396,7 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#micro-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">micro 微服务架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#discovery-eureka"><span class="nav-number">1.1.</span> <span class="nav-text">discovery&#x2F;eureka</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eureka-server"><span class="nav-number">1.2.</span> <span class="nav-text">eureka server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-server"><span class="nav-number">1.3.</span> <span class="nav-text">other server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gateway"><span class="nav-number">2.</span> <span class="nav-text">Gateway</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#REST"><span class="nav-number">1.</span> <span class="nav-text">REST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DTO"><span class="nav-number">1.1.</span> <span class="nav-text">DTO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pos-api-%E2%80%94%E2%80%94-%E6%9C%8D%E5%8A%A1%E9%97%B4%E9%80%9A%E7%94%A8api"><span class="nav-number">2.</span> <span class="nav-text">pos-api  —— 服务间通用api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#product"><span class="nav-number">3.</span> <span class="nav-text">product</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ehcache"><span class="nav-number">3.1.</span> <span class="nav-text">ehcache</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#carts"><span class="nav-number">4.</span> <span class="nav-text">carts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#micro-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">micro 微服务架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#discovery-eureka"><span class="nav-number">5.1.</span> <span class="nav-text">discovery&#x2F;eureka</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eureka-server"><span class="nav-number">5.2.</span> <span class="nav-text">eureka server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-server"><span class="nav-number">5.3.</span> <span class="nav-text">other server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gateway"><span class="nav-number">6.</span> <span class="nav-text">Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plantuml%E2%80%94%E2%80%94AWSuml"><span class="nav-number">7.</span> <span class="nav-text">plantuml——AWSuml</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

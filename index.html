@@ -205,10 +205,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-04-18 17:47:36 / Modified: 18:12:26" itemprop="dateCreated datePublished" datetime="2022-04-18T17:47:36+08:00">2022-04-18</time>
+              <time title="Created: 2022-04-18 17:47:36" itemprop="dateCreated datePublished" datetime="2022-04-18T17:47:36+08:00">2022-04-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-04-25 17:37:46" itemprop="dateModified" datetime="2022-04-25T17:37:46+08:00">2022-04-25</time>
+              </span>
 
           
   
@@ -235,7 +241,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#x69;&#119;&#x75;&#106;&#117;&#x6e;&#x40;&#x6e;&#106;&#x75;&#x2e;&#x65;&#100;&#x75;&#x2e;&#x63;&#110;">&#x6c;&#x69;&#119;&#x75;&#106;&#117;&#x6e;&#x40;&#x6e;&#106;&#x75;&#x2e;&#x65;&#100;&#x75;&#x2e;&#x63;&#110;</a></p>
+          <h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#x69;&#119;&#117;&#x6a;&#x75;&#x6e;&#64;&#x6e;&#106;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#x63;&#110;">&#x6c;&#x69;&#119;&#117;&#x6a;&#x75;&#x6e;&#64;&#x6e;&#106;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#x63;&#110;</a></p>
 <p>主页: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -316,7 +322,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-18 17:50:41" itemprop="dateModified" datetime="2022-04-18T17:50:41+08:00">2022-04-18</time>
+                <time title="Modified: 2022-04-28 00:16:30" itemprop="dateModified" datetime="2022-04-28T00:16:30+08:00">2022-04-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -354,22 +360,16 @@
 
       
           <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sawork-2022/aw05-August0830">作业项目地址</a></p>
-<p>Steps：</p>
-<p>REST/micro机制弄大概懂</p>
-<p>设计包括cache 断路器机制</p>
 <p>Question：</p>
-<p>ehcache <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/spring-boot-ehcache">在服务中使用的例子</a> 类似之前 在JDRepostry添加</p>
-<p>断路器</p>
 <ul>
-<li>cart的功能<ul>
-<li>初步设想：老师的课堂样例是网页翻页，我的理解是基于一个状态，在进行一个操作之后转移到另一个状态，也就是从一个页面，经过一个点击操作进入另一个页面。而在一定状态下，能够进行的操作是有限的，因此一定可以确定一个页面，即是前一个还是后一个。</li>
-<li>REST是没有状态的，即没有session可以存储购物车状态。但对于服务端来说，由于商品数量有限，从任意一个购物车状态能够转移到的另一个购物车状态都是有限的。假设有ABC 三种产品，一开始所有购物车状态是0，则下一种状态只有 A1,B1,C1三种可能。</li>
-<li>（果然计算机的本质是状态机！）</li>
+<li>断路器：在gateway实现，在<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-circuitbreaker/blob/master/src/main/java/com/example/circuitbreaker/AlbumService.java">读取product列表</a>的时候实现</li>
 </ul>
-</li>
-</ul>
-<p>REST</p>
-<p>解决接口不规范的问题</p>
+<h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://spring.io/guides/tutorials/rest/">官方文档</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bilibili.com/video/BV1GE411G7hu?p=4">课程对应样例讲解：spring-projects/spring-hateoas-examples</a></p>
+<p>REST目标之一是解决接口不规范的问题；ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析，并且传入http状态代码。</p>
+<p>annotation类型与get/post等http方法对应</p>
+<p>配合open-api：规定程序接口 </p>
+<h3 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Data_transfer_object">DTO</a></h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/c689f23c/#more" rel="contents">
