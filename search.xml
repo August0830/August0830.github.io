@@ -1426,7 +1426,7 @@
   <entry>
     <title>NJUCS 各研究组宣讲</title>
     <url>/post/89396cda/</url>
-    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#x69;&#119;&#117;&#x6a;&#x75;&#x6e;&#64;&#x6e;&#106;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#x63;&#110;">&#x6c;&#x69;&#119;&#117;&#x6a;&#x75;&#x6e;&#64;&#x6e;&#106;&#x75;&#x2e;&#101;&#x64;&#117;&#x2e;&#x63;&#110;</a></p>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#105;&#119;&#117;&#x6a;&#117;&#x6e;&#x40;&#110;&#x6a;&#x75;&#x2e;&#x65;&#100;&#117;&#x2e;&#99;&#110;">&#x6c;&#105;&#119;&#117;&#x6a;&#117;&#x6e;&#x40;&#110;&#x6a;&#x75;&#x2e;&#x65;&#100;&#117;&#x2e;&#99;&#110;</a></p>
 <p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -1491,6 +1491,13 @@
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425170214676.png" alt="image-20220425170214676"></p>
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425171515818.png" alt="image-20220425171515818"></p>
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425171846425.png" alt="image-20220425171846425"></p>
+<h2 id="计算机理论之美——尹一通老师"><a href="#计算机理论之美——尹一通老师" class="headerlink" title="计算机理论之美——尹一通老师"></a>计算机理论之美——尹一通老师</h2><p>cs之于computer有如望远镜之于天文学</p>
+<p>图灵机 通用的数学模型：对各种计算机的基本抽象</p>
+<p>元胞自动机 game of life</p>
+<p>计算机科学的创立时间早于第一台通用计算机的诞生</p>
+<p>公理化的历程：</p>
+<p>几何原本——罗素悖论</p>
+<p>建立在喜欢钻研某个领域的基础再考虑未来学术道路如是否出国</p>
 ]]></content>
       <tags>
         <tag>NJUCS</tag>
@@ -1606,5 +1613,98 @@
       <tags>
         <tag>NJUCS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Batch-AW06</title>
+    <url>/post/27c8219b/</url>
+    <content><![CDATA[<h2 id="Task-to-do"><a href="#Task-to-do" class="headerlink" title="Task to do"></a>Task to do</h2><p>读样例代码+看课程其他讲解样例视频</p>
+<p>作业思路： 把aw04中的product来源换成batch任务写入的数据库</p>
+<p>aw04的数据结构可能需要重构 如product</p>
+<p>More： Faster！——Parallel！</p>
+<h2 id="Read-Example-Code"><a href="#Read-Example-Code" class="headerlink" title="Read Example Code"></a>Read Example Code</h2><h3 id="Service——batch流程工作流程用到的基本服务"><a href="#Service——batch流程工作流程用到的基本服务" class="headerlink" title="Service——batch流程工作流程用到的基本服务"></a>Service——batch流程工作流程用到的基本服务</h3><p>ItemReader，ItemProcessor，ItemWriter是模板，有类型参数可供自定义，可以通过重载自定义前后预处理的流程</p>
+<h4 id="JsonFilerReader"><a href="#JsonFilerReader" class="headerlink" title="JsonFilerReader"></a>JsonFilerReader</h4><ul>
+<li><p><a href="https://fasterxml.github.io/jackson-databind/javadoc/2.7/com/fasterxml/jackson/databind/ObjectMapper.html">ObjectMapper</a>：json和Plain Old Java Object互相转换</p>
+</li>
+<li><p><a href="https://fasterxml.github.io/jackson-databind/javadoc/2.8/com/fasterxml/jackson/databind/JsonNode.html">JsonNode</a>: json的数据被组织成树状，树的节点，样例中实现的ItemReader类型参数是JsonNode</p>
+</li>
+</ul>
+<p>（Reader的原理？）</p>
+<h4 id="JsonReader"><a href="#JsonReader" class="headerlink" title="JsonReader"></a>JsonReader</h4><p>和JsonFileReader的区别？</p>
+<p>限定了filename </p>
+<p><strong>todo: 因为至少有两个文件 所以需要正则表达式来写读取文件</strong></p>
+<p>ClassPathResource(“data/xxx”)</p>
+<h4 id="ProductProcessor"><a href="#ProductProcessor" class="headerlink" title="ProductProcessor"></a>ProductProcessor</h4><p>利用objectMapper的treeToValue函数转换成Product类，注意Product类的成员应该和json的格式对应</p>
+<h4 id="ProductWriter"><a href="#ProductWriter" class="headerlink" title="ProductWriter"></a>ProductWriter</h4><p>重载write方法——todo：写入到数据库中，或许可以参考aw04</p>
+<p><a href="https://docs.spring.io/spring-batch/docs/current/reference/html/index.html">官方Spring Batch入门文档</a>，writer有一些与数据库相关的接口。</p>
+<p>写入数据库 样例：<a href="https://spring.io/guides/gs/batch-processing/">spring-guides/gs-batch-processing</a></p>
+<p>该样例用的hsqldb 是用于模拟、测试的位于内存的数据库</p>
+<h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><h4 id="BatchConfig"><a href="#BatchConfig" class="headerlink" title="BatchConfig"></a>BatchConfig</h4><p>@EnableBatchProcessing</p>
+<p>使用了线程池来管理step级别的工作；整个任务是一个job，job中读入/处理/写入是step</p>
+<p><strong>todo: 可以尝试更多加速的并行方式</strong></p>
+<h3 id="PartitionJob"><a href="#PartitionJob" class="headerlink" title="PartitionJob"></a><a href="https://docs.spring.io/spring-batch/docs/current/reference/html/scalability.html#partitioning">PartitionJob</a></h3><p>数据分割成并行的块，有masterStep负责同步，masterStep履行了PartitionHandler的职责，设定了gridSize（？）</p>
+<p>Partitioner是示意图中的StepExecutionSplitter，负责</p>
+<p>Partitioner 负责分割资源，此处因为要读取的文件不止一个所以用了MultiResourcePartitioner，并且通过正则表达式来指定文件（PathMatchingResourcePatternResolver)</p>
+<p>ItemReader要接收的文件格式不是原本的文件，而是经过分割的，所以用Value注解进行了注释说明</p>
+<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h3><p>原有的product和amazon导入的AmazonProduct分离，repository之上套一层posDB服务进行类型转换</p>
+<h4 id="对aw06（Batch）："><a href="#对aw06（Batch）：" class="headerlink" title="对aw06（Batch）："></a>对aw06（Batch）：</h4><p>确认使用何种数据库</p>
+<p>找到写入数据库的方式</p>
+<h4 id="对aw04原有代码（Amazon-webpos）："><a href="#对aw04原有代码（Amazon-webpos）：" class="headerlink" title="对aw04原有代码（Amazon-webpos）："></a>对aw04原有代码（Amazon-webpos）：</h4><ul>
+<li>单机模式下运行 redis和jdbc的关系？能写入redis吗 不能切换成jdbc<ul>
+<li>cache原本是用于存储从网上拉取的product信息的，原本使用的redis是用于存session的，因此redis部分并不干扰</li>
+</ul>
+</li>
+</ul>
+<p>aw04中的db 新写一个posDB的实现代替原本的JD-PosDB</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p><strong>跑起来就花了很多时间</strong></p>
+<p><em>看样例代码的时候需要关注说明！</em>有一些环境需要配置的，如添加建立数据库的脚本</p>
+<p>数据库写入的数据具有原子性，而product结构中有list，因此被迫放弃使用jdbc+sql硬编码语句，转向抽象程度更高的CrudRepository+h2db，但是依旧要解决写入list的问题。</p>
+<p><em>仔细看报错，分析原因；搜索提问的时候问题描述需要准确，可以更快的解决问题</em></p>
+<p><a href="https://stackoverflow.com/questions/5867130/how-to-persist-a-list-of-strings-in-hibernate">How to persist a List of String in Hibernate</a></p>
+<p>jsonType推荐  <a href="https://www.baeldung.com/hibernate-types-library">A Guide to the Hibernate Types Library</a></p>
+<p>检查是否写入数据库——下载一个h2客户端来独立检查，因为没有spring-boot web无法用浏览器打开</p>
+<p><a href="https://www.yawintutor.com/table-batch_job_instance-not-found-sql-statement/">bad SQL grammar [SELECT JOB_INSTANCE_ID, JOB_NAME from BATCH_JOB_INSTANCE where JOB_NAME = ? and JOB_KEY = ?]</a></p>
+<ul>
+<li><p>成功连上数据库 可以用持久化文件来检查 暂时用jdbc:h2:mem:testdb来确认是否写入</p>
+<ul>
+<li>直接h2客户端查看更快</li>
+<li>testdb没有写入，直接用文件来持久化。还可以看到dbtrace，方便调试</li>
+<li>下载解压后进入h2文件夹运行./h2.sh脚本即可</li>
+</ul>
+</li>
+<li><p>但是没有能写入数据——果然问号是因为是空值 为什么会是空值呢</p>
+<ul>
+<li>控制台问号不是空值 是h2数据库需要重启脚本来刷新 才能读取到正确的文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据存储的方式"><a href="#数据存储的方式" class="headerlink" title="数据存储的方式"></a>数据存储的方式</h4><p>对于简单的非list的部分，直接存在指定的表amazon_product中；对于List&lt;String&gt;部分，新建表格存储，一对多的关系转换成多个一对一关系</p>
+<p>List&lt;String&gt;在代码中如何配置：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@JsonIgnoreProperties(ignoreUnknown = true)</span><span class="comment">//写表时如果无法识别就填null 是兜底的操作</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table(name = &quot;amazon_products&quot;)</span><span class="comment">//简单属性会直接存入这张表 list属性会在同层生成其他表 实际可以用join来获取信息</span></span><br><span class="line"><span class="meta">@TypeDefs(&#123;</span></span><br><span class="line"><span class="meta">    @TypeDef(name = &quot;json&quot;, typeClass = JsonStringType.class)//使用hibernate扩展的属性来写入List&lt;String&gt; 定义别名</span></span><br><span class="line"><span class="meta">    //@TypeDef(name = &quot;json&quot;, typeClass = JsonType.class)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Product</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line"> <span class="meta">@ElementCollection</span></span><br><span class="line">    <span class="meta">@Column(name = &quot;imageURL&quot;,columnDefinition = &quot;json&quot;)</span><span class="comment">//指明列名和类型</span></span><br><span class="line">    <span class="meta">@Type(type = &quot;json&quot;)</span><span class="comment">//该类型需要引入hibernate的扩展包并且用注解定义别名才能使用</span></span><br><span class="line">    <span class="meta">@Getter</span><span class="comment">//不能省略 供外界调用</span></span><br><span class="line">    <span class="meta">@Setter</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; imageURLHighRes;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考资料：</p>
+<p><a href="https://howtodoinjava.com/hibernate/hibernate-insert-query-tutorial/">https://howtodoinjava.com/hibernate/hibernate-insert-query-tutorial/</a></p>
+<p><a href="https://stackoverflow.com/questions/32765893/storing-a-listsomeclass-as-json-in-a-text-field-with-hibernate">https://stackoverflow.com/questions/32765893/storing-a-listsomeclass-as-json-in-a-text-field-with-hibernate</a></p>
+<p><a href="https://www.baeldung.com/hibernate-persist-json-object">https://www.baeldung.com/hibernate-persist-json-object</a></p>
+<p><a href="https://www.concretepage.com/spring-5/spring-data-crudrepository-example">https://www.concretepage.com/spring-5/spring-data-crudrepository-example</a></p>
+<h3 id="Amazon-webpos读取数据"><a href="#Amazon-webpos读取数据" class="headerlink" title="Amazon-webpos读取数据"></a>Amazon-webpos读取数据</h3><p>命名并指定注入的组件</p>
+<p>Amazon-webpos读取失败：</p>
+<p>原来是设置了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">spring.batch.jdbc.initialize-schema=never/always</span><br></pre></td></tr></table></figure>
+
+<p>h2每次连接都会刷新（照搬了batch的配置），在batch中应当刷新，但是读取的时候不应该改动。</p>
+<p>crudRepository是很方便可靠的架构，出问题应该先检查数据是否有问题——发现持久化文件被清空了。</p>
+<h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><p>大部分时间花在了接入数据库上，batch工作的原理只是大概了解了流程，学会了重载writer，更多的parallel的性质还没有探索。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BigData Exp2 倒排索引+小组协作</title>
+    <url>/post/a4ce9ffa/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
