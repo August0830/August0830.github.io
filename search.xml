@@ -373,11 +373,6 @@
       </tags>
   </entry>
   <entry>
-    <title>BigData Exp2 倒排索引+小组协作</title>
-    <url>/post/a4ce9ffa/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>FAT12 File System</title>
     <url>/post/7f6e4fde/</url>
     <content><![CDATA[<h1 id="FAT12-File-System"><a href="#FAT12-File-System" class="headerlink" title="FAT12 File System"></a>FAT12 File System</h1><h2 id="DAY-3-1"><a href="#DAY-3-1" class="headerlink" title="DAY-3~1"></a>DAY-3~1</h2><blockquote>
@@ -502,7 +497,7 @@
 <p><code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code> 而vscode java 需要的是 <code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code></p>
 <p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
 <h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">jps <span class="comment">#查hadoop伪集群启动情况</span></span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
 
 <p><a href="https://hijiangtao.github.io/2014/02/19/wordcountrunning/">样例的运行方法指导</a> 样例程序wordcount在hadoop的share/hadoop/mapreduce下</p>
 <p>可视化信息</p>
@@ -521,6 +516,8 @@
 
 <p>调试方法+远程提交方法见Chap4 PPT</p>
 <p>主要是熟悉git的开源社区协作方法</p>
+<p>/user/2021sz01/exp4-1.0-SNAPSHOT.jar</p>
+<p>hadoop jar /user/2021sz01/exp4-1.0-SNAPSHOT.jar com.hadoop.KMeans /user/2021sz01/exp4-example</p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -669,7 +666,7 @@
   <entry>
     <title>NJUCS 各研究组宣讲</title>
     <url>/post/89396cda/</url>
-    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#105;&#119;&#117;&#106;&#117;&#110;&#64;&#x6e;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;">&#108;&#105;&#119;&#117;&#106;&#117;&#110;&#64;&#x6e;&#106;&#x75;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#110;</a></p>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#x6c;&#x69;&#119;&#x75;&#106;&#117;&#x6e;&#x40;&#110;&#x6a;&#117;&#x2e;&#x65;&#x64;&#117;&#46;&#99;&#110;">&#x6c;&#x69;&#119;&#x75;&#106;&#117;&#x6e;&#x40;&#110;&#x6a;&#117;&#x2e;&#x65;&#x64;&#117;&#46;&#99;&#110;</a></p>
 <p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -734,13 +731,54 @@
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425170214676.png" alt="image-20220425170214676"></p>
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425171515818.png" alt="image-20220425171515818"></p>
 <p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220425171846425.png" alt="image-20220425171846425"></p>
-<h2 id="计算机理论之美——尹一通老师"><a href="#计算机理论之美——尹一通老师" class="headerlink" title="计算机理论之美——尹一通老师"></a>计算机理论之美——尹一通老师</h2><p>cs之于computer有如望远镜之于天文学</p>
+<h2 id="计算机理论之美——尹一通老师-理论实验室"><a href="#计算机理论之美——尹一通老师-理论实验室" class="headerlink" title="计算机理论之美——尹一通老师 理论实验室"></a>计算机理论之美——尹一通老师 理论实验室</h2><p>tcs.nju.edu.cn</p>
+<p>cs之于computer有如望远镜之于天文学</p>
 <p>图灵机 通用的数学模型：对各种计算机的基本抽象</p>
 <p>元胞自动机 game of life</p>
 <p>计算机科学的创立时间早于第一台通用计算机的诞生</p>
 <p>公理化的历程：</p>
 <p>几何原本——罗素悖论</p>
 <p>建立在喜欢钻研某个领域的基础再考虑未来学术道路如是否出国</p>
+<ul>
+<li>林冰凯<ul>
+<li>参数复杂性与算法<ul>
+<li>按照参数精细刻画计算开销</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>刘景铖<ul>
+<li>计算相变 why easy 和物理结合</li>
+</ul>
+</li>
+<li>尹一通<ul>
+<li>采样算法 并行与分布式计算理论</li>
+</ul>
+</li>
+<li>郑朝栋 <ul>
+<li>分布式算法 现代分布式计算模式中的原语问题（一些经典问题）</li>
+<li>网络算法</li>
+</ul>
+</li>
+</ul>
+<h2 id="Meta-Graphics-amp-3D"><a href="#Meta-Graphics-amp-3D" class="headerlink" title="Meta Graphics &amp; 3D"></a>Meta Graphics &amp; 3D</h2><p>CV+ML</p>
+<h2 id="分布式计算实验室"><a href="#分布式计算实验室" class="headerlink" title="分布式计算实验室"></a>分布式计算实验室</h2><p>dislab.nju.edu.cn</p>
+<p>谢磊</p>
+<ul>
+<li><p>智能感知</p>
+</li>
+<li><p>云/边缘计算</p>
+</li>
+<li><p>数据挖掘</p>
+</li>
+<li><p>数据中心</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220516174136009.png" alt="image-20220516174136009"></p>
+<h2 id="边缘智能——钱柱中-张胜老师"><a href="#边缘智能——钱柱中-张胜老师" class="headerlink" title="边缘智能——钱柱中/张胜老师"></a>边缘智能——钱柱中/张胜老师</h2><p>数据产生在客户端/远端 如何计算？如果全部放在远端对用户不友好（eg：手机设备掉电快）</p>
+<p>近数据源</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220526161853790.png" alt="image-20220526161853790"></p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20220526162438968.png" alt="image-20220526162438968"></p>
 ]]></content>
       <tags>
         <tag>NJUCS</tag>
@@ -1705,6 +1743,356 @@
       </categories>
       <tags>
         <tag>Algo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AW07-Event Driven Architecture</title>
+    <url>/post/8f0f1e10/</url>
+    <content><![CDATA[<p><a href="https://spring.io/projects/spring-cloud-stream">https://spring.io/projects/spring-cloud-stream</a></p>
+<p><a href="https://github.com/sa-spring/stream-loan">https://github.com/sa-spring/stream-loan</a></p>
+<p><a href="https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/">https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/</a></p>
+<h1 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h1><h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><p>添加orderService，配置好事件驱动</p>
+<p>source/发送者用的是supplier，连续的发送事件，但是我的期望设计是由特定事件驱动，需要用到streamBridge.<a href="https://github.com/spring-cloud/spring-cloud-stream/blob/main/samples/confluent-schema-registry-integration/confluent-schema-registry-integration-producer1/src/main/java/sample/producer1/ConfluentAvroProducer1Application.java">参考</a></p>
+<p>处理者也可以返回消息，需要使用consumer<a href="https://github.com/sa-spring/stream-loan/blob/main/loan-check/src/main/java/com/example/loan/check/LoanChecker.java">参考</a></p>
+<p>测试</p>
+<p>先测试事件驱动架构，在自动化生成请求的情况下；</p>
+<p>测试pos-order和pos-delivery在有网页访问的情况下</p>
+<p>测试由pos-cart驱动pos-order</p>
+<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><p>伪代码+配置文件</p>
+<h4 id="pos-order"><a href="#pos-order" class="headerlink" title="pos-order"></a>pos-order</h4><ul>
+<li><p>配置文件</p>
+<p>copy pos-cart</p>
+<p>spring.io 生成一个micro service文件</p>
+<p>作为微服务的配置/discovery配置/gateaway配置/</p>
+<p><strong>cloudstream 配置 ???</strong></p>
+<p>直接去掉？</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">function:</span></span><br><span class="line">      <span class="attr">definition:</span> <span class="string">placeOrder</span></span><br><span class="line">    <span class="attr">stream:</span></span><br><span class="line">      <span class="attr">function:</span></span><br><span class="line">        <span class="attr">bindings:</span></span><br><span class="line">          <span class="attr">deliver-order:</span> <span class="string">String</span></span><br><span class="line">      <span class="attr">bindings:</span></span><br><span class="line">        <span class="attr">loan:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">output</span></span><br></pre></td></tr></table></figure></li>
+<li><p>补充api</p>
+<ul>
+<li>openApi中在responses<a href="https://blog.csdn.net/weixin_39853892/article/details/111127663">使用基本类型的方法</a></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">/order/place</span></span><br><span class="line"><span class="attr">post:</span></span><br><span class="line">	<span class="attr">sumary:</span> <span class="string">place</span> <span class="string">an</span> <span class="string">order</span></span><br><span class="line">	<span class="attr">operationId:</span> <span class="string">placeOrder</span></span><br><span class="line">	<span class="attr">tags:</span></span><br><span class="line">		<span class="bullet">-</span> <span class="string">order</span></span><br><span class="line">	<span class="attr">requestBody:</span></span><br><span class="line">		<span class="attr">description:</span> <span class="string">order</span> <span class="string">info</span></span><br><span class="line">		<span class="attr">content:</span></span><br><span class="line">			<span class="attr">application/json:</span></span><br><span class="line">				<span class="attr">schema:</span></span><br><span class="line">					<span class="attr">type:</span> <span class="string">string</span></span><br><span class="line">		<span class="attr">required:</span> <span class="literal">true</span></span><br><span class="line">	<span class="attr">responses:</span></span><br><span class="line">		<span class="attr">&#x27;200&#x27;:</span></span><br><span class="line">			<span class="attr">description:</span> <span class="string">Expected</span></span><br><span class="line">			<span class="attr">content:</span></span><br><span class="line">				<span class="attr">application/json:</span></span><br><span class="line">					<span class="attr">schema:</span></span><br><span class="line">						<span class="attr">type:</span> <span class="string">boolean</span></span><br><span class="line">		<span class="attr">default:</span></span><br><span class="line">			<span class="attr">description:</span> <span class="string">Unexpected</span></span><br><span class="line">			<span class="attr">content:</span></span><br><span class="line">				<span class="attr">application/json:</span></span><br><span class="line">					<span class="attr">schema:</span></span><br><span class="line">					 <span class="string">$ref:</span> <span class="string">&quot;#/components/schemas/Error&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>//Info format: productA|productB|addr:CityA</p>
+</li>
+<li><p>rest </p>
+<ul>
+<li>restController implements OrdersApi</li>
+<li>override method 调用service中方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ResponseEntity&lt;<span class="keyword">boolean</span>&gt; <span class="title">placeOrder</span><span class="params">(<span class="meta">@RequestBody</span> String orderInfo)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> res = orderService.placeOrder(orderInfo);</span><br><span class="line">    <span class="keyword">if</span>(!res)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(HttpStatus.NOT_FOUND);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(res,HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>service</p>
+<ul>
+<li><p>OrderService</p>
+<ul>
+<li>placeOrder</li>
+</ul>
+</li>
+<li><p>OrderServiceImpl</p>
+<ul>
+<li>EDA-Impl</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line">OrderServiceImp implements OrderService&#123;</span><br><span class="line">    StreamBridge streamBridge</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">boolean</span> <span class="title">placeOrder</span><span class="params">(String orderInfo)</span></span>&#123;</span><br><span class="line">        <span class="comment">//calculate number of products</span></span><br><span class="line">        <span class="keyword">for</span>(str : info)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str.startsWith(<span class="string">&quot;addr:&quot;</span>))&#123;</span><br><span class="line">                addr = <span class="keyword">new</span> StringBuilder(str.substring(<span class="number">4</span>)).toString();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        String deliveryInfo = String.format(<span class="string">&quot;%d|%s&quot;</span>,cnt,addr);</span><br><span class="line">        <span class="keyword">return</span> streamBridge.send(<span class="string">&quot;deliver-order&quot;</span>,deliveryInfo);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//单向</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>postman跑不动：用curl来测试</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-Type:application/json&quot; -X POST -d &#x27;&#123;&quot;orderInfo&quot;:&quot;3|CityA&#125;&quot;&#x27; http://localhost:8085/api/order/place</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="pos-delivery"><a href="#pos-delivery" class="headerlink" title="pos-delivery"></a>pos-delivery</h4><ul>
+<li><p>配置：类似loan-checker √</p>
+<ul>
+<li>application.yml</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">function:</span></span><br><span class="line">      <span class="attr">definition:</span> <span class="comment">#Consume方法名</span></span><br><span class="line">    <span class="attr">stream:</span></span><br><span class="line">      <span class="attr">function:</span></span><br><span class="line">        <span class="attr">bindings:</span></span><br><span class="line">          <span class="attr">checkOrder-in-0:</span> <span class="string">receive</span></span><br><span class="line">          <span class="comment">#consumer方法名-in-0: 发送方send的首个参数</span></span><br><span class="line">      <span class="attr">bindings:</span></span><br><span class="line">      	<span class="comment">#发送的消息名称 保持一致</span></span><br><span class="line">        <span class="attr">order-declined:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">order-declined</span></span><br><span class="line">        <span class="attr">order-approved:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">order-approved</span></span><br></pre></td></tr></table></figure></li>
+<li><p>DeliveryApplication √</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">main&#123;&#125;</span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Consumer&lt;String&gt; <span class="title">deliverCart</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CartDelivery();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>CartDelivery  √</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CartDelivery implements Consumer&lt;String&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(CartDelivery.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> StreamBridge streamBridge;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(String info)</span></span>&#123;</span><br><span class="line">        <span class="comment">//number to calculate fee</span></span><br><span class="line">        String[] infos = info.split(<span class="string">&quot;\\|&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> cnt = Integer.parseInt(infos[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">double</span> fee = <span class="number">1.25</span>*cnt;</span><br><span class="line">        String msg = String.format(<span class="string">&quot;deliver %d product(s) to %s,fee is %f&quot;</span>,cnt,infos[<span class="number">1</span>],fee);</span><br><span class="line">       	log.info(msg+<span class="string">&quot;\n&quot;</span>); </span><br><span class="line">        streamBridge.send(<span class="string">&quot;delivery&quot;</span>,message(msg));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> &lt;T&gt; <span class="function">Message&lt;T&gt; <span class="title">message</span><span class="params">(T val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> MessageBuilder.withPayload(val).build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进阶版：添加DeliveryInfo 记录重量和地区信息</p>
+</li>
+</ul>
+<p>cart中添加用rest发送消息的controller方法 <a href="https://github.com/sawork-2022/aw05-caochun/blob/main/pos-carts/src/main/java/com/micropos/cart/service/CartServiceImpl.java">参考</a></p>
+<p>在CartServiceImp：checkout方法中添加生成信息</p>
+<p>todo：在vmware上做</p>
+<p>discovery&amp;&amp;gateway能正常运转</p>
+<p>其他微服务controller问题</p>
+<p>cart中添加调用</p>
+<h2 id="一些插曲——遇到的问题和解决措施"><a href="#一些插曲——遇到的问题和解决措施" class="headerlink" title="一些插曲——遇到的问题和解决措施"></a>一些插曲——遇到的问题和解决措施</h2><p>因为内存不足在另一台虚拟机上重配了环境，配置maven的时候需要<a href="https://stackoverflow.com/questions/57208665/oracle-jdk-11-error-occuring-every-time-i-install-anything-in-terminal">移除</a>旧的未成功安装的Java环J境并<a href="https://www.javafixing.com/2021/09/fixed-maven-crashes-when-trying-to.html">重新配置Java环境</a></p>
+<p><a href="https://blog.csdn.net/xsj_blog/article/details/79531083">持久化javahome设置</a></p>
+<p>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/</p>
+<p>/usr/local/src/java/jdk-18.0.1</p>
+<p><a href="https://www.jianshu.com/p/afaa5e789f5c">springboot公共类打包成依赖</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -Dfile=/home/avril/SA-2022/HW07/stream-loan/loan-model/target/loan-model-0.0.1.jar -DgroupId=com.example -DartifactId=loan-model -Dversion=0.0.1 -Dpackaging=jar</span><br></pre></td></tr></table></figure>
+
+<p>换环境后<a href="https://blog.csdn.net/ksws0319440/article/details/113246070?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-113246070-blog-81251677.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-113246070-blog-81251677.pc_relevant_aa&utm_relevant_index=1">maven-compiler-plugin版本过高</a></p>
+<p>rest-controller无法调用: </p>
+<ul>
+<li>api之后不需要写getMapping</li>
+<li>扫描包</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS, Software Archetecture</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AW08 Spring Integration</title>
+    <url>/post/3da399b2/</url>
+    <content><![CDATA[<p>delivery变成integration</p>
+<p>大致思路：</p>
+<p>aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置）</p>
+<p>pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收</p>
+<p>pos-delivery 保持不变</p>
+<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><ul>
+<li>pos-order</li>
+</ul>
+<p>替换成改写demo中的inbound/outbound</p>
+<p>inboud：处理发送来的post请求，提取string信息，调用placeOrder函数进行中间处理转换</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">inboundGateway(uri)</span><br><span class="line">.requestMapping(r -&gt; r.methods(Https.POST)</span><br><span class="line">.consumes(&quot;text/plain&quot;))</span><br><span class="line">.&lt;String&gt;handle((s)-&gt; return placeOrder(s))</span><br><span class="line">.requestPayloadType(String.class)</span><br><span class="line">.get();</span><br></pre></td></tr></table></figure>
+
+<p>中间处理<a href="https://www.tabnine.com/code/java/methods/org.springframework.integration.http.dsl.Http/inboundGateway">ref</a></p>
+<p>outbound：向pos-delivery发送post请求</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">outboundGateway((Message&lt;String&gt; r)-&gt;r.getPayload())</span><br><span class="line">.httpMethod(Https.POST)</span><br><span class="line">.expectedResponseType(Boolean.type)</span><br><span class="line">.get();</span><br></pre></td></tr></table></figure>
+
+<p>#注释 初步 handle是具体的处理函数，可以做简单的处理</p>
+<p>method改动</p>
+<ul>
+<li><p>pos-delivery：</p>
+<p>普通的网页应用 rest架构，参数使用和测试方法<a href="https://mkyong.com/spring/curl-post-request-examples/">参考</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -d &quot;orderInfo=3|CityA&quot; http://localhost:8086/delivery/</span><br></pre></td></tr></table></figure>
+
+<p>采用了RequestParam</p>
+</li>
+<li><p>pos-cart</p>
+</li>
+</ul>
+<p><img src="/post/3da399b2/.%5CAW08-Spring-Integration.assets%5Cimage-20220621094639379.png" alt="image-20220621094639379"></p>
+<p><em>提问</em>：post传递参数和url中携带参数的不同？</p>
+<p>Reference：</p>
+<p><a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/HttpInboundEndpointSupportSpec.RequestMappingSpec.html">consumes</a></p>
+<p><a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/Http.html#method.detail">outboundGateway加参数</a></p>
+<p>code <a href="https://stackoverflow.com/questions/56899730/how-to-send-http-request-from-my-integrationflow">ref1</a> <a href="https://www.tabnine.com/code/java/methods/org.springframework.integration.http.dsl.Http/inboundGateway">ref2</a></p>
+<p>outbound中使用的流的类型<a href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/BaseHttpMessageHandlerSpec.html">BaseHttpMessageHandlerSpec</a></p>
+<p><em>搜索关键词：intergrationflows inbound post</em></p>
+<p>pos-order inbound 接收参数,</p>
+<p><a href="https://github.com/sa-spring/spring-integration/blob/master/src/main/java/com/example/spring/integration/helloworld/HelloWorldApp.java">在函数中额外指定input/outputChannel</a>；<a href="https://github.com/sa-spring/spring-integration/blob/master/src/main/resources/META-INF/spring/integration/helloworld/helloWorldDemo.xml">xml配置</a></p>
+<ul>
+<li>引入channel配置</li>
+</ul>
+<p>AbstractApplicationContext context = new ClassPathXmlApplicationContext(xmlfile in resource,claassName);</p>
+<ul>
+<li>对inbound channel配置</li>
+</ul>
+<p><a href="https://stackoverflow.com/questions/50108253/http-outbound-gateway-post-with-payload">https://stackoverflow.com/questions/50108253/http-outbound-gateway-post-with-payload</a></p>
+<p>测试 curl -X POST -d “orderInfo=3|CityA” <a href="http://localhost:8085/order">http://localhost:8085/order</a> 在暂时删除掉inbound中的处理函数的情况下<br>-d 是json的意思<br>curl -H “Content-Type:text/plain” -X POST -d ‘p1|p2|addr:CityA’ <a href="http://localhost:8085/order">http://localhost:8085/order</a> 明确是发送字符串</p>
+<h2 id="Obstacles："><a href="#Obstacles：" class="headerlink" title="Obstacles："></a>Obstacles：</h2><ul>
+<li>直接访问样例中的外部服务无问题，但是运行时出现：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GenericMessage [payload=Each hair in Chuck Norris&#x27;s beard contributes to make the world&#x27;s largest DDOS., headers=&#123;Transfer-Encoding=chunked, http_requestMethod=GET, errorChannel=org.springframework.messaging.core.GenericMessagingTemplate$TemporaryReplyChannel@3be35f5c, Server=cloudflare, Connection=keep-alive, http_statusCode=200 OK, Date=1653960361000, Via=1.1 vegur, accept=*/*, replyChannel=org.springframework.messaging.core.GenericMessagingTemplate$TemporaryReplyChannel@3be35f5c, host=localhost:8080, http_requestUrl=http://localhost:8080/check, id=35b1eb39-4b71-13c7-c14e-9a360c5a757e, contentType=application/json;charset=UTF-8, user-agent=curl/7.47.0, timestamp=1653960361139&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>与外部服务链接无问题 如果需要查看其中的信息可能需要指定gateway，指定errorChannel并提取信息</p>
+<p>解决： 中间的打印实际上消耗了流中的数据 因此去掉打印的代码即可</p>
+<ul>
+<li>设计上的不足 head的模式 类型不匹配——用json改写所有看看</li>
+</ul>
+<p>how to find api I need:</p>
+<p>search spring integration directly：搜索出来的结果和demo并不相似，更像老师的hello-world例子，即显式调用channel发送消息，样例中的服务本质并不是独立服务而是一个java类中的方法</p>
+<p>直接搜索demo中调用的方法，查看api doc；然后搜素是否可能用该api传递post中的参数</p>
+<p>利用xml是配置的好方式尤其是使用了默认的channel的时候，但是对于代码阅读不是很直观，可以参考stackoverflow和github搜索到的代码样例中的api</p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>inbound outbound作为接口 和之前接收http request的方法比更加简洁，体现了流式了处理，可以把更多的精力放在中间处理函数上（因为之前在http request上花费了时间）借用更加稳定的架构</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AW09-Reactive Version</title>
+    <url>/post/f51e3ca2/</url>
+    <content><![CDATA[<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://github.com/sa-spring/employee-reactive">sa-spring/employee-reactive</a></p>
+<p>针对delivery系统先尝试</p>
+<p>EmployeeController 负责处理网页请求，返回的是用Mono或者Flux包装的数据结构</p>
+<p>webclient 不管处理怎样的请求 都会显示取两个请求来处理</p>
+<ul>
+<li>EmployeeRepository/Employee 基础设施 <ul>
+<li>repository是内存中 可以模仿之前某次作业里的持久化 或者改进时再做</li>
+</ul>
+</li>
+</ul>
+<p>Simple version： 发送一个请求立刻传送 模拟高占时的计算任务</p>
+<ul>
+<li><p>OrderInfo（需要添加买家名字和地址 order调整时在做，暂定是）应该在order中 迁移；</p>
+<ul>
+<li>Stirng id    </li>
+<li>Items 信息（联调实现） </li>
+</ul>
+</li>
+<li><p>DeliveryInfo pos-api 生成随机时长 显示在路上（log）最后告知已经送达 </p>
+<ul>
+<li>String 信息</li>
+<li>是否已经送达（？）</li>
+</ul>
+</li>
+</ul>
+<p>Todo</p>
+<ul>
+<li><p>rabbitmq 配置</p>
+<p>stream来发送 在yml里配置 </p>
+</li>
+<li><p>order创建好DeliveryDto再发送 才能用mapper 在order中订阅</p>
+</li>
+<li><p>可以用web client来发送请求</p>
+</li>
+</ul>
+<p>Test Ref: <a href="https://github.com/sa-spring/spring-webflux">sa-spring/spring-webflux</a></p>
+<p>测试用例可以写成mvn项目</p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>Tips: 把本地jar包添加到本地依赖库：</p>
+<p>mvn install:install-file -Dfile=./target/pos-api-0.0.1-SNAPSHOT.jar -Dgroup=com.micropos -DartifactId=micropos -Dversion=0.0.1</p>
+<h3 id="Delivery-Service"><a href="#Delivery-Service" class="headerlink" title="Delivery Service"></a>Delivery Service</h3><p>采用了reactive的设计 但是只体现在了mono这种流式处理的数据结构上，自定义的consume只在应用刚启动的时候调用了一次</p>
+<p>client中的<a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/reactive/function/client/WebClient.RequestHeadersSpec.html#retrieve--">retrieve</a>是用来定义提取什么部分的，只有在有订阅的时候</p>
+<p>onSubscribe都是在订阅的之后 publish请求的时候才会被调用</p>
+<p><a href="https://github.com/sa-spring/employee-reactive">sa-spring/employee-reactive</a>，是把数据库作为publisher 服务器作为subscriber，这样subscriber可以控制数据产生的速度 order中有mono注册来subscribe 即下运输单的时候取决于运输服务的情况</p>
+<p>改接口为Dto  方便服务间传输数据，测试样例不变</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -H &quot;Content-type:application/json&quot; -X POST -d &#x27;&#123;&quot;orderId&quot;:&quot;001&quot;,&quot;deliveryId&quot;:&quot;001&quot;,&quot;delivered&quot;:&quot;false&quot;&#125;&#x27; http://localhost:8090/delivery/add</span><br></pre></td></tr></table></figure>
+
+<h2 id="Order-Service"><a href="#Order-Service" class="headerlink" title="Order Service"></a>Order Service</h2><p>order</p>
+<p>按照规范建立 建立rabbit stream传输</p>
+<p>参照employee subscribe（感觉合适一些一对多场景？）</p>
+<p>测试 发送一个只有一个product的order来测试（之后修改carts）</p>
+<p>如果用stream delivery需要改进配合stream </p>
+<p>如果是独立服务 那么用get uri？</p>
+<p>问题：controller用webflux还是普通的 在service层抽象 repos返回orderInfo service层用mapper转换 flux来返回</p>
+<p>add 订阅</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">curl -H <span class="string">&quot;Content-type:application/json&quot;</span> -X POST -d</span><br><span class="line">&#x27;</span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;id&quot;</span>:<span class="string">&quot;c001&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;items&quot;</span>: [</span><br><span class="line">		&#123;<span class="attr">&quot;id&quot;</span>:<span class="number">1</span>,</span><br><span class="line">		<span class="attr">&quot;quantity&quot;</span>:<span class="number">2</span></span><br><span class="line">		<span class="string">&quot;product&quot;</span>:</span><br><span class="line">            &#123;</span><br><span class="line">				<span class="attr">&quot;id&quot;</span>: <span class="string">&quot;p01&quot;</span>,</span><br><span class="line">				<span class="attr">&quot;name&quot;</span>: <span class="string">&quot;product1&quot;</span>,</span><br><span class="line">				<span class="attr">&quot;price&quot;</span>: <span class="number">20.0</span></span><br><span class="line">				<span class="string">&quot;image&quot;</span>: <span class="string">&quot;xxx&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line">&#x27;</span><br><span class="line">http:<span class="comment">//localhost:8089/order/add</span></span><br></pre></td></tr></table></figure>
+
+<p>修改 发送必要信息 只有string orderId发送</p>
+<p>用subscriber来模拟处理订单需要的时间，然后再开始配送</p>
+<h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><p>下载了windows版（关于和linux虚拟机斗争的故事之后再说。。）</p>
+<p>激活命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rabbitmq-plugins.bat enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+
+<p>访问界面：<a href="http://127.0.0.1:15672/">http://127.0.0.1:15672/</a></p>
+<p>默认账号和密码：guest/guest</p>
+<p><a href="https://cloud.tencent.com/developer/article/1505191">后续参考</a></p>
+<p><img src="/post/f51e3ca2/.%5CAW09-Reactive-Version.assets%5Cimage-20220704232815224.png" alt="image-20220704232815224"></p>
+<p>暂时先用webclient发送消息 因此消息队列在本次作业中没有用上</p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>Future 获取结果 在发布任务的服务中可能需要</p>
+<p>Mono/Flux区别: Mono 0-1item，Flux 0-n items</p>
+<p>callback和future的区别？<a href="https://jayconrod.com/posts/93/futures-are-better-than-callbacks#:~:text=Futures%20have%20several%20advantages%20over,if%20there%20was%20an%20error.">Futures are better than callbacks</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1347628">Future,Callback,Promise</a></p>
+<p><img src="/post/f51e3ca2/image-20220630094227028.png" alt="image-20220630094227028"></p>
+<img src="/post/f51e3ca2/AW09-Reactive-Version.assets\image-20220630094214316.png" alt="image-20220630094214316" style="zoom:50%;">]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AW10-Final-Full-Reactive-MicroPos</title>
+    <url>/post/d29cc919/</url>
+    <content><![CDATA[<h2 id="Not-Finished-Yet-in-Previous-AW"><a href="#Not-Finished-Yet-in-Previous-AW" class="headerlink" title="Not Finished Yet in Previous AW"></a>Not Finished Yet in Previous AW</h2><ul>
+<li><p>choose product and checkout; use message</p>
+</li>
+<li><p>big collection of goods: extract and save in the repos——patch <a href="https://github.com/sawork-2022/aw06-August0830">aw06</a> products use h2db? 修改pos-product</p>
+</li>
+<li><p>test case <a href="https://github.com/sa-spring/spring-webflux">sa-spring/spring-webflux</a>测试用例可以写成mvn项目</p>
+</li>
+<li><p>记得恢复各地的eureka enable 其中cart需要在serviceimpl里恢复loadbalance yml文件</p>
+</li>
+<li><p>cart传输的数据需要修改</p>
+</li>
+</ul>
+<h2 id="Guideline-to-my-Micropos"><a href="#Guideline-to-my-Micropos" class="headerlink" title="Guideline to my Micropos"></a>Guideline to my Micropos</h2><p>启动gateway 可以通过<a href="http://localhost:2222/%E6%9D%A5%E8%AE%BF%E9%97%AEMicropos%EF%BC%8C%E5%85%B6%E4%B8%AD%E5%90%8E%E7%BC%80%E6%B7%BB%E5%8A%A0product%EF%BC%8Ccarts%EF%BC%8Corder%EF%BC%8Cdelivery%E8%AE%BF%E9%97%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%8D%E5%8A%A1%E3%80%82%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%AF%B9%E5%90%84%E8%87%AA%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%8D%95%E7%8B%AC%E8%B0%83%E8%AF%95">http://localhost:2222/来访问Micropos，其中后缀添加product，carts，order，delivery访问对应的服务。也可以对各自的服务单独调试</a></p>
+<h2 id="Obstacles"><a href="#Obstacles" class="headerlink" title="Obstacles"></a>Obstacles</h2><ul>
+<li>迁移到windows下环境后delivery启动失败出现<a href="https://stackoverflow.com/questions/65164809/error-creating-bean-with-name-org-springframework-cloud-netflix-eureka-server-e">Unsatisfied dependency expressed through field ‘eurekaServerBootstrap’</a></li>
+<li>类似问题 carts启动失败：<a href="https://stackoverflow.com/questions/46878649/maven-compilation-issue-with-java-9">查询后添加</a><ul>
+<li>I got the same error on java 11. Adding <a href="https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/2.2.11">jaxb api</a> dependency to the pom solved my issue</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJUCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字节iOS实习小结</title>
+    <url>/post/67d81b79/</url>
+    <content><![CDATA[<p>20220105-20220513 字节 iOS岗位实习</p>
+<p>借用KISS框架做一个简单小结</p>
+<h2 id="Keep-需要保持的"><a href="#Keep-需要保持的" class="headerlink" title="Keep-需要保持的"></a>Keep-需要保持的</h2><ul>
+<li>相信自己有解决问题的能力，遇到技术/业务上不懂的地方先尝试自己弄懂；</li>
+<li>学会提问，提问的时候介绍清楚背景和自己目前所做的努力；</li>
+<li>分隔开工作学习生活，保持完全投入和完全抽离。在工作时间段只想工作中的事情，其他时间段保存精力或者专心处理其他，忙碌的时候这一点尤为重要，可以减少不必要的内耗；</li>
+<li>留意工作中开发和学校中项目的不同，多反思多学习；</li>
+<li>从要跳槽/写简历的角度看待自己的工作；</li>
+<li>写代码的时候保持记录，写好文档；根据文档做代码收敛和优化；</li>
+</ul>
+<h2 id="Improvement-需要改进的"><a href="#Improvement-需要改进的" class="headerlink" title="Improvement-需要改进的"></a>Improvement-需要改进的</h2><ul>
+<li><p>写代码尽可能遵照调研-技术方案-开发-自检-代码说明的流程，让代码思路设计更加完备，简洁，符合规范；</p>
+</li>
+<li><p>读原有代码的时候理解逻辑，做到和自己需求相关的闭包内容都了解清楚；</p>
+</li>
+<li><p>沟通！沟通！沟通！无论是业务需求、技术问题还是代码规范，自己有了思路以后不要埋头苦干，多向mentor以及对接的同学进行确认；</p>
+</li>
+</ul>
+<h2 id="Start-需要开始的"><a href="#Start-需要开始的" class="headerlink" title="Start-需要开始的"></a>Start-需要开始的</h2><ul>
+<li>工作之余借当前项目进行技术钻研，多读代码</li>
+<li>在调研和写tech solution的阶段多咨询mentor</li>
+</ul>
+<h2 id="Stop-需要停止的"><a href="#Stop-需要停止的" class="headerlink" title="Stop-需要停止的"></a>Stop-需要停止的</h2><ul>
+<li>停止假设对接人是完美的，停止“非我职责”的想法，遇到问题多问多push</li>
+</ul>
+<p>原本在四月初就应该离职回学校的，因为疫情滞留上海在学业和实习中苦苦又支撑了一个月。也算是因祸得福做了一个更大的项目。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Career</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>保研就业分享</title>
+    <url>/post/e7143260/</url>
+    <content><![CDATA[<h2 id="就业分享"><a href="#就业分享" class="headerlink" title="就业分享"></a>就业分享</h2><p>认识自己 再去考虑工作的去向</p>
+<p>想是没有用的 去尝试才会知道</p>
+<p>大学期间 转型是代价相对小的</p>
+<p><img src="/post/e7143260/image-20220526164234394-16594014462471.png" alt="image-20220526164234394"></p>
+<p>但是需要有一个标准</p>
+<p><img src="/post/e7143260/image-20220526164413972.png" alt="image-20220526164413972"></p>
+<p><img src="/post/e7143260/image-20220526164744117-16535548658031.png" alt="image-20220526164744117"></p>
+<p>技巧+实力 对问题有思考</p>
+<p><img src="/post/e7143260/image-20220526164841788-16535549237082.png" alt="image-20220526164841788"></p>
+<p>从课程项目入手的指南</p>
+<p>简历</p>
+<p><img src="/post/e7143260/image-20220526165339138.png" alt="image-20220526165339138"></p>
+<p><img src="/post/e7143260/image-20220526165808015-16535554895653.png" alt="image-20220526165808015"></p>
+<p><img src="/post/e7143260/image-20220526170026861.png" alt="image-20220526170026861"></p>
+<p><img src="/post/e7143260/image-20220526170154076-16535557151634.png" alt="image-20220526170154076"></p>
+<p><img src="/post/e7143260/image-20220526170318981-16535557999605.png" alt="image-20220526170318981"></p>
+<h2 id="保研"><a href="#保研" class="headerlink" title="保研"></a>保研</h2><p><img src="/post/e7143260/image-20220526171216845.png" alt="image-20220526171216845"></p>
+<p><img src="/post/e7143260/image-20220526172011878.png" alt="image-20220526172011878"></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>NJU</tag>
       </tags>
   </entry>
 </search>

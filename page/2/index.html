@@ -182,6 +182,537 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/961e2082/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/961e2082/" class="post-title-link" itemprop="url">Software-Architecture docker踩坑小结+AW04记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-03-27 15:26:37" itemprop="dateCreated datePublished" datetime="2022-03-27T15:26:37+08:00">2022-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-04-04 23:54:42" itemprop="dateModified" datetime="2022-04-04T23:54:42+08:00">2022-04-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/961e2082/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/961e2082/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="gcr-io-镜像因为网络原因拉取失败"><a href="#gcr-io-镜像因为网络原因拉取失败" class="headerlink" title="gcr.io 镜像因为网络原因拉取失败"></a>gcr.io 镜像因为网络原因拉取失败</h2><p>尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载</p>
+<h3 id="虚拟机使用宿主机的梯子环境"><a href="#虚拟机使用宿主机的梯子环境" class="headerlink" title="虚拟机使用宿主机的梯子环境"></a>虚拟机使用宿主机的梯子环境</h3><p>vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 <strong>网络地址转换（NAT）</strong></p>
+<p>在终端用 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route show</span><br></pre></td></tr></table></figure>
+
+<p>查看虚拟机所占用的ip地址，选择default的记录下来。</p>
+<p>在虚拟机设置中找到Network-NeworkProxy 选择manual</p>
+<p>所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）</p>
+<p>在浏览器中访问google/youtube，成功即可</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/961e2082/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/155d23b4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/155d23b4/" class="post-title-link" itemprop="url">暑期实习面经</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-08 20:55:48 / Modified: 22:09:14" itemprop="dateCreated datePublished" datetime="2022-02-08T20:55:48+08:00">2022-02-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/155d23b4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/155d23b4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="谷歌"><a href="#谷歌" class="headerlink" title="谷歌"></a>谷歌</h1><h2 id="投递"><a href="#投递" class="headerlink" title="投递"></a>投递</h2><p>同样是偶然在公众号看到。第一次用国内邮箱发送邮件被退回；但改用谷歌邮箱以后依旧没成功，最后请人内推。谷歌是滚动制，投递越早越好，然而正好与考试周冲突，可能投递完了只收到上海base的面试邮件。</p>
+<p>面试用的自然语言（中英语）和计算机语言都可以在问卷中自选。</p>
+<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><ul>
+<li><p>给定开心数的定义：各个位上数字的平方之和计算得到新的数，一直计算下去如果能得到1就是开心数，如果进入循环，即有计算得出的数重复出现，则不是。判断一个数是否是开心数。</p>
+</li>
+<li><p>追问：（我使用的是Java，并且用哈希表来解决）</p>
+<ul>
+<li><p>为什么要使用hashset？</p>
+</li>
+<li><p>hashset插入和查询的复杂度</p>
+</li>
+<li><p>哈希表底层原理？</p>
+</li>
+</ul>
+</li>
+<li><p>（有点答不上来于是换了进阶算法） 给定一个10^6以内的数，返回有多少个小于给定数的开心数？</p>
+<ul>
+<li>类似NP问题的思路（？） 被提示：有些数字进行一次各个位数字平方和就可以得到1，有些需要两次，即第一次先得到到1只有一步开心数计算的数字，以此倒退。</li>
+</ul>
+</li>
+</ul>
+<h1 id="微软提前批"><a href="#微软提前批" class="headerlink" title="微软提前批"></a>微软提前批</h1><h2 id="投递时间"><a href="#投递时间" class="headerlink" title="投递时间"></a>投递时间</h2><p>12月底偶然发现公众号更新了提前批相关信息，苦于当时在考试，在跨年夜当天晚上投递了，在1月3号投递ddl当天收到了意向征集的表格。</p>
+<h2 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/155d23b4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/b5bd3a01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/b5bd3a01/" class="post-title-link" itemprop="url">基于Java实现简单Reactor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-12-11 13:39:07 / Modified: 14:11:13" itemprop="dateCreated datePublished" datetime="2021-12-11T13:39:07+08:00">2021-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/b5bd3a01/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/b5bd3a01/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
+<p>一张解释了各个组件之间关系的图：</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png" alt="image-20211211134127551"></p>
+<p>InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。</p>
+<p>EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。</p>
+<p>在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。</p>
+<h2 id="Reactor-Basic"><a href="#Reactor-Basic" class="headerlink" title="Reactor Basic"></a>Reactor Basic</h2><p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png" alt="image-20211211135057739"></p>
+<p>可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/b5bd3a01/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/15229090/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/15229090/" class="post-title-link" itemprop="url">Java下运行mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-09 20:34:07" itemprop="dateCreated datePublished" datetime="2021-12-09T20:34:07+08:00">2021-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:11:13" itemprop="dateModified" datetime="2021-12-11T14:11:13+08:00">2021-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/15229090/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/15229090/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="环境配置问题"><a href="#环境配置问题" class="headerlink" title="环境配置问题"></a>环境配置问题</h2><p>如果出现 <code>java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</code> 的问题（在mysql 8.0及以上的版本 应该是<code>com.mysql.cj.jdbc.Driver</code>）有可能是没有安装connection j的依赖，最好先借助mysql installer检查mysql的安装包。</p>
+<p>查到的解决方案大多针对有maven等管理工具的大型软件，对vscode下临时建立的小项目不直接适用。</p>
+<p>安装后有一个jar包，移动到classpath以后依旧报错，在YouTube上找到一位<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.youtube.com/watch?v=MtME-ERufu0&ab_channel=BoostMyTool">印度小哥制作的新手教程</a> 把jar包移动到java project中即可。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211209203900546.png" alt="image-20211209203900546"></p>
+<h2 id="依赖和包的使用"><a href="#依赖和包的使用" class="headerlink" title="依赖和包的使用"></a>依赖和包的使用</h2><p>需要java.sql.*</p>
+<p>可以<a target="_blank" rel="external nofollow noopener noreferrer" href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-statements.html">参考Mysql官方文档</a> 和 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/java/java-mysql-connect.html">菜鸟教程</a></p>
+<p>Statement: 用于像数据库发送指令 其中execute可以用于执行无返回结果和有返回结果的sql语句，但是executeQuery只能用于有返回结果的（如select）</p>
+<p>ResultSet：用于接收结果，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/SHU15121856/article/details/79305295">游标</a>可以通过该对象使用</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/15229090/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c9d2088f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/c9d2088f/" class="post-title-link" itemprop="url">字节上海客户端面经一二三面</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-24 21:01:30" itemprop="dateCreated datePublished" datetime="2021-11-24T21:01:30+08:00">2021-11-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-11 21:08:37" itemprop="dateModified" datetime="2022-02-11T21:08:37+08:00">2022-02-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/c9d2088f/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/c9d2088f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1115 内推投简历<br>1117 hr联系约19号面试</p>
+<h2 id="1119一面"><a href="#1119一面" class="headerlink" title="1119一面"></a>1119一面</h2><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ul>
+<li>进程线程</li>
+<li>平常用线程编程过吗 举个例子？</li>
+<li>刚刚提到互斥 怎么保证线程互不干扰？</li>
+<li>死锁 </li>
+<li>提到银行家算法就说一下具体实现</li>
+</ul>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul>
+<li>怎么用两个队列实现一个栈？</li>
+<li>排序有了解吗 </li>
+<li>说一个印象深刻的排序算法？（讲了快排）</li>
+<li>快排既然有比较差的情况 怎么改进？</li>
+<li>平均复杂度是nlogn 是怎么算出来的？</li>
+<li>还有什么印象深刻的数据结构？ </li>
+<li>（讲到树） 既然刚刚提到交换左右子树的题就写一下吧</li>
+<li>一道算法题 交换左右子树 （一边写一边解释了思路 没有跑）</li>
+</ul>
+<h3 id="计网"><a href="#计网" class="headerlink" title="计网"></a>计网</h3><ul>
+<li>基本的TCP UDP介绍一下？</li>
+<li>刚刚提到TCP有保证稳定链接的机制 提到拥塞控制 详细说一下过程？（快恢复还是啥忘记名字了 面试官提示了一下）</li>
+<li>拥塞控制中怎么知道网络的拥塞程度的呢（前面关于阈值和ccwindow名字想不起来了） </li>
+<li>可以具体再说说吗（说到收到冗余3次和超时两种情况 会对应不同的处理方式</li>
+</ul>
+<h3 id="介绍一个课外项目"><a href="#介绍一个课外项目" class="headerlink" title="介绍一个课外项目"></a>介绍一个课外项目</h3><p>说了南小包 问了如何处理一些错误情况 异常 比如用户支付失败</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/c9d2088f/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/601be613/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -702,512 +1233,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/55a58fe7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/55a58fe7/" class="post-title-link" itemprop="url">Algo Revised: Tree</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-19 23:39:20" itemprop="dateCreated datePublished" datetime="2021-09-19T23:39:20+08:00">2021-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-16 10:16:42" itemprop="dateModified" datetime="2022-01-16T10:16:42+08:00">2022-01-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/55a58fe7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/55a58fe7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/symmetric-tree/">101. Symmetric Tree</a></h4><p>从树的递归性质入手 这里增加的难度在于左右交替判断 注意指针为空的情况</p>
-<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSym</span><span class="params">(TreeNode* rt1,TreeNode*rt2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!rt1&amp;&amp;!rt2)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(rt1 &amp;&amp; rt2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(rt1-&gt;val!=rt2-&gt;val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">isSym</span>(rt1-&gt;left,rt2-&gt;right) &amp;&amp; <span class="built_in">isSym</span>(rt1-&gt;right,rt2-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isSym</span>(root-&gt;left,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="98-Validate-Binary-Search-Tree"><a href="#98-Validate-Binary-Search-Tree" class="headerlink" title="98. Validate Binary Search Tree"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. Validate Binary Search Tree</a></h4><p>搜索树的定义！！复习非递归实现前序遍历</p>
-<p>递归：结合范围 注意数字取值的范围</p>
-<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> lower,<span class="keyword">long</span> <span class="keyword">long</span> upper, TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val &lt;= lower || root-&gt;val &gt;= upper)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">check</span>(lower,root-&gt;val,root-&gt;left) &amp;&amp; </span><br><span class="line">        <span class="built_in">check</span>(root-&gt;val,upper,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">check</span>(LONG_MIN,LONG_MAX,root);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>非递归的中序遍历</p>
-<p>甚至都不需要存队列 只需要保存队列的最后一个值进行比较就可以了</p>
-<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        stack&lt;TreeNode*&gt; stk;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> inorder = LONG_MIN;</span><br><span class="line">        <span class="keyword">while</span>(!stk.<span class="built_in">empty</span>() || root)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(root)</span><br><span class="line">            &#123;</span><br><span class="line">                stk.<span class="built_in">push</span>(root);</span><br><span class="line">                root=root-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            root = stk.<span class="built_in">top</span>();</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(inorder&gt;=root-&gt;val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            inorder = root-&gt;val;</span><br><span class="line">            root=root-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/55a58fe7/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/9120db44/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/9120db44/" class="post-title-link" itemprop="url">Algo Revised: Dynamic Programing</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-19 23:39:08" itemprop="dateCreated datePublished" datetime="2021-09-19T23:39:08+08:00">2021-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-27 18:13:40" itemprop="dateModified" datetime="2022-01-27T18:13:40+08:00">2022-01-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/9120db44/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/9120db44/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Longest-ZigZag-Path-in-a-Binary-Tree"><a href="#Longest-ZigZag-Path-in-a-Binary-Tree" class="headerlink" title="Longest ZigZag Path in a Binary Tree"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/longest-zigzag-path-in-a-binary-tree/">Longest ZigZag Path in a Binary Tree</a></h4><p>尾递归的构建方式 在参数当中完成运算。</p>
-<p>本题最优解不依赖于子问题的解，因为有可能子问题中出现最大解但是对于父问题来说不符合加1的要求，例如最长Z路径出现在中间段，所以采用外部设置全局变量比较更新的方法</p>
-<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> maxlen=<span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">tail_recusion</span><span class="params">(<span class="keyword">int</span> len,<span class="keyword">int</span> direct,TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        maxlen = <span class="built_in">max</span>(maxlen,len);</span><br><span class="line">        <span class="keyword">if</span>(root)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(direct==<span class="number">1</span>)<span class="comment">//上一次走的是右侧 即当前节点是父节点的右子树</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(root-&gt;left)</span><br><span class="line">                    <span class="built_in">tail_recusion</span>(len+<span class="number">1</span>,<span class="number">0</span>,root-&gt;left);</span><br><span class="line">                <span class="keyword">if</span>(root-&gt;right)</span><br><span class="line">                    <span class="built_in">tail_recusion</span>(<span class="number">1</span>,<span class="number">1</span>,root-&gt;right);</span><br><span class="line">            &#125; </span><br><span class="line">            <span class="keyword">else</span><span class="comment">//当前节点是父节点的左子树</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(root-&gt;left)</span><br><span class="line">                    <span class="built_in">tail_recusion</span>(<span class="number">1</span>,<span class="number">0</span>,root-&gt;left);<span class="comment">//1 是为了在下一层中记录本层的位置</span></span><br><span class="line">                <span class="keyword">if</span>(root-&gt;right)</span><br><span class="line">                    <span class="built_in">tail_recusion</span>(len+<span class="number">1</span>,<span class="number">1</span>,root-&gt;right);</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestZigZag</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">tail_recusion</span>(<span class="number">0</span>,<span class="number">0</span>,root);</span><br><span class="line">        <span class="built_in">tail_recusion</span>(<span class="number">0</span>,<span class="number">1</span>,root);</span><br><span class="line">        <span class="keyword">return</span> maxlen;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="887-Super-Egg-Drop"><a href="#887-Super-Egg-Drop" class="headerlink" title="887. Super Egg Drop"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode-cn.com/problems/super-egg-drop/">887. Super Egg Drop</a></h4><p>重点:描述出状态 找到状态转移方程 本题特征: 利用函数的单调性来逼近答案（这是本题规划的部分）</p>
-<img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20210526153430141.png" alt="image-20210526153430141" style="zoom: 50%;">
-
-<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20210526153443782.png" alt="image-20210526153443782"></p>
-<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; memo;<span class="comment">//dp中用于存储的字典</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(memo.<span class="built_in">find</span>(<span class="number">100</span>*n+k)==memo.<span class="built_in">end</span>())<span class="comment">//找不到</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(k==<span class="number">1</span>)</span><br><span class="line">                ans=n;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">                ans=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> low =<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">int</span> high=n;</span><br><span class="line">                <span class="keyword">while</span>(low+<span class="number">1</span>&lt;high)<span class="comment">//是离散的点 所以只能用间隔逼近</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> x = low + (high-low)/<span class="number">2</span>;</span><br><span class="line">                    <span class="keyword">int</span> t1 = <span class="built_in">dp</span>(k,n-x);</span><br><span class="line">                    <span class="keyword">int</span> t2 = <span class="built_in">dp</span>(k<span class="number">-1</span>,x<span class="number">-1</span>);</span><br><span class="line">                    <span class="keyword">if</span>(t1&gt;t2)</span><br><span class="line">                        low = x;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(t1&lt;t2)</span><br><span class="line">                        high=x;</span><br><span class="line">                    <span class="keyword">else</span>    </span><br><span class="line">                        low = high = x;</span><br><span class="line">                &#125;</span><br><span class="line">                ans=<span class="number">1</span>+<span class="built_in">min</span>(<span class="built_in">max</span>(<span class="built_in">dp</span>(k,n-low),<span class="built_in">dp</span>(k<span class="number">-1</span>,low<span class="number">-1</span>)),<span class="built_in">max</span>(<span class="built_in">dp</span>(k,n-high),<span class="built_in">dp</span>(k<span class="number">-1</span>,high<span class="number">-1</span>)));</span><br><span class="line">            &#125;</span><br><span class="line">            memo[<span class="number">100</span>*n+k]=ans;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> memo[<span class="number">100</span>*n+k];<span class="comment">//利用一个函数映射 把二维降为一维存储</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">superEggDrop</span><span class="params">(<span class="keyword">int</span> K, <span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dp</span>(K,N);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>20220118 树状分析改为动态规划：二分法想到的是对的 最后本质采用了二分查找；压缩的本质是 m~n可以用n-m来表示</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/9120db44/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c0898a4d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/c0898a4d/" class="post-title-link" itemprop="url">新世界大门大开-几款编程相关工具</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-19 23:37:08" itemprop="dateCreated datePublished" datetime="2021-09-19T23:37:08+08:00">2021-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-19 20:13:10" itemprop="dateModified" datetime="2021-10-19T20:13:10+08:00">2021-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/c0898a4d/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/c0898a4d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="plantuml"><a href="#plantuml" class="headerlink" title="plantuml"></a>plantuml</h2><p>一个绘制类图，时序图的在线<a target="_blank" rel="external nofollow noopener noreferrer" href="https://plantuml.com/zh/starting">网站</a>，支持生成在线的url，无需登录。</p>
-<p>和其他工具不太一样的是，输入主要依靠代码描述，和拖拽相比感觉很酷（x</p>
-<h2 id="asciinema"><a href="#asciinema" class="headerlink" title="asciinema"></a>asciinema</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://asciinema.org/">终端录制工具</a>，可以把终端的动画保存在网站云端，可以获取url插入markdown，但是大小有限制，超过5M左右就无法顺利上传。邮箱可以直接注册登陆。</p>
-<p>可以在命令行安装，但是不支持windows，macOS和linux都可以。</p>
-<h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2><p>一个图床工具，支持github，gitee，七牛腾讯等等云床，可以内嵌进入markdown。</p>
-<h2 id="localtunnel"><a href="#localtunnel" class="headerlink" title="localtunnel"></a>localtunnel</h2><p>在自己本地测试服务器的时候，如果需要外部网络访问被测试的网站和服务器，可以用这个<a target="_blank" rel="external nofollow noopener noreferrer" href="https://localtunnel.github.io/www/">工具</a>生成网址。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/c0898a4d/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/3a3e4295/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/3a3e4295/" class="post-title-link" itemprop="url">更换设备后追踪仓库更新</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-09-19 17:58:45 / Modified: 23:29:56" itemprop="dateCreated datePublished" datetime="2021-09-19T17:58:45+08:00">2021-09-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/3a3e4295/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/3a3e4295/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>原本是在windows上git clone的github仓库，在原仓库有一次较大改动（发布新作业）之后，因为环境问题需要换到linux虚拟机上做，于是需要把仓库也clone到虚拟机上，但是直接git clone我fork过后的仓库只能下载提交后原仓库更新前的代码，需要更新。</p>
-<p>首先检查upstream是否有对应的远程仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
-<p>如果只有两行origin，说明新设备上的仓库还没有与原本的仓库挂钩，需要添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add remote-original.git</span><br></pre></td></tr></table></figure>
-
-<p>之后再次检查upstream，出现upstream两行就可以了</p>
-<p>记得根据upstream的提示切换分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout upstream/main</span><br></pre></td></tr></table></figure>
-
-<p>否则就会依旧停留在旧的版本（在这里卡了很久以为弄错了）</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/3a3e4295/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/72f41795/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/72f41795/" class="post-title-link" itemprop="url">RM 高考 目的与手段 和我</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-14 11:49:11" itemprop="dateCreated datePublished" datetime="2021-09-14T11:49:11+08:00">2021-09-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-19 23:29:56" itemprop="dateModified" datetime="2021-09-19T23:29:56+08:00">2021-09-19</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/72f41795/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/72f41795/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>rm生日的时候看到一条生贺视频 缪斯、月亮与鲸鱼 里面南俊说 在工作压力下 通过看展 散步 骑车 亲近自然 来放松自己 虽然说不能指望这些体验对音乐工作有直接的作用 但是至少这是他对抗压力的方式</p>
-<p>突然鼻子就一酸 南俊的生活当中镶嵌了许许多多他喜欢的治愈的事情 而我却有很长一段时间都在把想做的事情推到“等到xx的时候” 如果压力一直长存没有尽头 如果人生不是为了一个目的就可以放弃一切 那在松动下来的时间里忙里偷闲又有何妨？跑弹不必留到周末再看 吃饭间隙就可以享受 想读的时候就找来放在手边 网络一关就可以开始看 毕竟 某种程度上 这也是让我不必崩溃的办法</p>
-<p>到底是为什么没有办法享受闲暇 只能在碎片化中找到安心的时刻 只能在压力下承认自己也需要休息 为什么总要在极端反复跳跃？我想这个问题 得要回到高三的时候 毕竟那个时候只有一个目标 哪怕心底里在反抗 但只能在指挥棒下不断的自我拉扯 看综艺没办法看完 看书也不能认真享受 一切都推到高考以后 推着推着 高考过去了整整两年 我还困在这里</p>
-<p>想起来看到的一篇衡水学生的文章 不得不承认尽管自己的高中已经宽松太多 但是总有一些相似的ptsd是高考体制下人们共通的 里面作者写到无法忍受等待和闲暇 做什么都要有目的和效率 实在是让人狠狠共情 为了一个目标能够放弃一切的想法 以及随之造就的习惯 其实作为一种惯性留在很多人的后高考时代 看转发评论里的人们可见一斑 可是有很多事情 也同样重要 或者换句话说 一些斗争不会到此为止 难道要一直这样等到克服一切困难才能放过自己吗 那可能要把一些原本属于自己的时光带进坟墓了</p>
-<p>看着南俊 突然意识到自己也有和压力共存的方式 心安理得的在午饭的时候享受跑弹 心安理得的在认真做了几个小时的任务之后放松自己 反倒减少了很多犹如溺水之人抓不到救命稻草的时刻 想要从网络上找一些转移注意力的刺激的时刻减少了不少 搭配digital balance 这两天连睡眠作息都规律了很多</p>
-<p>承认自己的压力 承认自己的欲望 让自己慢慢学会享受闲暇 享受专注 避免碎片化的emo 这是我最近学到的love myself的方式 感谢南俊 还有那个剪出让人落泪的生贺视频的4粉</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/72f41795/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1274,7 +1303,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1287,7 +1316,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

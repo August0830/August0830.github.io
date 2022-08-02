@@ -29,7 +29,7 @@
 <meta property="og:description" content="虚拟机环境准备账户设置：采用虚拟机原有设置 没有新建账号 环境变量设置 12345678sudo vi ~&#x2F;.bash_profilePATH&#x3D;$PATH:$HOME&#x2F;binexport JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-11-openjdk-amd64&#x2F;bin&#x2F;java #需要查询本地Java安装地址 export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-1">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-03T07:03:06.000Z">
-<meta property="article:modified_time" content="2022-04-14T15:45:14.406Z">
+<meta property="article:modified_time" content="2022-06-06T11:39:23.708Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="NJUCS">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-14 23:45:14" itemprop="dateModified" datetime="2022-04-14T23:45:14+08:00">2022-04-14</time>
+                <time title="Modified: 2022-06-06 19:39:23" itemprop="dateModified" datetime="2022-06-06T19:39:23+08:00">2022-06-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +274,7 @@
 <p><code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code> 而vscode java 需要的是 <code>/usr/lib/jvm/java-11-openjdk-amd64/bin/java</code></p>
 <p>出现问题时可以在安装hadoop的文件夹下的logs中查看，也注意观察终端info信息中显示log写入的地方 出现问题及时打印log查看报错</p>
 <h3 id="进行测试实验"><a href="#进行测试实验" class="headerlink" title="进行测试实验"></a>进行测试实验</h3><p> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#copyFromLocal">指令文档</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">start-all.sh</span><br><span class="line">jps <span class="comment">#查hadoop伪集群启动情况</span></span><br><span class="line">hadoop fs -ls /    <span class="comment">#先查看当前hdfs下的文件夹</span></span><br><span class="line">hadoop fs -mkdir /test-in <span class="comment">#创建文件夹</span></span><br><span class="line">hadoop fs -put /home/njucs/BigData/V.html /test-in <span class="comment">#移动文件到hadoop hdfs文件系统中指定文件夹下 注意本地文件夹的名字要写全 如果是在hadoop文件夹中操作的话</span></span><br><span class="line">tail -500 yarn-hadoop-resourcemanager-xxx <span class="comment">#显示前500个字节</span></span><br><span class="line">hadoop dfs -cat /V-out/part-r-00000 <span class="comment">#查看结果</span></span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hijiangtao.github.io/2014/02/19/wordcountrunning/">样例的运行方法指导</a> 样例程序wordcount在hadoop的share/hadoop/mapreduce下</p>
 <p>可视化信息</p>
@@ -293,6 +293,8 @@
 
 <p>调试方法+远程提交方法见Chap4 PPT</p>
 <p>主要是熟悉git的开源社区协作方法</p>
+<p>/user/2021sz01/exp4-1.0-SNAPSHOT.jar</p>
+<p>hadoop jar /user/2021sz01/exp4-1.0-SNAPSHOT.jar com.hadoop.KMeans /user/2021sz01/exp4-example</p>
 
     </div>
 
@@ -392,7 +394,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -405,7 +407,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

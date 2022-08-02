@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="BXdHtW-DrlxrxqqWU7NtzaDn_jm-z9A1Lv-D2aFOMxY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="delivery变成integration 大致思路： aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置） pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收 pos-delivery 保持不变 Tech Solution pos-order  替换成改写demo中的inbound&#x2F;outbo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AW08 Spring Integration">
+<meta property="og:url" content="https://august0830.github.io/post/3da399b2/index.html">
+<meta property="og:site_name" content="Map of the Soul">
+<meta property="og:description" content="delivery变成integration 大致思路： aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置） pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收 pos-delivery 保持不变 Tech Solution pos-order  替换成改写demo中的inbound&#x2F;outbo">
+<meta property="og:locale">
+<meta property="og:image" content="https://august0830.github.io/post/3da399b2/.%5CAW08-Spring-Integration.assets%5Cimage-20220621094639379.png">
+<meta property="article:published_time" content="2022-05-31T00:32:44.000Z">
+<meta property="article:modified_time" content="2022-08-02T00:54:52.611Z">
+<meta property="article:author" content="Augustus">
+<meta property="article:tag" content="NJUCS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://august0830.github.io/post/3da399b2/.%5CAW08-Spring-Integration.assets%5Cimage-20220621094639379.png">
+
+<link rel="canonical" href="https://august0830.github.io/post/3da399b2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>AW08 Spring Integration | Map of the Soul</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Map of the Soul</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/3da399b2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AW08 Spring Integration
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-31 08:32:44" itemprop="dateCreated datePublished" datetime="2022-05-31T08:32:44+08:00">2022-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-02 08:54:52" itemprop="dateModified" datetime="2022-08-02T08:54:52+08:00">2022-08-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/3da399b2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/3da399b2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>delivery变成integration</p>
+<p>大致思路：</p>
+<p>aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置）</p>
+<p>pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收</p>
+<p>pos-delivery 保持不变</p>
+<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><ul>
+<li>pos-order</li>
+</ul>
+<p>替换成改写demo中的inbound/outbound</p>
+<p>inboud：处理发送来的post请求，提取string信息，调用placeOrder函数进行中间处理转换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inboundGateway(uri)</span><br><span class="line">.requestMapping(r -&gt; r.methods(Https.POST)</span><br><span class="line">.consumes(&quot;text/plain&quot;))</span><br><span class="line">.&lt;String&gt;handle((s)-&gt; return placeOrder(s))</span><br><span class="line">.requestPayloadType(String.class)</span><br><span class="line">.get();</span><br></pre></td></tr></table></figure>
+
+<p>中间处理<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.tabnine.com/code/java/methods/org.springframework.integration.http.dsl.Http/inboundGateway">ref</a></p>
+<p>outbound：向pos-delivery发送post请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">outboundGateway((Message&lt;String&gt; r)-&gt;r.getPayload())</span><br><span class="line">.httpMethod(Https.POST)</span><br><span class="line">.expectedResponseType(Boolean.type)</span><br><span class="line">.get();</span><br></pre></td></tr></table></figure>
+
+<p>#注释 初步 handle是具体的处理函数，可以做简单的处理</p>
+<p>method改动</p>
+<ul>
+<li><p>pos-delivery：</p>
+<p>普通的网页应用 rest架构，参数使用和测试方法<a target="_blank" rel="external nofollow noopener noreferrer" href="https://mkyong.com/spring/curl-post-request-examples/">参考</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d &quot;orderInfo=3|CityA&quot; http://localhost:8086/delivery/</span><br></pre></td></tr></table></figure>
+
+<p>采用了RequestParam</p>
+</li>
+<li><p>pos-cart</p>
+</li>
+</ul>
+<p><img src="/post/3da399b2/.%5CAW08-Spring-Integration.assets%5Cimage-20220621094639379.png" alt="image-20220621094639379"></p>
+<p><em>提问</em>：post传递参数和url中携带参数的不同？</p>
+<p>Reference：</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/HttpInboundEndpointSupportSpec.RequestMappingSpec.html">consumes</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/Http.html#method.detail">outboundGateway加参数</a></p>
+<p>code <a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/56899730/how-to-send-http-request-from-my-integrationflow">ref1</a> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.tabnine.com/code/java/methods/org.springframework.integration.http.dsl.Http/inboundGateway">ref2</a></p>
+<p>outbound中使用的流的类型<a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.spring.io/spring-integration/api/org/springframework/integration/http/dsl/BaseHttpMessageHandlerSpec.html">BaseHttpMessageHandlerSpec</a></p>
+<p><em>搜索关键词：intergrationflows inbound post</em></p>
+<p>pos-order inbound 接收参数,</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-integration/blob/master/src/main/java/com/example/spring/integration/helloworld/HelloWorldApp.java">在函数中额外指定input/outputChannel</a>；<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-integration/blob/master/src/main/resources/META-INF/spring/integration/helloworld/helloWorldDemo.xml">xml配置</a></p>
+<ul>
+<li>引入channel配置</li>
+</ul>
+<p>AbstractApplicationContext context = new ClassPathXmlApplicationContext(xmlfile in resource,claassName);</p>
+<ul>
+<li>对inbound channel配置</li>
+</ul>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/50108253/http-outbound-gateway-post-with-payload">https://stackoverflow.com/questions/50108253/http-outbound-gateway-post-with-payload</a></p>
+<p>测试 curl -X POST -d “orderInfo=3|CityA” <a target="_blank" rel="external nofollow noopener noreferrer" href="http://localhost:8085/order">http://localhost:8085/order</a> 在暂时删除掉inbound中的处理函数的情况下<br>-d 是json的意思<br>curl -H “Content-Type:text/plain” -X POST -d ‘p1|p2|addr:CityA’ <a target="_blank" rel="external nofollow noopener noreferrer" href="http://localhost:8085/order">http://localhost:8085/order</a> 明确是发送字符串</p>
+<h2 id="Obstacles："><a href="#Obstacles：" class="headerlink" title="Obstacles："></a>Obstacles：</h2><ul>
+<li>直接访问样例中的外部服务无问题，但是运行时出现：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GenericMessage [payload=Each hair in Chuck Norris&#x27;s beard contributes to make the world&#x27;s largest DDOS., headers=&#123;Transfer-Encoding=chunked, http_requestMethod=GET, errorChannel=org.springframework.messaging.core.GenericMessagingTemplate$TemporaryReplyChannel@3be35f5c, Server=cloudflare, Connection=keep-alive, http_statusCode=200 OK, Date=1653960361000, Via=1.1 vegur, accept=*/*, replyChannel=org.springframework.messaging.core.GenericMessagingTemplate$TemporaryReplyChannel@3be35f5c, host=localhost:8080, http_requestUrl=http://localhost:8080/check, id=35b1eb39-4b71-13c7-c14e-9a360c5a757e, contentType=application/json;charset=UTF-8, user-agent=curl/7.47.0, timestamp=1653960361139&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>与外部服务链接无问题 如果需要查看其中的信息可能需要指定gateway，指定errorChannel并提取信息</p>
+<p>解决： 中间的打印实际上消耗了流中的数据 因此去掉打印的代码即可</p>
+<ul>
+<li>设计上的不足 head的模式 类型不匹配——用json改写所有看看</li>
+</ul>
+<p>how to find api I need:</p>
+<p>search spring integration directly：搜索出来的结果和demo并不相似，更像老师的hello-world例子，即显式调用channel发送消息，样例中的服务本质并不是独立服务而是一个java类中的方法</p>
+<p>直接搜索demo中调用的方法，查看api doc；然后搜素是否可能用该api传递post中的参数</p>
+<p>利用xml是配置的好方式尤其是使用了默认的channel的时候，但是对于代码阅读不是很直观，可以参考stackoverflow和github搜索到的代码样例中的api</p>
+<h2 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h2><p>inbound outbound作为接口 和之前接收http request的方法比更加简洁，体现了流式了处理，可以把更多的精力放在中间处理函数上（因为之前在http request上花费了时间）借用更加稳定的架构</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NJUCS/" rel="tag"># NJUCS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/e7143260/" rel="prev" title="保研就业分享">
+      <i class="fa fa-chevron-left"></i> 保研就业分享
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/f51e3ca2/" rel="next" title="AW09-Reactive Version">
+      AW09-Reactive Version <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tech-Solution"><span class="nav-number">1.</span> <span class="nav-text">Tech Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Obstacles%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">Obstacles：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augustus" src="/images/mokku-blue.jpg">
+  <p class="site-author-name" itemprop="name">Augustus</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augustus</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'JT9nm32Rf5wbsCR5OTAwNiKt-gzGzoHsz',
+      appKey     : 'pUI49PHMERibkyNXiuNT2IiM',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

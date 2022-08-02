@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="BXdHtW-DrlxrxqqWU7NtzaDn_jm-z9A1Lv-D2aFOMxY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-cloud-stream https:&#x2F;&#x2F;github.com&#x2F;sa-spring&#x2F;stream-loan https:&#x2F;&#x2F;piotrminkowski.com&#x2F;2020&#x2F;06&#x2F;05&#x2F;introduction-to-event-driven-microservices-with-spring-cloud-stream&#x2F; 调研开发添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AW07-Event Driven Architecture">
+<meta property="og:url" content="https://august0830.github.io/post/8f0f1e10/index.html">
+<meta property="og:site_name" content="Map of the Soul">
+<meta property="og:description" content="https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-cloud-stream https:&#x2F;&#x2F;github.com&#x2F;sa-spring&#x2F;stream-loan https:&#x2F;&#x2F;piotrminkowski.com&#x2F;2020&#x2F;06&#x2F;05&#x2F;introduction-to-event-driven-microservices-with-spring-cloud-stream&#x2F; 调研开发添">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-05-14T07:18:13.000Z">
+<meta property="article:modified_time" content="2022-08-02T00:44:48.419Z">
+<meta property="article:author" content="Augustus">
+<meta property="article:tag" content="NJUCS, Software Archetecture">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://august0830.github.io/post/8f0f1e10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>AW07-Event Driven Architecture | Map of the Soul</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Map of the Soul</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/8f0f1e10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AW07-Event Driven Architecture
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-05-14 15:18:13" itemprop="dateCreated datePublished" datetime="2022-05-14T15:18:13+08:00">2022-05-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-02 08:44:48" itemprop="dateModified" datetime="2022-08-02T08:44:48+08:00">2022-08-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/8f0f1e10/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/8f0f1e10/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://spring.io/projects/spring-cloud-stream">https://spring.io/projects/spring-cloud-stream</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/stream-loan">https://github.com/sa-spring/stream-loan</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/">https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/</a></p>
+<h1 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h1><h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><p>添加orderService，配置好事件驱动</p>
+<p>source/发送者用的是supplier，连续的发送事件，但是我的期望设计是由特定事件驱动，需要用到streamBridge.<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/spring-cloud/spring-cloud-stream/blob/main/samples/confluent-schema-registry-integration/confluent-schema-registry-integration-producer1/src/main/java/sample/producer1/ConfluentAvroProducer1Application.java">参考</a></p>
+<p>处理者也可以返回消息，需要使用consumer<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/stream-loan/blob/main/loan-check/src/main/java/com/example/loan/check/LoanChecker.java">参考</a></p>
+<p>测试</p>
+<p>先测试事件驱动架构，在自动化生成请求的情况下；</p>
+<p>测试pos-order和pos-delivery在有网页访问的情况下</p>
+<p>测试由pos-cart驱动pos-order</p>
+<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><p>伪代码+配置文件</p>
+<h4 id="pos-order"><a href="#pos-order" class="headerlink" title="pos-order"></a>pos-order</h4><ul>
+<li><p>配置文件</p>
+<p>copy pos-cart</p>
+<p>spring.io 生成一个micro service文件</p>
+<p>作为微服务的配置/discovery配置/gateaway配置/</p>
+<p><strong>cloudstream 配置 ???</strong></p>
+<p>直接去掉？</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">function:</span></span><br><span class="line">      <span class="attr">definition:</span> <span class="string">placeOrder</span></span><br><span class="line">    <span class="attr">stream:</span></span><br><span class="line">      <span class="attr">function:</span></span><br><span class="line">        <span class="attr">bindings:</span></span><br><span class="line">          <span class="attr">deliver-order:</span> <span class="string">String</span></span><br><span class="line">      <span class="attr">bindings:</span></span><br><span class="line">        <span class="attr">loan:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">output</span></span><br></pre></td></tr></table></figure></li>
+<li><p>补充api</p>
+<ul>
+<li>openApi中在responses<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_39853892/article/details/111127663">使用基本类型的方法</a></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/order/place</span></span><br><span class="line"><span class="attr">post:</span></span><br><span class="line">	<span class="attr">sumary:</span> <span class="string">place</span> <span class="string">an</span> <span class="string">order</span></span><br><span class="line">	<span class="attr">operationId:</span> <span class="string">placeOrder</span></span><br><span class="line">	<span class="attr">tags:</span></span><br><span class="line">		<span class="bullet">-</span> <span class="string">order</span></span><br><span class="line">	<span class="attr">requestBody:</span></span><br><span class="line">		<span class="attr">description:</span> <span class="string">order</span> <span class="string">info</span></span><br><span class="line">		<span class="attr">content:</span></span><br><span class="line">			<span class="attr">application/json:</span></span><br><span class="line">				<span class="attr">schema:</span></span><br><span class="line">					<span class="attr">type:</span> <span class="string">string</span></span><br><span class="line">		<span class="attr">required:</span> <span class="literal">true</span></span><br><span class="line">	<span class="attr">responses:</span></span><br><span class="line">		<span class="attr">&#x27;200&#x27;:</span></span><br><span class="line">			<span class="attr">description:</span> <span class="string">Expected</span></span><br><span class="line">			<span class="attr">content:</span></span><br><span class="line">				<span class="attr">application/json:</span></span><br><span class="line">					<span class="attr">schema:</span></span><br><span class="line">						<span class="attr">type:</span> <span class="string">boolean</span></span><br><span class="line">		<span class="attr">default:</span></span><br><span class="line">			<span class="attr">description:</span> <span class="string">Unexpected</span></span><br><span class="line">			<span class="attr">content:</span></span><br><span class="line">				<span class="attr">application/json:</span></span><br><span class="line">					<span class="attr">schema:</span></span><br><span class="line">					 <span class="string">$ref:</span> <span class="string">&quot;#/components/schemas/Error&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>//Info format: productA|productB|addr:CityA</p>
+</li>
+<li><p>rest </p>
+<ul>
+<li>restController implements OrdersApi</li>
+<li>override method 调用service中方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ResponseEntity&lt;<span class="keyword">boolean</span>&gt; <span class="title">placeOrder</span><span class="params">(<span class="meta">@RequestBody</span> String orderInfo)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> res = orderService.placeOrder(orderInfo);</span><br><span class="line">    <span class="keyword">if</span>(!res)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(HttpStatus.NOT_FOUND);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(res,HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>service</p>
+<ul>
+<li><p>OrderService</p>
+<ul>
+<li>placeOrder</li>
+</ul>
+</li>
+<li><p>OrderServiceImpl</p>
+<ul>
+<li>EDA-Impl</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line">OrderServiceImp implements OrderService&#123;</span><br><span class="line">    StreamBridge streamBridge</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">boolean</span> <span class="title">placeOrder</span><span class="params">(String orderInfo)</span></span>&#123;</span><br><span class="line">        <span class="comment">//calculate number of products</span></span><br><span class="line">        <span class="keyword">for</span>(str : info)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str.startsWith(<span class="string">&quot;addr:&quot;</span>))&#123;</span><br><span class="line">                addr = <span class="keyword">new</span> StringBuilder(str.substring(<span class="number">4</span>)).toString();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        String deliveryInfo = String.format(<span class="string">&quot;%d|%s&quot;</span>,cnt,addr);</span><br><span class="line">        <span class="keyword">return</span> streamBridge.send(<span class="string">&quot;deliver-order&quot;</span>,deliveryInfo);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//单向</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>postman跑不动：用curl来测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H &quot;Content-Type:application/json&quot; -X POST -d &#x27;&#123;&quot;orderInfo&quot;:&quot;3|CityA&#125;&quot;&#x27; http://localhost:8085/api/order/place</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="pos-delivery"><a href="#pos-delivery" class="headerlink" title="pos-delivery"></a>pos-delivery</h4><ul>
+<li><p>配置：类似loan-checker √</p>
+<ul>
+<li>application.yml</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">function:</span></span><br><span class="line">      <span class="attr">definition:</span> <span class="comment">#Consume方法名</span></span><br><span class="line">    <span class="attr">stream:</span></span><br><span class="line">      <span class="attr">function:</span></span><br><span class="line">        <span class="attr">bindings:</span></span><br><span class="line">          <span class="attr">checkOrder-in-0:</span> <span class="string">receive</span></span><br><span class="line">          <span class="comment">#consumer方法名-in-0: 发送方send的首个参数</span></span><br><span class="line">      <span class="attr">bindings:</span></span><br><span class="line">      	<span class="comment">#发送的消息名称 保持一致</span></span><br><span class="line">        <span class="attr">order-declined:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">order-declined</span></span><br><span class="line">        <span class="attr">order-approved:</span></span><br><span class="line">          <span class="attr">destination:</span> <span class="string">order-approved</span></span><br></pre></td></tr></table></figure></li>
+<li><p>DeliveryApplication √</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">main&#123;&#125;</span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Consumer&lt;String&gt; <span class="title">deliverCart</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CartDelivery();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>CartDelivery  √</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">CartDelivery implements Consumer&lt;String&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(CartDelivery.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> StreamBridge streamBridge;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(String info)</span></span>&#123;</span><br><span class="line">        <span class="comment">//number to calculate fee</span></span><br><span class="line">        String[] infos = info.split(<span class="string">&quot;\\|&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> cnt = Integer.parseInt(infos[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">double</span> fee = <span class="number">1.25</span>*cnt;</span><br><span class="line">        String msg = String.format(<span class="string">&quot;deliver %d product(s) to %s,fee is %f&quot;</span>,cnt,infos[<span class="number">1</span>],fee);</span><br><span class="line">       	log.info(msg+<span class="string">&quot;\n&quot;</span>); </span><br><span class="line">        streamBridge.send(<span class="string">&quot;delivery&quot;</span>,message(msg));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> &lt;T&gt; <span class="function">Message&lt;T&gt; <span class="title">message</span><span class="params">(T val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> MessageBuilder.withPayload(val).build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进阶版：添加DeliveryInfo 记录重量和地区信息</p>
+</li>
+</ul>
+<p>cart中添加用rest发送消息的controller方法 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sawork-2022/aw05-caochun/blob/main/pos-carts/src/main/java/com/micropos/cart/service/CartServiceImpl.java">参考</a></p>
+<p>在CartServiceImp：checkout方法中添加生成信息</p>
+<p>todo：在vmware上做</p>
+<p>discovery&amp;&amp;gateway能正常运转</p>
+<p>其他微服务controller问题</p>
+<p>cart中添加调用</p>
+<h2 id="一些插曲——遇到的问题和解决措施"><a href="#一些插曲——遇到的问题和解决措施" class="headerlink" title="一些插曲——遇到的问题和解决措施"></a>一些插曲——遇到的问题和解决措施</h2><p>因为内存不足在另一台虚拟机上重配了环境，配置maven的时候需要<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/57208665/oracle-jdk-11-error-occuring-every-time-i-install-anything-in-terminal">移除</a>旧的未成功安装的Java环J境并<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.javafixing.com/2021/09/fixed-maven-crashes-when-trying-to.html">重新配置Java环境</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/xsj_blog/article/details/79531083">持久化javahome设置</a></p>
+<p>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/</p>
+<p>/usr/local/src/java/jdk-18.0.1</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jianshu.com/p/afaa5e789f5c">springboot公共类打包成依赖</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -Dfile=/home/avril/SA-2022/HW07/stream-loan/loan-model/target/loan-model-0.0.1.jar -DgroupId=com.example -DartifactId=loan-model -Dversion=0.0.1 -Dpackaging=jar</span><br></pre></td></tr></table></figure>
+
+<p>换环境后<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/ksws0319440/article/details/113246070?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-113246070-blog-81251677.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-113246070-blog-81251677.pc_relevant_aa&utm_relevant_index=1">maven-compiler-plugin版本过高</a></p>
+<p>rest-controller无法调用: </p>
+<ul>
+<li>api之后不需要写getMapping</li>
+<li>扫描包</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NJUCS-Software-Archetecture/" rel="tag"># NJUCS, Software Archetecture</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/67d81b79/" rel="prev" title="字节iOS实习小结">
+      <i class="fa fa-chevron-left"></i> 字节iOS实习小结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/e7143260/" rel="next" title="保研就业分享">
+      保研就业分享 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%A0%94"><span class="nav-number">1.</span> <span class="nav-text">调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91"><span class="nav-number">1.0.1.</span> <span class="nav-text">开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tech-Solution"><span class="nav-number">1.1.</span> <span class="nav-text">Tech Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pos-order"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">pos-order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pos-delivery"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">pos-delivery</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%8F%92%E6%9B%B2%E2%80%94%E2%80%94%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%8E%AA%E6%96%BD"><span class="nav-number">1.2.</span> <span class="nav-text">一些插曲——遇到的问题和解决措施</span></a></li></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augustus" src="/images/mokku-blue.jpg">
+  <p class="site-author-name" itemprop="name">Augustus</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augustus</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'JT9nm32Rf5wbsCR5OTAwNiKt-gzGzoHsz',
+      appKey     : 'pUI49PHMERibkyNXiuNT2IiM',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
