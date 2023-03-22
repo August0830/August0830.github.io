@@ -182,6 +182,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/15229090/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of the Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/15229090/" class="post-title-link" itemprop="url">Java下运行mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-09 20:34:07" itemprop="dateCreated datePublished" datetime="2021-12-09T20:34:07+08:00">2021-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:11:13" itemprop="dateModified" datetime="2021-12-11T14:11:13+08:00">2021-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/15229090/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/15229090/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="环境配置问题"><a href="#环境配置问题" class="headerlink" title="环境配置问题"></a>环境配置问题</h2><p>如果出现 <code>java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</code> 的问题（在mysql 8.0及以上的版本 应该是<code>com.mysql.cj.jdbc.Driver</code>）有可能是没有安装connection j的依赖，最好先借助mysql installer检查mysql的安装包。</p>
+<p>查到的解决方案大多针对有maven等管理工具的大型软件，对vscode下临时建立的小项目不直接适用。</p>
+<p>安装后有一个jar包，移动到classpath以后依旧报错，在YouTube上找到一位<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.youtube.com/watch?v=MtME-ERufu0&ab_channel=BoostMyTool">印度小哥制作的新手教程</a> 把jar包移动到java project中即可。</p>
+<p><img src="https://gitee.com/mzl0830/pic-storage/raw/master/image-20211209203900546.png" alt="image-20211209203900546"></p>
+<h2 id="依赖和包的使用"><a href="#依赖和包的使用" class="headerlink" title="依赖和包的使用"></a>依赖和包的使用</h2><p>需要java.sql.*</p>
+<p>可以<a target="_blank" rel="external nofollow noopener noreferrer" href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-statements.html">参考Mysql官方文档</a> 和 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/java/java-mysql-connect.html">菜鸟教程</a></p>
+<p>Statement: 用于像数据库发送指令 其中execute可以用于执行无返回结果和有返回结果的sql语句，但是executeQuery只能用于有返回结果的（如select）</p>
+<p>ResultSet：用于接收结果，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/SHU15121856/article/details/79305295">游标</a>可以通过该对象使用</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/15229090/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/c9d2088f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1130,111 +1232,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/3a3e4295/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of the Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/3a3e4295/" class="post-title-link" itemprop="url">更换设备后追踪仓库更新</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-09-19 17:58:45 / Modified: 23:29:56" itemprop="dateCreated datePublished" datetime="2021-09-19T17:58:45+08:00">2021-09-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/3a3e4295/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/3a3e4295/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>原本是在windows上git clone的github仓库，在原仓库有一次较大改动（发布新作业）之后，因为环境问题需要换到linux虚拟机上做，于是需要把仓库也clone到虚拟机上，但是直接git clone我fork过后的仓库只能下载提交后原仓库更新前的代码，需要更新。</p>
-<p>首先检查upstream是否有对应的远程仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
-<p>如果只有两行origin，说明新设备上的仓库还没有与原本的仓库挂钩，需要添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add remote-original.git</span><br></pre></td></tr></table></figure>
-
-<p>之后再次检查upstream，出现upstream两行就可以了</p>
-<p>记得根据upstream的提示切换分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout upstream/main</span><br></pre></td></tr></table></figure>
-
-<p>否则就会依旧停留在旧的版本（在这里卡了很久以为弄错了）</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/3a3e4295/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1301,7 +1302,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
