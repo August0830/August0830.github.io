@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Map of the Soul</title>
+  <icon>https://august0830.github.io/icon.png</icon>
+  
+  <link href="https://august0830.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://august0830.github.io/"/>
+  <updated>2023-03-23T06:56:39.379Z</updated>
+  <id>https://august0830.github.io/</id>
+  
+  <author>
+    <name>Augustus</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始写简历</title>
+    <link href="https://august0830.github.io/post/cbfb1047/"/>
+    <id>https://august0830.github.io/post/cbfb1047/</id>
+    <published>2023-03-22T12:57:15.000Z</published>
+    <updated>2023-03-23T06:56:39.379Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这里的从零是字面意思，不管是刚开始找实习的同学，还是因为考研不幸落榜匆忙投入春招的同学，这篇文章是为之前完全没有写过简历的你准备的！&lt;/p&gt;
+&lt;p&gt;这一篇是对我实习经验分享中写简历部分的具体拓展，对其他内容感兴趣也可以&lt;a href=&quot;https://njucs.top/internet_company_pratice/&quot;&gt;移步&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;前期准备——拉清单&quot;&gt;&lt;a href=&quot;#前期准备——拉清单&quot; class=&quot;headerlink&quot; title=&quot;前期准备——拉清单&quot;&gt;&lt;/a&gt;前期准备——拉清单&lt;/h2&gt;&lt;p&gt;清单内容如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;所有专业相关课程&lt;ul&gt;
+&lt;li&gt;不管你认为有多水都要写出来&lt;/li&gt;
+&lt;li&gt;有项目/课设/代码的课程要把代码和实验报告找到；整理好上传到Github/博客上，之后根据简历排布情况置顶重要项目的仓库&lt;/li&gt;
+&lt;li&gt;如果没有代码等材料，尽量回忆课程主要内容，列出大纲&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;所有专业相关活动&lt;ul&gt;
+&lt;li&gt;大创、技术社团活动、数模比赛、美赛等&lt;/li&gt;
+&lt;li&gt;专业内容弱相关的活动可以记下来，只是写进简历的优先级比上述略低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;考过的证书&lt;ul&gt;
+&lt;li&gt;四六级成绩证明，雅思托福（如果有）&lt;/li&gt;
+&lt;li&gt;或者你认为能体现你能力的其他证书&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;开始动笔&quot;&gt;&lt;a href=&quot;#开始动笔&quot; class=&quot;headerlink&quot; title=&quot;开始动笔&quot;&gt;&lt;/a&gt;开始动笔&lt;/h2&gt;&lt;p&gt;先来看一份来自CMU的简历&lt;/p&gt;
+&lt;img src=&quot;/post/cbfb1047/image-20230322211658324.png&quot; class title=&quot;image-20230322211658324&quot;&gt;
+
+&lt;p&gt;是不是看起来很简洁很干货？我原来用的工具现在有人反映总是会泄露个人隐私，就不推荐了。可以使用Overleaf或者自行查找类似模板。&lt;/p&gt;
+&lt;p&gt;好的，现在让我们来写简历，争取像上述简历一样一页写完 (*^_^*)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Interview" scheme="https://august0830.github.io/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与Chatgpt二三事二三思</title>
+    <link href="https://august0830.github.io/post/6a1e4dd7/"/>
+    <id>https://august0830.github.io/post/6a1e4dd7/</id>
+    <published>2023-03-08T02:49:08.000Z</published>
+    <updated>2023-03-12T03:46:20.929Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Chatgpt会威胁人类吗&quot;&gt;&lt;a href=&quot;#Chatgpt会威胁人类吗&quot; class=&quot;headerlink&quot; title=&quot;Chatgpt会威胁人类吗&quot;&gt;&lt;/a&gt;Chatgpt会威胁人类吗&lt;/h2&gt;&lt;p&gt;大概会威胁到脑子空空的人。&lt;/p&gt;
+&lt;p&gt;最早注意到Chatgpt是在豆瓣看到一个测试它的&lt;a href=&quot;https://www.douban.com/group/topic/279710957/?_i=785876838f16251&quot;&gt;帖子&lt;/a&gt;。当时我对帖子里“AI具有鉴赏、哲学思考的可能性从而让人感到威胁”的观点有所不同意。在我的一番“抬杠”下，我发现Chatgpt会从提问里学习提问者的话术再生成回答（也许是In-context learning的一种表现？），因此提问者实际上是被自己的才华惊讶而非Chatgpt。而且仔细推敲，Chatgpt的答案实际上欠缺逻辑，也欠缺事实，信息量有限。&lt;/p&gt;
+&lt;p&gt;因此，我当时对Chatgpt的判断是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一只人类友好的学舌鹦鹉，在处理文书、工作邮件等有模版需要填内容的文件表现优异&lt;/li&gt;
+&lt;li&gt;只靠Chatgpt，是没有逻辑和信息量的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;人一直认为创造力是人的独有，所以人们能用Chatgpt创作小说的时候，不免又有惊恐的声音出现。但是Chatgpt更像是一个初步的索引。比如让写小说大纲，它能洋洋洒洒写出一篇。然而创作大纲本身有规律可循，网上也有不少教程总结过。Chatgpt学习了这部分语料而人没有学习就会让人觉得不明觉厉。但是对于精于创作的人（或者比较挑剔的人）来说，大纲就只是大纲，缺乏更多细节。&lt;/p&gt;
+&lt;p&gt;综上，我认为该感到恐慌的人，是所书写的文字材料本身就是套话空话，信息量少的类型。还有一群人，或许不恐慌，但是需要小心被新时代人工智能的洪水淹没的可能———没有办法判断别人话语里逻辑和事实的人，也许很容易被Chatgpt给忽悠了。&lt;/p&gt;
+&lt;p&gt;逻辑、理性和创造力，或许始终是人类的诺亚方舟。&lt;/p&gt;
+&lt;h2 id=&quot;Chatgpt是生产力新突破吗&quot;&gt;&lt;a href=&quot;#Chatgpt是生产力新突破吗&quot; class=&quot;headerlink&quot; title=&quot;Chatgpt是生产力新突破吗&quot;&gt;&lt;/a&gt;Chatgpt是生产力新突破吗&lt;/h2&gt;&lt;p&gt;可以是，取决于科技巨头和开发者们能多大程度弥补Chatgpt的缺陷并创造更多的可能性。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Chatgpt" scheme="https://august0830.github.io/tags/Chatgpt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>怨种23届本科生秋招实录</title>
+    <link href="https://august0830.github.io/post/d5aef8f3/"/>
+    <id>https://august0830.github.io/post/d5aef8f3/</id>
+    <published>2023-01-09T07:30:30.000Z</published>
+    <updated>2023-01-09T16:07:55.621Z</updated>
+    
+    
+    <summary type="html">&lt;h4 id=&quot;我的背景&quot;&gt;&lt;a href=&quot;#我的背景&quot; class=&quot;headerlink&quot; title=&quot;我的背景&quot;&gt;&lt;/a&gt;我的背景&lt;/h4&gt;&lt;p&gt;本科CS科班，无竞赛无比赛绩点在中游保研边缘，简历上主要是偏后端底层的课设，有一段4个月字节iOS客户端实习经历，秋招开始的时候在微软暑期实习，做的后端相关，时长3个月。&lt;/p&gt;
+&lt;h4 id=&quot;Offer情况和时间线&quot;&gt;&lt;a href=&quot;#Offer情况和时间线&quot; class=&quot;headerlink&quot; title=&quot;Offer情况和时间线&quot;&gt;&lt;/a&gt;Offer情况和时间线&lt;/h4&gt;&lt;p&gt;7月底暑期实习期间就开始同步秋招，在9月份初拿到了宁德时代的offer，因为薪资不满意+觉得秋招还有机会拒了，9月中旬拿到了Thoughtworks年包税前不到20w的offer，之后屡战屡挂，10月中下旬进了菊花厂大鱼池，微软暑期转正最终因为没有hc在11月被挂了，12月初侥幸被捞上岸拿到了阿里后端年包40w的offer&lt;/p&gt;
+&lt;p&gt;面试了大概30+场，笔试次数大概不相上下，面过的企业包括国内外科技大厂，国内外金融机构，新能源/汽车/传统行业也有涉及。&lt;/p&gt;
+&lt;p&gt;插播一个地狱笑话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我一位在大厂实习过的朋友有一次神神秘秘的说自己和HR聊天得到了一个行业内幕。让ta讲的时候，ta先问了我一个问题：假如你是一个小团队的leader，如果你想了解竞争对手类似部门的组织架构，你会怎么办呢？&lt;/p&gt;
+&lt;p&gt;我说，我会让HR或者猎头挖竞争对手同类部门的大头兵或是senior程序员的墙脚，面试的时候提问我想要知道的问题。我朋友接着问：可是你们部门没hc怎么办？我说那就在最后一轮或者HR面提高面试难度挂掉对方。我朋友大惊，说你怎么知道HR就是这样说的。&lt;/p&gt;
+&lt;p&gt;那会我还在秋招中挣扎，我只能苦笑说这都是我被疯狂捞起涮面试KPI养成的直觉。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今年情况并不乐观，失败是家常便饭，但是失败不意味着结束，每一次面试都能让我更熟悉招聘的套路，也更熟悉我的优势和缺点，让我明确我不能接受怎样的企业风格。只有不怕失败才能不断的去尝试，修正、确认自己的策略。&lt;/p&gt;
+&lt;h2 id=&quot;我稳住求职季心态苟到最后年包翻番的tips：&quot;&gt;&lt;a href=&quot;#我稳住求职季心态苟到最后年包翻番的tips：&quot; class=&quot;headerlink&quot; title=&quot;我稳住求职季心态苟到最后年包翻番的tips：&quot;&gt;&lt;/a&gt;我稳住求职季心态苟到最后年包翻番的tips：&lt;/h2&gt;&lt;h3 id=&quot;第一目标是不失业&quot;&gt;&lt;a href=&quot;#第一目标是不失业&quot; class=&quot;headerlink&quot; title=&quot;第一目标是不失业&quot;&gt;&lt;/a&gt;第一目标是不失业&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Interview" scheme="https://august0830.github.io/tags/Interview/"/>
+    
+    <category term="Career" scheme="https://august0830.github.io/tags/Career/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>碎片时间学英语-程序员的口语练习</title>
+    <link href="https://august0830.github.io/post/4250e502/"/>
+    <id>https://august0830.github.io/post/4250e502/</id>
+    <published>2022-12-03T13:40:16.000Z</published>
+    <updated>2023-01-09T15:54:58.622Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;我经历过的英语面试&quot;&gt;&lt;a href=&quot;#我经历过的英语面试&quot; class=&quot;headerlink&quot; title=&quot;我经历过的英语面试&quot;&gt;&lt;/a&gt;我经历过的英语面试&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;面试&lt;/th&gt;
+&lt;th&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;微软暑期实习二面&lt;/td&gt;
+&lt;td&gt;英文自我介绍 回答了面试官的追问&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Morgan Stanley 电话简历面&lt;/td&gt;
+&lt;td&gt;简单Java八股，通过本场面试&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Morgan Stanley 3轮技术面试&lt;/td&gt;
+&lt;td&gt;算法题+技术问题 磕磕绊绊解释思路&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TikTok Singapore 技术面+HR面&lt;/td&gt;
+&lt;td&gt;3场技术面中有一半时间用英文介绍项目，解算法题，回答追问，进行反问；HR面全程用英语回答问题表达诉求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;以上所有面试并除了Morgan Stanley因为技术问题没回答好挂了之外其他都通过了面试本身。英文的技术面试重点依旧是技术，但是经过我的练习，我至少可以做到尽可能减少表达不流畅带来的负面影响。&lt;/p&gt;
+&lt;p&gt;我训练的主要目标是提升表达的流畅度，对口语的口音没有太多要求。&lt;/p&gt;
+&lt;h2 id=&quot;碎片时间利用的方法&quot;&gt;&lt;a href=&quot;#碎片时间利用的方法&quot; class=&quot;headerlink&quot; title=&quot;碎片时间利用的方法&quot;&gt;&lt;/a&gt;碎片时间利用的方法&lt;/h2&gt;&lt;h3 id=&quot;英语刷算法题&quot;&gt;&lt;a href=&quot;#英语刷算法题&quot; class=&quot;headerlink&quot; title=&quot;英语刷算法题&quot;&gt;&lt;/a&gt;英语刷算法题&lt;/h3&gt;&lt;p&gt;英文面试中手撕算法题的关键依旧是讲清楚算法题，只不过多了一个附加条件——用英语。我在原来写自己的题解、梳理思路的基础上只是替换了语言。先保证自己能用中文清晰的写出算法题思路和需要注意的要点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;做英语算法题，看英语题解，用英文关键词搜索&lt;/strong&gt; 尽可能营造沉浸式环境，同时减少对英语的陌生感和恐惧感，避免看到英语算法题就头晕。还可以学习相关术语。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;大胆写 不需要在意语法 是Broken English也没关系&lt;/strong&gt; 如果一开始觉得直接说很困难可以先写出来，作为缓冲。写的时候可以不在意语法，不一定要是完整的句子，把要点写出来，再考虑连起来。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;模仿学习矫正是必须要下的功夫&lt;/strong&gt; 参考母语者是如何讲题的可以帮助自己修正讲题的方式。我参考的是&lt;a href=&quot;%5BNeetcode%5D(https://neetcode.io/)&quot;&gt;NeetCode&lt;/a&gt;。他擅长用样例讲解算法，并且用语非常基础，易于模仿。在学习模仿的过程中也可以积累常用的讲解算法题的表达。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Language Learning" scheme="https://august0830.github.io/categories/Language-Learning/"/>
+    
+    
+    <category term="Owl at Dusk" scheme="https://august0830.github.io/tags/Owl-at-Dusk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021春季学期小结</title>
+    <link href="https://august0830.github.io/post/bb9e0ca7/"/>
+    <id>https://august0830.github.io/post/bb9e0ca7/</id>
+    <published>2022-12-03T13:33:03.000Z</published>
+    <updated>2022-12-03T13:36:39.118Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;整理文件的时候发现于是发出来 其实是一个补档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;考完试了来回顾一下这一个学期我都在干什么。&lt;/p&gt;
+&lt;p&gt;考试周的时候感到非常空虚，总是沉迷于阈值很高的娱乐而无所事事，经过一段时间才能调整适应并没有ddl追着打的日子。但是转念一想，在一个学期被ddl追着打的日子里，我又有什么收获呢? 乍一想好像还真没有。&lt;/p&gt;
+&lt;p&gt;翻开我的日程本，刚开学的三月份过的还是相当忙碌的。寒假结束了STEP项目的申请（失败）和美赛，马不停蹄的又开始参加shopee的比赛以及准备gsoc。&lt;/p&gt;
+&lt;p&gt;shopee的比赛纯属被大佬带飞，我也认识到自己并不适合短时间突击某个技术模块，厚积薄发才是王道。（尤其是在美赛结果出来以后更是印证了这一点）。&lt;/p&gt;
+&lt;p&gt;gsoc虽然最终落选，但是在准备的过程中啃了一篇论文以及工程级别的源代码，认识到做研究和做工业的不同。做研究需要独创性，并且需要证明自己的方法有效，至于代码实现，只是作为证明的一部分。同时打破心理舒适区，拓展了一下自己的能力边界，看懂全英文的论文，搞明白代码的互相依赖关系并不是不可能的！&lt;/p&gt;
+&lt;p&gt;之后就是连着的面试。STEP的惨痛教训另外写过。面腾讯和微软的时候基础知识和算法不够扎实，不出意外的挂了。5月份学期快结束的时候，面字节因为对方不愿意收大二的也挂了。还有一个量化的岗位因为时间不合适我被我拒了面试机会。通过一连串的面试，虽然没有获得996的机会&lt;del&gt;（不是&lt;/del&gt;，但是多少了解了自己的不足以及接下来弥补的方向。同时在这期间，学会了如何大胆的请教前辈以及利用connection争取机会。&lt;/p&gt;
+&lt;p&gt;另外有一个NUS的summer camp出于财务问题被我残忍拒绝了。经此一役确认接下来留学的打算估计要推到自己攒够钱之后了。家里能够提供的支持是有限的，我也不忍心再让父母掏钱。&lt;/p&gt;
+&lt;p&gt;获得这样的结果我并不意外，并不能算是有顶级天赋又没有下定决心狠狠努力的我显然并不能苛求太多。从另一个角度说，失败是成功的逆位，通过排除自己目前不能做到什么，可以为接下来的假期敲响警钟。&lt;/p&gt;
+&lt;p&gt;课外活动的丰富尝（shi）试（bai）来源于上个学期无所事事的教训。但是在课外也一无所成的情况下，似乎乍一看是没有任何收获的。这可能是源于我高中一贯以来的思维：大家都做了就等于都没做。但是显然，在有限的时间内，课内的实践也应当成为宝贵的经历。至少在努力过后要有所提炼，有所感悟。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Owl at Dusk" scheme="https://august0830.github.io/tags/Owl-at-Dusk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>碎片时间学英语——日常阅读</title>
+    <link href="https://august0830.github.io/post/cda728a4/"/>
+    <id>https://august0830.github.io/post/cda728a4/</id>
+    <published>2022-11-21T14:35:29.000Z</published>
+    <updated>2023-01-09T15:56:09.441Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;em&gt;原文是我外刊时文共读的作业，但是我认为这门课让我学到的东西可以拓展写一下，于是改写成了这篇文章。关于碎片化学习英语，应该会写一个系列，覆盖近一年来关于听说读写这四个方面我的练习。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h2&gt;&lt;p&gt;过去的三年时间里，除了大一还有英语必修课使我能在繁忙的专业课程之余专门留出时间给英语学习，我总是很难在专业课夹击中找到如上大学之前那样集中学习英语的时间，连四六级英语考试都是匆忙上阵的。&lt;/p&gt;
+&lt;p&gt;系统有意识的学习英语多半是在课堂上：有专门主题的教材，有系统的笔记，有及时的作业和反馈。这并不是说我在平常不会接触、练习、使用英语；但是与课堂相比，总是缺少刻意练习和记录，因此我总是把系统、刻意练习的期待寄托在完整的、可以像课堂一样的时间段，寄希望于教材这样系统的学习材料。但是实际上，这是一种会阻碍我前进的“完美主义”。&lt;strong&gt;学习任何事情都不需要等到一切就绪&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;Learning-in-Pieces&quot;&gt;&lt;a href=&quot;#Learning-in-Pieces&quot; class=&quot;headerlink&quot; title=&quot;Learning in Pieces&quot;&gt;&lt;/a&gt;Learning in Pieces&lt;/h2&gt;&lt;p&gt;语言原本就是思想的载体，是交流的工具；我所学习、所练习的一切，原本就是为了更好的倾听他人的观点，表达我的想法。因此即便是对不同主题，基于不同体裁看似零散的练习，也总是有相通的地方；而能从多种多样的文章中找到共同的部分——比如国际顶尖媒体写作者都是怎样导入，怎样吸引读者注意，引起读者思考——也同样是一种能力。对于我这样有阅读英语原文——包括新闻和技术文章——的习惯的人来说，实际上每一篇文章都是一次学习的好机会。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;饭是一口口吃的，但是每一口吃什么，可以根据此时此地的情况定制。&lt;/strong&gt;读什么样的文章，读文章的时候注意什么，都可以通过不同的选择来激发自己的学习兴趣。比如对同一篇文章，可以着重积累词汇，也可以学习作者安排文章结构的方式，或是观察作者如何导入一个主题、事件、专业名词；或者对不同的文章，采取不同的策略。对于略读的文章，可以扫几眼概览架构；对于精读的文章，可以掏出小本本记单词分析句子。总之可以灵活安排，就可以一定程度上减少“等我有时间再做”这样的无效flag。&lt;/p&gt;
+&lt;p&gt;我时常会有阅读专业相关的英语博客的时候，这种时候除了注意专业知识，我还可以积累一些常用专业术语的表达，并且观察写作者是如何让文章保持简明易懂的。而对于商业、时事新闻，我可以多积累一些常用名词，以及一些通俗搭配，了解一些文化背景知识。&lt;/p&gt;
+&lt;h2 id=&quot;Make-some-Output&quot;&gt;&lt;a href=&quot;#Make-some-Output&quot; class=&quot;headerlink&quot; title=&quot;Make some Output&quot;&gt;&lt;/a&gt;Make some Output&lt;/h2&gt;&lt;p&gt;上外刊课程的时候，系统整理好的笔记和选择题答题记录是作业的一部分。不过这也倒逼了我输出笔记。输出倒逼输入的好处就不再赘述了，个人觉得还是非常大程度的避免我偷懒or忘记学到的东西了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Language Learning" scheme="https://august0830.github.io/categories/Language-Learning/"/>
+    
+    
+    <category term="Owl at Dusk" scheme="https://august0830.github.io/tags/Owl-at-Dusk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微软实习小结</title>
+    <link href="https://august0830.github.io/post/6f29a5ac/"/>
+    <id>https://august0830.github.io/post/6f29a5ac/</id>
+    <published>2022-11-16T16:10:42.000Z</published>
+    <updated>2022-11-16T16:15:48.513Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;实习经历&quot;&gt;&lt;a href=&quot;#实习经历&quot; class=&quot;headerlink&quot; title=&quot;实习经历&quot;&gt;&lt;/a&gt;实习经历&lt;/h2&gt;&lt;p&gt;实习开始前有一个有意思的小插曲，我申请过一次换组。微软暑期实习分组和项目本身是开盲盒，算法分到开发的也大有人在。可能是因为我上一段实习主要做客户端开发的工作，最开始发邮件给我分到的组主要是做前端的。于是我发邮件问组里有没有后端的项目能让我去做，对方虽然答复我说组里主要做前端没有后端项目，但是愿意帮我去向大老板申请能不能给我换组。于是后来我成功换到了我后来实习的组。我的manager也知道我想要做后端于是让我的mentor给我安排了相关的任务。&lt;/p&gt;
+&lt;p&gt;我得到的经验是还是需要尽力去争取，说不定就成了呢。这件事还给我的manager留下了我”明确知道自己喜欢什么并且勇于争取“的印象。算是一种肯定（？）&lt;/p&gt;
+&lt;p&gt;我们组是一个新组，文档有，但是要么基于其他组，要么不够完善，所以基本只能看个大概有所了解。更直接的方式是问mentor和同事们，比如我在第一天参加站会的时候就请大家介绍了一下组里在做的产品，有了个大概的认识。可以说作为新人，我是在和大家一起成长的。但好在同事之间非常欢迎互助，不止一个不是我mentor的同事鼓励我多多提问。&lt;/p&gt;
+&lt;p&gt;对于有点自闭社恐的人来说，还有一个了解组里技术背景的方式是站会。一个能对新人暴露足够多信息的站会在我看来需要包括以下要素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个人需要提到自己的block和进度，详细到技术名词&lt;/li&gt;
+&lt;li&gt;谈到自己的任务的时候会提及上下文，即任务的上下游部门是哪些，采用了什么技术，达成什么目标，正在与谁协作&lt;/li&gt;
+&lt;li&gt;提到的技术工具 组里有文档或者群聊记录有提及&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我重构信息的方式是，先不求甚解，尝试通过大家讨论block的时候的信息在脑子里画一个依赖图，对于能查到文档的或我自己的项目也用到的技术，去看看文档；听到新的技术名词的时候问问自己，猜想这是用来解决什么问题的，必要的时候直接问。经过大概两周的时间，我就能描述出组里做什么，每个同事做什么模块。这对定向求助以及理解自己在组里的位置非常有帮助。&lt;/p&gt;
+&lt;p&gt;组里主要是基于Scrum流程来安排工作的。除了每天的站会之外。每周会有一些固定会议，大家一起讨论当前遇到的问题，基于Azure DevOps看板盘点当前大家的任务进度并分配新的任务；还会安排专门的knowledge sharing和happy hour供大家交流学习和团建。&lt;/p&gt;
+&lt;p&gt;和学校里非常不同，工作当中沟通讨论的时间和写代码的时间可以说是对半。写代码的时候为了写代码而准备的时间有时候又比写代码本身要长。所以，写代码很重要，但是不是工作的全部。&lt;/p&gt;
+&lt;h2 id=&quot;个人成长&quot;&gt;&lt;a href=&quot;#个人成长&quot; class=&quot;headerlink&quot; title=&quot;个人成长&quot;&gt;&lt;/a&gt;个人成长&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Career" scheme="https://august0830.github.io/tags/Career/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AW10-Final-Full-Reactive-MicroPos</title>
+    <link href="https://august0830.github.io/post/d29cc919/"/>
+    <id>https://august0830.github.io/post/d29cc919/</id>
+    <published>2022-07-05T01:17:30.000Z</published>
+    <updated>2022-08-02T00:54:23.717Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Not-Finished-Yet-in-Previous-AW&quot;&gt;&lt;a href=&quot;#Not-Finished-Yet-in-Previous-AW&quot; class=&quot;headerlink&quot; title=&quot;Not Finished Yet in Previous AW&quot;&gt;&lt;/a&gt;Not Finished Yet in Previous AW&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;choose product and checkout; use message&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;big collection of goods: extract and save in the repos——patch &lt;a href=&quot;https://github.com/sawork-2022/aw06-August0830&quot;&gt;aw06&lt;/a&gt; products use h2db? 修改pos-product&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;test case &lt;a href=&quot;https://github.com/sa-spring/spring-webflux&quot;&gt;sa-spring/spring-webflux&lt;/a&gt;测试用例可以写成mvn项目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;记得恢复各地的eureka enable 其中cart需要在serviceimpl里恢复loadbalance yml文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cart传输的数据需要修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Guideline-to-my-Micropos&quot;&gt;&lt;a href=&quot;#Guideline-to-my-Micropos&quot; class=&quot;headerlink&quot; title=&quot;Guideline to my Micropos&quot;&gt;&lt;/a&gt;Guideline to my Micropos&lt;/h2&gt;&lt;p&gt;启动gateway 可以通过&lt;a href=&quot;http://localhost:2222/%E6%9D%A5%E8%AE%BF%E9%97%AEMicropos%EF%BC%8C%E5%85%B6%E4%B8%AD%E5%90%8E%E7%BC%80%E6%B7%BB%E5%8A%A0product%EF%BC%8Ccarts%EF%BC%8Corder%EF%BC%8Cdelivery%E8%AE%BF%E9%97%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%8D%E5%8A%A1%E3%80%82%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%AF%B9%E5%90%84%E8%87%AA%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%8D%95%E7%8B%AC%E8%B0%83%E8%AF%95&quot;&gt;http://localhost:2222/来访问Micropos，其中后缀添加product，carts，order，delivery访问对应的服务。也可以对各自的服务单独调试&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Obstacles&quot;&gt;&lt;a href=&quot;#Obstacles&quot; class=&quot;headerlink&quot; title=&quot;Obstacles&quot;&gt;&lt;/a&gt;Obstacles&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;迁移到windows下环境后delivery启动失败出现&lt;a href=&quot;https://stackoverflow.com/questions/65164809/error-creating-bean-with-name-org-springframework-cloud-netflix-eureka-server-e&quot;&gt;Unsatisfied dependency expressed through field ‘eurekaServerBootstrap’&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;类似问题 carts启动失败：&lt;a href=&quot;https://stackoverflow.com/questions/46878649/maven-compilation-issue-with-java-9&quot;&gt;查询后添加&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;I got the same error on java 11. Adding &lt;a href=&quot;https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/2.2.11&quot;&gt;jaxb api&lt;/a&gt; dependency to the pom solved my issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AW09-Reactive Version</title>
+    <link href="https://august0830.github.io/post/f51e3ca2/"/>
+    <id>https://august0830.github.io/post/f51e3ca2/</id>
+    <published>2022-06-30T01:27:23.000Z</published>
+    <updated>2022-08-02T00:56:48.130Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/sa-spring/employee-reactive&quot;&gt;sa-spring/employee-reactive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;针对delivery系统先尝试&lt;/p&gt;
+&lt;p&gt;EmployeeController 负责处理网页请求，返回的是用Mono或者Flux包装的数据结构&lt;/p&gt;
+&lt;p&gt;webclient 不管处理怎样的请求 都会显示取两个请求来处理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EmployeeRepository/Employee 基础设施 &lt;ul&gt;
+&lt;li&gt;repository是内存中 可以模仿之前某次作业里的持久化 或者改进时再做&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Simple version： 发送一个请求立刻传送 模拟高占时的计算任务&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;OrderInfo（需要添加买家名字和地址 order调整时在做，暂定是）应该在order中 迁移；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stirng id    &lt;/li&gt;
+&lt;li&gt;Items 信息（联调实现） &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DeliveryInfo pos-api 生成随机时长 显示在路上（log）最后告知已经送达 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String 信息&lt;/li&gt;
+&lt;li&gt;是否已经送达（？）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;rabbitmq 配置&lt;/p&gt;
+&lt;p&gt;stream来发送 在yml里配置 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;order创建好DeliveryDto再发送 才能用mapper 在order中订阅&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可以用web client来发送请求&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AW08 Spring Integration</title>
+    <link href="https://august0830.github.io/post/3da399b2/"/>
+    <id>https://august0830.github.io/post/3da399b2/</id>
+    <published>2022-05-31T00:32:44.000Z</published>
+    <updated>2022-08-02T00:54:52.611Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;delivery变成integration&lt;/p&gt;
+&lt;p&gt;大致思路：&lt;/p&gt;
+&lt;p&gt;aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置）&lt;/p&gt;
+&lt;p&gt;pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收&lt;/p&gt;
+&lt;p&gt;pos-delivery 保持不变&lt;/p&gt;
+&lt;h2 id=&quot;Tech-Solution&quot;&gt;&lt;a href=&quot;#Tech-Solution&quot; class=&quot;headerlink&quot; title=&quot;Tech Solution&quot;&gt;&lt;/a&gt;Tech Solution&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;pos-order&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;替换成改写demo中的inbound/outbound&lt;/p&gt;
+&lt;p&gt;inboud：处理发送来的post请求，提取string信息，调用placeOrder函数进行中间处理转换&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;inboundGateway(uri)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.requestMapping(r -&amp;gt; r.methods(Https.POST)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.consumes(&amp;quot;text/plain&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.&amp;lt;String&amp;gt;handle((s)-&amp;gt; return placeOrder(s))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.requestPayloadType(String.class)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.get();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>保研就业分享</title>
+    <link href="https://august0830.github.io/post/e7143260/"/>
+    <id>https://august0830.github.io/post/e7143260/</id>
+    <published>2022-05-26T08:30:50.000Z</published>
+    <updated>2022-08-02T01:07:48.053Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;就业分享&quot;&gt;&lt;a href=&quot;#就业分享&quot; class=&quot;headerlink&quot; title=&quot;就业分享&quot;&gt;&lt;/a&gt;就业分享&lt;/h2&gt;&lt;p&gt;认识自己 再去考虑工作的去向&lt;/p&gt;
+&lt;p&gt;想是没有用的 去尝试才会知道&lt;/p&gt;
+&lt;p&gt;大学期间 转型是代价相对小的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/e7143260/image-20220526164234394-16594014462471.png&quot; alt=&quot;image-20220526164234394&quot;&gt;&lt;/p&gt;
+&lt;p&gt;但是需要有一个标准&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/e7143260/image-20220526164413972.png&quot; alt=&quot;image-20220526164413972&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/e7143260/image-20220526164744117-16535548658031.png&quot; alt=&quot;image-20220526164744117&quot;&gt;&lt;/p&gt;
+&lt;p&gt;技巧+实力 对问题有思考&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/e7143260/image-20220526164841788-16535549237082.png&quot; alt=&quot;image-20220526164841788&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJU" scheme="https://august0830.github.io/tags/NJU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AW07-Event Driven Architecture</title>
+    <link href="https://august0830.github.io/post/8f0f1e10/"/>
+    <id>https://august0830.github.io/post/8f0f1e10/</id>
+    <published>2022-05-14T07:18:13.000Z</published>
+    <updated>2023-01-09T15:51:53.751Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-cloud-stream&quot;&gt;https://spring.io/projects/spring-cloud-stream&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sa-spring/stream-loan&quot;&gt;https://github.com/sa-spring/stream-loan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/&quot;&gt;https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;调研&quot;&gt;&lt;a href=&quot;#调研&quot; class=&quot;headerlink&quot; title=&quot;调研&quot;&gt;&lt;/a&gt;调研&lt;/h1&gt;&lt;h3 id=&quot;开发&quot;&gt;&lt;a href=&quot;#开发&quot; class=&quot;headerlink&quot; title=&quot;开发&quot;&gt;&lt;/a&gt;开发&lt;/h3&gt;&lt;p&gt;添加orderService，配置好事件驱动&lt;/p&gt;
+&lt;p&gt;source/发送者用的是supplier，连续的发送事件，但是我的期望设计是由特定事件驱动，需要用到streamBridge.&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-stream/blob/main/samples/confluent-schema-registry-integration/confluent-schema-registry-integration-producer1/src/main/java/sample/producer1/ConfluentAvroProducer1Application.java&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;处理者也可以返回消息，需要使用consumer&lt;a href=&quot;https://github.com/sa-spring/stream-loan/blob/main/loan-check/src/main/java/com/example/loan/check/LoanChecker.java&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;测试&lt;/p&gt;
+&lt;p&gt;先测试事件驱动架构，在自动化生成请求的情况下；&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+    <category term="Software Archetecture" scheme="https://august0830.github.io/tags/Software-Archetecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字节iOS实习小结</title>
+    <link href="https://august0830.github.io/post/67d81b79/"/>
+    <id>https://august0830.github.io/post/67d81b79/</id>
+    <published>2022-05-13T09:15:03.000Z</published>
+    <updated>2022-08-02T00:44:48.471Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;20220105-20220513 字节 iOS岗位实习&lt;/p&gt;
+&lt;p&gt;借用KISS框架做一个简单小结&lt;/p&gt;
+&lt;h2 id=&quot;Keep-需要保持的&quot;&gt;&lt;a href=&quot;#Keep-需要保持的&quot; class=&quot;headerlink&quot; title=&quot;Keep-需要保持的&quot;&gt;&lt;/a&gt;Keep-需要保持的&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;相信自己有解决问题的能力，遇到技术/业务上不懂的地方先尝试自己弄懂；&lt;/li&gt;
+&lt;li&gt;学会提问，提问的时候介绍清楚背景和自己目前所做的努力；&lt;/li&gt;
+&lt;li&gt;分隔开工作学习生活，保持完全投入和完全抽离。在工作时间段只想工作中的事情，其他时间段保存精力或者专心处理其他，忙碌的时候这一点尤为重要，可以减少不必要的内耗；&lt;/li&gt;
+&lt;li&gt;留意工作中开发和学校中项目的不同，多反思多学习；&lt;/li&gt;
+&lt;li&gt;从要跳槽/写简历的角度看待自己的工作；&lt;/li&gt;
+&lt;li&gt;写代码的时候保持记录，写好文档；根据文档做代码收敛和优化；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Improvement-需要改进的&quot;&gt;&lt;a href=&quot;#Improvement-需要改进的&quot; class=&quot;headerlink&quot; title=&quot;Improvement-需要改进的&quot;&gt;&lt;/a&gt;Improvement-需要改进的&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;写代码尽可能遵照调研-技术方案-开发-自检-代码说明的流程，让代码思路设计更加完备，简洁，符合规范；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;读原有代码的时候理解逻辑，做到和自己需求相关的闭包内容都了解清楚；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;沟通！沟通！沟通！无论是业务需求、技术问题还是代码规范，自己有了思路以后不要埋头苦干，多向mentor以及对接的同学进行确认；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Start-需要开始的&quot;&gt;&lt;a href=&quot;#Start-需要开始的&quot; class=&quot;headerlink&quot; title=&quot;Start-需要开始的&quot;&gt;&lt;/a&gt;Start-需要开始的&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;工作之余借当前项目进行技术钻研，多读代码&lt;/li&gt;
+&lt;li&gt;在调研和写tech solution的阶段多咨询mentor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Stop-需要停止的&quot;&gt;&lt;a href=&quot;#Stop-需要停止的&quot; class=&quot;headerlink&quot; title=&quot;Stop-需要停止的&quot;&gt;&lt;/a&gt;Stop-需要停止的&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;停止假设对接人是完美的，停止“非我职责”的想法，遇到问题多问多push&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Career" scheme="https://august0830.github.io/tags/Career/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Batch-AW06</title>
+    <link href="https://august0830.github.io/post/27c8219b/"/>
+    <id>https://august0830.github.io/post/27c8219b/</id>
+    <published>2022-04-30T02:43:25.000Z</published>
+    <updated>2022-05-05T15:11:16.860Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Task-to-do&quot;&gt;&lt;a href=&quot;#Task-to-do&quot; class=&quot;headerlink&quot; title=&quot;Task to do&quot;&gt;&lt;/a&gt;Task to do&lt;/h2&gt;&lt;p&gt;读样例代码+看课程其他讲解样例视频&lt;/p&gt;
+&lt;p&gt;作业思路： 把aw04中的product来源换成batch任务写入的数据库&lt;/p&gt;
+&lt;p&gt;aw04的数据结构可能需要重构 如product&lt;/p&gt;
+&lt;p&gt;More： Faster！——Parallel！&lt;/p&gt;
+&lt;h2 id=&quot;Read-Example-Code&quot;&gt;&lt;a href=&quot;#Read-Example-Code&quot; class=&quot;headerlink&quot; title=&quot;Read Example Code&quot;&gt;&lt;/a&gt;Read Example Code&lt;/h2&gt;&lt;h3 id=&quot;Service——batch流程工作流程用到的基本服务&quot;&gt;&lt;a href=&quot;#Service——batch流程工作流程用到的基本服务&quot; class=&quot;headerlink&quot; title=&quot;Service——batch流程工作流程用到的基本服务&quot;&gt;&lt;/a&gt;Service——batch流程工作流程用到的基本服务&lt;/h3&gt;&lt;p&gt;ItemReader，ItemProcessor，ItemWriter是模板，有类型参数可供自定义，可以通过重载自定义前后预处理的流程&lt;/p&gt;
+&lt;h4 id=&quot;JsonFilerReader&quot;&gt;&lt;a href=&quot;#JsonFilerReader&quot; class=&quot;headerlink&quot; title=&quot;JsonFilerReader&quot;&gt;&lt;/a&gt;JsonFilerReader&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://fasterxml.github.io/jackson-databind/javadoc/2.7/com/fasterxml/jackson/databind/ObjectMapper.html&quot;&gt;ObjectMapper&lt;/a&gt;：json和Plain Old Java Object互相转换&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://fasterxml.github.io/jackson-databind/javadoc/2.8/com/fasterxml/jackson/databind/JsonNode.html&quot;&gt;JsonNode&lt;/a&gt;: json的数据被组织成树状，树的节点，样例中实现的ItemReader类型参数是JsonNode&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NJUCS 各研究组宣讲</title>
+    <link href="https://august0830.github.io/post/89396cda/"/>
+    <id>https://august0830.github.io/post/89396cda/</id>
+    <published>2022-04-18T09:47:36.000Z</published>
+    <updated>2022-05-26T08:29:58.871Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;BigAI&quot;&gt;&lt;a href=&quot;#BigAI&quot; class=&quot;headerlink&quot; title=&quot;BigAI&quot;&gt;&lt;/a&gt;BigAI&lt;/h2&gt;&lt;p&gt;邮件: &lt;a href=&quot;mailto:&amp;#108;&amp;#x69;&amp;#x77;&amp;#117;&amp;#106;&amp;#117;&amp;#110;&amp;#64;&amp;#x6e;&amp;#106;&amp;#117;&amp;#x2e;&amp;#x65;&amp;#x64;&amp;#117;&amp;#x2e;&amp;#99;&amp;#110;&quot;&gt;&amp;#108;&amp;#x69;&amp;#x77;&amp;#117;&amp;#106;&amp;#117;&amp;#110;&amp;#64;&amp;#x6e;&amp;#106;&amp;#117;&amp;#x2e;&amp;#x65;&amp;#x64;&amp;#117;&amp;#x2e;&amp;#99;&amp;#110;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主页: &lt;a href=&quot;https://cs.nju.edu.cn/lwj&quot;&gt;https://cs.nju.edu.cn/lwj&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;大数据机器学习 机器学习算法：存储、计算、通信&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;哈希学习&lt;ul&gt;
+&lt;li&gt;哈希函数很关键 哈希值应当保留样本是否相似的特征&lt;/li&gt;
+&lt;li&gt;实际应用: 行人重识别，自动问答，视频查重&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;并行与分布式随机学习&lt;ul&gt;
+&lt;li&gt;单机器：并行；多机器：分布式&lt;/li&gt;
+&lt;li&gt;交互协同的开销有时比计算开销更大，是加速的代价&lt;/li&gt;
+&lt;li&gt;分布式机器学习：数据不出本地（保护隐私等原因），实现可信机器学习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;大数据机器学习平台LIBBLE&lt;ul&gt;
+&lt;li&gt;机器学习的底层数据平台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;应用：&lt;/p&gt;
+&lt;p&gt;智慧医疗&lt;/p&gt;
+&lt;h2 id=&quot;ICS-基础研究和系统工程中心&quot;&gt;&lt;a href=&quot;#ICS-基础研究和系统工程中心&quot; class=&quot;headerlink&quot; title=&quot;ICS - 基础研究和系统工程中心&quot;&gt;&lt;/a&gt;ICS - 基础研究和系统工程中心&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://cs.nju.edu.cn/ics&quot;&gt;http://cs.nju.edu.cn/ics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;判断程序的正误？如何根据行为习惯进行推断？高效的多心（并发）问题？&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RESTful microPos-AW05</title>
+    <link href="https://august0830.github.io/post/c689f23c/"/>
+    <id>https://august0830.github.io/post/c689f23c/</id>
+    <published>2022-04-13T12:13:21.000Z</published>
+    <updated>2022-04-27T16:16:30.434Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/sawork-2022/aw05-August0830&quot;&gt;作业项目地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Question：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;断路器：在gateway实现，在&lt;a href=&quot;https://github.com/sa-spring/spring-circuitbreaker/blob/master/src/main/java/com/example/circuitbreaker/AlbumService.java&quot;&gt;读取product列表&lt;/a&gt;的时候实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;REST&quot;&gt;&lt;a href=&quot;#REST&quot; class=&quot;headerlink&quot; title=&quot;REST&quot;&gt;&lt;/a&gt;REST&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://spring.io/guides/tutorials/rest/&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1GE411G7hu?p=4&quot;&gt;课程对应样例讲解：spring-projects/spring-hateoas-examples&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;REST目标之一是解决接口不规范的问题；ResponseEntity RESTful架构下返回的标准的数据接口，可以被网页解析，并且传入http状态代码。&lt;/p&gt;
+&lt;p&gt;annotation类型与get/post等http方法对应&lt;/p&gt;
+&lt;p&gt;配合open-api：规定程序接口 &lt;/p&gt;
+&lt;h3 id=&quot;DTO&quot;&gt;&lt;a href=&quot;#DTO&quot; class=&quot;headerlink&quot; title=&quot;DTO&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Data_transfer_object&quot;&gt;DTO&lt;/a&gt;&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop实验一记录</title>
+    <link href="https://august0830.github.io/post/f141b6ad/"/>
+    <id>https://august0830.github.io/post/f141b6ad/</id>
+    <published>2022-04-03T07:03:06.000Z</published>
+    <updated>2022-06-06T11:39:23.708Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;虚拟机环境准备&quot;&gt;&lt;a href=&quot;#虚拟机环境准备&quot; class=&quot;headerlink&quot; title=&quot;虚拟机环境准备&quot;&gt;&lt;/a&gt;虚拟机环境准备&lt;/h2&gt;&lt;p&gt;账户设置：采用虚拟机原有设置 没有新建账号&lt;/p&gt;
+&lt;p&gt;环境变量设置&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi ~/.bash_profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;:&lt;span class=&quot;variable&quot;&gt;$HOME&lt;/span&gt;/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java &lt;span class=&quot;comment&quot;&gt;#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; PATH=&lt;span class=&quot;variable&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class=&quot;variable&quot;&gt;$HADOOP_HOME&lt;/span&gt;/bin:&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; CLASSPATH=&lt;span class=&quot;variable&quot;&gt;$JAVA_HOME&lt;/span&gt;/lib:.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;下载安装ssh 确认启动&lt;/p&gt;
+&lt;p&gt;（由于和另一个实验环境冲突，尝试了修改，暂时未测试）&lt;/p&gt;
+&lt;h2 id=&quot;Hadoop配置&quot;&gt;&lt;a href=&quot;#Hadoop配置&quot; class=&quot;headerlink&quot; title=&quot;Hadoop配置&quot;&gt;&lt;/a&gt;Hadoop配置&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://hadoop.apache.org/docs/r2.7.2/index.html&quot;&gt;Apache Hadoop官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.w3cschool.cn/hadoop/hadoop_command_reference.html&quot;&gt;账户配置和基础指令指导&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;填写配置文件&quot;&gt;&lt;a href=&quot;#填写配置文件&quot; class=&quot;headerlink&quot; title=&quot;填写配置文件&quot;&gt;&lt;/a&gt;填写配置文件&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Software-Architecture docker踩坑小结+AW04记录</title>
+    <link href="https://august0830.github.io/post/961e2082/"/>
+    <id>https://august0830.github.io/post/961e2082/</id>
+    <published>2022-03-27T07:26:37.000Z</published>
+    <updated>2022-04-04T15:54:42.250Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;gcr-io-镜像因为网络原因拉取失败&quot;&gt;&lt;a href=&quot;#gcr-io-镜像因为网络原因拉取失败&quot; class=&quot;headerlink&quot; title=&quot;gcr.io 镜像因为网络原因拉取失败&quot;&gt;&lt;/a&gt;gcr.io 镜像因为网络原因拉取失败&lt;/h2&gt;&lt;p&gt;尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载&lt;/p&gt;
+&lt;h3 id=&quot;虚拟机使用宿主机的梯子环境&quot;&gt;&lt;a href=&quot;#虚拟机使用宿主机的梯子环境&quot; class=&quot;headerlink&quot; title=&quot;虚拟机使用宿主机的梯子环境&quot;&gt;&lt;/a&gt;虚拟机使用宿主机的梯子环境&lt;/h3&gt;&lt;p&gt;vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 &lt;strong&gt;网络地址转换（NAT）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在终端用 &lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip route show&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;查看虚拟机所占用的ip地址，选择default的记录下来。&lt;/p&gt;
+&lt;p&gt;在虚拟机设置中找到Network-NeworkProxy 选择manual&lt;/p&gt;
+&lt;p&gt;所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）&lt;/p&gt;
+&lt;p&gt;在浏览器中访问google/youtube，成功即可&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暑期实习面经</title>
+    <link href="https://august0830.github.io/post/155d23b4/"/>
+    <id>https://august0830.github.io/post/155d23b4/</id>
+    <published>2022-02-08T12:55:48.000Z</published>
+    <updated>2022-02-08T14:09:14.263Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;谷歌&quot;&gt;&lt;a href=&quot;#谷歌&quot; class=&quot;headerlink&quot; title=&quot;谷歌&quot;&gt;&lt;/a&gt;谷歌&lt;/h1&gt;&lt;h2 id=&quot;投递&quot;&gt;&lt;a href=&quot;#投递&quot; class=&quot;headerlink&quot; title=&quot;投递&quot;&gt;&lt;/a&gt;投递&lt;/h2&gt;&lt;p&gt;同样是偶然在公众号看到。第一次用国内邮箱发送邮件被退回；但改用谷歌邮箱以后依旧没成功，最后请人内推。谷歌是滚动制，投递越早越好，然而正好与考试周冲突，可能投递完了只收到上海base的面试邮件。&lt;/p&gt;
+&lt;p&gt;面试用的自然语言（中英语）和计算机语言都可以在问卷中自选。&lt;/p&gt;
+&lt;h2 id=&quot;一面&quot;&gt;&lt;a href=&quot;#一面&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;给定开心数的定义：各个位上数字的平方之和计算得到新的数，一直计算下去如果能得到1就是开心数，如果进入循环，即有计算得出的数重复出现，则不是。判断一个数是否是开心数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;追问：（我使用的是Java，并且用哈希表来解决）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;为什么要使用hashset？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hashset插入和查询的复杂度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;哈希表底层原理？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;（有点答不上来于是换了进阶算法） 给定一个10^6以内的数，返回有多少个小于给定数的开心数？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类似NP问题的思路（？） 被提示：有些数字进行一次各个位数字平方和就可以得到1，有些需要两次，即第一次先得到到1只有一步开心数计算的数字，以此倒退。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;微软提前批&quot;&gt;&lt;a href=&quot;#微软提前批&quot; class=&quot;headerlink&quot; title=&quot;微软提前批&quot;&gt;&lt;/a&gt;微软提前批&lt;/h1&gt;&lt;h2 id=&quot;投递时间&quot;&gt;&lt;a href=&quot;#投递时间&quot; class=&quot;headerlink&quot; title=&quot;投递时间&quot;&gt;&lt;/a&gt;投递时间&lt;/h2&gt;&lt;p&gt;12月底偶然发现公众号更新了提前批相关信息，苦于当时在考试，在跨年夜当天晚上投递了，在1月3号投递ddl当天收到了意向征集的表格。&lt;/p&gt;
+&lt;h2 id=&quot;一面-1&quot;&gt;&lt;a href=&quot;#一面-1&quot; class=&quot;headerlink&quot; title=&quot;一面&quot;&gt;&lt;/a&gt;一面&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Interview" scheme="https://august0830.github.io/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Java实现简单Reactor</title>
+    <link href="https://august0830.github.io/post/b5bd3a01/"/>
+    <id>https://august0830.github.io/post/b5bd3a01/</id>
+    <published>2021-12-11T05:39:07.000Z</published>
+    <updated>2021-12-11T06:11:13.639Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h2&gt;&lt;p&gt;Reactor最早是在&lt;a href=&quot;http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf&quot;&gt;这篇论文&lt;/a&gt;中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的&lt;a href=&quot;https://github.com/caochun/java-server/tree/main/src/main/java&quot;&gt;参考实现&lt;/a&gt;和论文中介绍的组件的对应关系。&lt;/p&gt;
+&lt;p&gt;一张解释了各个组件之间关系的图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png&quot; alt=&quot;image-20211211134127551&quot;&gt;&lt;/p&gt;
+&lt;p&gt;InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。&lt;/p&gt;
+&lt;p&gt;EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。&lt;/p&gt;
+&lt;p&gt;在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。&lt;/p&gt;
+&lt;h2 id=&quot;Reactor-Basic&quot;&gt;&lt;a href=&quot;#Reactor-Basic&quot; class=&quot;headerlink&quot; title=&quot;Reactor Basic&quot;&gt;&lt;/a&gt;Reactor Basic&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png&quot; alt=&quot;image-20211211135057739&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Java" scheme="https://august0830.github.io/tags/Java/"/>
+    
+  </entry>
+  
+</feed>
