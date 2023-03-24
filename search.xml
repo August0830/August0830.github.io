@@ -1359,7 +1359,7 @@
   <entry>
     <title>NJUCS 各研究组宣讲</title>
     <url>/post/89396cda/</url>
-    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#x77;&#117;&#106;&#117;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#x64;&#117;&#x2e;&#99;&#110;">&#108;&#x69;&#x77;&#117;&#106;&#117;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#x64;&#117;&#x2e;&#99;&#110;</a></p>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#x77;&#x75;&#106;&#x75;&#110;&#x40;&#110;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#99;&#x6e;">&#108;&#x69;&#x77;&#x75;&#106;&#x75;&#110;&#x40;&#110;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#99;&#x6e;</a></p>
 <p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -2092,32 +2092,6 @@
       </tags>
   </entry>
   <entry>
-    <title>恢复特定文件到过去版本的解决办法</title>
-    <url>/post/ca390c6f/</url>
-    <content><![CDATA[<p>事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子</p>
-<p>首先是查询特定文件的git log记录</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> ./folder/filename</span><br></pre></td></tr></table></figure>
-
-
-
-<p>在windows的git bash中，是无法通过 <code>git reset --hard 版本哈希 filename </code> 来回退的</p>
-<p><a href="https://www.jianshu.com/p/caae5b928173">搜索</a>后发现应该用<code>checkout</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout 版本<span class="built_in">hash</span> filename</span><br></pre></td></tr></table></figure>
-
-<p>可以避免影响已经完成的作业</p>
-<p>但是这样是无法直接push的，因为有文件回退到了过去的版本。<a href="https://stackoverflow.com/questions/30471557/git-push-master-fatal-you-are-not-currently-on-a-branch/30471627">会出现 you are not currently on a branch</a></p>
-<p>可以通过 <code>git push origin HEAD:master --force</code> 来强制执行</p>
-<p>成功！</p>
-<p>Stackoverflow 好用！</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>怨种23届本科生秋招实录</title>
     <url>/post/d5aef8f3/</url>
     <content><![CDATA[<h4 id="我的背景"><a href="#我的背景" class="headerlink" title="我的背景"></a>我的背景</h4><p>本科CS科班，无竞赛无比赛绩点在中游保研边缘，简历上主要是偏后端底层的课设，有一段4个月字节iOS客户端实习经历，秋招开始的时候在微软暑期实习，做的后端相关，时长3个月。</p>
@@ -2197,6 +2171,32 @@
       <tags>
         <tag>Interview</tag>
         <tag>Career</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>恢复特定文件到过去版本的解决办法</title>
+    <url>/post/ca390c6f/</url>
+    <content><![CDATA[<p>事情的起因是提交java作业的时候，因为有一个模板文件被改动而无法merge。于是需要把这个文件还原到最初下载时的样子</p>
+<p>首先是查询特定文件的git log记录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> ./folder/filename</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在windows的git bash中，是无法通过 <code>git reset --hard 版本哈希 filename </code> 来回退的</p>
+<p><a href="https://www.jianshu.com/p/caae5b928173">搜索</a>后发现应该用<code>checkout</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout 版本<span class="built_in">hash</span> filename</span><br></pre></td></tr></table></figure>
+
+<p>可以避免影响已经完成的作业</p>
+<p>但是这样是无法直接push的，因为有文件回退到了过去的版本。<a href="https://stackoverflow.com/questions/30471557/git-push-master-fatal-you-are-not-currently-on-a-branch/30471627">会出现 you are not currently on a branch</a></p>
+<p>可以通过 <code>git push origin HEAD:master --force</code> 来强制执行</p>
+<p>成功！</p>
+<p>Stackoverflow 好用！</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
