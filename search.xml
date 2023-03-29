@@ -1359,7 +1359,7 @@
   <entry>
     <title>NJUCS 各研究组宣讲</title>
     <url>/post/89396cda/</url>
-    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#x77;&#x75;&#106;&#x75;&#110;&#x40;&#110;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#99;&#x6e;">&#108;&#x69;&#x77;&#x75;&#106;&#x75;&#110;&#x40;&#110;&#x6a;&#x75;&#46;&#101;&#x64;&#x75;&#46;&#99;&#x6e;</a></p>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#x77;&#x75;&#x6a;&#x75;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#x63;&#110;">&#108;&#x69;&#x77;&#x75;&#x6a;&#x75;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#x63;&#110;</a></p>
 <p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -1906,6 +1906,9 @@
       <categories>
         <category>Tech</category>
       </categories>
+      <tags>
+        <tag>Owl at Dusk</tag>
+      </tags>
   </entry>
   <entry>
     <title>基于Java实现简单Reactor</title>
