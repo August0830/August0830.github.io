@@ -6,7 +6,7 @@
   <link href="https://august0830.github.io/atom.xml" rel="self"/>
   
   <link href="https://august0830.github.io/"/>
-  <updated>2023-03-23T06:56:39.379Z</updated>
+  <updated>2023-04-22T14:02:55.491Z</updated>
   <id>https://august0830.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DP IS EASY —— 如何切入动态规划问题</title>
+    <link href="https://august0830.github.io/post/70b45bc3/"/>
+    <id>https://august0830.github.io/post/70b45bc3/</id>
+    <published>2023-04-22T13:57:41.000Z</published>
+    <updated>2023-04-22T14:02:55.491Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;是对&lt;a href=&quot;https://leetcode.com/problems/target-sum/solutions/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions&quot;&gt;DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions&lt;/a&gt;的翻译记录，原题是 &lt;a href=&quot;https://leetcode.cn/problems/target-sum/solution/DP-IS-EASY/?utm_source=LCUS&amp;utm_medium=ip_redirect&amp;utm_campaign=transfer2china&quot;&gt;Target Sum（目标和）&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;DP很容易！5步思考DP问题&quot;&gt;&lt;a href=&quot;#DP很容易！5步思考DP问题&quot; class=&quot;headerlink&quot; title=&quot;DP很容易！5步思考DP问题&quot;&gt;&lt;/a&gt;DP很容易！5步思考DP问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。&lt;/p&gt;
+&lt;h3 id=&quot;类别&quot;&gt;&lt;a href=&quot;#类别&quot; class=&quot;headerlink&quot; title=&quot;类别&quot;&gt;&lt;/a&gt;类别&lt;/h3&gt;&lt;p&gt;大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它允许我们将一个新问题转化成我们已知的问题。转化意味着使用框架，而不是将另一个问题的解决方法复制到当前问题中。你必须明白每个DP问题都是不同的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：在继续之前将此问题标识为以下类别之一。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0/1背包&lt;/li&gt;
+&lt;li&gt;无界背包&lt;/li&gt;
+&lt;li&gt;最短路径（例如：独特的路径I/II）&lt;/li&gt;
+&lt;li&gt;斐波那契数列（例如：房子小偷，跳跃游戏）&lt;/li&gt;
+&lt;li&gt;最长公共子串/子序列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：0/1背包&lt;/p&gt;
+&lt;p&gt;为什么是0/1背包？我们的“容量”是我们想达到的目标“S”。我们的“物品”是输入子集中的数字，物品的“重量”是数字本身的值。这个问题遵循0/1背包而不是无界背包，因为我们只能使用每个数字一次。&lt;/p&gt;
+&lt;p&gt;变化是什么？这个问题与标准背包问题的变化在于，我们必须将子集中的所有物品添加到我们的背包中。我们可以将问题重新构成为将当前数字的正值或负值添加到我们的背包中，以达到目标容量“S”。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Algo" scheme="https://august0830.github.io/tags/Algo/"/>
+    
+  </entry>
   
   <entry>
     <title>从零开始写简历</title>
@@ -661,32 +695,6 @@
     
     
     <category term="Interview" scheme="https://august0830.github.io/tags/Interview/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Java实现简单Reactor</title>
-    <link href="https://august0830.github.io/post/b5bd3a01/"/>
-    <id>https://august0830.github.io/post/b5bd3a01/</id>
-    <published>2021-12-11T05:39:07.000Z</published>
-    <updated>2021-12-11T06:11:13.639Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h2&gt;&lt;p&gt;Reactor最早是在&lt;a href=&quot;http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf&quot;&gt;这篇论文&lt;/a&gt;中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的&lt;a href=&quot;https://github.com/caochun/java-server/tree/main/src/main/java&quot;&gt;参考实现&lt;/a&gt;和论文中介绍的组件的对应关系。&lt;/p&gt;
-&lt;p&gt;一张解释了各个组件之间关系的图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211134127551.png&quot; alt=&quot;image-20211211134127551&quot;&gt;&lt;/p&gt;
-&lt;p&gt;InitiationDispatcher （以下简称ID）是事实上监听事件的组件，其中使用NIO的实现方式，因为实际上一个Reactor中ID尽可能的使用单线程的方式实现，如果轻易阻塞会极大影响效率。同时具有一张用于分发的EventHandler表，在事件注册的时候进行初始化。SynchronouseEventDemultiplexer是用于通知ID的组件。&lt;/p&gt;
-&lt;p&gt;EvenHandler和Handle实际上实现了“Dispatch”（分发）的功能，事件注册时需要在ID中注册。&lt;/p&gt;
-&lt;p&gt;在看懂Reactor的代码之前，需要理解网络通信，以及了解NIO的实现机制。&lt;/p&gt;
-&lt;h2 id=&quot;Reactor-Basic&quot;&gt;&lt;a href=&quot;#Reactor-Basic&quot; class=&quot;headerlink&quot; title=&quot;Reactor Basic&quot;&gt;&lt;/a&gt;Reactor Basic&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://gitee.com/mzl0830/pic-storage/raw/master/image-20211211135057739.png&quot; alt=&quot;image-20211211135057739&quot;&gt;&lt;/p&gt;
-&lt;p&gt;可以理解为Reactor统一处理请求，再将请求根据具体的任务分发到具体的acceptor，交给对应的处理函数执行（demultiplexing）代码对应single文件夹，其中包括了基础的组件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
-    
-    
-    <category term="Java" scheme="https://august0830.github.io/tags/Java/"/>
     
   </entry>
   

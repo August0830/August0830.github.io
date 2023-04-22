@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="BXdHtW-DrlxrxqqWU7NtzaDn_jm-z9A1Lv-D2aFOMxY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="是对DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions的翻译记录，原题是 Target Sum（目标和）  DP很容易！5步思考DP问题注意：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。 类别大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DP IS EASY —— 如何切入动态规划问题">
+<meta property="og:url" content="https://august0830.github.io/post/70b45bc3/index.html">
+<meta property="og:site_name" content="Map of Augustus&#39;s Soul">
+<meta property="og:description" content="是对DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions的翻译记录，原题是 Target Sum（目标和）  DP很容易！5步思考DP问题注意：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。 类别大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-04-22T13:57:41.000Z">
+<meta property="article:modified_time" content="2023-04-22T14:02:55.491Z">
+<meta property="article:author" content="Augustus">
+<meta property="article:tag" content="Algo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://august0830.github.io/post/70b45bc3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>DP IS EASY —— 如何切入动态规划问题 | Map of Augustus's Soul</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Map of Augustus's Soul" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Map of Augustus's Soul</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="Searching..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/70b45bc3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DP IS EASY —— 如何切入动态规划问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-22 21:57:41 / Modified: 22:02:55" itemprop="dateCreated datePublished" datetime="2023-04-22T21:57:41+08:00">2023-04-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/70b45bc3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/70b45bc3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>是对<a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode.com/problems/target-sum/solutions/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions">DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions</a>的翻译记录，原题是 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode.cn/problems/target-sum/solution/DP-IS-EASY/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">Target Sum（目标和）</a></p>
+</blockquote>
+<h2 id="DP很容易！5步思考DP问题"><a href="#DP很容易！5步思考DP问题" class="headerlink" title="DP很容易！5步思考DP问题"></a>DP很容易！5步思考DP问题</h2><p><strong>注意</strong>：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。</p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><p>大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它允许我们将一个新问题转化成我们已知的问题。转化意味着使用框架，而不是将另一个问题的解决方法复制到当前问题中。你必须明白每个DP问题都是不同的。</p>
+<p><strong>问题</strong>：在继续之前将此问题标识为以下类别之一。</p>
+<ul>
+<li>0/1背包</li>
+<li>无界背包</li>
+<li>最短路径（例如：独特的路径I/II）</li>
+<li>斐波那契数列（例如：房子小偷，跳跃游戏）</li>
+<li>最长公共子串/子序列</li>
+</ul>
+<p><strong>答案</strong>：0/1背包</p>
+<p>为什么是0/1背包？我们的“容量”是我们想达到的目标“S”。我们的“物品”是输入子集中的数字，物品的“重量”是数字本身的值。这个问题遵循0/1背包而不是无界背包，因为我们只能使用每个数字一次。</p>
+<p>变化是什么？这个问题与标准背包问题的变化在于，我们必须将子集中的所有物品添加到我们的背包中。我们可以将问题重新构成为将当前数字的正值或负值添加到我们的背包中，以达到目标容量“S”。</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>我们需要跟踪哪些变量才能达到最佳结果？这篇Quora文章很好地解释了状态，请参考这个链接（如果你感到困惑）：**<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming">www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming</a>**</p>
+<p><strong>问题</strong>：确定状态变量。</p>
+<p><em>提示</em>：作为一般规则，背包问题至少需要2个状态。</p>
+<p><strong>答案</strong>：索引与当前总和</p>
+<p><em>为什么是索引？</em></p>
+<p>索引代表我们正在考虑的输入子集的索引。这告诉我们哪些值我们已经考虑过，哪些值我们还没有考虑过，以及我们当前正在考虑的值。一般规则是，在几乎所有的动态规划问题中都需要索引状态，除了最短路径，它的状态是行和列而不是单个索引，但我们会在另一篇文章中介绍这个问题。</p>
+<p><em>为什么是当前总和？</em></p>
+<p>这个问题是问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。 Current Sum 为我们提供了迄今为止我们已处理的所有值的总和。 我们的答案围绕着 Current Sum 等于 Target。</p>
+<h3 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h3><p>动态规划就是做出最佳决策。 为了做出最佳决策，我们必须首先尝试所有决策。 MIT 关于动态规划的课程讲义（The MIT lecture on DP）（强烈推荐）将此称为猜测步骤。 我的大脑更擅长将此称为决策而不是猜测。 决策必须使我们更接近基本情况（Base Case），并引导我们找到我们想要回答的问题。 基本情况在第 4 步中涵盖，但实际上与决策步骤协同工作。</p>
+<p><strong>问题</strong>：在每次递归调用时我们必须做出什么决定？ <em>提示</em>：一般来说，背包问题需要 2 个决定。</p>
+<p><strong>答案</strong>：这个问题要求我们在输入子集中获取所有数，因此在每一步中我们都会向背包中添加一个数。 请记住，我们在第 2 步中声明“该问题询问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。” 决策包括：</p>
+<ul>
+<li>我们应该添加当前数字的正值吗</li>
+<li>我们应该添加当前数字负值吗</li>
+</ul>
+<p>请注意，背包问题通常不需要我们拿走所有物品，因此通常的背包决定是拿走物品或留下物品</p>
+<h3 id="基本情况（Base-Case）"><a href="#基本情况（Base-Case）" class="headerlink" title="基本情况（Base Case）"></a>基本情况（Base Case）</h3><p>基本情况需要与我们正在寻求的答案所需的条件直接相关。 这就是为什么我们的决策朝着我们的基本情况努力很重要，因为这意味着我们的决策正在朝着我们的答案努力。</p>
+<p>让我们重新审视我们的答案的条件：</p>
+<ul>
+<li>我们使用输入子集中的所有数字。</li>
+<li>所有数字的总和等于我们的目标“S”。</li>
+</ul>
+<p><strong>问题</strong>：确定基本案例。 <em>提示</em>：有 2 个基本案例。</p>
+<p><strong>答案</strong>：我们需要 2 个基本案例。 一种用于当前状态有效时，一种用于当前状态无效时。</p>
+<ul>
+<li>有效：索引超出范围且当前总和等于目标“S”</li>
+<li>无效：索引越界</li>
+</ul>
+<p><em>为什么索引越界？</em> </p>
+<p>我们答案的一个条件是我们使用输入子集中的每个项目。 当索引超出范围时，我们知道我们已经考虑了输入子集中的每个项目。</p>
+<p><em>为什么当前总和等于目标？</em> </p>
+<p>我们的答案的一个条件是在我们的输入子集中使用的数的正值或负值的总和等于目标总和“S”。</p>
+<p>如果我们已经考虑了输入子集中的所有数并且我们当前的总和等于我们的目标，那么我们已经成功地满足了我们答案要求的两个条件。</p>
+<p>另一方面，如果我们已经考虑了输入子集中的所有数，并且我们当前的总和不等于我们的目标，那么我们只满足了答案所要求的条件之一。说明无最终答案。</p>
+<h3 id="写代码吧"><a href="#写代码吧" class="headerlink" title="写代码吧"></a>写代码吧</h3><p>如果您已经考虑了所有步骤并理解了问题，那么编写实际解决方案的代码就很简单了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">     index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">     curr_sum = <span class="number">0</span></span><br><span class="line">     <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">     </span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line"> 	<span class="comment"># Base Cases</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">     </span><br><span class="line"> 	<span class="comment"># Decisions 决策</span></span><br><span class="line">     positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">     negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> positive + negative</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>一旦我们引入记忆化（memoization），我们将只解决每个子问题一次。 我们可以完全删除递归，并通过引入制表来避免开销和堆栈溢出的可能性。 重要的是要注意自上而下的递归和自下而上的制表方法执行完全相同的工作量。 唯一不同的是内存。 如果他们执行完全相同的工作量，转换只需要我们指定解决问题的顺序。 这篇文章现在真的很长，所以我不会在这里介绍这些步骤，可能会在以后的文章中介绍。</p>
+<p>使用记忆化的方案供参考</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">        index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        curr_sum = <span class="number">0</span></span><br><span class="line">        self.memo = &#123;&#125;</span><br><span class="line">        <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line">        <span class="keyword">if</span> (index, curr_sum) <span class="keyword">in</span> self.memo:</span><br><span class="line">            <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">        </span><br><span class="line">        positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">        negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">        </span><br><span class="line">        self.memo[(index, curr_sum)] = positive + negative</span><br><span class="line">        <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br></pre></td></tr></table></figure>
+
+<p>对您希望此类帖子在下一篇文章中遇到的 DP 问题发表评论，如果您觉得有帮助，请为该解决方案点赞。 我想把它推到首位，因为我真的厌倦了看到直接优化的表格解决方案，背后没有任何思考过程。</p>
+<p>DP IS EASY!</p>
+<p>谢谢。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algo/" rel="tag"># Algo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/cbfb1047/" rel="prev" title="从零开始写简历">
+      <i class="fa fa-chevron-left"></i> 从零开始写简历
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DP%E5%BE%88%E5%AE%B9%E6%98%93%EF%BC%815%E6%AD%A5%E6%80%9D%E8%80%83DP%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">DP很容易！5步思考DP问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81"><span class="nav-number">1.2.</span> <span class="nav-text">状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96"><span class="nav-number">1.3.</span> <span class="nav-text">决策</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5%EF%BC%88Base-Case%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">基本情况（Base Case）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E4%BB%A3%E7%A0%81%E5%90%A7"><span class="nav-number">1.5.</span> <span class="nav-text">写代码吧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">1.6.</span> <span class="nav-text">优化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Augustus" src="/images/mokku-blue.jpg">
+  <p class="site-author-name" itemprop="name">Augustus</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/August0830" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;August0830" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mzl0830@sina.com" title="E-Mail → mailto:mzl0830@sina.com" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Augustus</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">116k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:50</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'JT9nm32Rf5wbsCR5OTAwNiKt-gzGzoHsz',
+      appKey     : 'pUI49PHMERibkyNXiuNT2IiM',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

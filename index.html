@@ -180,6 +180,124 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/70b45bc3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/70b45bc3/" class="post-title-link" itemprop="url">DP IS EASY —— 如何切入动态规划问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-22 21:57:41 / Modified: 22:02:55" itemprop="dateCreated datePublished" datetime="2023-04-22T21:57:41+08:00">2023-04-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/70b45bc3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/70b45bc3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>是对<a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode.com/problems/target-sum/solutions/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions">DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions</a>的翻译记录，原题是 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://leetcode.cn/problems/target-sum/solution/DP-IS-EASY/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">Target Sum（目标和）</a></p>
+</blockquote>
+<h2 id="DP很容易！5步思考DP问题"><a href="#DP很容易！5步思考DP问题" class="headerlink" title="DP很容易！5步思考DP问题"></a>DP很容易！5步思考DP问题</h2><p><strong>注意</strong>：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。</p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><p>大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它允许我们将一个新问题转化成我们已知的问题。转化意味着使用框架，而不是将另一个问题的解决方法复制到当前问题中。你必须明白每个DP问题都是不同的。</p>
+<p><strong>问题</strong>：在继续之前将此问题标识为以下类别之一。</p>
+<ul>
+<li>0/1背包</li>
+<li>无界背包</li>
+<li>最短路径（例如：独特的路径I/II）</li>
+<li>斐波那契数列（例如：房子小偷，跳跃游戏）</li>
+<li>最长公共子串/子序列</li>
+</ul>
+<p><strong>答案</strong>：0/1背包</p>
+<p>为什么是0/1背包？我们的“容量”是我们想达到的目标“S”。我们的“物品”是输入子集中的数字，物品的“重量”是数字本身的值。这个问题遵循0/1背包而不是无界背包，因为我们只能使用每个数字一次。</p>
+<p>变化是什么？这个问题与标准背包问题的变化在于，我们必须将子集中的所有物品添加到我们的背包中。我们可以将问题重新构成为将当前数字的正值或负值添加到我们的背包中，以达到目标容量“S”。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/70b45bc3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/cbfb1047/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1293,125 +1411,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/3da399b2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/3da399b2/" class="post-title-link" itemprop="url">AW08 Spring Integration</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-05-31 08:32:44" itemprop="dateCreated datePublished" datetime="2022-05-31T08:32:44+08:00">2022-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-02 08:54:52" itemprop="dateModified" datetime="2022-08-02T08:54:52+08:00">2022-08-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/3da399b2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/3da399b2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>6 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>delivery变成integration</p>
-<p>大致思路：</p>
-<p>aw07中的delivery不再作为微服务的一部分（去掉discovery和gateway配置）</p>
-<p>pos-cart中添加发送消息的部分；发送的消息有load，字符串（与aw08样例中直接get不同）；添加接收</p>
-<p>pos-delivery 保持不变</p>
-<h2 id="Tech-Solution"><a href="#Tech-Solution" class="headerlink" title="Tech Solution"></a>Tech Solution</h2><ul>
-<li>pos-order</li>
-</ul>
-<p>替换成改写demo中的inbound/outbound</p>
-<p>inboud：处理发送来的post请求，提取string信息，调用placeOrder函数进行中间处理转换</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inboundGateway(uri)</span><br><span class="line">.requestMapping(r -&gt; r.methods(Https.POST)</span><br><span class="line">.consumes(&quot;text/plain&quot;))</span><br><span class="line">.&lt;String&gt;handle((s)-&gt; return placeOrder(s))</span><br><span class="line">.requestPayloadType(String.class)</span><br><span class="line">.get();</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/3da399b2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1482,7 +1481,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1546,12 +1545,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">113k</span>
+    <span title="Symbols count total">116k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:42</span>
+    <span title="Reading time total">4:50</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>
