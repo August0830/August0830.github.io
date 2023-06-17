@@ -6,7 +6,7 @@
   <link href="https://august0830.github.io/atom.xml" rel="self"/>
   
   <link href="https://august0830.github.io/"/>
-  <updated>2023-05-16T11:24:50.841Z</updated>
+  <updated>2023-06-17T07:59:06.317Z</updated>
   <id>https://august0830.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>毕设实录</title>
+    <link href="https://august0830.github.io/post/7d3f17d0/"/>
+    <id>https://august0830.github.io/post/7d3f17d0/</id>
+    <published>2023-06-17T07:47:38.000Z</published>
+    <updated>2023-06-17T07:59:06.317Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;关于选题&quot;&gt;&lt;a href=&quot;#关于选题&quot; class=&quot;headerlink&quot; title=&quot;关于选题&quot;&gt;&lt;/a&gt;关于选题&lt;/h2&gt;&lt;p&gt;事实上在做毕设之前我从来没有接触过机器学习相关的科研或者项目，实习做的也不是这个方向。是在和导师沟通的过程中，觉得这个题目有点意思，加上之前没怎么做过研究，于是脑子一热答应选了这个如导师所言”有挑战性”的选题。&lt;/p&gt;
+&lt;p&gt;虽然做的过程中经常要死要活，也一度非常迷茫自己到底能不能做完，但是因为最开始的确是对选题感兴趣，所以倒也有不少苦中作乐或者惊觉“Eureka”的时刻。毕竟本科生比较少会在毕设上被为难，所以抱着“只要认真做了一定能过”的心态，去做些自己感兴趣的尝试，也不枉费投入的时间与精力。&lt;/p&gt;
+&lt;h2 id=&quot;从零开始快速恶补机器学习——面向毕设学习机器学习&quot;&gt;&lt;a href=&quot;#从零开始快速恶补机器学习——面向毕设学习机器学习&quot; class=&quot;headerlink&quot; title=&quot;从零开始快速恶补机器学习——面向毕设学习机器学习&quot;&gt;&lt;/a&gt;从零开始快速恶补机器学习——面向毕设学习机器学习&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统性的阅读：找一本教材。能动手跟着做练习最好，如果时间有限，其实重点熟悉与自己的毕设有关的方面就够了，其他的反正一时半会用不上，用到了再说。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;论坛：（eg：Reddit，Stackoverflow）找更亲民、短平快、面向具体毕设主题的材料。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Chatgpt：学习一些基本的概念，或者是复习。注意：GPT只能说人话，不能保证正确，留个心眼，在实践中验证。对于基础知识，大概率材料已经在它的训练数据里，所以拿不准的时候还是会问它。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为我的毕设本质做的是优化问题，所以针对毕设问题来学习对我来说就是：关注性能优化，可以少看公式，多关注性能衡量指标的原理，具体方法的原理先放一放。&lt;/p&gt;
+&lt;h2 id=&quot;阅读文献&quot;&gt;&lt;a href=&quot;#阅读文献&quot; class=&quot;headerlink&quot; title=&quot;阅读文献&quot;&gt;&lt;/a&gt;阅读文献&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Zetero：读文献的时候划重点，做批注，对文献类型分类，导出引用都很方便。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.chatpdf.com/&quot;&gt;ChatPDF - Chat with any PDF!&lt;/a&gt;：在读文献初期，对所做领域所知甚少的时候，通过交互式的提问可以更快了解一篇论文是否对自己的毕设有帮助。&lt;/li&gt;
+&lt;li&gt;学会读摘要：&lt;ul&gt;
+&lt;li&gt;背景是什么：与你的毕设题目是否相关&lt;/li&gt;
+&lt;li&gt;过去的研究局限是什么：补充关于现有研究的知识，可能会启发思路&lt;/li&gt;
+&lt;li&gt;该论文提出的解决方案是什么：对你的主题是否有启发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对我来说：因为我的毕设本质是一个已有方案的优化问题，所以读文献花了很长时间。原因是需要了解：我的问题场景下已经有什么优化方法、是否有效、是否适用于已有方案。&lt;/p&gt;
+&lt;h2 id=&quot;做实验&quot;&gt;&lt;a href=&quot;#做实验&quot; class=&quot;headerlink&quot; title=&quot;做实验&quot;&gt;&lt;/a&gt;做实验&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
+    
+  </entry>
   
   <entry>
     <title>实习就业分享</title>
@@ -658,33 +699,6 @@
 &lt;h2 id=&quot;Hadoop配置&quot;&gt;&lt;a href=&quot;#Hadoop配置&quot; class=&quot;headerlink&quot; title=&quot;Hadoop配置&quot;&gt;&lt;/a&gt;Hadoop配置&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://hadoop.apache.org/docs/r2.7.2/index.html&quot;&gt;Apache Hadoop官方文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.w3cschool.cn/hadoop/hadoop_command_reference.html&quot;&gt;账户配置和基础指令指导&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;填写配置文件&quot;&gt;&lt;a href=&quot;#填写配置文件&quot; class=&quot;headerlink&quot; title=&quot;填写配置文件&quot;&gt;&lt;/a&gt;填写配置文件&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
-    
-    
-    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Software-Architecture docker踩坑小结+AW04记录</title>
-    <link href="https://august0830.github.io/post/961e2082/"/>
-    <id>https://august0830.github.io/post/961e2082/</id>
-    <published>2022-03-27T07:26:37.000Z</published>
-    <updated>2022-04-04T15:54:42.250Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;gcr-io-镜像因为网络原因拉取失败&quot;&gt;&lt;a href=&quot;#gcr-io-镜像因为网络原因拉取失败&quot; class=&quot;headerlink&quot; title=&quot;gcr.io 镜像因为网络原因拉取失败&quot;&gt;&lt;/a&gt;gcr.io 镜像因为网络原因拉取失败&lt;/h2&gt;&lt;p&gt;尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载&lt;/p&gt;
-&lt;h3 id=&quot;虚拟机使用宿主机的梯子环境&quot;&gt;&lt;a href=&quot;#虚拟机使用宿主机的梯子环境&quot; class=&quot;headerlink&quot; title=&quot;虚拟机使用宿主机的梯子环境&quot;&gt;&lt;/a&gt;虚拟机使用宿主机的梯子环境&lt;/h3&gt;&lt;p&gt;vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 &lt;strong&gt;网络地址转换（NAT）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在终端用 &lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ip route show&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;查看虚拟机所占用的ip地址，选择default的记录下来。&lt;/p&gt;
-&lt;p&gt;在虚拟机设置中找到Network-NeworkProxy 选择manual&lt;/p&gt;
-&lt;p&gt;所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）&lt;/p&gt;
-&lt;p&gt;在浏览器中访问google/youtube，成功即可&lt;/p&gt;</summary>
     
     
     

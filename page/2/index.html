@@ -180,6 +180,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/d29cc919/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/d29cc919/" class="post-title-link" itemprop="url">AW10-Final-Full-Reactive-MicroPos</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-05 09:17:30" itemprop="dateCreated datePublished" datetime="2022-07-05T09:17:30+08:00">2022-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-02 08:54:23" itemprop="dateModified" datetime="2022-08-02T08:54:23+08:00">2022-08-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/d29cc919/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/d29cc919/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>575</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Not-Finished-Yet-in-Previous-AW"><a href="#Not-Finished-Yet-in-Previous-AW" class="headerlink" title="Not Finished Yet in Previous AW"></a>Not Finished Yet in Previous AW</h2><ul>
+<li><p>choose product and checkout; use message</p>
+</li>
+<li><p>big collection of goods: extract and save in the repos——patch <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sawork-2022/aw06-August0830">aw06</a> products use h2db? 修改pos-product</p>
+</li>
+<li><p>test case <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-webflux">sa-spring/spring-webflux</a>测试用例可以写成mvn项目</p>
+</li>
+<li><p>记得恢复各地的eureka enable 其中cart需要在serviceimpl里恢复loadbalance yml文件</p>
+</li>
+<li><p>cart传输的数据需要修改</p>
+</li>
+</ul>
+<h2 id="Guideline-to-my-Micropos"><a href="#Guideline-to-my-Micropos" class="headerlink" title="Guideline to my Micropos"></a>Guideline to my Micropos</h2><p>启动gateway 可以通过<a target="_blank" rel="external nofollow noopener noreferrer" href="http://localhost:2222/%E6%9D%A5%E8%AE%BF%E9%97%AEMicropos%EF%BC%8C%E5%85%B6%E4%B8%AD%E5%90%8E%E7%BC%80%E6%B7%BB%E5%8A%A0product%EF%BC%8Ccarts%EF%BC%8Corder%EF%BC%8Cdelivery%E8%AE%BF%E9%97%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%8D%E5%8A%A1%E3%80%82%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%AF%B9%E5%90%84%E8%87%AA%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%8D%95%E7%8B%AC%E8%B0%83%E8%AF%95">http://localhost:2222/来访问Micropos，其中后缀添加product，carts，order，delivery访问对应的服务。也可以对各自的服务单独调试</a></p>
+<h2 id="Obstacles"><a href="#Obstacles" class="headerlink" title="Obstacles"></a>Obstacles</h2><ul>
+<li>迁移到windows下环境后delivery启动失败出现<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/65164809/error-creating-bean-with-name-org-springframework-cloud-netflix-eureka-server-e">Unsatisfied dependency expressed through field ‘eurekaServerBootstrap’</a></li>
+<li>类似问题 carts启动失败：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/46878649/maven-compilation-issue-with-java-9">查询后添加</a><ul>
+<li>I got the same error on java 11. Adding <a target="_blank" rel="external nofollow noopener noreferrer" href="https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/2.2.11">jaxb api</a> dependency to the pom solved my issue</li>
+</ul>
+</li>
+</ul>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/d29cc919/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f51e3ca2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1282,123 +1411,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/961e2082/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/961e2082/" class="post-title-link" itemprop="url">Software-Architecture docker踩坑小结+AW04记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-03-27 15:26:37" itemprop="dateCreated datePublished" datetime="2022-03-27T15:26:37+08:00">2022-03-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-04 23:54:42" itemprop="dateModified" datetime="2022-04-04T23:54:42+08:00">2022-04-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/961e2082/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/961e2082/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>10 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="gcr-io-镜像因为网络原因拉取失败"><a href="#gcr-io-镜像因为网络原因拉取失败" class="headerlink" title="gcr.io 镜像因为网络原因拉取失败"></a>gcr.io 镜像因为网络原因拉取失败</h2><p>尝试换源失败，总是提示验证失败，于是打算直接用代理从原网站下载</p>
-<h3 id="虚拟机使用宿主机的梯子环境"><a href="#虚拟机使用宿主机的梯子环境" class="headerlink" title="虚拟机使用宿主机的梯子环境"></a>虚拟机使用宿主机的梯子环境</h3><p>vitualbox上没有装梯子，尝试使用宿主机的梯子环境。vitualbox上的网络连接方式是 <strong>网络地址转换（NAT）</strong></p>
-<p>在终端用 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route show</span><br></pre></td></tr></table></figure>
-
-<p>查看虚拟机所占用的ip地址，选择default的记录下来。</p>
-<p>在虚拟机设置中找到Network-NeworkProxy 选择manual</p>
-<p>所有proxy的ip都填写刚刚记录的ip，端口就查看电脑本机梯子上的端口填入（我的梯子软件界面自带了该信息，如果没有可以通过查看梯子软件进程占用的端口来确定）</p>
-<p>在浏览器中访问google/youtube，成功即可</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/961e2082/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1469,7 +1481,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1533,12 +1545,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">118k</span>
+    <span title="Symbols count total">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:56</span>
+    <span title="Reading time total">5:02</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>

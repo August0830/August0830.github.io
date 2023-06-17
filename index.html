@@ -180,6 +180,131 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/7d3f17d0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/7d3f17d0/" class="post-title-link" itemprop="url">毕设实录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-06-17 15:47:38 / Modified: 15:59:06" itemprop="dateCreated datePublished" datetime="2023-06-17T15:47:38+08:00">2023-06-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/7d3f17d0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/7d3f17d0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于选题"><a href="#关于选题" class="headerlink" title="关于选题"></a>关于选题</h2><p>事实上在做毕设之前我从来没有接触过机器学习相关的科研或者项目，实习做的也不是这个方向。是在和导师沟通的过程中，觉得这个题目有点意思，加上之前没怎么做过研究，于是脑子一热答应选了这个如导师所言”有挑战性”的选题。</p>
+<p>虽然做的过程中经常要死要活，也一度非常迷茫自己到底能不能做完，但是因为最开始的确是对选题感兴趣，所以倒也有不少苦中作乐或者惊觉“Eureka”的时刻。毕竟本科生比较少会在毕设上被为难，所以抱着“只要认真做了一定能过”的心态，去做些自己感兴趣的尝试，也不枉费投入的时间与精力。</p>
+<h2 id="从零开始快速恶补机器学习——面向毕设学习机器学习"><a href="#从零开始快速恶补机器学习——面向毕设学习机器学习" class="headerlink" title="从零开始快速恶补机器学习——面向毕设学习机器学习"></a>从零开始快速恶补机器学习——面向毕设学习机器学习</h2><ul>
+<li><p>系统性的阅读：找一本教材。能动手跟着做练习最好，如果时间有限，其实重点熟悉与自己的毕设有关的方面就够了，其他的反正一时半会用不上，用到了再说。</p>
+</li>
+<li><p>论坛：（eg：Reddit，Stackoverflow）找更亲民、短平快、面向具体毕设主题的材料。</p>
+</li>
+<li><p>Chatgpt：学习一些基本的概念，或者是复习。注意：GPT只能说人话，不能保证正确，留个心眼，在实践中验证。对于基础知识，大概率材料已经在它的训练数据里，所以拿不准的时候还是会问它。</p>
+</li>
+</ul>
+<p>因为我的毕设本质做的是优化问题，所以针对毕设问题来学习对我来说就是：关注性能优化，可以少看公式，多关注性能衡量指标的原理，具体方法的原理先放一放。</p>
+<h2 id="阅读文献"><a href="#阅读文献" class="headerlink" title="阅读文献"></a>阅读文献</h2><ul>
+<li>Zetero：读文献的时候划重点，做批注，对文献类型分类，导出引用都很方便。</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.chatpdf.com/">ChatPDF - Chat with any PDF!</a>：在读文献初期，对所做领域所知甚少的时候，通过交互式的提问可以更快了解一篇论文是否对自己的毕设有帮助。</li>
+<li>学会读摘要：<ul>
+<li>背景是什么：与你的毕设题目是否相关</li>
+<li>过去的研究局限是什么：补充关于现有研究的知识，可能会启发思路</li>
+<li>该论文提出的解决方案是什么：对你的主题是否有启发</li>
+</ul>
+</li>
+</ul>
+<p>对我来说：因为我的毕设本质是一个已有方案的优化问题，所以读文献花了很长时间。原因是需要了解：我的问题场景下已经有什么优化方法、是否有效、是否适用于已有方案。</p>
+<h2 id="做实验"><a href="#做实验" class="headerlink" title="做实验"></a>做实验</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/7d3f17d0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/af204ca1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1259,135 +1384,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/d29cc919/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/d29cc919/" class="post-title-link" itemprop="url">AW10-Final-Full-Reactive-MicroPos</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-07-05 09:17:30" itemprop="dateCreated datePublished" datetime="2022-07-05T09:17:30+08:00">2022-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-02 08:54:23" itemprop="dateModified" datetime="2022-08-02T08:54:23+08:00">2022-08-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/d29cc919/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/d29cc919/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>575</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Not-Finished-Yet-in-Previous-AW"><a href="#Not-Finished-Yet-in-Previous-AW" class="headerlink" title="Not Finished Yet in Previous AW"></a>Not Finished Yet in Previous AW</h2><ul>
-<li><p>choose product and checkout; use message</p>
-</li>
-<li><p>big collection of goods: extract and save in the repos——patch <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sawork-2022/aw06-August0830">aw06</a> products use h2db? 修改pos-product</p>
-</li>
-<li><p>test case <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/sa-spring/spring-webflux">sa-spring/spring-webflux</a>测试用例可以写成mvn项目</p>
-</li>
-<li><p>记得恢复各地的eureka enable 其中cart需要在serviceimpl里恢复loadbalance yml文件</p>
-</li>
-<li><p>cart传输的数据需要修改</p>
-</li>
-</ul>
-<h2 id="Guideline-to-my-Micropos"><a href="#Guideline-to-my-Micropos" class="headerlink" title="Guideline to my Micropos"></a>Guideline to my Micropos</h2><p>启动gateway 可以通过<a target="_blank" rel="external nofollow noopener noreferrer" href="http://localhost:2222/%E6%9D%A5%E8%AE%BF%E9%97%AEMicropos%EF%BC%8C%E5%85%B6%E4%B8%AD%E5%90%8E%E7%BC%80%E6%B7%BB%E5%8A%A0product%EF%BC%8Ccarts%EF%BC%8Corder%EF%BC%8Cdelivery%E8%AE%BF%E9%97%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9C%8D%E5%8A%A1%E3%80%82%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%AF%B9%E5%90%84%E8%87%AA%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%8D%95%E7%8B%AC%E8%B0%83%E8%AF%95">http://localhost:2222/来访问Micropos，其中后缀添加product，carts，order，delivery访问对应的服务。也可以对各自的服务单独调试</a></p>
-<h2 id="Obstacles"><a href="#Obstacles" class="headerlink" title="Obstacles"></a>Obstacles</h2><ul>
-<li>迁移到windows下环境后delivery启动失败出现<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/65164809/error-creating-bean-with-name-org-springframework-cloud-netflix-eureka-server-e">Unsatisfied dependency expressed through field ‘eurekaServerBootstrap’</a></li>
-<li>类似问题 carts启动失败：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackoverflow.com/questions/46878649/maven-compilation-issue-with-java-9">查询后添加</a><ul>
-<li>I got the same error on java 11. Adding <a target="_blank" rel="external nofollow noopener noreferrer" href="https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/2.2.11">jaxb api</a> dependency to the pom solved my issue</li>
-</ul>
-</li>
-</ul>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/d29cc919/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1458,7 +1454,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1522,12 +1518,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">118k</span>
+    <span title="Symbols count total">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:56</span>
+    <span title="Reading time total">5:02</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>
