@@ -180,6 +180,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f141b6ad/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/f141b6ad/" class="post-title-link" itemprop="url">Hadoop实验一记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-03 15:03:06" itemprop="dateCreated datePublished" datetime="2022-04-03T15:03:06+08:00">2022-04-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-06 19:39:23" itemprop="dateModified" datetime="2022-06-06T19:39:23+08:00">2022-06-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/f141b6ad/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/f141b6ad/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="虚拟机环境准备"><a href="#虚拟机环境准备" class="headerlink" title="虚拟机环境准备"></a>虚拟机环境准备</h2><p>账户设置：采用虚拟机原有设置 没有新建账号</p>
+<p>环境变量设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java <span class="comment">#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib:.</span><br></pre></td></tr></table></figure>
+
+<p>下载安装ssh 确认启动</p>
+<p>（由于和另一个实验环境冲突，尝试了修改，暂时未测试）</p>
+<h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hadoop.apache.org/docs/r2.7.2/index.html">Apache Hadoop官方文档</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3cschool.cn/hadoop/hadoop_command_reference.html">账户配置和基础指令指导</a></p>
+<h3 id="填写配置文件"><a href="#填写配置文件" class="headerlink" title="填写配置文件"></a>填写配置文件</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/f141b6ad/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/961e2082/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1259,118 +1376,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/d0b95d98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/d0b95d98/" class="post-title-link" itemprop="url">tunneling socket could not established， cause = getaddrinfo ENOTFOUND 解决方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-07 20:55:16" itemprop="dateCreated datePublished" datetime="2021-10-07T20:55:16+08:00">2021-10-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-08 14:10:58" itemprop="dateModified" datetime="2021-10-08T14:10:58+08:00">2021-10-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/d0b95d98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/d0b95d98/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>179</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这个错误同时在PicGo上传图片和我登陆科学上网小工具的时候出现。一开始在科学上网工具出现的时候没当回事，以为是工具本身问题，再次出现发现不对劲，应该配置问题。</p>
-<p>感谢谷歌,让我翻到一个<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.lifeee.top/posts/1004.html">参考解决方案</a>。</p>
-<p>因为不是PicGo本身的问题，所以搜索到的调整PicGo的方案都不符合我的要求，最后发现是当前用户的系统变量莫名其妙多出来一个https的环境变量，删除以后解决。</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/d0b95d98/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1441,14 +1446,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1505,12 +1510,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">121k</span>
+    <span title="Symbols count total">123k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:02</span>
+    <span title="Reading time total">5:08</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>

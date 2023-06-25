@@ -6,7 +6,7 @@
   <link href="https://august0830.github.io/atom.xml" rel="self"/>
   
   <link href="https://august0830.github.io/"/>
-  <updated>2023-06-17T07:59:06.317Z</updated>
+  <updated>2023-06-25T03:27:33.988Z</updated>
   <id>https://august0830.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四年本科回顾：Dos and Don&#39;ts</title>
+    <link href="https://august0830.github.io/post/62f70775/"/>
+    <id>https://august0830.github.io/post/62f70775/</id>
+    <published>2023-06-25T03:13:14.000Z</published>
+    <updated>2023-06-25T03:27:33.988Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;四年前入学的时候应该想不到自己真的能带着两段实习和一个符合选择CS初心的预期的工作offer毕业。如果能重来一遍，有些事情我希望我能早点做到，或是继续保持，或是不要做。在这篇文章里简单写写。&lt;/p&gt;
+&lt;h2 id=&quot;早点做到&quot;&gt;&lt;a href=&quot;#早点做到&quot; class=&quot;headerlink&quot; title=&quot;早点做到&quot;&gt;&lt;/a&gt;早点做到&lt;/h2&gt;&lt;h3 id=&quot;多多提问&quot;&gt;&lt;a href=&quot;#多多提问&quot; class=&quot;headerlink&quot; title=&quot;多多提问&quot;&gt;&lt;/a&gt;多多提问&lt;/h3&gt;&lt;p&gt;对内向型人来说提问可能是困难的，如果担心自己在提问中被看不起，提问就会变得更加困难。&lt;/p&gt;
+&lt;p&gt;但是对于新手来说，只要掌握了&lt;a href=&quot;https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md&quot;&gt;正确的提问方法&lt;/a&gt;就No Stupid Question。同时应该解构“提问”这一动作的含义：提问不代表你能力不行，不假思索的提问才会影响能力的成长，经过思考以后求助才能帮助你摆脱目前的困境。&lt;/p&gt;
+&lt;p&gt;可能大一早点想通这点，绩点就不至于如此凄惨了（&lt;/p&gt;
+&lt;h3 id=&quot;喜欢就享受，不喜欢就趁早摆脱&quot;&gt;&lt;a href=&quot;#喜欢就享受，不喜欢就趁早摆脱&quot; class=&quot;headerlink&quot; title=&quot;喜欢就享受，不喜欢就趁早摆脱&quot;&gt;&lt;/a&gt;喜欢就享受，不喜欢就趁早摆脱&lt;/h3&gt;&lt;p&gt;大二的时候一度非常怀疑自己的选择，但是这个专业和学校又的确是我自己选的，不出于所谓的就业前景、不出于所谓的热门，就只是我的兴趣结合我需要的现实资源的考量。后来我尝试着捕捉那些让我感到发自内心快乐的时刻，我终于发现，原来我讨厌的不是学习CS的过程，是不合理的体系设计。&lt;/p&gt;
+&lt;p&gt;想明白一点以后，我开始寻找新的可能性，比如不读研尝试找工，也如愿摆脱了让我身心俱疲的环境与节奏，找到让我舒适的新的选项。享受快乐的瞬间；对折磨的时刻，不要坐以待毙，跑起来！&lt;/p&gt;
+&lt;h2 id=&quot;继续保持&quot;&gt;&lt;a href=&quot;#继续保持&quot; class=&quot;headerlink&quot; title=&quot;继续保持&quot;&gt;&lt;/a&gt;继续保持&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Thoughts" scheme="https://august0830.github.io/categories/Thoughts/"/>
+    
+    
+    <category term="Career" scheme="https://august0830.github.io/tags/Career/"/>
+    
+  </entry>
   
   <entry>
     <title>毕设实录</title>
@@ -672,33 +697,6 @@
 &lt;p&gt;annotation类型与get/post等http方法对应&lt;/p&gt;
 &lt;p&gt;配合open-api：规定程序接口 &lt;/p&gt;
 &lt;h3 id=&quot;DTO&quot;&gt;&lt;a href=&quot;#DTO&quot; class=&quot;headerlink&quot; title=&quot;DTO&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Data_transfer_object&quot;&gt;DTO&lt;/a&gt;&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
-    
-    
-    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop实验一记录</title>
-    <link href="https://august0830.github.io/post/f141b6ad/"/>
-    <id>https://august0830.github.io/post/f141b6ad/</id>
-    <published>2022-04-03T07:03:06.000Z</published>
-    <updated>2022-06-06T11:39:23.708Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;虚拟机环境准备&quot;&gt;&lt;a href=&quot;#虚拟机环境准备&quot; class=&quot;headerlink&quot; title=&quot;虚拟机环境准备&quot;&gt;&lt;/a&gt;虚拟机环境准备&lt;/h2&gt;&lt;p&gt;账户设置：采用虚拟机原有设置 没有新建账号&lt;/p&gt;
-&lt;p&gt;环境变量设置&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi ~/.bash_profile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;:&lt;span class=&quot;variable&quot;&gt;$HOME&lt;/span&gt;/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java &lt;span class=&quot;comment&quot;&gt;#需要查询本地Java安装地址 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java //需要查询本地Java安装地址 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; HADOOP_HOME=/home/hadoop/hadoop_installs/hadoop-2.7.7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; PATH=&lt;span class=&quot;variable&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin:&lt;span class=&quot;variable&quot;&gt;$HADOOP_HOME&lt;/span&gt;/bin:&lt;span class=&quot;variable&quot;&gt;$PATH&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; CLASSPATH=&lt;span class=&quot;variable&quot;&gt;$JAVA_HOME&lt;/span&gt;/lib:.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;下载安装ssh 确认启动&lt;/p&gt;
-&lt;p&gt;（由于和另一个实验环境冲突，尝试了修改，暂时未测试）&lt;/p&gt;
-&lt;h2 id=&quot;Hadoop配置&quot;&gt;&lt;a href=&quot;#Hadoop配置&quot; class=&quot;headerlink&quot; title=&quot;Hadoop配置&quot;&gt;&lt;/a&gt;Hadoop配置&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://hadoop.apache.org/docs/r2.7.2/index.html&quot;&gt;Apache Hadoop官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.w3cschool.cn/hadoop/hadoop_command_reference.html&quot;&gt;账户配置和基础指令指导&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;填写配置文件&quot;&gt;&lt;a href=&quot;#填写配置文件&quot; class=&quot;headerlink&quot; title=&quot;填写配置文件&quot;&gt;&lt;/a&gt;填写配置文件&lt;/h3&gt;</summary>
     
     
     
