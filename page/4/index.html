@@ -180,6 +180,125 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/175000d5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/175000d5/" class="post-title-link" itemprop="url">Java并发高级设施实现原理笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-30 09:08:03" itemprop="dateCreated datePublished" datetime="2021-10-30T09:08:03+08:00">2021-10-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-11 14:12:53" itemprop="dateModified" datetime="2021-12-11T14:12:53+08:00">2021-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/175000d5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/175000d5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>24 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>vscode看java api的源码非常舒适 提供了跳转到指定源码的功能</p>
+<p>结合Oracle的JAVA文档食用更佳</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baeldung.com/">Java相关api介绍网站推荐: Baeldung</a></p>
+</blockquote>
+<h2 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html">CountDownLatch</a></h2><p>核心是sync，Sync类是基于AbstractQueueSynchonizer这一抽象接口实现的</p>
+<h3 id="AbstractQueueSynchronizer"><a href="#AbstractQueueSynchronizer" class="headerlink" title="AbstractQueueSynchronizer"></a>AbstractQueueSynchronizer</h3><p>一个用链表实现的队列，对节点加自旋锁来实现synchronize。按照队列的性质，头部的节点会先获得申请锁的机会，但是不保证成功。</p>
+<p>有state来存储状态，其中state是volatile的，即存储在内存中，立即更新，不存在写缓冲问题。</p>
+<p>这里的加锁方式有exclusive/shared两种。实现上没有做显著区分</p>
+<h3 id="Sync"><a href="#Sync" class="headerlink" title="Sync"></a>Sync</h3><p>实现了上述接口，其中Count直接存储在了AbstractQueueSynchronizer（以下简称AQS）的state变量中。</p>
+<p>CountDownLatch的countDown方法是调用sync的releaseShared方法实现的 而sync中又调用AQS的tryReleaseShared() 判断能否释放，如果能，就调用doReleaseShared()对队列里的节点做操作。具体会调整列表中节点的状态。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/175000d5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/4a3554ff/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1216,163 +1335,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f7e510c4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/f7e510c4/" class="post-title-link" itemprop="url">2021暑假小结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-08-29 11:40:04 / Modified: 20:31:28" itemprop="dateCreated datePublished" datetime="2021-08-29T11:40:04+08:00">2021-08-29</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/f7e510c4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/f7e510c4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="目标与效果对照"><a href="#目标与效果对照" class="headerlink" title="目标与效果对照"></a>目标与效果对照</h2><p>假期前列出了以下to do：（按照重要性排序）</p>
-<ul>
-<li><p>准备GRE 9月开学即考试</p>
-</li>
-<li><p>完成操作系统课上的PA：FAT12文件系统</p>
-</li>
-<li><p>搭建博客</p>
-</li>
-<li><p>leetcode习题积累</p>
-</li>
-<li><p>自学爬虫 解决一些感兴趣的数据分析话题</p>
-</li>
-<li><p>收集信息</p>
-</li>
-<li><p>把借来的书读完（世界史系列8本 北欧神话 二战系列2本 说服与不被说服的艺术 20世纪简史）</p>
-</li>
-</ul>
-<p>实际完成的情况：</p>
-<ul>
-<li>GRE<ul>
-<li>在假期背完了学期间的GRE单词<ul>
-<li>粗略过了一遍 做题过程中高频词不够熟悉</li>
-</ul>
-</li>
-<li>Issue 写作5篇，分析6篇 和Arguement 5篇写作<ul>
-<li>有大致的思路框架 但是几天不写会模糊</li>
-<li>能够表达 但是打字速度和用词需要继续加强</li>
-</ul>
-</li>
-<li>选词 linduxi做了两遍，高频合集做到20+<ul>
-<li>与最开始相比能够分析句子</li>
-<li>词汇量需要加强</li>
-</ul>
-</li>
-<li>阅读 中间20~30题做了两次 目前到约40题<ul>
-<li>能够断长难句 理清逻辑</li>
-<li>词汇量和长难文有待提高</li>
-</ul>
-</li>
-<li>数学 专题还差概率部分<ul>
-<li>只做了第一遍 需要复习错题和总结技巧</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>FAT12<ul>
-<li>完成了基本的框架代码并且同步到了github上 博客同步更新</li>
-<li>但是有bug没有调试完</li>
-</ul>
-</li>
-<li>搭建博客：网站已经可以正常运行 包括评论 tag 收录到搜索引擎<ul>
-<li>反复更换心仪的主题 调试比较花时间</li>
-</ul>
-</li>
-<li>Leetcode 100题没有做完，做了一半这样，只要当天在学习就尽量做题<ul>
-<li>至少每天一题 偶尔有几次能够在玩耍完回家后随手来一题</li>
-</ul>
-</li>
-<li>读书：读完了《说服与不被说服的艺术 》世界史2本 北欧神话 （都没有更新读书笔记）</li>
-</ul>
-<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>最大的问题是作息 1点~3点睡 10~12点起成为常态导致一整个上午直接报废，下午的效率比较高 晚上基本在放松躺平</p>
-<p>因为一直在熬夜，所以也不敢运动。关键是到点就休息 维持良好的作息才会有更多的自由时间</p>
-<p>其次是不太紧张，虽然开了倒计时但是对于没有明确时间节点的任务经常会因为赖床往后推。在GRE考试延期以后连最开始坚持的GRE刷题也松懈了。</p>
-<p>因为在家放假，休息时间很容易失控。应当用温和平静的放松方式代替玩手机，避免一次上头忘乎所以。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/f7e510c4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1443,7 +1405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1456,7 +1418,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1507,12 +1469,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">125k</span>
+    <span title="Symbols count total">128k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:13</span>
+    <span title="Reading time total">5:20</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>

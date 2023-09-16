@@ -6,7 +6,7 @@
   <link href="https://august0830.github.io/atom.xml" rel="self"/>
   
   <link href="https://august0830.github.io/"/>
-  <updated>2023-07-01T07:01:48.310Z</updated>
+  <updated>2023-09-16T08:17:58.960Z</updated>
   <id>https://august0830.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从一台计算机到Kubernetes</title>
+    <link href="https://august0830.github.io/post/56c20e9/"/>
+    <id>https://august0830.github.io/post/56c20e9/</id>
+    <published>2023-09-16T07:59:58.000Z</published>
+    <updated>2023-09-16T08:17:58.960Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;p&gt;在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。&lt;/p&gt;
+&lt;h2 id=&quot;为什么需要Kubernetes？&quot;&gt;&lt;a href=&quot;#为什么需要Kubernetes？&quot; class=&quot;headerlink&quot; title=&quot;为什么需要Kubernetes？&quot;&gt;&lt;/a&gt;为什么需要Kubernetes？&lt;/h2&gt;&lt;p&gt;回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果学校在同学们的吐槽声中，真的决定选中你写的学生选课信息管理系统作为升级版本，原本在你电脑里运行的二进制文件，真的能满足同学们的需求吗？&lt;/p&gt;
+&lt;p&gt;说不定经过一番折腾真的可以。首先，我们来尝试考虑同学们在选课的需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;准确性：选课信息要准确，不同同学之间的课程信息不能弄混&lt;/li&gt;
+&lt;li&gt;可靠性：大量同学一起选课的时候不能崩&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;再尝试考虑学校的需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;充分利用资源：除了选课高峰期，其他时间，系统不应该占据过多的服务器资源，以减少学校开支&lt;/li&gt;
+&lt;li&gt;减少人工干预的成本：选课期间老师们大多忙于解答选课问题或者处理排课冲突等问题，没有过多精力关注选课系统本身的问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;原本在课上写的代码可能包括如下部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gateway：系统前端，也负责转发流量到后端的部分&lt;/li&gt;
+&lt;li&gt;Admin：身份验证&lt;/li&gt;
+&lt;li&gt;Database：存储选课信息&lt;/li&gt;
+&lt;li&gt;Controller：对选课逻辑等进行检查、处理（比如需要修满本系学分，同一个学生不同课程时间有重叠需要调整或者提醒等）&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
+    
+    
+    <category term="Kubernetes" scheme="https://august0830.github.io/tags/Kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>Smooth like Butter：如何从高中丝滑过渡到大学</title>
@@ -658,46 +695,6 @@
     
     
     <category term="Tech" scheme="https://august0830.github.io/categories/Tech/"/>
-    
-    
-    <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NJUCS 各研究组宣讲</title>
-    <link href="https://august0830.github.io/post/89396cda/"/>
-    <id>https://august0830.github.io/post/89396cda/</id>
-    <published>2022-04-18T09:47:36.000Z</published>
-    <updated>2022-05-26T08:29:58.871Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;BigAI&quot;&gt;&lt;a href=&quot;#BigAI&quot; class=&quot;headerlink&quot; title=&quot;BigAI&quot;&gt;&lt;/a&gt;BigAI&lt;/h2&gt;&lt;p&gt;邮件: &lt;a href=&quot;mailto:&amp;#108;&amp;#x69;&amp;#x77;&amp;#x75;&amp;#x6a;&amp;#x75;&amp;#110;&amp;#64;&amp;#x6e;&amp;#106;&amp;#117;&amp;#x2e;&amp;#x65;&amp;#100;&amp;#x75;&amp;#46;&amp;#x63;&amp;#110;&quot;&gt;&amp;#108;&amp;#x69;&amp;#x77;&amp;#x75;&amp;#x6a;&amp;#x75;&amp;#110;&amp;#64;&amp;#x6e;&amp;#106;&amp;#117;&amp;#x2e;&amp;#x65;&amp;#100;&amp;#x75;&amp;#46;&amp;#x63;&amp;#110;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;主页: &lt;a href=&quot;https://cs.nju.edu.cn/lwj&quot;&gt;https://cs.nju.edu.cn/lwj&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;大数据机器学习 机器学习算法：存储、计算、通信&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;哈希学习&lt;ul&gt;
-&lt;li&gt;哈希函数很关键 哈希值应当保留样本是否相似的特征&lt;/li&gt;
-&lt;li&gt;实际应用: 行人重识别，自动问答，视频查重&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;并行与分布式随机学习&lt;ul&gt;
-&lt;li&gt;单机器：并行；多机器：分布式&lt;/li&gt;
-&lt;li&gt;交互协同的开销有时比计算开销更大，是加速的代价&lt;/li&gt;
-&lt;li&gt;分布式机器学习：数据不出本地（保护隐私等原因），实现可信机器学习&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;大数据机器学习平台LIBBLE&lt;ul&gt;
-&lt;li&gt;机器学习的底层数据平台&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;应用：&lt;/p&gt;
-&lt;p&gt;智慧医疗&lt;/p&gt;
-&lt;h2 id=&quot;ICS-基础研究和系统工程中心&quot;&gt;&lt;a href=&quot;#ICS-基础研究和系统工程中心&quot; class=&quot;headerlink&quot; title=&quot;ICS - 基础研究和系统工程中心&quot;&gt;&lt;/a&gt;ICS - 基础研究和系统工程中心&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://cs.nju.edu.cn/ics&quot;&gt;http://cs.nju.edu.cn/ics&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;判断程序的正误？如何根据行为习惯进行推断？高效的多心（并发）问题？&lt;/p&gt;</summary>
-    
-    
     
     
     <category term="NJUCS" scheme="https://august0830.github.io/tags/NJUCS/"/>

@@ -21,20 +21,22 @@
     var CONFIG = {"hostname":"august0830.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":true,"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="rm生日的时候看到一条生贺视频 缪斯、月亮与鲸鱼 里面南俊说 在工作压力下 通过看展 散步 骑车 亲近自然 来放松自己 虽然说不能指望这些体验对音乐工作有直接的作用 但是至少这是他对抗压力的方式 突然鼻子就一酸 南俊的生活当中镶嵌了许许多多他喜欢的治愈的事情 而我却有很长一段时间都在把想做的事情推到“等到xx的时候” 如果压力一直长存没有尽头 如果人生不是为了一个目的就可以放弃一切 那在松动下来的">
+  <meta name="description" content="前言：在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。 为什么需要Kubernetes？回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RM 高考 目的与手段 和我">
-<meta property="og:url" content="https://august0830.github.io/post/72f41795/index.html">
+<meta property="og:title" content="从一台计算机到Kubernetes">
+<meta property="og:url" content="https://august0830.github.io/post/56c20e9/index.html">
 <meta property="og:site_name" content="Map of Augustus&#39;s Soul">
-<meta property="og:description" content="rm生日的时候看到一条生贺视频 缪斯、月亮与鲸鱼 里面南俊说 在工作压力下 通过看展 散步 骑车 亲近自然 来放松自己 虽然说不能指望这些体验对音乐工作有直接的作用 但是至少这是他对抗压力的方式 突然鼻子就一酸 南俊的生活当中镶嵌了许许多多他喜欢的治愈的事情 而我却有很长一段时间都在把想做的事情推到“等到xx的时候” 如果压力一直长存没有尽头 如果人生不是为了一个目的就可以放弃一切 那在松动下来的">
+<meta property="og:description" content="前言：在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。 为什么需要Kubernetes？回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-09-14T03:49:11.640Z">
-<meta property="article:modified_time" content="2021-09-19T15:29:56.993Z">
+<meta property="og:image" content="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png">
+<meta property="article:published_time" content="2023-09-16T07:59:58.000Z">
+<meta property="article:modified_time" content="2023-09-16T08:17:58.960Z">
 <meta property="article:author" content="Augustus">
-<meta property="article:tag" content="Owl at Dusk">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png">
 
-<link rel="canonical" href="https://august0830.github.io/post/72f41795/">
+<link rel="canonical" href="https://august0830.github.io/post/56c20e9/">
 
 
 <script id="page-configurations">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>RM 高考 目的与手段 和我 | Map of Augustus's Soul</title>
+  <title>从一台计算机到Kubernetes | Map of Augustus's Soul</title>
   
 
 
@@ -186,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/72f41795/">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/56c20e9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mokku-blue.jpg">
@@ -199,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          RM 高考 目的与手段 和我
+          从一台计算机到Kubernetes
         </h1>
 
         <div class="post-meta">
@@ -208,16 +210,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-09-14 11:49:11" itemprop="dateCreated datePublished" datetime="2021-09-14T11:49:11+08:00">2021-09-14</time>
+              <time title="Created: 2023-09-16 15:59:58 / Modified: 16:17:58" itemprop="dateCreated datePublished" datetime="2023-09-16T15:59:58+08:00">2023-09-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-19 23:29:56" itemprop="dateModified" datetime="2021-09-19T23:29:56+08:00">2021-09-19</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -235,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/post/72f41795/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/72f41795/" itemprop="commentCount"></span>
+    <a title="valine" href="/post/56c20e9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/56c20e9/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -246,14 +251,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>844</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>7 mins.</span>
             </span>
 
         </div>
@@ -265,12 +270,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>rm生日的时候看到一条生贺视频 缪斯、月亮与鲸鱼 里面南俊说 在工作压力下 通过看展 散步 骑车 亲近自然 来放松自己 虽然说不能指望这些体验对音乐工作有直接的作用 但是至少这是他对抗压力的方式</p>
-<p>突然鼻子就一酸 南俊的生活当中镶嵌了许许多多他喜欢的治愈的事情 而我却有很长一段时间都在把想做的事情推到“等到xx的时候” 如果压力一直长存没有尽头 如果人生不是为了一个目的就可以放弃一切 那在松动下来的时间里忙里偷闲又有何妨？跑弹不必留到周末再看 吃饭间隙就可以享受 想读的时候就找来放在手边 网络一关就可以开始看 毕竟 某种程度上 这也是让我不必崩溃的办法</p>
-<p>到底是为什么没有办法享受闲暇 只能在碎片化中找到安心的时刻 只能在压力下承认自己也需要休息 为什么总要在极端反复跳跃？我想这个问题 得要回到高三的时候 毕竟那个时候只有一个目标 哪怕心底里在反抗 但只能在指挥棒下不断的自我拉扯 看综艺没办法看完 看书也不能认真享受 一切都推到高考以后 推着推着 高考过去了整整两年 我还困在这里</p>
-<p>想起来看到的一篇衡水学生的文章 不得不承认尽管自己的高中已经宽松太多 但是总有一些相似的ptsd是高考体制下人们共通的 里面作者写到无法忍受等待和闲暇 做什么都要有目的和效率 实在是让人狠狠共情 为了一个目标能够放弃一切的想法 以及随之造就的习惯 其实作为一种惯性留在很多人的后高考时代 看转发评论里的人们可见一斑 可是有很多事情 也同样重要 或者换句话说 一些斗争不会到此为止 难道要一直这样等到克服一切困难才能放过自己吗 那可能要把一些原本属于自己的时光带进坟墓了</p>
-<p>看着南俊 突然意识到自己也有和压力共存的方式 心安理得的在午饭的时候享受跑弹 心安理得的在认真做了几个小时的任务之后放松自己 反倒减少了很多犹如溺水之人抓不到救命稻草的时刻 想要从网络上找一些转移注意力的刺激的时刻减少了不少 搭配digital balance 这两天连睡眠作息都规律了很多</p>
-<p>承认自己的压力 承认自己的欲望 让自己慢慢学会享受闲暇 享受专注 避免碎片化的emo 这是我最近学到的love myself的方式 感谢南俊 还有那个剪出让人落泪的生贺视频的4粉</p>
+        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。</p>
+<h2 id="为什么需要Kubernetes？"><a href="#为什么需要Kubernetes？" class="headerlink" title="为什么需要Kubernetes？"></a>为什么需要Kubernetes？</h2><p>回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果学校在同学们的吐槽声中，真的决定选中你写的学生选课信息管理系统作为升级版本，原本在你电脑里运行的二进制文件，真的能满足同学们的需求吗？</p>
+<p>说不定经过一番折腾真的可以。首先，我们来尝试考虑同学们在选课的需求：</p>
+<ol>
+<li>准确性：选课信息要准确，不同同学之间的课程信息不能弄混</li>
+<li>可靠性：大量同学一起选课的时候不能崩</li>
+</ol>
+<p>再尝试考虑学校的需求：</p>
+<ol>
+<li>充分利用资源：除了选课高峰期，其他时间，系统不应该占据过多的服务器资源，以减少学校开支</li>
+<li>减少人工干预的成本：选课期间老师们大多忙于解答选课问题或者处理排课冲突等问题，没有过多精力关注选课系统本身的问题</li>
+</ol>
+<p>原本在课上写的代码可能包括如下部分：</p>
+<ul>
+<li>Gateway：系统前端，也负责转发流量到后端的部分</li>
+<li>Admin：身份验证</li>
+<li>Database：存储选课信息</li>
+<li>Controller：对选课逻辑等进行检查、处理（比如需要修满本系学分，同一个学生不同课程时间有重叠需要调整或者提醒等）</li>
+</ul>
+<p>结合需求和现有条件，我们可以尝试用以下思路来满足同学与学校的需求：</p>
+<ol>
+<li>对选课信息本身做持久化保存，加备份避免丢失 → Database增减</li>
+<li>对登录同学身份做验证 → Admin将紧随选课同学数量的变化而感知到压力</li>
+<li>选课期间增加Gateway数量，分流同学们的访问流量</li>
+<li>在选课期间加服务器保证稳定，选课结束以后再撤掉多余的服务器；并将上述过程自动化</li>
+</ol>
+<p>课堂代码之所以被我称之为单机游戏，是因为这些模块都会被放在一个项目下，逻辑可能有重叠交叉，编译时也一同编译。毕竟最开始我们的目标只是写完作业（啊这</p>
+<p>但是这些组件在实际场景中真的能放在一起吗？显然选课期间与非选课期间，Gateway，Admin，Controller面临的压力是不同的。把应用作为一个整体一起增加、减少是不合适的。Database的数量与其他三个组件的数量比例也会随着同学数量的增减出现变化，人少的时候也许一个Database就能支持一个Gateway转发来的流量，但是人多的时候可能需要更多Database来存储信息。</p>
+<p>这就引出了微服务（Microservice）的概念。根据<a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway‘s Law</a>，设计复杂系统本身就是在设计各个组件（Component）之间的关系。微服务的设计思路帮助我们在实现中也把不同功能模块拆开，独立编译、更新、部署。这样我们就可以解决例如：</p>
+<ul>
+<li>在非选课期间学生选课调整需要保存新旧数据的情况下，只增加Database，其他组件数量不变</li>
+<li>单独升级组件，Controller中的校验逻辑变化的时候，单独升级，无需改变其他组件</li>
+</ul>
+<p>功能模块拆分后作为组件部署，意味着不同的组件可以被部署到不同的服务器上；就算是从我们的电脑（eg：Windows）转移到服务器（Linux），也同样要面临异质的底层的问题。聪明的你或许已经想到了虚拟机（Virtual Machine）。VM是一种虚拟化技术，它屏蔽了系统硬件间的差异，封装了硬件资源（内存、CPU、网卡）的调度，使得用户对底层硬件系统的区别无感。但是VM存在着体积大，启动慢的问题——毕竟一个虚拟机动辄几个G。试想，选课如火如荼的时候要加Admin，Gateway等组件，等待安装到启动，选课刚开始流量暴涨的前5分钟可能都不够下载虚拟机的。硬件层面的虚拟化并不能完全满足需求。</p>
+<p>让我们尝试打开思路，可以虚拟化的不止是底层硬件。我们可以在系统之上的层次进行抽象。这就是容器（Container）。容器不在乎系统，它只会将应用，与应用所需的各种依赖（Dependency）和配置（Configuration）一起打包，使得它只要一要到系统资源就能开始运行。一来减少了包的大小便于传输到服务器上，二来提升了启动速度，能够快速响应需求。</p>
+<p>问谁要资源呢？当然是位于容器与系统之间的管家了——Container Runtime Engine，常见的有Docker，Contaierd。Container Runtime Engine是一种系统间的抽象，使得我们要考虑的东西又少了一层。</p>
+<p>容器与虚拟机是不同层次的抽象，二者虽然有区别但是可以并存，如下图所示</p>
+<p><img src="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png" alt="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png"></p>
+<p>到目前为止，我们已经把一大坨课程作业zip包拆成了灵活的积木一样的容器，满足了以下场景的需求：</p>
+<ul>
+<li>我们可以通过增加某组件容器数量来增强某一组件处理同学们选课请求的能力避免系统崩溃，也可以通过终止容器运行来释放冗余的资源，减少学校开支。<ul>
+<li>选课人多就加Gateway，Admin；高峰期结束以后再减少Gateway，Admin容器数量。</li>
+</ul>
+</li>
+<li>我们可以在不同的服务器上（甚至上云，如果学校懒得自己买服务器的话）部署，只要针对构造对应系统的镜像即可</li>
+</ul>
+<p>但是部署编排如果需要人工干预又是一件麻烦事（想想学校的第二个需求）：</p>
+<ul>
+<li>高峰期需要加多少容器？是一起全部启动所有待加的容器，还是逐个上线？</li>
+<li>不同容器之间的通讯与网络怎么配置？例如Controller怎么找到对应的Database来查询、更新所需的同学选课数据？</li>
+<li>下线容器怎么样才能确保不会因为一次下线太多而影响正常服务？</li>
+</ul>
+<p>可以看到，容器只解决了单个应用部署的问题，对于应用之间的资源调度与容器编排，实在是只能“只见树木，不见森林”。这就是Kubernetes（K8s）存在的意义——作为一种声明式的容器编排工具（Declarative Container Orchestrator）解决容器管理问题。</p>
+<p>什么是声明式？意思是我们只需要告诉Kubernetes我们希望达到的状态（声明期望状态，而非说明具体要做什么），它会想办法把当前状态搞定成期望状态。至于怎么做到？我们可以不关心也可以关心——它提供了解决方案，我们也可以通过K8s约定的方式来增强它的能力（支持魔改）。到此，学校的第二个需求也有了解决方案——只需要规定选课和非选课期间需要保持的在线最小数量与最大数量，和我们期望部署、升级的步调，K8s会托管这一切。</p>
+<h2 id="TBC"><a href="#TBC" class="headerlink" title="TBC"></a>TBC</h2><p>事实上，K8s并不是唯一一个尝试解决容器调度编排问题的技术方案，但是它的确是目前最知名的方案，以至于提到云就绕不开K8s。K8s方案是怎样支持它目前具有的能力的，又是怎样发展成今天的样子？是它的什么特性使得它最终被大众认可？与其他方案相比优势何在？下一篇再继续讨论这些问题🎈</p>
+<blockquote>
+<p>ref:<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.opsramp.com/guides/why-kubernetes/container-vs-vm/">https://www.opsramp.com/guides/why-kubernetes/container-vs-vm/</a></p>
+</blockquote>
 
     </div>
 
@@ -280,7 +337,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Owl-at-Dusk/" rel="tag"># Owl at Dusk</a>
+              <a href="/tags/Kubernetes/" rel="tag"># Kubernetes</a>
           </div>
 
         
@@ -289,13 +346,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/fbfaa019/" rel="prev" title="配环境有感">
-      <i class="fa fa-chevron-left"></i> 配环境有感
+    <a href="/post/df092d39/" rel="prev" title="Smooth like Butter：如何从高中丝滑过渡到大学">
+      <i class="fa fa-chevron-left"></i> Smooth like Butter：如何从高中丝滑过渡到大学
     </a></div>
-      <div class="post-nav-item">
-    <a href="/post/3a3e4295/" rel="next" title="更换设备后追踪仓库更新">
-      更换设备后追踪仓库更新 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -355,6 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81Kubernetes%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">为什么需要Kubernetes？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TBC"><span class="nav-number">3.</span> <span class="nav-text">TBC</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

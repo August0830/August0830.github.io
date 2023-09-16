@@ -180,6 +180,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/56c20e9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/56c20e9/" class="post-title-link" itemprop="url">从一台计算机到Kubernetes</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-16 15:59:58 / Modified: 16:17:58" itemprop="dateCreated datePublished" datetime="2023-09-16T15:59:58+08:00">2023-09-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/56c20e9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/56c20e9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。</p>
+<h2 id="为什么需要Kubernetes？"><a href="#为什么需要Kubernetes？" class="headerlink" title="为什么需要Kubernetes？"></a>为什么需要Kubernetes？</h2><p>回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果学校在同学们的吐槽声中，真的决定选中你写的学生选课信息管理系统作为升级版本，原本在你电脑里运行的二进制文件，真的能满足同学们的需求吗？</p>
+<p>说不定经过一番折腾真的可以。首先，我们来尝试考虑同学们在选课的需求：</p>
+<ol>
+<li>准确性：选课信息要准确，不同同学之间的课程信息不能弄混</li>
+<li>可靠性：大量同学一起选课的时候不能崩</li>
+</ol>
+<p>再尝试考虑学校的需求：</p>
+<ol>
+<li>充分利用资源：除了选课高峰期，其他时间，系统不应该占据过多的服务器资源，以减少学校开支</li>
+<li>减少人工干预的成本：选课期间老师们大多忙于解答选课问题或者处理排课冲突等问题，没有过多精力关注选课系统本身的问题</li>
+</ol>
+<p>原本在课上写的代码可能包括如下部分：</p>
+<ul>
+<li>Gateway：系统前端，也负责转发流量到后端的部分</li>
+<li>Admin：身份验证</li>
+<li>Database：存储选课信息</li>
+<li>Controller：对选课逻辑等进行检查、处理（比如需要修满本系学分，同一个学生不同课程时间有重叠需要调整或者提醒等）</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/56c20e9/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/df092d39/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1268,111 +1389,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/bb9e0ca7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/bb9e0ca7/" class="post-title-link" itemprop="url">2021春季学期小结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-12-03 21:33:03 / Modified: 21:36:39" itemprop="dateCreated datePublished" datetime="2022-12-03T21:33:03+08:00">2022-12-03</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/bb9e0ca7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/bb9e0ca7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>整理文件的时候发现于是发出来 其实是一个补档</p>
-</blockquote>
-<p>考完试了来回顾一下这一个学期我都在干什么。</p>
-<p>考试周的时候感到非常空虚，总是沉迷于阈值很高的娱乐而无所事事，经过一段时间才能调整适应并没有ddl追着打的日子。但是转念一想，在一个学期被ddl追着打的日子里，我又有什么收获呢? 乍一想好像还真没有。</p>
-<p>翻开我的日程本，刚开学的三月份过的还是相当忙碌的。寒假结束了STEP项目的申请（失败）和美赛，马不停蹄的又开始参加shopee的比赛以及准备gsoc。</p>
-<p>shopee的比赛纯属被大佬带飞，我也认识到自己并不适合短时间突击某个技术模块，厚积薄发才是王道。（尤其是在美赛结果出来以后更是印证了这一点）。</p>
-<p>gsoc虽然最终落选，但是在准备的过程中啃了一篇论文以及工程级别的源代码，认识到做研究和做工业的不同。做研究需要独创性，并且需要证明自己的方法有效，至于代码实现，只是作为证明的一部分。同时打破心理舒适区，拓展了一下自己的能力边界，看懂全英文的论文，搞明白代码的互相依赖关系并不是不可能的！</p>
-<p>之后就是连着的面试。STEP的惨痛教训另外写过。面腾讯和微软的时候基础知识和算法不够扎实，不出意外的挂了。5月份学期快结束的时候，面字节因为对方不愿意收大二的也挂了。还有一个量化的岗位因为时间不合适我被我拒了面试机会。通过一连串的面试，虽然没有获得996的机会<del>（不是</del>，但是多少了解了自己的不足以及接下来弥补的方向。同时在这期间，学会了如何大胆的请教前辈以及利用connection争取机会。</p>
-<p>另外有一个NUS的summer camp出于财务问题被我残忍拒绝了。经此一役确认接下来留学的打算估计要推到自己攒够钱之后了。家里能够提供的支持是有限的，我也不忍心再让父母掏钱。</p>
-<p>获得这样的结果我并不意外，并不能算是有顶级天赋又没有下定决心狠狠努力的我显然并不能苛求太多。从另一个角度说，失败是成功的逆位，通过排除自己目前不能做到什么，可以为接下来的假期敲响警钟。</p>
-<p>课外活动的丰富尝（shi）试（bai）来源于上个学期无所事事的教训。但是在课外也一无所成的情况下，似乎乍一看是没有任何收获的。这可能是源于我高中一贯以来的思维：大家都做了就等于都没做。但是显然，在有限的时间内，课内的实践也应当成为宝贵的经历。至少在努力过后要有所提炼，有所感悟。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/bb9e0ca7/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1443,7 +1459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1456,7 +1472,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1507,12 +1523,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">125k</span>
+    <span title="Symbols count total">128k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:13</span>
+    <span title="Reading time total">5:20</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>
