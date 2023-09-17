@@ -23,20 +23,20 @@
 
   <meta name="description" content="前言：在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。 为什么需要Kubernetes？回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从一台计算机到Kubernetes">
-<meta property="og:url" content="https://august0830.github.io/post/56c20e9/index.html">
+<meta property="og:title" content="改进选课土豆服务器背后——浅析Kubernetes(1)">
+<meta property="og:url" content="https://august0830.github.io/post/f14a27d0/index.html">
 <meta property="og:site_name" content="Map of Augustus&#39;s Soul">
 <meta property="og:description" content="前言：在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。 为什么需要Kubernetes？回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果">
 <meta property="og:locale">
 <meta property="og:image" content="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png">
-<meta property="article:published_time" content="2023-09-16T07:59:58.000Z">
-<meta property="article:modified_time" content="2023-09-16T08:17:58.960Z">
+<meta property="article:published_time" content="2023-09-17T07:56:00.000Z">
+<meta property="article:modified_time" content="2023-09-17T07:57:47.908Z">
 <meta property="article:author" content="Augustus">
 <meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.opsramp.com/wp-content/uploads/2022/07/V-vs-C-1-1536x1142.png">
 
-<link rel="canonical" href="https://august0830.github.io/post/56c20e9/">
+<link rel="canonical" href="https://august0830.github.io/post/f14a27d0/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>从一台计算机到Kubernetes | Map of Augustus's Soul</title>
+  <title>改进选课土豆服务器背后——浅析Kubernetes(1) | Map of Augustus's Soul</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/56c20e9/">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f14a27d0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mokku-blue.jpg">
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          从一台计算机到Kubernetes
+          改进选课土豆服务器背后——浅析Kubernetes(1)
         </h1>
 
         <div class="post-meta">
@@ -212,7 +212,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-16 15:59:58 / Modified: 16:17:58" itemprop="dateCreated datePublished" datetime="2023-09-16T15:59:58+08:00">2023-09-16</time>
+              <time title="Created: 2023-09-17 15:56:00 / Modified: 15:57:47" itemprop="dateCreated datePublished" datetime="2023-09-17T15:56:00+08:00">2023-09-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,8 +240,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/post/56c20e9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/56c20e9/" itemprop="commentCount"></span>
+    <a title="valine" href="/post/f14a27d0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/f14a27d0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -298,7 +298,7 @@
 </ol>
 <p>课堂代码之所以被我称之为单机游戏，是因为这些模块都会被放在一个项目下，逻辑可能有重叠交叉，编译时也一同编译。毕竟最开始我们的目标只是写完作业（啊这</p>
 <p>但是这些组件在实际场景中真的能放在一起吗？显然选课期间与非选课期间，Gateway，Admin，Controller面临的压力是不同的。把应用作为一个整体一起增加、减少是不合适的。Database的数量与其他三个组件的数量比例也会随着同学数量的增减出现变化，人少的时候也许一个Database就能支持一个Gateway转发来的流量，但是人多的时候可能需要更多Database来存储信息。</p>
-<p>这就引出了微服务（Microservice）的概念。根据<a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway‘s Law</a>，设计复杂系统本身就是在设计各个组件（Component）之间的关系。微服务的设计思路帮助我们在实现中也把不同功能模块拆开，独立编译、更新、部署。这样我们就可以解决例如：</p>
+<p>这就引出了微服务（Microservice）的概念。根据<a target="_blank" rel="external nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway’s Law</a>，设计复杂系统本身就是在设计各个组件（Component）之间的关系。微服务的设计思路帮助我们在实现中也把不同功能模块拆开，独立编译、更新、部署。这样我们用如下方式解决前面提到的一些问题：</p>
 <ul>
 <li>在非选课期间学生选课调整需要保存新旧数据的情况下，只增加Database，其他组件数量不变</li>
 <li>单独升级组件，Controller中的校验逻辑变化的时候，单独升级，无需改变其他组件</li>

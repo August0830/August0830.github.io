@@ -897,6 +897,87 @@
       </tags>
   </entry>
   <entry>
+    <title>从零开始写简历</title>
+    <url>/post/cbfb1047/</url>
+    <content><![CDATA[<p>这里的从零是字面意思，不管是刚开始找实习的同学，还是因为考研不幸落榜匆忙投入春招的同学，这篇文章是为之前完全没有写过简历的你准备的！</p>
+<p>这一篇是对我实习经验分享中写简历部分的具体拓展，对其他内容感兴趣也可以<a href="https://njucs.top/internet_company_pratice/">移步</a>。</p>
+<h2 id="前期准备——拉清单"><a href="#前期准备——拉清单" class="headerlink" title="前期准备——拉清单"></a>前期准备——拉清单</h2><p>清单内容如下：</p>
+<ul>
+<li>所有专业相关课程<ul>
+<li>不管你认为有多水都要写出来</li>
+<li>有项目/课设/代码的课程要把代码和实验报告找到；整理好上传到Github/博客上，之后根据简历排布情况置顶重要项目的仓库</li>
+<li>如果没有代码等材料，尽量回忆课程主要内容，列出大纲</li>
+</ul>
+</li>
+<li>所有专业相关活动<ul>
+<li>大创、技术社团活动、数模比赛、美赛等</li>
+<li>专业内容弱相关的活动可以记下来，只是写进简历的优先级比上述略低</li>
+</ul>
+</li>
+<li>考过的证书<ul>
+<li>四六级成绩证明，雅思托福（如果有）</li>
+<li>或者你认为能体现你能力的其他证书</li>
+</ul>
+</li>
+</ul>
+<h2 id="开始动笔"><a href="#开始动笔" class="headerlink" title="开始动笔"></a>开始动笔</h2><p>先来看一份来自CMU的简历</p>
+<img src="/post/cbfb1047/image-20230322211658324.png" class title="image-20230322211658324">
+
+<p>是不是看起来很简洁很干货？我原来用的工具现在有人反映总是会泄露个人隐私，就不推荐了。可以使用Overleaf或者自行查找类似模板。</p>
+<p>好的，现在让我们来写简历，争取像上述简历一样一页写完 (*^_^*)</p>
+<ul>
+<li>教育背景<ul>
+<li>专业相关课程可以放到技能里，或者参考CMU简历里的写法，分数特别高的课程请大胆亮出分数！</li>
+<li>课程不需要写出具体内容，留名即可（具体内容面试时再拓展，<del>留有悬念</del>）</li>
+<li>校园活动和个人荣誉可以放到简历末端，因为没有写也没关系（说的就是我这种没有拿得出手奖学金的人</li>
+</ul>
+</li>
+<li>项目经历<ul>
+<li>总结项目内容的时候可以参照STAR（Situation-Task-Action-Result）原则，写的时候不妨动词开头，紧跟结果；Situation和Task可以作为补充</li>
+<li>使用的技术框架放在一句话的开头能更好的抓住HR的视线。如果技术点比较多，可以写项目中使用多的、你有把握的、符合岗位要求的技术</li>
+<li>措辞公式：工具+做了个什么东西+这个东西的功能：<ul>
+<li>如果一行总结不完，可以参考CMU简历，一句话总结项目中的一个模块</li>
+<li>eg：使用C语言，在Linux上模拟实现操作系统中的FAT12文件系统。程序能够生成、加载二进制磁盘镜像，将文件读取、写入到磁盘</li>
+</ul>
+</li>
+<li>从清单里列出的各种课程中，优先选和岗位匹配的、参与度高的、写了代码的</li>
+<li>可以把你认为重要的项目排在上面，吸引面试官提问，觉得不够有分量的放在下端撑场面；<strong>简历里附上github链接更有说服力</strong></li>
+</ul>
+</li>
+<li>技能可以写框架/语言，可以不涉及详细内容<ul>
+<li>eg：算法分析与设计、数据结构，计算机网络，操作系统， 数据库</li>
+<li>顺序也很重要，不太有把握的可以往后面写</li>
+</ul>
+</li>
+</ul>
+<h2 id="根据简历准备"><a href="#根据简历准备" class="headerlink" title="根据简历准备"></a>根据简历准备</h2><p>目标是：</p>
+<ul>
+<li>了解简历上的项目不至于被问麻</li>
+<li>引导面试官向你更熟悉的方向提问</li>
+</ul>
+<p>准备项目相关的八股，可以参考<a href="https://njucs.top/internet_company_pratice/#%E7%AE%80%E5%8E%86">这篇</a></p>
+<img src="/post/cbfb1047/Reflection-Quesiton-For-Project.png" class title="Reflection-Quesiton-For-Project">
+
+<p>如果你的项目内容有更经典的实现，比如编译器、操作系统、现实中的商城系统等，可以去学习经典代码的写法，思考如何让你的项目向经典接近，下个模块中这种分析训练会派上大用场。</p>
+<h3 id="如果真的问到我不会的怎么办？"><a href="#如果真的问到我不会的怎么办？" class="headerlink" title="如果真的问到我不会的怎么办？"></a>如果真的问到我不会的怎么办？</h3><p>就算认真准备了也不可能面面俱到，被问到不懂太正常了。关键是<strong>Think Out Loud</strong>——大胆的说出你的分析</p>
+<p>实习或者是校招的同学是不可能什么都知道的，重点是展现出你：</p>
+<ul>
+<li>有分析、拆解问题的能力；</li>
+<li>懂得学习经典方案的思路，活用解决现实问题；</li>
+<li>能够把看起来笨的办法通过逐步优化找到更好的方案。</li>
+</ul>
+<p>所以一定要大胆的说出你的分析，即便你认为自己一开始提出来的方法很笨也没关系，像做算法题一样逐步去优化，展现出思路，这总比你真的在面试中沉默要好太多。</p>
+<h2 id="写在最后——一点鸡汤"><a href="#写在最后——一点鸡汤" class="headerlink" title="写在最后——一点鸡汤"></a>写在最后——一点鸡汤</h2><p>除我之外，第一位按照如上思路准备简历的是我的发小，一位不幸落榜还被考研耽搁所以无实习经历的西电射频方向（偏硬件）的本科同学；在我给她呕心沥血地倾吐我的血泪教训之后，她最终在两周的时间里顺利拿到年包18w+的offer。希望我的经验也能如此帮到你~(^_^)~</p>
+<p>有问题可以评论留言or给我发<a href="mzl0830@sina.com">邮件</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Batch-AW06</title>
     <url>/post/27c8219b/</url>
     <content><![CDATA[<h2 id="Task-to-do"><a href="#Task-to-do" class="headerlink" title="Task to do"></a>Task to do</h2><p>读样例代码+看课程其他讲解样例视频</p>
@@ -985,84 +1066,74 @@
       </tags>
   </entry>
   <entry>
-    <title>从零开始写简历</title>
-    <url>/post/cbfb1047/</url>
-    <content><![CDATA[<p>这里的从零是字面意思，不管是刚开始找实习的同学，还是因为考研不幸落榜匆忙投入春招的同学，这篇文章是为之前完全没有写过简历的你准备的！</p>
-<p>这一篇是对我实习经验分享中写简历部分的具体拓展，对其他内容感兴趣也可以<a href="https://njucs.top/internet_company_pratice/">移步</a>。</p>
-<h2 id="前期准备——拉清单"><a href="#前期准备——拉清单" class="headerlink" title="前期准备——拉清单"></a>前期准备——拉清单</h2><p>清单内容如下：</p>
+    <title>DP IS EASY —— 如何切入动态规划问题</title>
+    <url>/post/70b45bc3/</url>
+    <content><![CDATA[<blockquote>
+<p>是对<a href="https://leetcode.com/problems/target-sum/solutions/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions">DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions</a>的翻译记录，原题是 <a href="https://leetcode.cn/problems/target-sum/solution/DP-IS-EASY/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">Target Sum（目标和）</a></p>
+</blockquote>
+<h2 id="DP很容易！5步思考DP问题"><a href="#DP很容易！5步思考DP问题" class="headerlink" title="DP很容易！5步思考DP问题"></a>DP很容易！5步思考DP问题</h2><p><strong>注意</strong>：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。</p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><p>大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它允许我们将一个新问题转化成我们已知的问题。转化意味着使用框架，而不是将另一个问题的解决方法复制到当前问题中。你必须明白每个DP问题都是不同的。</p>
+<p><strong>问题</strong>：在继续之前将此问题标识为以下类别之一。</p>
 <ul>
-<li>所有专业相关课程<ul>
-<li>不管你认为有多水都要写出来</li>
-<li>有项目/课设/代码的课程要把代码和实验报告找到；整理好上传到Github/博客上，之后根据简历排布情况置顶重要项目的仓库</li>
-<li>如果没有代码等材料，尽量回忆课程主要内容，列出大纲</li>
+<li>0/1背包</li>
+<li>无界背包</li>
+<li>最短路径（例如：独特的路径I/II）</li>
+<li>斐波那契数列（例如：房子小偷，跳跃游戏）</li>
+<li>最长公共子串/子序列</li>
 </ul>
-</li>
-<li>所有专业相关活动<ul>
-<li>大创、技术社团活动、数模比赛、美赛等</li>
-<li>专业内容弱相关的活动可以记下来，只是写进简历的优先级比上述略低</li>
+<p><strong>答案</strong>：0/1背包</p>
+<p>为什么是0/1背包？我们的“容量”是我们想达到的目标“S”。我们的“物品”是输入子集中的数字，物品的“重量”是数字本身的值。这个问题遵循0/1背包而不是无界背包，因为我们只能使用每个数字一次。</p>
+<p>变化是什么？这个问题与标准背包问题的变化在于，我们必须将子集中的所有物品添加到我们的背包中。我们可以将问题重新构成为将当前数字的正值或负值添加到我们的背包中，以达到目标容量“S”。</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>我们需要跟踪哪些变量才能达到最佳结果？这篇Quora文章很好地解释了状态，请参考这个链接（如果你感到困惑）：**<a href="http://www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming">www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming</a>**</p>
+<p><strong>问题</strong>：确定状态变量。</p>
+<p><em>提示</em>：作为一般规则，背包问题至少需要2个状态。</p>
+<p><strong>答案</strong>：索引与当前总和</p>
+<p><em>为什么是索引？</em></p>
+<p>索引代表我们正在考虑的输入子集的索引。这告诉我们哪些值我们已经考虑过，哪些值我们还没有考虑过，以及我们当前正在考虑的值。一般规则是，在几乎所有的动态规划问题中都需要索引状态，除了最短路径，它的状态是行和列而不是单个索引，但我们会在另一篇文章中介绍这个问题。</p>
+<p><em>为什么是当前总和？</em></p>
+<p>这个问题是问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。 Current Sum 为我们提供了迄今为止我们已处理的所有值的总和。 我们的答案围绕着 Current Sum 等于 Target。</p>
+<h3 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h3><p>动态规划就是做出最佳决策。 为了做出最佳决策，我们必须首先尝试所有决策。 MIT 关于动态规划的课程讲义（The MIT lecture on DP）（强烈推荐）将此称为猜测步骤。 我的大脑更擅长将此称为决策而不是猜测。 决策必须使我们更接近基本情况（Base Case），并引导我们找到我们想要回答的问题。 基本情况在第 4 步中涵盖，但实际上与决策步骤协同工作。</p>
+<p><strong>问题</strong>：在每次递归调用时我们必须做出什么决定？ <em>提示</em>：一般来说，背包问题需要 2 个决定。</p>
+<p><strong>答案</strong>：这个问题要求我们在输入子集中获取所有数，因此在每一步中我们都会向背包中添加一个数。 请记住，我们在第 2 步中声明“该问题询问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。” 决策包括：</p>
+<ul>
+<li>我们应该添加当前数字的正值吗</li>
+<li>我们应该添加当前数字负值吗</li>
 </ul>
-</li>
-<li>考过的证书<ul>
-<li>四六级成绩证明，雅思托福（如果有）</li>
-<li>或者你认为能体现你能力的其他证书</li>
+<p>请注意，背包问题通常不需要我们拿走所有物品，因此通常的背包决定是拿走物品或留下物品</p>
+<h3 id="基本情况（Base-Case）"><a href="#基本情况（Base-Case）" class="headerlink" title="基本情况（Base Case）"></a>基本情况（Base Case）</h3><p>基本情况需要与我们正在寻求的答案所需的条件直接相关。 这就是为什么我们的决策朝着我们的基本情况努力很重要，因为这意味着我们的决策正在朝着我们的答案努力。</p>
+<p>让我们重新审视我们的答案的条件：</p>
+<ul>
+<li>我们使用输入子集中的所有数字。</li>
+<li>所有数字的总和等于我们的目标“S”。</li>
 </ul>
-</li>
+<p><strong>问题</strong>：确定基本案例。 <em>提示</em>：有 2 个基本案例。</p>
+<p><strong>答案</strong>：我们需要 2 个基本案例。 一种用于当前状态有效时，一种用于当前状态无效时。</p>
+<ul>
+<li>有效：索引超出范围且当前总和等于目标“S”</li>
+<li>无效：索引越界</li>
 </ul>
-<h2 id="开始动笔"><a href="#开始动笔" class="headerlink" title="开始动笔"></a>开始动笔</h2><p>先来看一份来自CMU的简历</p>
-<img src="/post/cbfb1047/image-20230322211658324.png" class title="image-20230322211658324">
+<p><em>为什么索引越界？</em> </p>
+<p>我们答案的一个条件是我们使用输入子集中的每个项目。 当索引超出范围时，我们知道我们已经考虑了输入子集中的每个项目。</p>
+<p><em>为什么当前总和等于目标？</em> </p>
+<p>我们的答案的一个条件是在我们的输入子集中使用的数的正值或负值的总和等于目标总和“S”。</p>
+<p>如果我们已经考虑了输入子集中的所有数并且我们当前的总和等于我们的目标，那么我们已经成功地满足了我们答案要求的两个条件。</p>
+<p>另一方面，如果我们已经考虑了输入子集中的所有数，并且我们当前的总和不等于我们的目标，那么我们只满足了答案所要求的条件之一。说明无最终答案。</p>
+<h3 id="写代码吧"><a href="#写代码吧" class="headerlink" title="写代码吧"></a>写代码吧</h3><p>如果您已经考虑了所有步骤并理解了问题，那么编写实际解决方案的代码就很简单了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">     index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">     curr_sum = <span class="number">0</span></span><br><span class="line">     <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">     </span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line"> 	<span class="comment"># Base Cases</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">     </span><br><span class="line"> 	<span class="comment"># Decisions 决策</span></span><br><span class="line">     positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">     negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> positive + negative</span><br></pre></td></tr></table></figure>
 
-<p>是不是看起来很简洁很干货？我原来用的工具现在有人反映总是会泄露个人隐私，就不推荐了。可以使用Overleaf或者自行查找类似模板。</p>
-<p>好的，现在让我们来写简历，争取像上述简历一样一页写完 (*^_^*)</p>
-<ul>
-<li>教育背景<ul>
-<li>专业相关课程可以放到技能里，或者参考CMU简历里的写法，分数特别高的课程请大胆亮出分数！</li>
-<li>课程不需要写出具体内容，留名即可（具体内容面试时再拓展，<del>留有悬念</del>）</li>
-<li>校园活动和个人荣誉可以放到简历末端，因为没有写也没关系（说的就是我这种没有拿得出手奖学金的人</li>
-</ul>
-</li>
-<li>项目经历<ul>
-<li>总结项目内容的时候可以参照STAR（Situation-Task-Action-Result）原则，写的时候不妨动词开头，紧跟结果；Situation和Task可以作为补充</li>
-<li>使用的技术框架放在一句话的开头能更好的抓住HR的视线。如果技术点比较多，可以写项目中使用多的、你有把握的、符合岗位要求的技术</li>
-<li>措辞公式：工具+做了个什么东西+这个东西的功能：<ul>
-<li>如果一行总结不完，可以参考CMU简历，一句话总结项目中的一个模块</li>
-<li>eg：使用C语言，在Linux上模拟实现操作系统中的FAT12文件系统。程序能够生成、加载二进制磁盘镜像，将文件读取、写入到磁盘</li>
-</ul>
-</li>
-<li>从清单里列出的各种课程中，优先选和岗位匹配的、参与度高的、写了代码的</li>
-<li>可以把你认为重要的项目排在上面，吸引面试官提问，觉得不够有分量的放在下端撑场面；<strong>简历里附上github链接更有说服力</strong></li>
-</ul>
-</li>
-<li>技能可以写框架/语言，可以不涉及详细内容<ul>
-<li>eg：算法分析与设计、数据结构，计算机网络，操作系统， 数据库</li>
-<li>顺序也很重要，不太有把握的可以往后面写</li>
-</ul>
-</li>
-</ul>
-<h2 id="根据简历准备"><a href="#根据简历准备" class="headerlink" title="根据简历准备"></a>根据简历准备</h2><p>目标是：</p>
-<ul>
-<li>了解简历上的项目不至于被问麻</li>
-<li>引导面试官向你更熟悉的方向提问</li>
-</ul>
-<p>准备项目相关的八股，可以参考<a href="https://njucs.top/internet_company_pratice/#%E7%AE%80%E5%8E%86">这篇</a></p>
-<img src="/post/cbfb1047/Reflection-Quesiton-For-Project.png" class title="Reflection-Quesiton-For-Project">
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>一旦我们引入记忆化（memoization），我们将只解决每个子问题一次。 我们可以完全删除递归，并通过引入制表来避免开销和堆栈溢出的可能性。 重要的是要注意自上而下的递归和自下而上的制表方法执行完全相同的工作量。 唯一不同的是内存。 如果他们执行完全相同的工作量，转换只需要我们指定解决问题的顺序。 这篇文章现在真的很长，所以我不会在这里介绍这些步骤，可能会在以后的文章中介绍。</p>
+<p>使用记忆化的方案供参考</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">        index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        curr_sum = <span class="number">0</span></span><br><span class="line">        self.memo = &#123;&#125;</span><br><span class="line">        <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line">        <span class="keyword">if</span> (index, curr_sum) <span class="keyword">in</span> self.memo:</span><br><span class="line">            <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">        </span><br><span class="line">        positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">        negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">        </span><br><span class="line">        self.memo[(index, curr_sum)] = positive + negative</span><br><span class="line">        <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br></pre></td></tr></table></figure>
 
-<p>如果你的项目内容有更经典的实现，比如编译器、操作系统、现实中的商城系统等，可以去学习经典代码的写法，思考如何让你的项目向经典接近，下个模块中这种分析训练会派上大用场。</p>
-<h3 id="如果真的问到我不会的怎么办？"><a href="#如果真的问到我不会的怎么办？" class="headerlink" title="如果真的问到我不会的怎么办？"></a>如果真的问到我不会的怎么办？</h3><p>就算认真准备了也不可能面面俱到，被问到不懂太正常了。关键是<strong>Think Out Loud</strong>——大胆的说出你的分析</p>
-<p>实习或者是校招的同学是不可能什么都知道的，重点是展现出你：</p>
-<ul>
-<li>有分析、拆解问题的能力；</li>
-<li>懂得学习经典方案的思路，活用解决现实问题；</li>
-<li>能够把看起来笨的办法通过逐步优化找到更好的方案。</li>
-</ul>
-<p>所以一定要大胆的说出你的分析，即便你认为自己一开始提出来的方法很笨也没关系，像做算法题一样逐步去优化，展现出思路，这总比你真的在面试中沉默要好太多。</p>
-<h2 id="写在最后——一点鸡汤"><a href="#写在最后——一点鸡汤" class="headerlink" title="写在最后——一点鸡汤"></a>写在最后——一点鸡汤</h2><p>除我之外，第一位按照如上思路准备简历的是我的发小，一位不幸落榜还被考研耽搁所以无实习经历的西电射频方向（偏硬件）的本科同学；在我给她呕心沥血地倾吐我的血泪教训之后，她最终在两周的时间里顺利拿到年包18w+的offer。希望我的经验也能如此帮到你~(^_^)~</p>
-<p>有问题可以评论留言or给我发<a href="mzl0830@sina.com">邮件</a></p>
+<p>对您希望此类帖子在下一篇文章中遇到的 DP 问题发表评论，如果您觉得有帮助，请为该解决方案点赞。 我想把它推到首位，因为我真的厌倦了看到直接优化的表格解决方案，背后没有任何思考过程。</p>
+<p>DP IS EASY!</p>
+<p>谢谢。</p>
 ]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Interview</tag>
+        <tag>Algo</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,7 +1430,7 @@
   <entry>
     <title>NJUCS 各研究组宣讲</title>
     <url>/post/89396cda/</url>
-    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#x77;&#x75;&#x6a;&#x75;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#x63;&#110;">&#108;&#x69;&#x77;&#x75;&#x6a;&#x75;&#110;&#64;&#x6e;&#106;&#117;&#x2e;&#x65;&#100;&#x75;&#46;&#x63;&#110;</a></p>
+    <content><![CDATA[<h2 id="BigAI"><a href="#BigAI" class="headerlink" title="BigAI"></a>BigAI</h2><p>邮件: <a href="mailto:&#108;&#x69;&#119;&#x75;&#106;&#x75;&#110;&#x40;&#x6e;&#106;&#117;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#x6e;">&#108;&#x69;&#119;&#x75;&#106;&#x75;&#110;&#x40;&#x6e;&#106;&#117;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#x6e;</a></p>
 <p>主页: <a href="https://cs.nju.edu.cn/lwj">https://cs.nju.edu.cn/lwj</a></p>
 <p>大数据机器学习 机器学习算法：存储、计算、通信</p>
 <ul>
@@ -1626,6 +1697,40 @@
 ]]></content>
       <tags>
         <tag>Owl at Dusk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Smooth like Butter：如何从高中丝滑过渡到大学</title>
+    <url>/post/df092d39/</url>
+    <content><![CDATA[<h2 id="从独木桥到旷野"><a href="#从独木桥到旷野" class="headerlink" title="从独木桥到旷野"></a>从独木桥到旷野</h2><p>如果说高中是只需要埋头前进勇争上游的独木桥，那么大学就是一片未知的旷野。</p>
+<p>前几天接到高中朋友的提问，让我介绍下NJUSE的情况。我一时哽住，说实话谈论一个院系不可能绕开讨论就读体验，仔细想想四年时间里我有收获也有不满，万般滋味实在难以总结成为最后结论。我能提供的靠谱信息，其实只有相对客观的事实。</p>
+<p>但是我又很清楚的知道，对于大部分刚刚离开高考体系的同学们来说，认识到“<strong>事实+价值=决策</strong>”的人寥寥无几，大家都习惯了给定方向向前冲，但是从填志愿开始，大学就展现了它截然不同的特征。所以我写了这篇文章。</p>
+<p>无论选择哪所学校，哪个院系，它都是万般可能性中的一种，高考的目标是考一个好分数，这是确定的；但是在大学里，从选专业到选课再到最终决定毕业去向，选择多得眼花缭乱。<strong>没有绝对意义上最好的选择，只有对做选择的个体来说最想要、最适合、最不会后悔的选择</strong>。</p>
+<p>其实高考也是如此，只是高压的应试教育体系不允许有不同的声音。有人觉得按照老师的指导一路前冲只考虑如何高分是无忧无虑的，就会有人觉得单一的评价体系压抑了自己的多种可能性。上大学这件事，乐观点说，我们终于拥有了更多的选择，可以尝试不同的可能性；对于不喜欢选择的同学，我只能很抱歉地说，你已经被推向了这个花花世界，你当然可以逃避，可以继续躲在师长的羽翼下，但是现实是，<strong>你是那个承担选择的后果的人</strong>，与其为别人的决定买单，为什么不一开始就按照自己的心意选择呢？途中可能会走弯路，可能会后悔，但是这全都是你的选择、你的经历、你的人生。</p>
+<p>所以从填志愿开始，自己决定要奔向旷野何方吧。</p>
+<h2 id="所有人的建议，都是有色眼镜后的所见"><a href="#所有人的建议，都是有色眼镜后的所见" class="headerlink" title="所有人的建议，都是有色眼镜后的所见"></a>所有人的建议，都是有色眼镜后的所见</h2><p>既然高中埋头赶路的模式已经不适合大学，那么如何在大学里做决定呢？</p>
+<p>首先，得要有这个意识。例如说，可能会有辅导员告诉你只要好好搞绩点做德育活动就能保研，可是有可能到9月保研季规则改动，或是到时候才发现原来有些思政活动对导师而言屁用没有——只有自己搜集信息，才能得出属于自己的判断，而不是人云亦云，把选择权无形的拱手相让。</p>
+<p>有人就算问了很多人也还是难以抉择的一个原因是，许多人的意见可能看似是互相矛盾的，比如该不该读这个专业，该不该上这个学校。在这里，认识到<strong>观点和事实的区别</strong>非常重要。大多数时候人提问是想要一个观点（应该读xx专业），但是这是一种偷懒行为——<strong>观点是事实在价值观这一有色眼镜后的成像</strong>。每个人的价值观与偏好都不相同，即便是相同的条件不同的人也会做出不同的决定。要么去<strong>寻找与你价值观相似的人，观察他们的选择</strong>；要么更进一步，<strong>拆解价值观，留下观点中隐含的事实</strong>。比如说一个不喜欢风险，追求稳定的人，大概率不会建议你学CS；而不害怕风险，喜欢钻研CS本身的人大概会毫不犹豫的选择CS。拆解选择CS与否背后的价值观，大概可以看出，CS目前就是一个高风险高回报的学科，并且始终需要你保持热情持续学习。去掉价值观，才会知道自己面临着怎样的情况。</p>
+<h2 id="大学，不只是上课"><a href="#大学，不只是上课" class="headerlink" title="大学，不只是上课"></a>大学，不只是上课</h2><p>我的高中朋友其实是替学弟来问我的，后来我和学弟单独聊了下，他问我如何在暑假里准备，要提前预习什么课。四年前我也是这样想的，但是现在我认为看到大树比盯着具体的叶子更重要——去了解你所选的学科需要学习什么，有什么分支，未来可能做什么方向的研究或是从事什么样的工作，这些都比以获得好绩点为目标来提问更加重要。多样化的不仅是选择，还有评价体系和生活方式。</p>
+<p>社会给高中生画的大饼是“只要你考到高分你就能获得你想要的生活，因为考到好学校就能做到”。但是这种单一线性的逻辑链在这几年已经加速崩坏：考到好的学校，获得好的绩点之后呢？是保研或是获得一份好的工作吗？获得高薪吗？就算获得这些，你想要的生活又真的能实现吗？事实是20年拿到几个大厂offer因为疫情等原因选择去读研的人在三年后可能连大厂简历关都难过，因为大厂招人步调放缓了。“读研就能比本科生获得更多”本身就是一个观点，而非事实，是否如此，需要就事论事的来看。投入的时间和精力到底转换成了什么，需要退一步看清全局，而非一开始就投身其中。</p>
+<p>以在大学学CS为例，当然上课好好搞绩点是一种学习方式，但是也有人并不适合在课堂上学习，而CS是一门可以利用许多课外资源学习的学科（也许其他学科也是），也许把投入在不喜欢的课程上的时间投入到自己的课外Side Project能获得更大的回报——这就是多样性的体现。这个世界上有大多数人都会走的道路，有主流观点认为应该走的道路，但是每个人最终让自己幸福的方式是，找到合适自己的道路。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>作为一个曾经无比希望摆脱高考体系，又某种程度上在大学里如愿以偿的人，我能给出的从高中丝滑过渡到大学的建议是：</p>
+<ul>
+<li>先问问自己到底要什么，保研工作考研出国对你来说意味着什么，而不是上来就问保研率，也不要过于心动直博等等别人给画的大饼</li>
+<li>拥抱多样性，认识到“听话”，”只要……就……“此类句式在成人世界里不管用，你需要为自己的选择买单</li>
+<li>行动之前先做调研，搞清楚这个选择实质上是什么</li>
+<li>分清观点与事实的区别，甲之蜜糖乙之砒霜，关键是事实，观点是事实在你的价值观上的成像</li>
+</ul>
+<p>希望大家都能过上自己想要的大学生活以及未来生活😉</p>
+<p>PS：</p>
+<p>谈论到自我与选择，悄悄的夹带推书：《德米安》。心理上感到无所适从的同学读了或许会有共鸣与安慰。</p>
+<p>一些可能会让你的大学四年过的更顺利的小建议可见：<a href="https://august0830.github.io/post/62f70775/">四年本科回顾：Dos and Don’ts</a></p>
+]]></content>
+      <categories>
+        <category>Thoughts</category>
+      </categories>
+      <tags>
+        <tag>Career</tag>
       </tags>
   </entry>
   <entry>
@@ -1911,6 +2016,40 @@
       </tags>
   </entry>
   <entry>
+    <title>四年本科回顾：Dos and Don&#39;ts</title>
+    <url>/post/62f70775/</url>
+    <content><![CDATA[<p>四年前入学的时候应该想不到自己真的能带着两段实习和一个符合选择CS初心的预期的工作offer毕业。如果能重来一遍，有些事情我希望我能早点做到，或是继续保持，或是不要做。在这篇文章里简单写写。</p>
+<h2 id="早点做到"><a href="#早点做到" class="headerlink" title="早点做到"></a>早点做到</h2><h3 id="多多提问"><a href="#多多提问" class="headerlink" title="多多提问"></a>多多提问</h3><p>对内向型人来说提问可能是困难的，如果担心自己在提问中被看不起，提问就会变得更加困难。</p>
+<p>但是对于新手来说，只要掌握了<a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">正确的提问方法</a>就No Stupid Question。同时应该解构“提问”这一动作的含义：提问不代表你能力不行，不假思索的提问才会影响能力的成长，经过思考以后求助才能帮助你摆脱目前的困境。</p>
+<p>可能大一早点想通这点，绩点就不至于如此凄惨了（</p>
+<h3 id="喜欢就享受，不喜欢就趁早摆脱"><a href="#喜欢就享受，不喜欢就趁早摆脱" class="headerlink" title="喜欢就享受，不喜欢就趁早摆脱"></a>喜欢就享受，不喜欢就趁早摆脱</h3><p>大二的时候一度非常怀疑自己的选择，但是这个专业和学校又的确是我自己选的，不出于所谓的就业前景、不出于所谓的热门，就只是我的兴趣结合我需要的现实资源的考量。后来我尝试着捕捉那些让我感到发自内心快乐的时刻，我终于发现，原来我讨厌的不是学习CS的过程，是不合理的体系设计。</p>
+<p>想明白一点以后，我开始寻找新的可能性，比如不读研尝试找工，也如愿摆脱了让我身心俱疲的环境与节奏，找到让我舒适的新的选项。享受快乐的瞬间；对折磨的时刻，不要坐以待毙，跑起来！</p>
+<h2 id="继续保持"><a href="#继续保持" class="headerlink" title="继续保持"></a>继续保持</h2><h3 id="做多样化的尝试"><a href="#做多样化的尝试" class="headerlink" title="做多样化的尝试"></a>做多样化的尝试</h3><p>其实四年本科所获得的，不是以开头一段纯找工角度的总结就能完全概括的。影响将会更加深远的也许并不是能写在简历上的东西。光是上了不同院系的课这件事本身就已经给我展现了多样的可能性。</p>
+<p>尝试过程中，人和事的多样性会展现出来，人自身的优缺点也会展现。多样性意味着“卷”的压力可能会突然变小——因为评价体系本质上不止绩点/科研/实习等常规体系，也许你会在其他体系大放异彩，也有可能你并不适合这一个体系，只凭一种维度的优秀就称霸所有体系是不现实的，而每个体系都需要的共同的底层能力，只有在不同的体验中才可能被发现、被培养。</p>
+<h3 id="寻找自我并对自己负责"><a href="#寻找自我并对自己负责" class="headerlink" title="寻找自我并对自己负责"></a>寻找自我并对自己负责</h3><p>以前觉得自己某种程度上的精神洁癖总让我很痛苦，意味着总是与周遭环境摩擦流血。但是爱恨都是两极，无法容忍，也无法欺骗自己的性格反倒让我很快意识到了我所喜欢的、所渴望的和所厌恶的。诚实的面对自己的感受是寻找自我的第一步，寻找自我反过来又是过的开心幸福的必经之路——毕竟你才能定义自己的幸福啊。热爱与否，骗得了自己一时，骗不了自己一世。</p>
+<p><strong>After all, you are the one who live with the consequence.</strong></p>
+<p>上大学之前就很讨厌被安排的路径与单一的指标，大学四年让我意识到原来我一直都想要为自己做选择，并且也乐意承担选择的后果，而这不巧并不是所有人的具备的，甚至在某些场合下是被打压的特质。但是从我所见所闻来看，人早晚都要为发生在自己身上的选择负责——无论是不是自己所选的。既然如此，为什么不早点把这选择权抓在自己手上呢？</p>
+<p>所以不听话，有想法不见得是坏事，反正听话、随波逐流也大概率不会有什么好下场，毕竟这是你的人生，强迫你听话的人又不需要为此付出代价。</p>
+<h3 id="保持学习，学习“如何学习”"><a href="#保持学习，学习“如何学习”" class="headerlink" title="保持学习，学习“如何学习”"></a>保持学习，学习“如何学习”</h3><p>学习本身是一件需要训练和矫正的事，我愿称之为元学习。元学习不仅是在绩点上有用，在工作，人际关系，社会生活，需要适应和学习的事情都非常的多，而且很多事情是没有所谓教材、课程大纲的，更别提如果还有个人爱好想要发展了——这些全部都需要学会学习，才能在具体领域上有所发展。</p>
+<p>作为一个从小到大对上课老师水平都很挑剔的人，不得不说，有机会当自己的老师是一种解脱。</p>
+<h3 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h3><p>和高中不同，大学有了固定的生活费，也有了消费的需求和能力，在进入职场之前锻炼理财能力是非常重要的——反正试错成本也低。</p>
+<p>理财不等于投资，从预算和开销管理入手是一个好的开始，至少在这个过程中会学到如何平衡自己的欲望和能力，如何平衡长短期的目标，以及确认什么东西对自己来说是不可或缺的。在有特别想要争取的事情，或者遭遇变故的时刻，能拿出一笔钱作为自己的底气，是一件很有成就感的事情。</p>
+<p>进入投资领域也挺好玩的。如何从零开始了解一个全新领域，如何评估自己能承受的风险，如何为自己的决定买单——投资实在是一种极好的演练。尤其是在现在变动大的市场环境下，学会保护好自己的钱包（虽然空空）还是非常有必要的，不求次次正确，但求不犯大错。在这个过程中会认识到：<strong>你的判断，价值千金。</strong></p>
+<h2 id="不要做的"><a href="#不要做的" class="headerlink" title="不要做的"></a>不要做的</h2><h3 id="给自己设限而不去争取。"><a href="#给自己设限而不去争取。" class="headerlink" title="给自己设限而不去争取。"></a>给自己设限而不去争取。</h3><p>因为认为自己做不到就不去钻研、不去争取是很蠢的事情，不钻研、不争取当然做不到啊！带着一种“做不到反正也不过保持现状”的摆烂心态去争取，反而会有惊喜。</p>
+<p>本人血泪教训：以为自己上半年不会有机会去韩国就没办韩签，结果因为签证时间赶不上错过了金南俊粉丝见面会，大虐啊！</p>
+<h3 id="死磕计划而忽视自己的真实感受"><a href="#死磕计划而忽视自己的真实感受" class="headerlink" title="死磕计划而忽视自己的真实感受"></a>死磕计划而忽视自己的真实感受</h3><p>人不是机器，状态有起伏，有突发事件都再正常不过。完成不了任务应该先考虑是不是计划或者做事方式出了问题，堆时间反而是代价最高也最不动脑子的处理方式。</p>
+<h3 id="事事上心、事事亲力亲为"><a href="#事事上心、事事亲力亲为" class="headerlink" title="事事上心、事事亲力亲为"></a>事事上心、事事亲力亲为</h3><p>坦白说大学期间就是有很多很蠢的、不值得上心的事情，当然毕业以后这种事情只多不少。明确自己的价值序列，考虑投入产出比，必要的时候把这类没有意义的事情外包。精力和注意力是有限的稀缺资源，像钱一样。如果对财产有精打细算的意识，为什么对自己的时间、精力和注意力不这样做呢？</p>
+<p>该拒绝的拒绝，该糊弄的糊弄，该外包的外包。<strong>Everything you did, will be exactly what you will be.</strong> 所以把更多时间精力放在自己认为值得的事情上吧。</p>
+<p>暂时想到这些，希望当打工人的时候也能坚持自己目前践行了认为有用、让我舒适的原则。</p>
+]]></content>
+      <categories>
+        <category>Thoughts</category>
+      </categories>
+      <tags>
+        <tag>Career</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于Java实现简单Reactor</title>
     <url>/post/b5bd3a01/</url>
     <content><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Reactor最早是在<a href="http://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">这篇论文</a>中提出的 作为Java课程拓展阅读的笔记，主要分析老师给的<a href="https://github.com/caochun/java-server/tree/main/src/main/java">参考实现</a>和论文中介绍的组件的对应关系。</p>
@@ -2064,6 +2203,61 @@
       </categories>
       <tags>
         <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实习就业分享</title>
+    <url>/post/af204ca1/</url>
+    <content><![CDATA[<blockquote>
+<p>之前分享时间有限，文字稿整理了更多内容</p>
+</blockquote>
+<h1 id="我的背景"><a href="#我的背景" class="headerlink" title="我的背景"></a>我的背景</h1><ul>
+<li>无亮眼绩点——40%上下浮动</li>
+<li>无竞赛——美赛只有一个水奖，没有ACM、花旗杯、大创</li>
+<li>进组经历——无 第一次接触科研是在毕设期间</li>
+</ul>
+<p>如果把找实习找工作比做牌桌，我猜我的开局应该和大部分人都是比较相似的，希望大家到最后不会觉得“我做不到”，而是“听起来我也行”。</p>
+<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>找实习和秋招春招的思路大致都是相似的。市场行情、你的期望等等因素都会有变化，所以对我来说授人以鱼不如授人以渔，对在座的各位来说，具有可成长的思维比照搬经验更重要。</p>
+<p>具有如下心态会对你的找工之旅有些帮助：</p>
+<ul>
+<li>忌刻舟求剑。和往年人对比是不现实的，因为这两年情况变化很快，和身边人对比也不是一个好主意，因为你们偏好的职业路径、面对的机会与挑战不尽相同。把别人当成参照物会徒增自我怀疑。如果羡慕别人的offer的话，把别人当成可以对齐模仿的案例才是成长性的思维。</li>
+<li>不要把面试结果当成是一种评判（Judgement），而应该是一种反馈（Feedback）面试是否能通过取决于很多因素，比如面试的部门是否急需人，你们气场是否相合。评判可能是一种噪音，但是反馈是应当是有利于你调整的信号。每一次面试都可以学到东西，不管是面试技巧上的、技术上的还是对行业的理解上。</li>
+<li>抓住每一次机会，不要等到做好准备。很多时候大家可能会觉得自己没准备好或者不足以去投一些看起来很高大上的大厂。但是不投怎么知道自己没机会呢？而且投简历和面试是一件投入极小但是回报极大的事情，大不了当别人免费给你做面试训练。看到内推就大胆去问、看到岗位招聘就尝试去投，来了面试就面。适应面试套路需要时间，尝试的越多，在机会来临的时候就越有机会抓住。 </li>
+<li>资源是有限的，需要权衡取舍。很多公司只允许你投递有限数量的岗位，或者是有优先级顺序；你自己的时间精力也是有限的。勇气不等于莽撞，在争取之前，需要确认自己是否真的愿意为此下注。这需要你了解你面对的机会能打开怎样的大门，以及你自己想要什么。</li>
+</ul>
+<h1 id="写简历-投递"><a href="#写简历-投递" class="headerlink" title="写简历+投递"></a>写简历+投递</h1><p>写简历是了解自己的过程，投递是了解市场行情的过程。</p>
+<p><em>插播广告一条：<a href="https://august0830.github.io/post/cbfb1047/">从零开始写简历</a></em></p>
+<p>写简历的时候，可以回想你在做什么项目的时候会觉得有意思，对什么框架比较熟悉。这种熟悉是相对的，不用觉得自己什么都不熟，毕竟是本科生，不需要对自己有太大压力。如果没有特别喜欢的怎么办？没关系，找你不讨厌的，反过来想就会有很多选择了。</p>
+<p>投递的时候可以很直观的在招聘软件上看到什么样的岗位需求量大，以及这些岗位需求都来自于哪些企业。JD上一般会提到一些技术框架，实话实说不需要完全满足，有几条符合就可以去投递了——不试白不试。试的前提是你确认自己不要对这个领域完全不懂也不感兴趣。可以搜寻一下相关技术框架的科普文章和面经，看看是否符合自己的兴趣。或是至少不讨厌，不会看着就完全失去了解的欲望。</p>
+<p>广泛投递的同时最好善用excel、notion等工具管理进度。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>关于不同公司的面试风格，有总结。总体上都包括三个方面：算法题，基础知识（八股文），Behavior Question</p>
+<p>Behavior Question：可以理解为是软实力，问题五花八门，不只是外企才有（相对来说外企更重视这些）。我被问过的问题就包括为什么投递我们公司、你面对挫折/团队冲突/难题的态度，你认为自己的优点和缺点。但是宗旨无非就是你是一个怎样的人，与你面试的公司/部门/组是否气场相合。</p>
+<p><em>再次插播一条广告：更多内容请移步<a href="https://august0830.github.io/post/d5aef8f3/">秋招实录</a></em></p>
+<p>应对思路：以不变应万变，经典思路+你的想法与个人风格。</p>
+<p>算法题为例：刷多少题不是关键，重要的是你掌握了多少种经典问题作为工具箱来帮助你切入新的问题</p>
+<p>基础知识为例：经常会问拓展问题，你之前没想到也不要沉默，重点是如何向经典框架或者实现靠近来解决，给面试官展现你解决的思路。毕竟遇到新问题是工作中经常出现的场景。</p>
+<p>举例：我的<a href="https://august0830.github.io/post/155d23b4/">微软实习二面</a></p>
+<ul>
+<li>Java项目中的多机联网是怎样做的？服务器和客户端是怎样交互的？</li>
+<li>突然有一方掉线了如何处理？如何确认对方依旧在线？</li>
+</ul>
+<p>我说实话之前没想过，但是想了下操作系统里确认任务是否完成，是在一种你不知道什么时候结束的状态下，经典的思路是使用轮询，“久不久探测”，面试官说我回答的接近了，提示我可以之后去查心跳机制。</p>
+<p>BQ为例：树立好你的工作人设，基于人设出发回答问题。为什么强调是工作人设？因为你需要展现出你能够成为这个部门/团队的助力。</p>
+<p>举例，阿里HR面问我缺点，我说：内向不爱问问题，喜欢自己先钻研，但是我回答的重心是强调我知道这会影响工作效率，我做出的平衡是先自己尝试搞清楚问题上下文，整理好我目前对问题的认识和尝试过的办法，然后自己折腾超过一定时间立马求助，保证自己能有效的提供信息帮助解决问题。比起强调个人视角的感受，我会同时强调这在工作上可能带来的影响。</p>
+<h1 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h1><p>做选择是一个加权平均数，每个人给自己人生赋予的权重不一样，经验分享能让大家看到的其实主要是“包括哪些项”，而不是告诉你应该选什么。</p>
+<p>写简历和投递的时候收集的信息在此刻非常重要。不管是决定接不接，接哪家，都需要你判断现在有的选项是否符合你的预期，外界现实和内在预期是否匹配，再做出选择或者去争取。</p>
+<p>微软实习小故事： 发邮件问分配到的组里的工作内容 → 不是我想做的方向，是上一段实习的偏客户端的方向，询问是否能换内容 → 被告知如果要换内容，需要换组 → 坚持要换，换到了我后来实习的组 → 给老板留下了深刻印象并且老板指派了我感兴趣的相关内容。</p>
+<p>常见的影响因素：岗位工作内容，业务部门，公司title，城市，潜在转正的可能，工作节奏。</p>
+<p>反问环节可以询问一些在jd和论坛上看不到的内容。我问过的问题：<strong>请面试官描述一下工作的一天</strong>。</p>
+<p>会有面试官问我是不是想问加班情况，我一般不会否认，但是我会说我还想知道更多关于工作体验的细节。可以有个大概感受。除了是否加班这样的工作节奏，还有比如开会、写周报的频率、和其他部门对接的方式。如果是基建部门和业务部面对接的时间会很多，业务部门有时候会有一些不依赖其他业务部门的需求。</p>
+<h1 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h1><p>祝大家都能得偿所愿，即便遇到不顺也最终只是或早或晚的区别。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Interview</tag>
+        <tag>Career</tag>
       </tags>
   </entry>
   <entry>
@@ -2351,214 +2545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>碎片时间学英语-程序员的口语练习</title>
-    <url>/post/4250e502/</url>
-    <content><![CDATA[<h2 id="我经历过的英语面试"><a href="#我经历过的英语面试" class="headerlink" title="我经历过的英语面试"></a>我经历过的英语面试</h2><table>
-<thead>
-<tr>
-<th>面试</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>微软暑期实习二面</td>
-<td>英文自我介绍 回答了面试官的追问</td>
-</tr>
-<tr>
-<td>Morgan Stanley 电话简历面</td>
-<td>简单Java八股，通过本场面试</td>
-</tr>
-<tr>
-<td>Morgan Stanley 3轮技术面试</td>
-<td>算法题+技术问题 磕磕绊绊解释思路</td>
-</tr>
-<tr>
-<td>TikTok Singapore 技术面+HR面</td>
-<td>3场技术面中有一半时间用英文介绍项目，解算法题，回答追问，进行反问；HR面全程用英语回答问题表达诉求</td>
-</tr>
-</tbody></table>
-<p>以上所有面试并除了Morgan Stanley因为技术问题没回答好挂了之外其他都通过了面试本身。英文的技术面试重点依旧是技术，但是经过我的练习，我至少可以做到尽可能减少表达不流畅带来的负面影响。</p>
-<p>我训练的主要目标是提升表达的流畅度，对口语的口音没有太多要求。</p>
-<h2 id="碎片时间利用的方法"><a href="#碎片时间利用的方法" class="headerlink" title="碎片时间利用的方法"></a>碎片时间利用的方法</h2><h3 id="英语刷算法题"><a href="#英语刷算法题" class="headerlink" title="英语刷算法题"></a>英语刷算法题</h3><p>英文面试中手撕算法题的关键依旧是讲清楚算法题，只不过多了一个附加条件——用英语。我在原来写自己的题解、梳理思路的基础上只是替换了语言。先保证自己能用中文清晰的写出算法题思路和需要注意的要点。</p>
-<p><strong>做英语算法题，看英语题解，用英文关键词搜索</strong> 尽可能营造沉浸式环境，同时减少对英语的陌生感和恐惧感，避免看到英语算法题就头晕。还可以学习相关术语。</p>
-<p><strong>大胆写 不需要在意语法 是Broken English也没关系</strong> 如果一开始觉得直接说很困难可以先写出来，作为缓冲。写的时候可以不在意语法，不一定要是完整的句子，把要点写出来，再考虑连起来。</p>
-<p><strong>模仿学习矫正是必须要下的功夫</strong> 参考母语者是如何讲题的可以帮助自己修正讲题的方式。我参考的是<a href="%5BNeetcode%5D(https://neetcode.io/)">NeetCode</a>。他擅长用样例讲解算法，并且用语非常基础，易于模仿。在学习模仿的过程中也可以积累常用的讲解算法题的表达。</p>
-<p><strong>“我讲明白了吗”</strong> 可以用 <em>录音回放</em> 来检查。至少自己要听得懂。有条件也可以找朋友结伴，给对方用英语讲题。</p>
-<h3 id="面试前简历准备"><a href="#面试前简历准备" class="headerlink" title="面试前简历准备"></a>面试前简历准备</h3><p>和算法题准备类似，首先我要保证用中文能复述出简历上项目的要点，能应对追问。然后在准备过程中找到合适的英文术语来替换成英文。</p>
-<p><strong>最好写好稿子背熟。</strong>有条件最好能Mock。因为实际面试中会遇到出乎意料的提问，用英语临场应变是需要训练的。</p>
-<p>碎片时间系列：</p>
-<p><a href="https://august0830.github.io/post/cda728a4/">碎片时间学英语——日常阅读</a></p>
-]]></content>
-      <categories>
-        <category>Language Learning</category>
-      </categories>
-      <tags>
-        <tag>Owl at Dusk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>碎片时间学英语——日常阅读</title>
-    <url>/post/cda728a4/</url>
-    <content><![CDATA[<p><em>原文是我外刊时文共读的作业，但是我认为这门课让我学到的东西可以拓展写一下，于是改写成了这篇文章。关于碎片化学习英语，应该会写一个系列，覆盖近一年来关于听说读写这四个方面我的练习。</em></p>
-<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>过去的三年时间里，除了大一还有英语必修课使我能在繁忙的专业课程之余专门留出时间给英语学习，我总是很难在专业课夹击中找到如上大学之前那样集中学习英语的时间，连四六级英语考试都是匆忙上阵的。</p>
-<p>系统有意识的学习英语多半是在课堂上：有专门主题的教材，有系统的笔记，有及时的作业和反馈。这并不是说我在平常不会接触、练习、使用英语；但是与课堂相比，总是缺少刻意练习和记录，因此我总是把系统、刻意练习的期待寄托在完整的、可以像课堂一样的时间段，寄希望于教材这样系统的学习材料。但是实际上，这是一种会阻碍我前进的“完美主义”。<strong>学习任何事情都不需要等到一切就绪</strong>。</p>
-<h2 id="Learning-in-Pieces"><a href="#Learning-in-Pieces" class="headerlink" title="Learning in Pieces"></a>Learning in Pieces</h2><p>语言原本就是思想的载体，是交流的工具；我所学习、所练习的一切，原本就是为了更好的倾听他人的观点，表达我的想法。因此即便是对不同主题，基于不同体裁看似零散的练习，也总是有相通的地方；而能从多种多样的文章中找到共同的部分——比如国际顶尖媒体写作者都是怎样导入，怎样吸引读者注意，引起读者思考——也同样是一种能力。对于我这样有阅读英语原文——包括新闻和技术文章——的习惯的人来说，实际上每一篇文章都是一次学习的好机会。</p>
-<p><strong>饭是一口口吃的，但是每一口吃什么，可以根据此时此地的情况定制。</strong>读什么样的文章，读文章的时候注意什么，都可以通过不同的选择来激发自己的学习兴趣。比如对同一篇文章，可以着重积累词汇，也可以学习作者安排文章结构的方式，或是观察作者如何导入一个主题、事件、专业名词；或者对不同的文章，采取不同的策略。对于略读的文章，可以扫几眼概览架构；对于精读的文章，可以掏出小本本记单词分析句子。总之可以灵活安排，就可以一定程度上减少“等我有时间再做”这样的无效flag。</p>
-<p>我时常会有阅读专业相关的英语博客的时候，这种时候除了注意专业知识，我还可以积累一些常用专业术语的表达，并且观察写作者是如何让文章保持简明易懂的。而对于商业、时事新闻，我可以多积累一些常用名词，以及一些通俗搭配，了解一些文化背景知识。</p>
-<h2 id="Make-some-Output"><a href="#Make-some-Output" class="headerlink" title="Make some Output"></a>Make some Output</h2><p>上外刊课程的时候，系统整理好的笔记和选择题答题记录是作业的一部分。不过这也倒逼了我输出笔记。输出倒逼输入的好处就不再赘述了，个人觉得还是非常大程度的避免我偷懒or忘记学到的东西了。</p>
-<p>意思是这里立Flag，看到有意思的英语会写文章记录一下。</p>
-<p>可能会记录生词短语，可能会分析写法结构，也可能会拓展记录一些背景知识。总之开始写了就好了。</p>
-<p>碎片时间系列：</p>
-<p><a href="https://august0830.github.io/post/4250e502/">碎片时间学英语-程序员的口语练习</a></p>
-]]></content>
-      <categories>
-        <category>Language Learning</category>
-      </categories>
-      <tags>
-        <tag>Owl at Dusk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>配环境有感</title>
-    <url>/post/fbfaa019/</url>
-    <content><![CDATA[<p>配环境有感<br>配环境是接触一门新语言/一个新框架的启蒙老师！</p>
-<p>连续配了Android开发和php网页段的环境。发现为了跑demo实际上掌握了关于一个新技术大致的运行方式。比如Android需要Java底层的支持和很多在线组建的支持 还有php需要配合服务器而不仅仅是一个网页文件</p>
-<p> 在配环境的过程中 经常会出现按照教程走了却没有得到想要的结果的情况 在解决这种不一致的过程中 必须要去了解原因 也因此会学习关于这门语言或者技术框架的运行原理 这样遇到问题才能分析出原因 配环境的这几个小时不算白搭</p>
-<p>另外 在没有现成demo教程的情况下 学会问问题而不仅仅是一遍遍机械重复的尝试变得非常关键 比如我在配php环境的时候一直跑不出更加复杂的他人的项目demo 搜索了如何在浏览器显示php才发现是我想的太简单了 同时也意识到这一套体系是用来模拟网站而不仅仅是网页运行的 解决这一点之后demo丝滑运行了</p>
-<p>不过必要的时候还是要寻求帮助 不过要在尝试所以能尝试的 能提问搜索的之后 </p>
-<p>还有不得不说 Google永远的神 拥有谷歌的人解决问题的概率比没有的人高了不知多少 stackoverfkow也是好东西 看多了加上逼不得已 英文就不再成为阻碍了 而且也能锻炼快速抓重点的能力</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>DP IS EASY —— 如何切入动态规划问题</title>
-    <url>/post/70b45bc3/</url>
-    <content><![CDATA[<blockquote>
-<p>是对<a href="https://leetcode.com/problems/target-sum/solutions/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions">DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions</a>的翻译记录，原题是 <a href="https://leetcode.cn/problems/target-sum/solution/DP-IS-EASY/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">Target Sum（目标和）</a></p>
-</blockquote>
-<h2 id="DP很容易！5步思考DP问题"><a href="#DP很容易！5步思考DP问题" class="headerlink" title="DP很容易！5步思考DP问题"></a>DP很容易！5步思考DP问题</h2><p><strong>注意</strong>：这不是一个规范化、完美优化的DP解决方案。我们已经有足够多这样的东西了。这篇文章将带领你了解动态规划背后的思考过程，让你能够自己解决这些问题。</p>
-<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><p>大多数动态规划问题可以归结为几个类别。识别类别很重要，因为它允许我们将一个新问题转化成我们已知的问题。转化意味着使用框架，而不是将另一个问题的解决方法复制到当前问题中。你必须明白每个DP问题都是不同的。</p>
-<p><strong>问题</strong>：在继续之前将此问题标识为以下类别之一。</p>
-<ul>
-<li>0/1背包</li>
-<li>无界背包</li>
-<li>最短路径（例如：独特的路径I/II）</li>
-<li>斐波那契数列（例如：房子小偷，跳跃游戏）</li>
-<li>最长公共子串/子序列</li>
-</ul>
-<p><strong>答案</strong>：0/1背包</p>
-<p>为什么是0/1背包？我们的“容量”是我们想达到的目标“S”。我们的“物品”是输入子集中的数字，物品的“重量”是数字本身的值。这个问题遵循0/1背包而不是无界背包，因为我们只能使用每个数字一次。</p>
-<p>变化是什么？这个问题与标准背包问题的变化在于，我们必须将子集中的所有物品添加到我们的背包中。我们可以将问题重新构成为将当前数字的正值或负值添加到我们的背包中，以达到目标容量“S”。</p>
-<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>我们需要跟踪哪些变量才能达到最佳结果？这篇Quora文章很好地解释了状态，请参考这个链接（如果你感到困惑）：**<a href="http://www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming">www.quora.com/What-does-a-state-represent-in-terms-of-Dynamic-Programming</a>**</p>
-<p><strong>问题</strong>：确定状态变量。</p>
-<p><em>提示</em>：作为一般规则，背包问题至少需要2个状态。</p>
-<p><strong>答案</strong>：索引与当前总和</p>
-<p><em>为什么是索引？</em></p>
-<p>索引代表我们正在考虑的输入子集的索引。这告诉我们哪些值我们已经考虑过，哪些值我们还没有考虑过，以及我们当前正在考虑的值。一般规则是，在几乎所有的动态规划问题中都需要索引状态，除了最短路径，它的状态是行和列而不是单个索引，但我们会在另一篇文章中介绍这个问题。</p>
-<p><em>为什么是当前总和？</em></p>
-<p>这个问题是问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。 Current Sum 为我们提供了迄今为止我们已处理的所有值的总和。 我们的答案围绕着 Current Sum 等于 Target。</p>
-<h3 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h3><p>动态规划就是做出最佳决策。 为了做出最佳决策，我们必须首先尝试所有决策。 MIT 关于动态规划的课程讲义（The MIT lecture on DP）（强烈推荐）将此称为猜测步骤。 我的大脑更擅长将此称为决策而不是猜测。 决策必须使我们更接近基本情况（Base Case），并引导我们找到我们想要回答的问题。 基本情况在第 4 步中涵盖，但实际上与决策步骤协同工作。</p>
-<p><strong>问题</strong>：在每次递归调用时我们必须做出什么决定？ <em>提示</em>：一般来说，背包问题需要 2 个决定。</p>
-<p><strong>答案</strong>：这个问题要求我们在输入子集中获取所有数，因此在每一步中我们都会向背包中添加一个数。 请记住，我们在第 2 步中声明“该问题询问我们是否可以对子集中的每个数（该数的正值或负值）求和以达到目标值。” 决策包括：</p>
-<ul>
-<li>我们应该添加当前数字的正值吗</li>
-<li>我们应该添加当前数字负值吗</li>
-</ul>
-<p>请注意，背包问题通常不需要我们拿走所有物品，因此通常的背包决定是拿走物品或留下物品</p>
-<h3 id="基本情况（Base-Case）"><a href="#基本情况（Base-Case）" class="headerlink" title="基本情况（Base Case）"></a>基本情况（Base Case）</h3><p>基本情况需要与我们正在寻求的答案所需的条件直接相关。 这就是为什么我们的决策朝着我们的基本情况努力很重要，因为这意味着我们的决策正在朝着我们的答案努力。</p>
-<p>让我们重新审视我们的答案的条件：</p>
-<ul>
-<li>我们使用输入子集中的所有数字。</li>
-<li>所有数字的总和等于我们的目标“S”。</li>
-</ul>
-<p><strong>问题</strong>：确定基本案例。 <em>提示</em>：有 2 个基本案例。</p>
-<p><strong>答案</strong>：我们需要 2 个基本案例。 一种用于当前状态有效时，一种用于当前状态无效时。</p>
-<ul>
-<li>有效：索引超出范围且当前总和等于目标“S”</li>
-<li>无效：索引越界</li>
-</ul>
-<p><em>为什么索引越界？</em> </p>
-<p>我们答案的一个条件是我们使用输入子集中的每个项目。 当索引超出范围时，我们知道我们已经考虑了输入子集中的每个项目。</p>
-<p><em>为什么当前总和等于目标？</em> </p>
-<p>我们的答案的一个条件是在我们的输入子集中使用的数的正值或负值的总和等于目标总和“S”。</p>
-<p>如果我们已经考虑了输入子集中的所有数并且我们当前的总和等于我们的目标，那么我们已经成功地满足了我们答案要求的两个条件。</p>
-<p>另一方面，如果我们已经考虑了输入子集中的所有数，并且我们当前的总和不等于我们的目标，那么我们只满足了答案所要求的条件之一。说明无最终答案。</p>
-<h3 id="写代码吧"><a href="#写代码吧" class="headerlink" title="写代码吧"></a>写代码吧</h3><p>如果您已经考虑了所有步骤并理解了问题，那么编写实际解决方案的代码就很简单了。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">     index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">     curr_sum = <span class="number">0</span></span><br><span class="line">     <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">     </span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line"> 	<span class="comment"># Base Cases</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">     <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">     </span><br><span class="line"> 	<span class="comment"># Decisions 决策</span></span><br><span class="line">     positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">     negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> positive + negative</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>一旦我们引入记忆化（memoization），我们将只解决每个子问题一次。 我们可以完全删除递归，并通过引入制表来避免开销和堆栈溢出的可能性。 重要的是要注意自上而下的递归和自下而上的制表方法执行完全相同的工作量。 唯一不同的是内存。 如果他们执行完全相同的工作量，转换只需要我们指定解决问题的顺序。 这篇文章现在真的很长，所以我不会在这里介绍这些步骤，可能会在以后的文章中介绍。</p>
-<p>使用记忆化的方案供参考</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findTargetSumWays</span>(<span class="params">self, nums, S</span>):</span></span><br><span class="line">        index = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        curr_sum = <span class="number">0</span></span><br><span class="line">        self.memo = &#123;&#125;</span><br><span class="line">        <span class="keyword">return</span> self.dp(nums, S, index, curr_sum)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dp</span>(<span class="params">self, nums, target, index, curr_sum</span>):</span></span><br><span class="line">        <span class="keyword">if</span> (index, curr_sum) <span class="keyword">in</span> self.memo:</span><br><span class="line">            <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span> <span class="keyword">and</span> curr_sum == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> index &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">        </span><br><span class="line">        positive = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + nums[index])</span><br><span class="line">        negative = self.dp(nums, target, index-<span class="number">1</span>, curr_sum + -nums[index])</span><br><span class="line">        </span><br><span class="line">        self.memo[(index, curr_sum)] = positive + negative</span><br><span class="line">        <span class="keyword">return</span> self.memo[(index, curr_sum)]</span><br></pre></td></tr></table></figure>
-
-<p>对您希望此类帖子在下一篇文章中遇到的 DP 问题发表评论，如果您觉得有帮助，请为该解决方案点赞。 我想把它推到首位，因为我真的厌倦了看到直接优化的表格解决方案，背后没有任何思考过程。</p>
-<p>DP IS EASY!</p>
-<p>谢谢。</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Algo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实习就业分享</title>
-    <url>/post/af204ca1/</url>
-    <content><![CDATA[<blockquote>
-<p>之前分享时间有限，文字稿整理了更多内容</p>
-</blockquote>
-<h1 id="我的背景"><a href="#我的背景" class="headerlink" title="我的背景"></a>我的背景</h1><ul>
-<li>无亮眼绩点——40%上下浮动</li>
-<li>无竞赛——美赛只有一个水奖，没有ACM、花旗杯、大创</li>
-<li>进组经历——无 第一次接触科研是在毕设期间</li>
-</ul>
-<p>如果把找实习找工作比做牌桌，我猜我的开局应该和大部分人都是比较相似的，希望大家到最后不会觉得“我做不到”，而是“听起来我也行”。</p>
-<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>找实习和秋招春招的思路大致都是相似的。市场行情、你的期望等等因素都会有变化，所以对我来说授人以鱼不如授人以渔，对在座的各位来说，具有可成长的思维比照搬经验更重要。</p>
-<p>具有如下心态会对你的找工之旅有些帮助：</p>
-<ul>
-<li>忌刻舟求剑。和往年人对比是不现实的，因为这两年情况变化很快，和身边人对比也不是一个好主意，因为你们偏好的职业路径、面对的机会与挑战不尽相同。把别人当成参照物会徒增自我怀疑。如果羡慕别人的offer的话，把别人当成可以对齐模仿的案例才是成长性的思维。</li>
-<li>不要把面试结果当成是一种评判（Judgement），而应该是一种反馈（Feedback）面试是否能通过取决于很多因素，比如面试的部门是否急需人，你们气场是否相合。评判可能是一种噪音，但是反馈是应当是有利于你调整的信号。每一次面试都可以学到东西，不管是面试技巧上的、技术上的还是对行业的理解上。</li>
-<li>抓住每一次机会，不要等到做好准备。很多时候大家可能会觉得自己没准备好或者不足以去投一些看起来很高大上的大厂。但是不投怎么知道自己没机会呢？而且投简历和面试是一件投入极小但是回报极大的事情，大不了当别人免费给你做面试训练。看到内推就大胆去问、看到岗位招聘就尝试去投，来了面试就面。适应面试套路需要时间，尝试的越多，在机会来临的时候就越有机会抓住。 </li>
-<li>资源是有限的，需要权衡取舍。很多公司只允许你投递有限数量的岗位，或者是有优先级顺序；你自己的时间精力也是有限的。勇气不等于莽撞，在争取之前，需要确认自己是否真的愿意为此下注。这需要你了解你面对的机会能打开怎样的大门，以及你自己想要什么。</li>
-</ul>
-<h1 id="写简历-投递"><a href="#写简历-投递" class="headerlink" title="写简历+投递"></a>写简历+投递</h1><p>写简历是了解自己的过程，投递是了解市场行情的过程。</p>
-<p><em>插播广告一条：<a href="https://august0830.github.io/post/cbfb1047/">从零开始写简历</a></em></p>
-<p>写简历的时候，可以回想你在做什么项目的时候会觉得有意思，对什么框架比较熟悉。这种熟悉是相对的，不用觉得自己什么都不熟，毕竟是本科生，不需要对自己有太大压力。如果没有特别喜欢的怎么办？没关系，找你不讨厌的，反过来想就会有很多选择了。</p>
-<p>投递的时候可以很直观的在招聘软件上看到什么样的岗位需求量大，以及这些岗位需求都来自于哪些企业。JD上一般会提到一些技术框架，实话实说不需要完全满足，有几条符合就可以去投递了——不试白不试。试的前提是你确认自己不要对这个领域完全不懂也不感兴趣。可以搜寻一下相关技术框架的科普文章和面经，看看是否符合自己的兴趣。或是至少不讨厌，不会看着就完全失去了解的欲望。</p>
-<p>广泛投递的同时最好善用excel、notion等工具管理进度。</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>关于不同公司的面试风格，有总结。总体上都包括三个方面：算法题，基础知识（八股文），Behavior Question</p>
-<p>Behavior Question：可以理解为是软实力，问题五花八门，不只是外企才有（相对来说外企更重视这些）。我被问过的问题就包括为什么投递我们公司、你面对挫折/团队冲突/难题的态度，你认为自己的优点和缺点。但是宗旨无非就是你是一个怎样的人，与你面试的公司/部门/组是否气场相合。</p>
-<p><em>再次插播一条广告：更多内容请移步<a href="https://august0830.github.io/post/d5aef8f3/">秋招实录</a></em></p>
-<p>应对思路：以不变应万变，经典思路+你的想法与个人风格。</p>
-<p>算法题为例：刷多少题不是关键，重要的是你掌握了多少种经典问题作为工具箱来帮助你切入新的问题</p>
-<p>基础知识为例：经常会问拓展问题，你之前没想到也不要沉默，重点是如何向经典框架或者实现靠近来解决，给面试官展现你解决的思路。毕竟遇到新问题是工作中经常出现的场景。</p>
-<p>举例：我的<a href="https://august0830.github.io/post/155d23b4/">微软实习二面</a></p>
-<ul>
-<li>Java项目中的多机联网是怎样做的？服务器和客户端是怎样交互的？</li>
-<li>突然有一方掉线了如何处理？如何确认对方依旧在线？</li>
-</ul>
-<p>我说实话之前没想过，但是想了下操作系统里确认任务是否完成，是在一种你不知道什么时候结束的状态下，经典的思路是使用轮询，“久不久探测”，面试官说我回答的接近了，提示我可以之后去查心跳机制。</p>
-<p>BQ为例：树立好你的工作人设，基于人设出发回答问题。为什么强调是工作人设？因为你需要展现出你能够成为这个部门/团队的助力。</p>
-<p>举例，阿里HR面问我缺点，我说：内向不爱问问题，喜欢自己先钻研，但是我回答的重心是强调我知道这会影响工作效率，我做出的平衡是先自己尝试搞清楚问题上下文，整理好我目前对问题的认识和尝试过的办法，然后自己折腾超过一定时间立马求助，保证自己能有效的提供信息帮助解决问题。比起强调个人视角的感受，我会同时强调这在工作上可能带来的影响。</p>
-<h1 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h1><p>做选择是一个加权平均数，每个人给自己人生赋予的权重不一样，经验分享能让大家看到的其实主要是“包括哪些项”，而不是告诉你应该选什么。</p>
-<p>写简历和投递的时候收集的信息在此刻非常重要。不管是决定接不接，接哪家，都需要你判断现在有的选项是否符合你的预期，外界现实和内在预期是否匹配，再做出选择或者去争取。</p>
-<p>微软实习小故事： 发邮件问分配到的组里的工作内容 → 不是我想做的方向，是上一段实习的偏客户端的方向，询问是否能换内容 → 被告知如果要换内容，需要换组 → 坚持要换，换到了我后来实习的组 → 给老板留下了深刻印象并且老板指派了我感兴趣的相关内容。</p>
-<p>常见的影响因素：岗位工作内容，业务部门，公司title，城市，潜在转正的可能，工作节奏。</p>
-<p>反问环节可以询问一些在jd和论坛上看不到的内容。我问过的问题：<strong>请面试官描述一下工作的一天</strong>。</p>
-<p>会有面试官问我是不是想问加班情况，我一般不会否认，但是我会说我还想知道更多关于工作体验的细节。可以有个大概感受。除了是否加班这样的工作节奏，还有比如开会、写周报的频率、和其他部门对接的方式。如果是基建部门和业务部面对接的时间会很多，业务部门有时候会有一些不依赖其他业务部门的需求。</p>
-<h1 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h1><p>祝大家都能得偿所愿，即便遇到不顺也最终只是或早或晚的区别。</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Interview</tag>
-        <tag>Career</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>毕设实录</title>
     <url>/post/7d3f17d0/</url>
     <content><![CDATA[<h2 id="关于选题"><a href="#关于选题" class="headerlink" title="关于选题"></a>关于选题</h2><p>事实上在做毕设之前我从来没有接触过机器学习相关的科研或者项目，实习做的也不是这个方向。是在和导师沟通的过程中，觉得这个题目有点意思，加上之前没怎么做过研究，于是脑子一热答应选了这个如导师所言”有挑战性”的选题。</p>
@@ -2644,76 +2630,90 @@
       </tags>
   </entry>
   <entry>
-    <title>四年本科回顾：Dos and Don&#39;ts</title>
-    <url>/post/62f70775/</url>
-    <content><![CDATA[<p>四年前入学的时候应该想不到自己真的能带着两段实习和一个符合选择CS初心的预期的工作offer毕业。如果能重来一遍，有些事情我希望我能早点做到，或是继续保持，或是不要做。在这篇文章里简单写写。</p>
-<h2 id="早点做到"><a href="#早点做到" class="headerlink" title="早点做到"></a>早点做到</h2><h3 id="多多提问"><a href="#多多提问" class="headerlink" title="多多提问"></a>多多提问</h3><p>对内向型人来说提问可能是困难的，如果担心自己在提问中被看不起，提问就会变得更加困难。</p>
-<p>但是对于新手来说，只要掌握了<a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">正确的提问方法</a>就No Stupid Question。同时应该解构“提问”这一动作的含义：提问不代表你能力不行，不假思索的提问才会影响能力的成长，经过思考以后求助才能帮助你摆脱目前的困境。</p>
-<p>可能大一早点想通这点，绩点就不至于如此凄惨了（</p>
-<h3 id="喜欢就享受，不喜欢就趁早摆脱"><a href="#喜欢就享受，不喜欢就趁早摆脱" class="headerlink" title="喜欢就享受，不喜欢就趁早摆脱"></a>喜欢就享受，不喜欢就趁早摆脱</h3><p>大二的时候一度非常怀疑自己的选择，但是这个专业和学校又的确是我自己选的，不出于所谓的就业前景、不出于所谓的热门，就只是我的兴趣结合我需要的现实资源的考量。后来我尝试着捕捉那些让我感到发自内心快乐的时刻，我终于发现，原来我讨厌的不是学习CS的过程，是不合理的体系设计。</p>
-<p>想明白一点以后，我开始寻找新的可能性，比如不读研尝试找工，也如愿摆脱了让我身心俱疲的环境与节奏，找到让我舒适的新的选项。享受快乐的瞬间；对折磨的时刻，不要坐以待毙，跑起来！</p>
-<h2 id="继续保持"><a href="#继续保持" class="headerlink" title="继续保持"></a>继续保持</h2><h3 id="做多样化的尝试"><a href="#做多样化的尝试" class="headerlink" title="做多样化的尝试"></a>做多样化的尝试</h3><p>其实四年本科所获得的，不是以开头一段纯找工角度的总结就能完全概括的。影响将会更加深远的也许并不是能写在简历上的东西。光是上了不同院系的课这件事本身就已经给我展现了多样的可能性。</p>
-<p>尝试过程中，人和事的多样性会展现出来，人自身的优缺点也会展现。多样性意味着“卷”的压力可能会突然变小——因为评价体系本质上不止绩点/科研/实习等常规体系，也许你会在其他体系大放异彩，也有可能你并不适合这一个体系，只凭一种维度的优秀就称霸所有体系是不现实的，而每个体系都需要的共同的底层能力，只有在不同的体验中才可能被发现、被培养。</p>
-<h3 id="寻找自我并对自己负责"><a href="#寻找自我并对自己负责" class="headerlink" title="寻找自我并对自己负责"></a>寻找自我并对自己负责</h3><p>以前觉得自己某种程度上的精神洁癖总让我很痛苦，意味着总是与周遭环境摩擦流血。但是爱恨都是两极，无法容忍，也无法欺骗自己的性格反倒让我很快意识到了我所喜欢的、所渴望的和所厌恶的。诚实的面对自己的感受是寻找自我的第一步，寻找自我反过来又是过的开心幸福的必经之路——毕竟你才能定义自己的幸福啊。热爱与否，骗得了自己一时，骗不了自己一世。</p>
-<p><strong>After all, you are the one who live with the consequence.</strong></p>
-<p>上大学之前就很讨厌被安排的路径与单一的指标，大学四年让我意识到原来我一直都想要为自己做选择，并且也乐意承担选择的后果，而这不巧并不是所有人的具备的，甚至在某些场合下是被打压的特质。但是从我所见所闻来看，人早晚都要为发生在自己身上的选择负责——无论是不是自己所选的。既然如此，为什么不早点把这选择权抓在自己手上呢？</p>
-<p>所以不听话，有想法不见得是坏事，反正听话、随波逐流也大概率不会有什么好下场，毕竟这是你的人生，强迫你听话的人又不需要为此付出代价。</p>
-<h3 id="保持学习，学习“如何学习”"><a href="#保持学习，学习“如何学习”" class="headerlink" title="保持学习，学习“如何学习”"></a>保持学习，学习“如何学习”</h3><p>学习本身是一件需要训练和矫正的事，我愿称之为元学习。元学习不仅是在绩点上有用，在工作，人际关系，社会生活，需要适应和学习的事情都非常的多，而且很多事情是没有所谓教材、课程大纲的，更别提如果还有个人爱好想要发展了——这些全部都需要学会学习，才能在具体领域上有所发展。</p>
-<p>作为一个从小到大对上课老师水平都很挑剔的人，不得不说，有机会当自己的老师是一种解脱。</p>
-<h3 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h3><p>和高中不同，大学有了固定的生活费，也有了消费的需求和能力，在进入职场之前锻炼理财能力是非常重要的——反正试错成本也低。</p>
-<p>理财不等于投资，从预算和开销管理入手是一个好的开始，至少在这个过程中会学到如何平衡自己的欲望和能力，如何平衡长短期的目标，以及确认什么东西对自己来说是不可或缺的。在有特别想要争取的事情，或者遭遇变故的时刻，能拿出一笔钱作为自己的底气，是一件很有成就感的事情。</p>
-<p>进入投资领域也挺好玩的。如何从零开始了解一个全新领域，如何评估自己能承受的风险，如何为自己的决定买单——投资实在是一种极好的演练。尤其是在现在变动大的市场环境下，学会保护好自己的钱包（虽然空空）还是非常有必要的，不求次次正确，但求不犯大错。在这个过程中会认识到：<strong>你的判断，价值千金。</strong></p>
-<h2 id="不要做的"><a href="#不要做的" class="headerlink" title="不要做的"></a>不要做的</h2><h3 id="给自己设限而不去争取。"><a href="#给自己设限而不去争取。" class="headerlink" title="给自己设限而不去争取。"></a>给自己设限而不去争取。</h3><p>因为认为自己做不到就不去钻研、不去争取是很蠢的事情，不钻研、不争取当然做不到啊！带着一种“做不到反正也不过保持现状”的摆烂心态去争取，反而会有惊喜。</p>
-<p>本人血泪教训：以为自己上半年不会有机会去韩国就没办韩签，结果因为签证时间赶不上错过了金南俊粉丝见面会，大虐啊！</p>
-<h3 id="死磕计划而忽视自己的真实感受"><a href="#死磕计划而忽视自己的真实感受" class="headerlink" title="死磕计划而忽视自己的真实感受"></a>死磕计划而忽视自己的真实感受</h3><p>人不是机器，状态有起伏，有突发事件都再正常不过。完成不了任务应该先考虑是不是计划或者做事方式出了问题，堆时间反而是代价最高也最不动脑子的处理方式。</p>
-<h3 id="事事上心、事事亲力亲为"><a href="#事事上心、事事亲力亲为" class="headerlink" title="事事上心、事事亲力亲为"></a>事事上心、事事亲力亲为</h3><p>坦白说大学期间就是有很多很蠢的、不值得上心的事情，当然毕业以后这种事情只多不少。明确自己的价值序列，考虑投入产出比，必要的时候把这类没有意义的事情外包。精力和注意力是有限的稀缺资源，像钱一样。如果对财产有精打细算的意识，为什么对自己的时间、精力和注意力不这样做呢？</p>
-<p>该拒绝的拒绝，该糊弄的糊弄，该外包的外包。<strong>Everything you did, will be exactly what you will be.</strong> 所以把更多时间精力放在自己认为值得的事情上吧。</p>
-<p>暂时想到这些，希望当打工人的时候也能坚持自己目前践行了认为有用、让我舒适的原则。</p>
+    <title>碎片时间学英语-程序员的口语练习</title>
+    <url>/post/4250e502/</url>
+    <content><![CDATA[<h2 id="我经历过的英语面试"><a href="#我经历过的英语面试" class="headerlink" title="我经历过的英语面试"></a>我经历过的英语面试</h2><table>
+<thead>
+<tr>
+<th>面试</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>微软暑期实习二面</td>
+<td>英文自我介绍 回答了面试官的追问</td>
+</tr>
+<tr>
+<td>Morgan Stanley 电话简历面</td>
+<td>简单Java八股，通过本场面试</td>
+</tr>
+<tr>
+<td>Morgan Stanley 3轮技术面试</td>
+<td>算法题+技术问题 磕磕绊绊解释思路</td>
+</tr>
+<tr>
+<td>TikTok Singapore 技术面+HR面</td>
+<td>3场技术面中有一半时间用英文介绍项目，解算法题，回答追问，进行反问；HR面全程用英语回答问题表达诉求</td>
+</tr>
+</tbody></table>
+<p>以上所有面试并除了Morgan Stanley因为技术问题没回答好挂了之外其他都通过了面试本身。英文的技术面试重点依旧是技术，但是经过我的练习，我至少可以做到尽可能减少表达不流畅带来的负面影响。</p>
+<p>我训练的主要目标是提升表达的流畅度，对口语的口音没有太多要求。</p>
+<h2 id="碎片时间利用的方法"><a href="#碎片时间利用的方法" class="headerlink" title="碎片时间利用的方法"></a>碎片时间利用的方法</h2><h3 id="英语刷算法题"><a href="#英语刷算法题" class="headerlink" title="英语刷算法题"></a>英语刷算法题</h3><p>英文面试中手撕算法题的关键依旧是讲清楚算法题，只不过多了一个附加条件——用英语。我在原来写自己的题解、梳理思路的基础上只是替换了语言。先保证自己能用中文清晰的写出算法题思路和需要注意的要点。</p>
+<p><strong>做英语算法题，看英语题解，用英文关键词搜索</strong> 尽可能营造沉浸式环境，同时减少对英语的陌生感和恐惧感，避免看到英语算法题就头晕。还可以学习相关术语。</p>
+<p><strong>大胆写 不需要在意语法 是Broken English也没关系</strong> 如果一开始觉得直接说很困难可以先写出来，作为缓冲。写的时候可以不在意语法，不一定要是完整的句子，把要点写出来，再考虑连起来。</p>
+<p><strong>模仿学习矫正是必须要下的功夫</strong> 参考母语者是如何讲题的可以帮助自己修正讲题的方式。我参考的是<a href="%5BNeetcode%5D(https://neetcode.io/)">NeetCode</a>。他擅长用样例讲解算法，并且用语非常基础，易于模仿。在学习模仿的过程中也可以积累常用的讲解算法题的表达。</p>
+<p><strong>“我讲明白了吗”</strong> 可以用 <em>录音回放</em> 来检查。至少自己要听得懂。有条件也可以找朋友结伴，给对方用英语讲题。</p>
+<h3 id="面试前简历准备"><a href="#面试前简历准备" class="headerlink" title="面试前简历准备"></a>面试前简历准备</h3><p>和算法题准备类似，首先我要保证用中文能复述出简历上项目的要点，能应对追问。然后在准备过程中找到合适的英文术语来替换成英文。</p>
+<p><strong>最好写好稿子背熟。</strong>有条件最好能Mock。因为实际面试中会遇到出乎意料的提问，用英语临场应变是需要训练的。</p>
+<p>碎片时间系列：</p>
+<p><a href="https://august0830.github.io/post/cda728a4/">碎片时间学英语——日常阅读</a></p>
 ]]></content>
       <categories>
-        <category>Thoughts</category>
+        <category>Language Learning</category>
       </categories>
       <tags>
-        <tag>Career</tag>
+        <tag>Owl at Dusk</tag>
       </tags>
   </entry>
   <entry>
-    <title>Smooth like Butter：如何从高中丝滑过渡到大学</title>
-    <url>/post/df092d39/</url>
-    <content><![CDATA[<h2 id="从独木桥到旷野"><a href="#从独木桥到旷野" class="headerlink" title="从独木桥到旷野"></a>从独木桥到旷野</h2><p>如果说高中是只需要埋头前进勇争上游的独木桥，那么大学就是一片未知的旷野。</p>
-<p>前几天接到高中朋友的提问，让我介绍下NJUSE的情况。我一时哽住，说实话谈论一个院系不可能绕开讨论就读体验，仔细想想四年时间里我有收获也有不满，万般滋味实在难以总结成为最后结论。我能提供的靠谱信息，其实只有相对客观的事实。</p>
-<p>但是我又很清楚的知道，对于大部分刚刚离开高考体系的同学们来说，认识到“<strong>事实+价值=决策</strong>”的人寥寥无几，大家都习惯了给定方向向前冲，但是从填志愿开始，大学就展现了它截然不同的特征。所以我写了这篇文章。</p>
-<p>无论选择哪所学校，哪个院系，它都是万般可能性中的一种，高考的目标是考一个好分数，这是确定的；但是在大学里，从选专业到选课再到最终决定毕业去向，选择多得眼花缭乱。<strong>没有绝对意义上最好的选择，只有对做选择的个体来说最想要、最适合、最不会后悔的选择</strong>。</p>
-<p>其实高考也是如此，只是高压的应试教育体系不允许有不同的声音。有人觉得按照老师的指导一路前冲只考虑如何高分是无忧无虑的，就会有人觉得单一的评价体系压抑了自己的多种可能性。上大学这件事，乐观点说，我们终于拥有了更多的选择，可以尝试不同的可能性；对于不喜欢选择的同学，我只能很抱歉地说，你已经被推向了这个花花世界，你当然可以逃避，可以继续躲在师长的羽翼下，但是现实是，<strong>你是那个承担选择的后果的人</strong>，与其为别人的决定买单，为什么不一开始就按照自己的心意选择呢？途中可能会走弯路，可能会后悔，但是这全都是你的选择、你的经历、你的人生。</p>
-<p>所以从填志愿开始，自己决定要奔向旷野何方吧。</p>
-<h2 id="所有人的建议，都是有色眼镜后的所见"><a href="#所有人的建议，都是有色眼镜后的所见" class="headerlink" title="所有人的建议，都是有色眼镜后的所见"></a>所有人的建议，都是有色眼镜后的所见</h2><p>既然高中埋头赶路的模式已经不适合大学，那么如何在大学里做决定呢？</p>
-<p>首先，得要有这个意识。例如说，可能会有辅导员告诉你只要好好搞绩点做德育活动就能保研，可是有可能到9月保研季规则改动，或是到时候才发现原来有些思政活动对导师而言屁用没有——只有自己搜集信息，才能得出属于自己的判断，而不是人云亦云，把选择权无形的拱手相让。</p>
-<p>有人就算问了很多人也还是难以抉择的一个原因是，许多人的意见可能看似是互相矛盾的，比如该不该读这个专业，该不该上这个学校。在这里，认识到<strong>观点和事实的区别</strong>非常重要。大多数时候人提问是想要一个观点（应该读xx专业），但是这是一种偷懒行为——<strong>观点是事实在价值观这一有色眼镜后的成像</strong>。每个人的价值观与偏好都不相同，即便是相同的条件不同的人也会做出不同的决定。要么去<strong>寻找与你价值观相似的人，观察他们的选择</strong>；要么更进一步，<strong>拆解价值观，留下观点中隐含的事实</strong>。比如说一个不喜欢风险，追求稳定的人，大概率不会建议你学CS；而不害怕风险，喜欢钻研CS本身的人大概会毫不犹豫的选择CS。拆解选择CS与否背后的价值观，大概可以看出，CS目前就是一个高风险高回报的学科，并且始终需要你保持热情持续学习。去掉价值观，才会知道自己面临着怎样的情况。</p>
-<h2 id="大学，不只是上课"><a href="#大学，不只是上课" class="headerlink" title="大学，不只是上课"></a>大学，不只是上课</h2><p>我的高中朋友其实是替学弟来问我的，后来我和学弟单独聊了下，他问我如何在暑假里准备，要提前预习什么课。四年前我也是这样想的，但是现在我认为看到大树比盯着具体的叶子更重要——去了解你所选的学科需要学习什么，有什么分支，未来可能做什么方向的研究或是从事什么样的工作，这些都比以获得好绩点为目标来提问更加重要。多样化的不仅是选择，还有评价体系和生活方式。</p>
-<p>社会给高中生画的大饼是“只要你考到高分你就能获得你想要的生活，因为考到好学校就能做到”。但是这种单一线性的逻辑链在这几年已经加速崩坏：考到好的学校，获得好的绩点之后呢？是保研或是获得一份好的工作吗？获得高薪吗？就算获得这些，你想要的生活又真的能实现吗？事实是20年拿到几个大厂offer因为疫情等原因选择去读研的人在三年后可能连大厂简历关都难过，因为大厂招人步调放缓了。“读研就能比本科生获得更多”本身就是一个观点，而非事实，是否如此，需要就事论事的来看。投入的时间和精力到底转换成了什么，需要退一步看清全局，而非一开始就投身其中。</p>
-<p>以在大学学CS为例，当然上课好好搞绩点是一种学习方式，但是也有人并不适合在课堂上学习，而CS是一门可以利用许多课外资源学习的学科（也许其他学科也是），也许把投入在不喜欢的课程上的时间投入到自己的课外Side Project能获得更大的回报——这就是多样性的体现。这个世界上有大多数人都会走的道路，有主流观点认为应该走的道路，但是每个人最终让自己幸福的方式是，找到合适自己的道路。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>作为一个曾经无比希望摆脱高考体系，又某种程度上在大学里如愿以偿的人，我能给出的从高中丝滑过渡到大学的建议是：</p>
-<ul>
-<li>先问问自己到底要什么，保研工作考研出国对你来说意味着什么，而不是上来就问保研率，也不要过于心动直博等等别人给画的大饼</li>
-<li>拥抱多样性，认识到“听话”，”只要……就……“此类句式在成人世界里不管用，你需要为自己的选择买单</li>
-<li>行动之前先做调研，搞清楚这个选择实质上是什么</li>
-<li>分清观点与事实的区别，甲之蜜糖乙之砒霜，关键是事实，观点是事实在你的价值观上的成像</li>
-</ul>
-<p>希望大家都能过上自己想要的大学生活以及未来生活😉</p>
-<p>PS：</p>
-<p>谈论到自我与选择，悄悄的夹带推书：《德米安》。心理上感到无所适从的同学读了或许会有共鸣与安慰。</p>
-<p>一些可能会让你的大学四年过的更顺利的小建议可见：<a href="https://august0830.github.io/post/62f70775/">四年本科回顾：Dos and Don’ts</a></p>
+    <title>碎片时间学英语——日常阅读</title>
+    <url>/post/cda728a4/</url>
+    <content><![CDATA[<p><em>原文是我外刊时文共读的作业，但是我认为这门课让我学到的东西可以拓展写一下，于是改写成了这篇文章。关于碎片化学习英语，应该会写一个系列，覆盖近一年来关于听说读写这四个方面我的练习。</em></p>
+<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>过去的三年时间里，除了大一还有英语必修课使我能在繁忙的专业课程之余专门留出时间给英语学习，我总是很难在专业课夹击中找到如上大学之前那样集中学习英语的时间，连四六级英语考试都是匆忙上阵的。</p>
+<p>系统有意识的学习英语多半是在课堂上：有专门主题的教材，有系统的笔记，有及时的作业和反馈。这并不是说我在平常不会接触、练习、使用英语；但是与课堂相比，总是缺少刻意练习和记录，因此我总是把系统、刻意练习的期待寄托在完整的、可以像课堂一样的时间段，寄希望于教材这样系统的学习材料。但是实际上，这是一种会阻碍我前进的“完美主义”。<strong>学习任何事情都不需要等到一切就绪</strong>。</p>
+<h2 id="Learning-in-Pieces"><a href="#Learning-in-Pieces" class="headerlink" title="Learning in Pieces"></a>Learning in Pieces</h2><p>语言原本就是思想的载体，是交流的工具；我所学习、所练习的一切，原本就是为了更好的倾听他人的观点，表达我的想法。因此即便是对不同主题，基于不同体裁看似零散的练习，也总是有相通的地方；而能从多种多样的文章中找到共同的部分——比如国际顶尖媒体写作者都是怎样导入，怎样吸引读者注意，引起读者思考——也同样是一种能力。对于我这样有阅读英语原文——包括新闻和技术文章——的习惯的人来说，实际上每一篇文章都是一次学习的好机会。</p>
+<p><strong>饭是一口口吃的，但是每一口吃什么，可以根据此时此地的情况定制。</strong>读什么样的文章，读文章的时候注意什么，都可以通过不同的选择来激发自己的学习兴趣。比如对同一篇文章，可以着重积累词汇，也可以学习作者安排文章结构的方式，或是观察作者如何导入一个主题、事件、专业名词；或者对不同的文章，采取不同的策略。对于略读的文章，可以扫几眼概览架构；对于精读的文章，可以掏出小本本记单词分析句子。总之可以灵活安排，就可以一定程度上减少“等我有时间再做”这样的无效flag。</p>
+<p>我时常会有阅读专业相关的英语博客的时候，这种时候除了注意专业知识，我还可以积累一些常用专业术语的表达，并且观察写作者是如何让文章保持简明易懂的。而对于商业、时事新闻，我可以多积累一些常用名词，以及一些通俗搭配，了解一些文化背景知识。</p>
+<h2 id="Make-some-Output"><a href="#Make-some-Output" class="headerlink" title="Make some Output"></a>Make some Output</h2><p>上外刊课程的时候，系统整理好的笔记和选择题答题记录是作业的一部分。不过这也倒逼了我输出笔记。输出倒逼输入的好处就不再赘述了，个人觉得还是非常大程度的避免我偷懒or忘记学到的东西了。</p>
+<p>意思是这里立Flag，看到有意思的英语会写文章记录一下。</p>
+<p>可能会记录生词短语，可能会分析写法结构，也可能会拓展记录一些背景知识。总之开始写了就好了。</p>
+<p>碎片时间系列：</p>
+<p><a href="https://august0830.github.io/post/4250e502/">碎片时间学英语-程序员的口语练习</a></p>
 ]]></content>
       <categories>
-        <category>Thoughts</category>
+        <category>Language Learning</category>
       </categories>
       <tags>
-        <tag>Career</tag>
+        <tag>Owl at Dusk</tag>
       </tags>
   </entry>
   <entry>
-    <title>从一台计算机到Kubernetes</title>
-    <url>/post/56c20e9/</url>
+    <title>配环境有感</title>
+    <url>/post/fbfaa019/</url>
+    <content><![CDATA[<p>配环境有感<br>配环境是接触一门新语言/一个新框架的启蒙老师！</p>
+<p>连续配了Android开发和php网页段的环境。发现为了跑demo实际上掌握了关于一个新技术大致的运行方式。比如Android需要Java底层的支持和很多在线组建的支持 还有php需要配合服务器而不仅仅是一个网页文件</p>
+<p> 在配环境的过程中 经常会出现按照教程走了却没有得到想要的结果的情况 在解决这种不一致的过程中 必须要去了解原因 也因此会学习关于这门语言或者技术框架的运行原理 这样遇到问题才能分析出原因 配环境的这几个小时不算白搭</p>
+<p>另外 在没有现成demo教程的情况下 学会问问题而不仅仅是一遍遍机械重复的尝试变得非常关键 比如我在配php环境的时候一直跑不出更加复杂的他人的项目demo 搜索了如何在浏览器显示php才发现是我想的太简单了 同时也意识到这一套体系是用来模拟网站而不仅仅是网页运行的 解决这一点之后demo丝滑运行了</p>
+<p>不过必要的时候还是要寻求帮助 不过要在尝试所以能尝试的 能提问搜索的之后 </p>
+<p>还有不得不说 Google永远的神 拥有谷歌的人解决问题的概率比没有的人高了不知多少 stackoverfkow也是好东西 看多了加上逼不得已 英文就不再成为阻碍了 而且也能锻炼快速抓重点的能力</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>改进选课土豆服务器背后——浅析Kubernetes(1)</title>
+    <url>/post/f14a27d0/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。</p>
 <h2 id="为什么需要Kubernetes？"><a href="#为什么需要Kubernetes？" class="headerlink" title="为什么需要Kubernetes？"></a>为什么需要Kubernetes？</h2><p>回到我还在学校的时候，学生信息管理系统 （aka 选课系统）属实是人手一个的项目。问题来了，如果学校在同学们的吐槽声中，真的决定选中你写的学生选课信息管理系统作为升级版本，原本在你电脑里运行的二进制文件，真的能满足同学们的需求吗？</p>
 <p>说不定经过一番折腾真的可以。首先，我们来尝试考虑同学们在选课的需求：</p>
@@ -2742,7 +2742,7 @@
 </ol>
 <p>课堂代码之所以被我称之为单机游戏，是因为这些模块都会被放在一个项目下，逻辑可能有重叠交叉，编译时也一同编译。毕竟最开始我们的目标只是写完作业（啊这</p>
 <p>但是这些组件在实际场景中真的能放在一起吗？显然选课期间与非选课期间，Gateway，Admin，Controller面临的压力是不同的。把应用作为一个整体一起增加、减少是不合适的。Database的数量与其他三个组件的数量比例也会随着同学数量的增减出现变化，人少的时候也许一个Database就能支持一个Gateway转发来的流量，但是人多的时候可能需要更多Database来存储信息。</p>
-<p>这就引出了微服务（Microservice）的概念。根据<a href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway‘s Law</a>，设计复杂系统本身就是在设计各个组件（Component）之间的关系。微服务的设计思路帮助我们在实现中也把不同功能模块拆开，独立编译、更新、部署。这样我们就可以解决例如：</p>
+<p>这就引出了微服务（Microservice）的概念。根据<a href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway’s Law</a>，设计复杂系统本身就是在设计各个组件（Component）之间的关系。微服务的设计思路帮助我们在实现中也把不同功能模块拆开，独立编译、更新、部署。这样我们用如下方式解决前面提到的一些问题：</p>
 <ul>
 <li>在非选课期间学生选课调整需要保存新旧数据的情况下，只增加Database，其他组件数量不变</li>
 <li>单独升级组件，Controller中的校验逻辑变化的时候，单独升级，无需改变其他组件</li>

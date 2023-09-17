@@ -6,7 +6,7 @@
   <link href="https://august0830.github.io/atom.xml" rel="self"/>
   
   <link href="https://august0830.github.io/"/>
-  <updated>2023-09-16T08:17:58.960Z</updated>
+  <updated>2023-09-17T07:57:47.908Z</updated>
   <id>https://august0830.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>从一台计算机到Kubernetes</title>
-    <link href="https://august0830.github.io/post/56c20e9/"/>
-    <id>https://august0830.github.io/post/56c20e9/</id>
-    <published>2023-09-16T07:59:58.000Z</published>
-    <updated>2023-09-16T08:17:58.960Z</updated>
+    <title>改进选课土豆服务器背后——浅析Kubernetes(1)</title>
+    <link href="https://august0830.github.io/post/f14a27d0/"/>
+    <id>https://august0830.github.io/post/f14a27d0/</id>
+    <published>2023-09-17T07:56:00.000Z</published>
+    <updated>2023-09-17T07:57:47.908Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;p&gt;在学校的时候对Kubernetes的向往来自于对“自动编排”这一愿景的向往。实际工作中接触到以后，发现各种知识扑面而来。比起直接深入细节，弄明白为什么需要Kubenetes的这些组件，为什么这些组件之间是如此互动的等问题，能够帮助我理清楚头绪。谨以此作为学习记录。&lt;/p&gt;
