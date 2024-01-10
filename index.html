@@ -180,6 +180,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/eea05286/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mokku-blue.jpg">
+      <meta itemprop="name" content="Augustus">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Map of Augustus's Soul">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/eea05286/" class="post-title-link" itemprop="url">重构代码初体验-1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-01-10 07:55:57 / Modified: 08:59:36" itemprop="dateCreated datePublished" datetime="2024-01-10T07:55:57+08:00">2024-01-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/eea05286/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/eea05286/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>8.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>21 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>一个矫正代码习惯的练习记录</p>
+</blockquote>
+<p>原代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> literatePrimes;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintPrimes</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> M = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> RR = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> CC = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> WW = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> ORDMAX = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">int</span> P[] = <span class="keyword">new</span> <span class="keyword">int</span>[M + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> PAGENUMBER;</span><br><span class="line">    <span class="keyword">int</span> PAGEOFFSET;</span><br><span class="line">    <span class="keyword">int</span> ROWOFFSET;</span><br><span class="line">    <span class="keyword">int</span> C;<span class="keyword">int</span> J;</span><br><span class="line">    <span class="keyword">int</span> K;</span><br><span class="line">    <span class="keyword">boolean</span> JPRIME;</span><br><span class="line">    <span class="keyword">int</span> ORD;</span><br><span class="line">    <span class="keyword">int</span> SQUARE;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">int</span> MULT[] = <span class="keyword">new</span> <span class="keyword">int</span>[ORDMAX + <span class="number">1</span>];</span><br><span class="line">    J = <span class="number">1</span>;</span><br><span class="line">    K = <span class="number">1</span>;</span><br><span class="line">    P[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    ORD = <span class="number">2</span>;</span><br><span class="line">    SQUARE = <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">while</span> (K &lt; M) &#123;</span><br><span class="line">      <span class="keyword">do</span> &#123;</span><br><span class="line">        J = J + <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (J == SQUARE) &#123;</span><br><span class="line">          ORD = ORD + <span class="number">1</span>;</span><br><span class="line">          SQUARE = P[ORD] * P[ORD];</span><br><span class="line">          MULT[ORD - <span class="number">1</span>] = J;</span><br><span class="line">        &#125;</span><br><span class="line">        N = <span class="number">2</span>;</span><br><span class="line">        JPRIME = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (N &lt; ORD &amp;&amp; JPRIME) &#123;</span><br><span class="line">          <span class="keyword">while</span> (MULT[N] &lt; J)</span><br><span class="line">            MULT[N] = MULT[N] + P[N] + P[N];</span><br><span class="line">          <span class="keyword">if</span> (MULT[N] == J)</span><br><span class="line">            JPRIME = <span class="keyword">false</span>;</span><br><span class="line">          N = N + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">while</span> (!JPRIME);</span><br><span class="line">      K = K + <span class="number">1</span>;</span><br><span class="line">      P[K] = J;</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">      PAGENUMBER = <span class="number">1</span>;</span><br><span class="line">      PAGEOFFSET = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span> (PAGEOFFSET &lt;= M) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;The First &quot;</span> + M + </span><br><span class="line">                             <span class="string">&quot; Prime Numbers --- Page &quot;</span> + PAGENUMBER);</span><br><span class="line">        System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (ROWOFFSET = PAGEOFFSET; ROWOFFSET &lt; PAGEOFFSET + RR; ROWOFFSET++)&#123;</span><br><span class="line">          <span class="keyword">for</span> (C = <span class="number">0</span>; C &lt; CC;C++)</span><br><span class="line">            <span class="keyword">if</span> (ROWOFFSET + C * RR &lt;= M)</span><br><span class="line">              System.out.format(<span class="string">&quot;%10d&quot;</span>, P[ROWOFFSET + C * RR]);</span><br><span class="line">          System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;\f&quot;</span>);</span><br><span class="line">        PAGENUMBER = PAGENUMBER + <span class="number">1</span>;</span><br><span class="line">        PAGEOFFSET = PAGEOFFSET + RR * CC;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>粗读下来就能发现的问题：</p>
+<ol>
+<li>函数太长了，而且杂糅了数据生成和数据打印到页面上，两个模块的代码</li>
+<li>变量命名太简单了，看不出实际的含义</li>
+<li>数据生成部分的代码逻辑过于复杂，看不懂是怎么生成的数据</li>
+</ol>
+<p>先从更容易看懂的数据打印部分开始重构：</p>
+<p>PrimePrinter-refactor1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrimePagePrinter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pageNumber = <span class="number">1</span>; <span class="comment">//PAGENUMBER</span></span><br><span class="line">    <span class="keyword">int</span> pageOffset = <span class="number">1</span>; <span class="comment">//PAGEOFFSET</span></span><br><span class="line">    <span class="keyword">int</span> rowLength = <span class="number">50</span>; <span class="comment">//RR</span></span><br><span class="line">    <span class="keyword">int</span> colLength = <span class="number">4</span>;<span class="comment">//CC</span></span><br><span class="line">    <span class="keyword">int</span> M = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> WW = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> ORDMAX = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">int</span> P[];</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PrimePagePrinter</span><span class="params">(<span class="keyword">int</span> rowLength, <span class="keyword">int</span> colLength, <span class="keyword">int</span>[] P)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rowPerPage = rowLength;</span><br><span class="line">        <span class="keyword">this</span>.colLength = colLength;</span><br><span class="line">        <span class="keyword">this</span>.P = P;</span><br><span class="line">        <span class="keyword">this</span>.M = P.length - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">this</span>.pageOffset &lt;= <span class="keyword">this</span>.M) &#123;</span><br><span class="line">            <span class="keyword">this</span>.printHeader();</span><br><span class="line">            <span class="keyword">this</span>.PrintPrimes();</span><br><span class="line">            System.out.println(<span class="string">&quot;\f&quot;</span>);</span><br><span class="line">            <span class="keyword">this</span>.pageNumber += <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">this</span>.pageOffset += <span class="keyword">this</span>.rowPerPage * <span class="keyword">this</span>.colLength;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">printHeader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;The First &quot;</span> + M + </span><br><span class="line">                             <span class="string">&quot; Prime Numbers --- Page &quot;</span> + <span class="keyword">this</span>.pageNumber);</span><br><span class="line">        System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">printPrimes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (ROWOFFSET = <span class="keyword">this</span>.pageOffset; ROWOFFSET &lt; <span class="keyword">this</span>.pageOffset + <span class="keyword">this</span>.rowPerPage; ROWOFFSET++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (C = <span class="number">0</span>; C &lt; <span class="keyword">this</span>.colLength;C++) </span><br><span class="line">                <span class="keyword">if</span> (ROWOFFSET + C * <span class="keyword">this</span>.rowPerPage &lt;= <span class="keyword">this</span>.M) </span><br><span class="line">                    System.out.format(<span class="string">&quot;%10d&quot;</span>, <span class="keyword">this</span>.P[ROWOFFSET + C * <span class="keyword">this</span>.rowPerPage]);</span><br><span class="line">          System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一步重构主要做了：</p>
+<ol>
+<li>修改了部分命名，让含义更清晰</li>
+<li>对打印过程进行了简单的分割，分成了 <code>printHeader</code> ，<code>printPrimes</code></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/eea05286/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/f14a27d0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1251,144 +1374,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://august0830.github.io/post/4250e502/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/mokku-blue.jpg">
-      <meta itemprop="name" content="Augustus">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Map of Augustus's Soul">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/4250e502/" class="post-title-link" itemprop="url">碎片时间学英语-程序员的口语练习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-12-03 21:40:16" itemprop="dateCreated datePublished" datetime="2022-12-03T21:40:16+08:00">2022-12-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-09 23:54:58" itemprop="dateModified" datetime="2023-01-09T23:54:58+08:00">2023-01-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Language-Learning/" itemprop="url" rel="index"><span itemprop="name">Language Learning</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/post/4250e502/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/4250e502/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>867</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="我经历过的英语面试"><a href="#我经历过的英语面试" class="headerlink" title="我经历过的英语面试"></a>我经历过的英语面试</h2><table>
-<thead>
-<tr>
-<th>面试</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>微软暑期实习二面</td>
-<td>英文自我介绍 回答了面试官的追问</td>
-</tr>
-<tr>
-<td>Morgan Stanley 电话简历面</td>
-<td>简单Java八股，通过本场面试</td>
-</tr>
-<tr>
-<td>Morgan Stanley 3轮技术面试</td>
-<td>算法题+技术问题 磕磕绊绊解释思路</td>
-</tr>
-<tr>
-<td>TikTok Singapore 技术面+HR面</td>
-<td>3场技术面中有一半时间用英文介绍项目，解算法题，回答追问，进行反问；HR面全程用英语回答问题表达诉求</td>
-</tr>
-</tbody></table>
-<p>以上所有面试并除了Morgan Stanley因为技术问题没回答好挂了之外其他都通过了面试本身。英文的技术面试重点依旧是技术，但是经过我的练习，我至少可以做到尽可能减少表达不流畅带来的负面影响。</p>
-<p>我训练的主要目标是提升表达的流畅度，对口语的口音没有太多要求。</p>
-<h2 id="碎片时间利用的方法"><a href="#碎片时间利用的方法" class="headerlink" title="碎片时间利用的方法"></a>碎片时间利用的方法</h2><h3 id="英语刷算法题"><a href="#英语刷算法题" class="headerlink" title="英语刷算法题"></a>英语刷算法题</h3><p>英文面试中手撕算法题的关键依旧是讲清楚算法题，只不过多了一个附加条件——用英语。我在原来写自己的题解、梳理思路的基础上只是替换了语言。先保证自己能用中文清晰的写出算法题思路和需要注意的要点。</p>
-<p><strong>做英语算法题，看英语题解，用英文关键词搜索</strong> 尽可能营造沉浸式环境，同时减少对英语的陌生感和恐惧感，避免看到英语算法题就头晕。还可以学习相关术语。</p>
-<p><strong>大胆写 不需要在意语法 是Broken English也没关系</strong> 如果一开始觉得直接说很困难可以先写出来，作为缓冲。写的时候可以不在意语法，不一定要是完整的句子，把要点写出来，再考虑连起来。</p>
-<p><strong>模仿学习矫正是必须要下的功夫</strong> 参考母语者是如何讲题的可以帮助自己修正讲题的方式。我参考的是<a href="%5BNeetcode%5D(https://neetcode.io/)">NeetCode</a>。他擅长用样例讲解算法，并且用语非常基础，易于模仿。在学习模仿的过程中也可以积累常用的讲解算法题的表达。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/4250e502/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1459,7 +1444,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1472,7 +1457,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1514,7 +1499,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1523,12 +1508,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">128k</span>
+    <span title="Symbols count total">136k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:20</span>
+    <span title="Reading time total">5:41</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a>
   </div>
